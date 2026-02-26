@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JSpot Massage — Swanpass</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0a0a;--black2:#111111;--black3:#1a1a1a;--card-bg:#161616;--red:#e8142a;--red-dark:#b80f20;--white:#fff;--white70:rgba(255,255,255,.7);--white40:rgba(255,255,255,.4);--white10:rgba(255,255,255,.08);--gold:#d4a847;--green:#22c55e;--border:rgba(255,255,255,.08);--radius:10px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;}
+header{background:var(--black);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:0 16px;}
+.header-inner{display:flex;align-items:center;gap:12px;height:52px;max-width:1200px;margin:0 auto;}
+.logo img{height:26px;display:block;}
+.back-btn{background:var(--white10);border:1px solid var(--border);border-radius:6px;padding:6px 12px;color:var(--white);font-size:12px;text-decoration:none;display:flex;align-items:center;gap:4px;}
+.btn-login{background:var(--red);color:var(--white);border:none;border-radius:6px;padding:7px 14px;font-size:12px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;}
+/* GALLERY */
+.gallery{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:4px;height:280px;max-width:1200px;margin:0 auto;}
+.gallery img{width:100%;height:100%;object-fit:cover;cursor:pointer;background:var(--black3);}
+.gallery img:first-child{grid-row:1/3;border-radius:0;}
+.gallery-more{position:relative;}
+.gallery-more-btn{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.2);border-radius:6px;padding:5px 10px;color:var(--white);font-size:11px;font-weight:600;cursor:pointer;backdrop-filter:blur(4px);}
+/* MAIN LAYOUT */
+.page-layout{display:flex;gap:24px;max-width:1200px;margin:0 auto;padding:20px 16px;}
+.page-main{flex:1;min-width:0;}
+.page-sidebar{width:300px;flex-shrink:0;}
+/* TITLE SECTION */
+.listing-header{margin-bottom:20px;}
+.listing-cats{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;}
+.cat-tag{display:inline-flex;align-items:center;gap:4px;background:var(--white10);border:1px solid var(--border);border-radius:12px;padding:3px 10px;font-size:11px;color:var(--white70);}
+.listing-name{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:1px;line-height:1;margin-bottom:8px;}
+.listing-badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;}
+.badge{display:inline-flex;align-items:center;gap:3px;padding:3px 8px;border-radius:4px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;}
+.badge-sponsored{background:rgba(212,168,71,.2);color:var(--gold);border:1px solid rgba(212,168,71,.4);}
+.badge-featured{background:rgba(232,20,42,.2);color:var(--red);border:1px solid rgba(232,20,42,.4);}
+.badge-deal{background:rgba(34,197,94,.2);color:var(--green);border:1px solid rgba(34,197,94,.4);}
+.badge-new{background:rgba(99,102,241,.2);color:#a5b4fc;border:1px solid rgba(99,102,241,.4);}
+.listing-stats{display:flex;align-items:center;gap:16px;padding:12px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:16px;}
+.stat-item{display:flex;flex-direction:column;align-items:center;gap:2px;}
+.stat-val{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:1px;color:var(--white);}
+.stat-val.gold{color:var(--gold);}
+.stat-val.red{color:var(--red);}
+.stat-label{font-size:10px;color:var(--white40);text-transform:uppercase;letter-spacing:.5px;}
+.stat-divider{width:1px;height:30px;background:var(--border);}
+/* RATING STARS ROW */
+.rating-row{display:flex;align-items:center;gap:8px;margin-bottom:16px;}
+.big-stars{font-size:20px;color:var(--gold);letter-spacing:2px;}
+.rating-num{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--gold);}
+.rating-of{font-size:12px;color:var(--white40);margin-top:6px;}
+/* INFO SECTION */
+.info-section{margin-bottom:20px;}
+.info-title{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1px;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.info-title::after{content:'';flex:1;height:1px;background:var(--border);}
+.info-row{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:13px;}
+.info-row:last-child{border-bottom:none;}
+.info-icon{font-size:16px;flex-shrink:0;width:20px;text-align:center;margin-top:1px;}
+.info-label{color:var(--white40);font-size:11px;flex-shrink:0;width:70px;margin-top:2px;}
+.info-val{flex:1;line-height:1.4;}
+.info-val a{color:var(--red);text-decoration:none;}
+/* DESC */
+.desc-text{font-size:14px;line-height:1.7;color:var(--white70);margin-bottom:16px;}
+/* PRICE TABLE */
+.price-table{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:20px;}
+.price-row{display:flex;align-items:center;padding:10px 14px;border-bottom:1px solid var(--border);font-size:13px;}
+.price-row:last-child{border-bottom:none;}
+.price-service{flex:1;font-weight:500;}
+.price-duration{color:var(--white40);font-size:12px;margin-right:16px;}
+.price-amount{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--green);letter-spacing:.5px;}
+/* REVIEWS */
+.review-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:14px;margin-bottom:10px;}
+.review-header{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.review-avatar{width:32px;height:32px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+.review-user{font-weight:600;font-size:13px;}
+.review-date{font-size:11px;color:var(--white40);margin-left:auto;}
+.review-stars{color:var(--gold);font-size:12px;margin-bottom:6px;}
+.review-text{font-size:13px;color:var(--white70);line-height:1.5;}
+/* SIDEBAR CARD */
+.sidebar-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:16px;position:sticky;top:72px;}
+.sidebar-img{width:100%;height:150px;object-fit:cover;display:block;background:var(--black3);}
+.sidebar-body{padding:16px;}
+.sidebar-name{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;margin-bottom:4px;}
+.sidebar-meta{font-size:12px;color:var(--white40);margin-bottom:12px;}
+.btn-cta{width:100%;background:var(--red);color:var(--white);border:none;border-radius:8px;padding:12px;font-size:14px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;margin-bottom:8px;transition:background .2s;}
+.btn-cta:hover{background:var(--red-dark);}
+.btn-secondary{width:100%;background:var(--white10);color:var(--white);border:1px solid var(--border);border-radius:8px;padding:10px;font-size:13px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;margin-bottom:8px;}
+.sidebar-info{padding:12px 0;border-top:1px solid var(--border);}
+.sidebar-info-row{display:flex;gap:8px;font-size:12px;padding:4px 0;color:var(--white70);}
+.sidebar-info-row span:first-child{flex-shrink:0;}
+/* DEAL BANNER */
+.deal-banner{background:linear-gradient(135deg,#1a0008,#4a000f);border:1px solid rgba(232,20,42,.3);border-radius:var(--radius);padding:14px 16px;margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+.deal-banner-content{flex:1;}
+.deal-banner-tag{display:inline-block;background:var(--red);color:var(--white);font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1px;padding:2px 6px;border-radius:3px;margin-bottom:4px;}
+.deal-banner-title{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1px;margin-bottom:2px;}
+.deal-banner-sub{font-size:12px;color:var(--white70);}
+.deal-banner-pct{font-family:'Bebas Neue',sans-serif;font-size:40px;color:var(--green);letter-spacing:-1px;line-height:1;}
+/* NEARBY */
+.nearby-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.nearby-card{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;overflow:hidden;text-decoration:none;color:inherit;display:block;transition:border-color .2s;}
+.nearby-card:hover{border-color:rgba(232,20,42,.4);}
+.nearby-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--black3);}
+.nearby-body{padding:6px 8px;}
+.nearby-name{font-size:11px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.nearby-meta{font-size:10px;color:var(--white40);}
+/* BOTTOM NAV */
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;z-index:90;background:var(--black2);border-top:1px solid var(--border);display:flex;padding:8px 0 calc(8px + env(safe-area-inset-bottom));}
+.bnav-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;color:var(--white40);text-decoration:none;transition:color .2s;}
+.bnav-item.active{color:var(--red);}
+.bnav-icon{font-size:20px;}
+.bnav-label{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
+.bottom-nav-spacer{height:70px;}
+@media(max-width:768px){.page-sidebar{display:none;}.gallery{height:200px;grid-template-columns:1fr;grid-template-rows:auto;}.gallery img:first-child{grid-row:auto;}.gallery img:nth-child(n+2){display:none;}}
+@media(min-width:768px){.bottom-nav{display:none;}.bottom-nav-spacer{display:none;}}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="listings.html" class="back-btn">← Listings</a>
+    <a href="index.html"><img src="https://swanpass.com/assets/swanpass_logo_rev-bd3cf3c257fac0af2b938b74d4b6ae8907fb1f7b4e10c0dc15add74fe1427363.png" alt="Swanpass"></a>
+    <div style="flex:1"></div>
+    <button class="btn-login">Login</button>
+  </div>
+</header>
+
+<!-- GALLERY -->
+<div class="gallery">
+  <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg" alt="JSpot Massage" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')">
+  <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg" alt="JSpot Massage" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')">
+  <div class="gallery-more">
+    <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg" alt="JSpot Massage" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')">
+    <button class="gallery-more-btn">📷 All photos</button>
+  </div>
+</div>
+
+<!-- LAYOUT -->
+<div class="page-layout">
+  <div class="page-main">
+
+    <!-- HEADER INFO -->
+    <div class="listing-header">
+      <div class="listing-cats">
+        <span class="cat-tag">👄 Massage · 🛁 Soapy</span>
+        <span class="cat-tag">📍 Bangkok</span>
+      </div>
+      <div class="listing-name">JSpot Massage</div>
+      <div class="listing-badges">
+        <span class="badge badge-sponsored">★ Sponsored</span>
+        <span class="badge badge-deal">🏷️ 20% OFF</span>
+      </div>
+      <div class="rating-row">
+        <div class="big-stars">★★★★★</div>
+        <div class="rating-num">4.7</div>
+        <div class="rating-of">/ 5.0<br><span style="color:var(--white40);font-size:11px">(1 reviews)</span></div>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="listing-stats">
+      <div class="stat-item"><div class="stat-val gold">4.7</div><div class="stat-label">Rating</div></div>
+      <div class="stat-divider"></div>
+      <div class="stat-item"><div class="stat-val">1</div><div class="stat-label">Reviews</div></div>
+      <div class="stat-divider"></div>
+      <div class="stat-item"><div class="stat-val red">5K+</div><div class="stat-label">Visits</div></div>
+      <div class="stat-divider"></div>
+      <div class="stat-item"><div class="stat-val">✓</div><div class="stat-label">Verified</div></div>
+    </div>
+
+    <!-- DEAL BANNER (if applicable) -->
+    <div class="deal-banner">
+      <div class="deal-banner-content">
+        <div class="deal-banner-tag">🏷️ Current Deal</div>
+        <div class="deal-banner-title">฿1,000 Special Offer</div>
+        <div class="deal-banner-sub">Limited time · Book now to lock in this price</div>
+      </div>
+      <div class="deal-banner-pct">-20%</div>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="info-section">
+      <div class="info-title">About</div>
+      <p class="desc-text">JSpot Massage is a premium massage parlour situated in the popular Sukhumvit Soi 33 strip. Offering a range of massage services in a clean, welcoming environment, JSpot is a favourite for both first-time visitors and regulars. Currently running a 20% discount promotion — one of the best value spots on the strip.</p>
+    </div>
+
+    <!-- INFO -->
+    <div class="info-section">
+      <div class="info-title">Details</div>
+      <div class="info-row"><span class="info-icon">📍</span><span class="info-label">Address</span><span class="info-val">12/5 Soi Sukhumvit 33, Khlong Tan Nuea, Watthana, Bangkok</span></div>
+      <div class="info-row"><span class="info-icon">📞</span><span class="info-label">Phone</span><span class="info-val"><a href="tel:063-094-3888">063-094-3888</a></span></div>
+      <div class="info-row"><span class="info-icon">🕐</span><span class="info-label">Hours</span><span class="info-val">Daily 1:00 PM – 2:00 AM</span></div>
+      <div class="info-row"><span class="info-icon">🏷️</span><span class="info-label">Category</span><span class="info-val">Massage, Soapy</span></div>
+      <div class="info-row"><span class="info-icon">🗺️</span><span class="info-label">Map</span><span class="info-val"><a href="map.html">View on Map →</a></span></div>
+    </div>
+
+    <!-- PRICING -->
+    <div class="info-section">
+      <div class="info-title">Pricing</div>
+      <div class="price-table">
+        <div class="price-row"><span class="price-service">Thai Massage</span><span class="price-duration">60 min</span><span class="price-amount">฿500</span></div>
+        <div class="price-row"><span class="price-service">Oil Massage</span><span class="price-duration">60 min</span><span class="price-amount">฿600</span></div>
+        <div class="price-row"><span class="price-service">Nuru Massage</span><span class="price-duration">60 min</span><span class="price-amount">฿1,000</span></div>
+        <div class="price-row"><span class="price-service">Full Body</span><span class="price-duration">90 min</span><span class="price-amount">฿1,800</span></div>
+        <div class="price-row" style="background:rgba(34,197,94,.05)"><span class="price-service" style="color:var(--green)">🏷️ Deal Price (this week)</span><span class="price-duration">60 min</span><span class="price-amount" style="color:var(--red)">฿800</span></div>
+      </div>
+    </div>
+
+    <!-- REVIEWS -->
+    <div class="info-section">
+      <div class="info-title">Reviews (1)</div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar">🧑</div>
+          <div><div class="review-user">TravellerMike88</div></div>
+          <div class="review-date">Feb 2026</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Absolutely fantastic experience. The staff are professional and the facilities are immaculate. Will definitely be back on my next trip to Bangkok. One of the best in the Sukhumvit area.</div>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar">👤</div>
+          <div><div class="review-user">NightOwl_BKK</div></div>
+          <div class="review-date">Jan 2026</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Been coming here for 2 years. Consistent quality every time. Great value for money. The girls are friendly and the place is clean. Highly recommend.</div>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar">🙂</div>
+          <div><div class="review-user">ExpatsGuide</div></div>
+          <div class="review-date">Jan 2026</div>
+        </div>
+        <div class="review-stars">★★★★☆</div>
+        <div class="review-text">Very good place, busy on weekends so try to go during the week. Prices are fair. Location is easy to find on Sukhumvit.</div>
+      </div>
+    </div>
+
+    <!-- NEARBY -->
+    <div class="info-section">
+      <div class="info-title">Nearby Shops</div>
+      <div class="nearby-grid">
+        <a href="listing-the333.html" class="nearby-card">
+          <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg" alt="The333">
+          <div class="nearby-body"><div class="nearby-name">The333</div><div class="nearby-meta">🛁 Soapy · Bangkok · ★ 4.8</div></div>
+        </a>
+        <a href="listing-amor888.html" class="nearby-card">
+          <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg" alt="AMOR888">
+          <div class="nearby-body"><div class="nearby-name">AMOR888</div><div class="nearby-meta">👄 Massage · Bangkok · ★ 4.8</div></div>
+        </a>
+        <a href="listing-jspot.html" class="nearby-card">
+          <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg" alt="JSpot">
+          <div class="nearby-body"><div class="nearby-name">JSpot Massage</div><div class="nearby-meta">🛁 Soapy · Bangkok · ★ 4.7</div></div>
+        </a>
+        <a href="listing-chairman-nuru.html" class="nearby-card">
+          <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg" alt="Chairman Nuru">
+          <div class="nearby-body"><div class="nearby-name">Chairman Nuru</div><div class="nearby-meta">👄 Massage · Bangkok · ★ 4.9</div></div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="page-sidebar">
+    <div class="sidebar-card">
+      <img class="sidebar-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg" alt="JSpot Massage" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')">
+      <div class="sidebar-body">
+        <div class="sidebar-name">JSpot Massage</div>
+        <div class="sidebar-meta">👄 Massage · 🛁 Soapy · 📍 Bangkok</div>
+        <button class="btn-cta">📞 Call Now</button>
+        <button class="btn-secondary">♡ Save to Favorites</button>
+        <button class="btn-secondary">🗺️ View on Map</button>
+        <div class="sidebar-info">
+          <div class="sidebar-info-row"><span>📞</span><span>063-094-3888</span></div>
+          <div class="sidebar-info-row"><span>🕐</span><span>Daily 1:00 PM – 2:00 AM</span></div>
+          <div class="sidebar-info-row"><span>📍</span><span>12/5 Soi Sukhumvit 33, Khlong Tan Nuea, Watthana, Bangkok</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bottom-nav-spacer"></div>
+<nav class="bottom-nav">
+  <a href="index.html" class="bnav-item"><span class="bnav-icon">🏠</span><span class="bnav-label">Home</span></a>
+  <a href="map.html" class="bnav-item"><span class="bnav-icon">🗺️</span><span class="bnav-label">Map</span></a>
+  <a href="index.html#deals" class="bnav-item"><span class="bnav-icon">🏷️</span><span class="bnav-label">Deals</span></a>
+  <a href="listings.html" class="bnav-item active"><span class="bnav-icon">🔍</span><span class="bnav-label">Browse</span></a>
+  <a href="admin.html" class="bnav-item"><span class="bnav-icon">⚙️</span><span class="bnav-label">Admin</span></a>
+</nav>
+</body>
+</html>

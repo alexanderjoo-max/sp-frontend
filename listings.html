@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swanpass — Browse Listings</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0a0a;--black2:#111111;--card-bg:#161616;--red:#e8142a;--red-dark:#b80f20;--white:#fff;--white70:rgba(255,255,255,.7);--white40:rgba(255,255,255,.4);--white10:rgba(255,255,255,.08);--gold:#d4a847;--green:#22c55e;--border:rgba(255,255,255,.08);--radius:10px;--radius-sm:6px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;}
+header{background:var(--black);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:0 16px;}
+.header-inner{display:flex;align-items:center;gap:12px;height:52px;max-width:1200px;margin:0 auto;}
+.logo img{height:26px;display:block;}
+.btn-login{background:var(--red);color:var(--white);border:none;border-radius:6px;padding:7px 14px;font-size:12px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;}
+.back-btn{background:var(--white10);border:1px solid var(--border);border-radius:6px;padding:6px 12px;color:var(--white);font-size:12px;cursor:pointer;text-decoration:none;}
+/* SEARCH BAR */
+.search-bar-wrap{background:var(--black2);border-bottom:1px solid var(--border);padding:12px 16px;}
+.search-bar{display:flex;gap:8px;max-width:1200px;margin:0 auto;}
+.search-input-wrap{flex:1;display:flex;align-items:center;gap:8px;background:var(--white10);border:1px solid var(--border);border-radius:8px;padding:0 14px;height:40px;}
+.search-input-wrap input{background:none;border:none;outline:none;color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;flex:1;}
+.search-input-wrap input::placeholder{color:var(--white40);}
+.search-select{background:var(--white10);border:1px solid var(--border);border-radius:8px;padding:0 12px;height:40px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:13px;outline:none;cursor:pointer;min-width:130px;}
+.search-select option{background:#1a1a1a;}
+.btn-search{background:var(--red);color:var(--white);border:none;border-radius:8px;padding:0 20px;height:40px;font-size:13px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;white-space:nowrap;}
+/* FILTERS ROW */
+.filters-row{display:flex;gap:8px;overflow-x:auto;padding:10px 16px;scrollbar-width:none;background:var(--black2);border-bottom:1px solid var(--border);}
+.filters-row::-webkit-scrollbar{display:none;}
+.filter-pill{display:flex;align-items:center;gap:4px;background:var(--white10);border:1px solid var(--border);border-radius:20px;padding:5px 12px;font-size:12px;font-weight:500;white-space:nowrap;cursor:pointer;transition:all .2s;flex-shrink:0;color:var(--white70);}
+.filter-pill:hover,.filter-pill.active{background:var(--red);border-color:var(--red);color:var(--white);}
+/* LAYOUT */
+.layout{display:flex;max-width:1200px;margin:0 auto;gap:0;}
+/* SIDEBAR FILTERS */
+.sidebar-filters{width:220px;flex-shrink:0;padding:20px 16px;border-right:1px solid var(--border);}
+.filter-section{margin-bottom:20px;}
+.filter-section-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--white40);margin-bottom:10px;}
+.filter-option{display:flex;align-items:center;gap:8px;padding:6px 0;cursor:pointer;font-size:13px;color:var(--white70);}
+.filter-option input{accent-color:var(--red);width:14px;height:14px;cursor:pointer;}
+.filter-option:hover{color:var(--white);}
+.filter-count{margin-left:auto;font-size:11px;color:var(--white40);}
+/* MAIN */
+.main-content{flex:1;padding:20px 16px;min-width:0;}
+.results-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
+.results-count{font-size:13px;color:var(--white70);}
+.results-count strong{color:var(--white);}
+.sort-select{background:var(--white10);border:1px solid var(--border);border-radius:6px;padding:5px 10px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:12px;outline:none;cursor:pointer;}
+.sort-select option{background:#1a1a1a;}
+.view-toggle{display:flex;gap:4px;}
+.view-btn{background:var(--white10);border:1px solid var(--border);border-radius:4px;padding:5px 8px;color:var(--white40);cursor:pointer;font-size:14px;transition:all .2s;}
+.view-btn.active{background:var(--red);border-color:var(--red);color:var(--white);}
+/* CARD GRID */
+.cards-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.shop-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:transform .2s,border-color .2s;position:relative;text-decoration:none;color:inherit;display:block;}
+.shop-card:hover{transform:translateY(-2px);border-color:rgba(232,20,42,.4);}
+.card-img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--black);}
+.card-badges{position:absolute;top:6px;left:6px;display:flex;flex-direction:column;gap:3px;}
+.badge{display:inline-flex;align-items:center;gap:3px;padding:2px 6px;border-radius:4px;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;backdrop-filter:blur(4px);}
+.badge-sponsored{background:rgba(212,168,71,.9);color:#000;}
+.badge-featured{background:rgba(232,20,42,.9);color:#fff;}
+.badge-deal{background:rgba(34,197,94,.9);color:#000;}
+.badge-new{background:rgba(99,102,241,.9);color:#fff;}
+.card-body{padding:8px 10px 10px;}
+.card-cat{font-size:10px;color:var(--white40);margin-bottom:2px;}
+.card-name{font-size:13px;font-weight:600;line-height:1.2;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.card-location{font-size:11px;color:var(--white40);margin-bottom:6px;}
+.card-footer{display:flex;align-items:center;justify-content:space-between;}
+.card-rating{display:flex;align-items:center;gap:3px;font-size:11px;font-weight:600;}
+.stars{color:var(--gold);font-size:10px;}
+.card-visits{font-size:10px;color:var(--white40);background:var(--white10);padding:2px 6px;border-radius:10px;}
+.card-deal-strip{background:linear-gradient(90deg,var(--red),#ff4d6d);padding:4px 10px;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:space-between;}
+.deal-pct{font-family:'Bebas Neue',sans-serif;font-size:14px;}
+/* LIST VIEW */
+.list-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:border-color .2s;display:flex;text-decoration:none;color:inherit;margin-bottom:10px;}
+.list-card:hover{border-color:rgba(232,20,42,.4);}
+.list-card-img{width:120px;height:100px;object-fit:cover;flex-shrink:0;background:var(--black);}
+.list-card-body{padding:12px 14px;flex:1;min-width:0;display:flex;flex-direction:column;justify-content:space-between;}
+.list-card-name{font-size:14px;font-weight:700;margin-bottom:3px;}
+.list-card-meta{font-size:11px;color:var(--white40);margin-bottom:6px;}
+.list-card-footer{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+/* PAGINATION */
+.pagination{display:flex;align-items:center;justify-content:center;gap:4px;padding:20px 0;}
+.page-btn{background:var(--white10);border:1px solid var(--border);border-radius:6px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;color:var(--white70);cursor:pointer;font-size:13px;transition:all .2s;}
+.page-btn:hover,.page-btn.active{background:var(--red);border-color:var(--red);color:var(--white);}
+/* BOTTOM NAV */
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;z-index:90;background:var(--black2);border-top:1px solid var(--border);display:flex;padding:8px 0 calc(8px + env(safe-area-inset-bottom));}
+.bnav-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;color:var(--white40);text-decoration:none;transition:color .2s;}
+.bnav-item.active{color:var(--red);}
+.bnav-icon{font-size:20px;}
+.bnav-label{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
+.bottom-nav-spacer{height:70px;}
+@media(max-width:768px){.sidebar-filters{display:none;}.cards-grid{grid-template-columns:1fr 1fr;}.search-bar{flex-wrap:wrap;}.search-select{display:none;}}
+@media(min-width:768px){.bottom-nav{display:none;}.bottom-nav-spacer{display:none;}.cards-grid{grid-template-columns:repeat(3,1fr);}}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="index.html"><img src="https://swanpass.com/assets/swanpass_logo_rev-bd3cf3c257fac0af2b938b74d4b6ae8907fb1f7b4e10c0dc15add74fe1427363.png" alt="Swanpass"></a>
+    <div style="flex:1"></div>
+    <a href="index.html" class="back-btn">← Home</a>
+    <button class="btn-login">Login</button>
+  </div>
+</header>
+<!-- SEARCH -->
+<div class="search-bar-wrap">
+  <div class="search-bar">
+    <div class="search-input-wrap"><span style="color:var(--white40)">🔍</span><input type="text" placeholder="Search shops..." id="searchQ"></div>
+    <select class="search-select" id="cityFilter">
+      <option value="">All Cities</option>
+      <option>Bangkok</option><option>Pattaya</option><option>Chiang Mai</option>
+      <option>Phuket</option><option>Ho Chi Minh City</option><option>Hanoi</option>
+      <option>Bali</option><option>Jakarta</option><option>Singapore</option>
+    </select>
+    <select class="search-select" id="sortFilter">
+      <option value="rating">Top Rated</option>
+      <option value="visits">Most Visited</option>
+      <option value="new">Newest</option>
+    </select>
+    <button class="btn-search" onclick="filterShops()">Search</button>
+  </div>
+</div>
+<!-- FILTER PILLS -->
+<div class="filters-row">
+  <div class="filter-pill active" onclick="setCat(this,'')">🔥 All</div>
+  <div class="filter-pill" onclick="setCat(this,'massage')">👄 Massage</div>
+  <div class="filter-pill" onclick="setCat(this,'soapy')">🛁 Soapy</div>
+  <div class="filter-pill" onclick="setCat(this,'club')">💃 Gentlemen's Club</div>
+  <div class="filter-pill" onclick="setCat(this,'gogo')">👯 Go-Go Bars</div>
+  <div class="filter-pill" onclick="setCat(this,'freelancer')">❤️‍🔥 Freelancers</div>
+  <div class="filter-pill" onclick="setCat(this,'redlight')">📍 Red Light</div>
+  <div class="filter-pill" id="pill-deals" onclick="toggleDeals()">🏷️ Has Deals</div>
+</div>
+<div class="layout">
+  <!-- SIDEBAR -->
+  <div class="sidebar-filters">
+    <div class="filter-section">
+      <div class="filter-section-title">Country</div>
+      <label class="filter-option"><input type="checkbox" checked> Thailand <span class="filter-count">430</span></label>
+      <label class="filter-option"><input type="checkbox" checked> Vietnam <span class="filter-count">158</span></label>
+      <label class="filter-option"><input type="checkbox" checked> Indonesia <span class="filter-count">70</span></label>
+      <label class="filter-option"><input type="checkbox" checked> Cambodia <span class="filter-count">25</span></label>
+      <label class="filter-option"><input type="checkbox" checked> Singapore <span class="filter-count">20</span></label>
+      <label class="filter-option"><input type="checkbox" checked> Malaysia <span class="filter-count">12</span></label>
+    </div>
+    <div class="filter-section">
+      <div class="filter-section-title">Tags</div>
+      <label class="filter-option"><input type="checkbox"> ⭐ Featured</label>
+      <label class="filter-option"><input type="checkbox"> 📣 Sponsored</label>
+      <label class="filter-option"><input type="checkbox"> 🏷️ Has Deal</label>
+      <label class="filter-option"><input type="checkbox"> 🆕 New</label>
+    </div>
+    <div class="filter-section">
+      <div class="filter-section-title">Rating</div>
+      <label class="filter-option"><input type="checkbox"> ★★★★★ 4.5+</label>
+      <label class="filter-option"><input type="checkbox"> ★★★★ 4.0+</label>
+      <label class="filter-option"><input type="checkbox"> ★★★ 3.0+</label>
+    </div>
+    <div class="filter-section">
+      <div class="filter-section-title">Popularity</div>
+      <label class="filter-option"><input type="checkbox"> 🔥 10K+ visits</label>
+      <label class="filter-option"><input type="checkbox"> 5K+ visits</label>
+      <label class="filter-option"><input type="checkbox"> 1K+ visits</label>
+    </div>
+  </div>
+  <!-- RESULTS -->
+  <div class="main-content">
+    <div class="results-header">
+      <div class="results-count"><strong id="resultCount">18</strong> listings found</div>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <select class="sort-select" onchange="filterShops()"><option>Top Rated</option><option>Most Visited</option><option>Newest</option></select>
+        <div class="view-toggle">
+          <div class="view-btn active" onclick="setView('grid',this)" title="Grid">⊞</div>
+          <div class="view-btn" onclick="setView('list',this)" title="List">≡</div>
+        </div>
+      </div>
+    </div>
+    <div id="resultsContainer" class="cards-grid"></div>
+    <div class="pagination">
+      <div class="page-btn">‹</div>
+      <div class="page-btn active">1</div>
+      <div class="page-btn">2</div>
+      <div class="page-btn">3</div>
+      <div class="page-btn">›</div>
+    </div>
+  </div>
+</div>
+<div class="bottom-nav-spacer"></div>
+<nav class="bottom-nav">
+  <a href="index.html" class="bnav-item"><span class="bnav-icon">🏠</span><span class="bnav-label">Home</span></a>
+  <a href="map.html" class="bnav-item"><span class="bnav-icon">🗺️</span><span class="bnav-label">Map</span></a>
+  <a href="index.html#deals" class="bnav-item"><span class="bnav-icon">🏷️</span><span class="bnav-label">Deals</span></a>
+  <a href="listings.html" class="bnav-item active"><span class="bnav-icon">🔍</span><span class="bnav-label">Browse</span></a>
+  <a href="admin.html" class="bnav-item"><span class="bnav-icon">⚙️</span><span class="bnav-label">Admin</span></a>
+</nav>
+<script>
+const shops=[
+  {name:'Chairman Nuru Massage',cat:'massage',emoji:'👄',catLabel:'Massage · Soapy',city:'Bangkok',rating:4.9,visits:'9K+',tags:['sponsored','featured'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg',page:'listing-chairman-nuru.html',deal:null},
+  {name:'G2G Massage',cat:'massage',emoji:'👄',catLabel:'Massage · Soapy',city:'Bangkok',rating:4.9,visits:'8K+',tags:['featured'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg',page:'#',deal:'฿800 (was ฿1,200)'},
+  {name:'JSpot Massage',cat:'soapy',emoji:'🛁',catLabel:'Massage · Soapy',city:'Bangkok',rating:4.7,visits:'5K+',tags:['sponsored','deal'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg',page:'listing-jspot.html',deal:'20% OFF'},
+  {name:'AMOR888',cat:'soapy',emoji:'🛁',catLabel:'Massage · Soapy',city:'Bangkok',rating:4.8,visits:'2K+',tags:['sponsored'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg',page:'listing-amor888.html',deal:null},
+  {name:'The333',cat:'soapy',emoji:'🛁',catLabel:'Massage · Soapy',city:'Bangkok',rating:4.8,visits:'2K+',tags:['featured','deal'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg',page:'listing-the333.html',deal:'Weekend Deal'},
+  {name:'Don Quixote',cat:'massage',emoji:'👄',catLabel:'Massage · Soapy',city:'Bangkok',rating:4.7,visits:'7K+',tags:['featured'],img:'https://swanpass.com/wp-content/uploads/2023/01/image09.jpg',page:'#',deal:null},
+  {name:'666 Class',cat:'massage',emoji:'👄',catLabel:'Massage · Soapy',city:'Bangkok',rating:4.8,visits:'3K+',tags:['sponsored'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14215/666-class.jpeg',page:'#',deal:null},
+  {name:'Suwon Man\'s Spa',cat:'massage',emoji:'👄',catLabel:'Massage · Soapy',city:'Bangkok',rating:4.3,visits:'7K+',tags:['sponsored'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14615/Suwon.jpg',page:'#',deal:null},
+  {name:'DRAKE Luxury Lounge',cat:'club',emoji:'💃',catLabel:'Gentlemen\'s Club',city:'Bangkok',rating:4.2,visits:'<100',tags:['sponsored','new'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp',page:'#',deal:null},
+  {name:'Club Cozmo',cat:'club',emoji:'💃',catLabel:'Gentlemen\'s Club',city:'Bangkok',rating:4.5,visits:'4K+',tags:['featured'],img:'https://swanpass.com/wp-content/uploads/2023/05/room07-3.jpg',page:'#',deal:'Free Entry Weekend'},
+  {name:'Taki',cat:'club',emoji:'💃',catLabel:'Gentlemen\'s Club',city:'Bangkok',rating:4.4,visits:'3K+',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8884/01.jpg',page:'#',deal:null},
+  {name:'Galaxy Walking St',cat:'gogo',emoji:'👯',catLabel:'Go-Go · Freelancers',city:'Pattaya',rating:4.5,visits:'3K+',tags:['featured'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/813/314591480_681428673470423_3006201469555310398_n.jpg',page:'#',deal:null},
+  {name:'Flame Spa Seminyak',cat:'massage',emoji:'👄',catLabel:'Massage · Soapy',city:'Bali',rating:4.8,visits:'2K+',tags:['featured','deal'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12090/seminyak.jpg2.jpg',page:'#',deal:'28% OFF'},
+  {name:'Ibiza Spa',cat:'soapy',emoji:'🛁',catLabel:'Massage · Soapy',city:'Bali',rating:4.6,visits:'1K+',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12102/Screenshot_2024-08-30_at_6.23.00_PM.jpg',page:'#',deal:null},
+  {name:'Exotic Massage BKK',cat:'massage',emoji:'👄',catLabel:'Massage · Soapy',city:'Bangkok',rating:4.8,visits:'9K+',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12049/2024-08-16-1.jpg',page:'#',deal:null},
+  {name:'Lunar Nuru',cat:'soapy',emoji:'🛁',catLabel:'Massage · Soapy',city:'Bangkok',rating:4.9,visits:'100+',tags:['new','deal'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15233/store01.jpg',page:'#',deal:'Opening -40%'},
+  {name:'Dragon Lady BKK',cat:'massage',emoji:'👄',catLabel:'Massage · Soapy',city:'Bangkok',rating:3.8,visits:'100+',tags:['new'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15189/Screenshot_2026-01-23_at_5.39.54_PM.jpg',page:'#',deal:null},
+  {name:'Riviere 77',cat:'massage',emoji:'👄',catLabel:'Massage',city:'Bangkok',rating:4.9,visits:'100+',tags:['new'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15179/store01.jpg',page:'#',deal:null},
+];
+let activeCat='',dealsOnly=false,currentView='grid';
+function starsHtml(r){const f=Math.floor(r);return'★'.repeat(f)+'☆'.repeat(5-f);}
+function cardHtml(s){
+  return`<a href="${s.page}" class="shop-card">
+    <img class="card-img" src="${s.img}" alt="${s.name}" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')">
+    <div class="card-badges">
+      ${s.tags.includes('sponsored')?'<span class="badge badge-sponsored">★ Sponsored</span>':''}
+      ${s.tags.includes('featured')?'<span class="badge badge-featured">⭐ Featured</span>':''}
+      ${s.tags.includes('new')?'<span class="badge badge-new">🆕 New</span>':''}
+    </div>
+    <div class="card-body">
+      <div class="card-cat">${s.emoji} ${s.catLabel}</div>
+      <div class="card-name">${s.name}</div>
+      <div class="card-location">📍 ${s.city}</div>
+      <div class="card-footer">
+        <div class="card-rating"><span class="stars">${starsHtml(s.rating)}</span> ${s.rating}</div>
+        <div class="card-visits">${s.visits}</div>
+      </div>
+    </div>
+    ${s.deal?`<div class="card-deal-strip"><span>${s.deal}</span><span class="deal-pct">DEAL</span></div>`:''}
+  </a>`;
+}
+function listCardHtml(s){
+  return`<a href="${s.page}" class="list-card">
+    <img class="list-card-img" src="${s.img}" alt="${s.name}" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')">
+    <div class="list-card-body">
+      <div>
+        <div class="list-card-name">${s.name}</div>
+        <div class="list-card-meta">${s.emoji} ${s.catLabel} · 📍 ${s.city}</div>
+      </div>
+      <div class="list-card-footer">
+        <span class="card-rating"><span class="stars" style="font-size:11px">${starsHtml(s.rating)}</span> ${s.rating}</span>
+        <span class="card-visits">${s.visits} visits</span>
+        ${s.tags.includes('sponsored')?'<span class="badge badge-sponsored">Sponsored</span>':''}
+        ${s.tags.includes('featured')?'<span class="badge badge-featured">Featured</span>':''}
+        ${s.deal?`<span class="badge badge-deal">🏷️ ${s.deal}</span>`:''}
+        ${s.tags.includes('new')?'<span class="badge badge-new">New</span>':''}
+      </div>
+    </div>
+  </a>`;
+}
+function filterShops(){
+  const q=document.getElementById('searchQ').value.toLowerCase();
+  const city=document.getElementById('cityFilter').value;
+  let filtered=shops.filter(s=>{
+    if(activeCat&&s.cat!==activeCat)return false;
+    if(dealsOnly&&!s.tags.includes('deal')&&!s.deal)return false;
+    if(city&&s.city!==city)return false;
+    if(q&&!s.name.toLowerCase().includes(q)&&!s.city.toLowerCase().includes(q))return false;
+    return true;
+  });
+  document.getElementById('resultCount').textContent=filtered.length;
+  const c=document.getElementById('resultsContainer');
+  if(currentView==='grid'){
+    c.className='cards-grid';
+    c.innerHTML=filtered.map(cardHtml).join('');
+  } else {
+    c.className='';
+    c.innerHTML=filtered.map(listCardHtml).join('');
+  }
+}
+function setCat(el,cat){
+  document.querySelectorAll('.filter-pill').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');
+  if(dealsOnly)document.getElementById('pill-deals').classList.add('active');
+  activeCat=cat;filterShops();
+}
+function toggleDeals(){
+  dealsOnly=!dealsOnly;
+  document.getElementById('pill-deals').classList.toggle('active',dealsOnly);
+  filterShops();
+}
+function setView(v,btn){
+  currentView=v;
+  document.querySelectorAll('.view-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');filterShops();
+}
+filterShops();
+</script>
+</body>
+</html>

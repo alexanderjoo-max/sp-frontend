@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deals & Promotions — Swanpass</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0a0a;--black2:#111111;--black3:#1a1a1a;--card-bg:#161616;--red:#e8142a;--red-dark:#b80f20;--white:#fff;--white70:rgba(255,255,255,.7);--white40:rgba(255,255,255,.4);--white10:rgba(255,255,255,.08);--gold:#d4a847;--green:#22c55e;--orange:#f97316;--purple:#a855f7;--border:rgba(255,255,255,.08);--radius:10px;--radius-sm:6px;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;}
+header{background:var(--black);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:0 16px;}
+.header-inner{display:flex;align-items:center;gap:12px;height:52px;max-width:1200px;margin:0 auto;}
+.logo img{height:26px;display:block;}
+.back-btn{background:var(--white10);border:1px solid var(--border);border-radius:6px;padding:6px 12px;color:var(--white);font-size:12px;text-decoration:none;}
+.btn-login{background:var(--red);color:var(--white);border:none;border-radius:6px;padding:7px 14px;font-size:12px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;}
+
+/* HERO */
+.deals-hero{background:linear-gradient(135deg,#1a0008 0%,#0a0a0a 50%,#001a08 100%);padding:28px 16px 24px;text-align:center;position:relative;overflow:hidden;}
+.deals-hero::before{content:'';position:absolute;top:-40px;left:50%;transform:translateX(-50%);width:500px;height:200px;background:radial-gradient(ellipse,rgba(232,20,42,.15) 0%,transparent 70%);pointer-events:none;}
+.deals-hero-tag{display:inline-block;background:var(--red);color:var(--white);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:2px;padding:4px 12px;border-radius:20px;margin-bottom:10px;}
+.deals-hero-title{font-family:'Bebas Neue',sans-serif;font-size:40px;letter-spacing:2px;line-height:1;margin-bottom:8px;}
+.deals-hero-sub{font-size:13px;color:var(--white70);margin-bottom:16px;}
+.deals-hero-stats{display:flex;justify-content:center;gap:24px;}
+.dstat{text-align:center;}
+.dstat-val{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1px;color:var(--green);}
+.dstat-label{font-size:10px;color:var(--white40);}
+
+/* FILTER BAR */
+.filter-bar{display:flex;gap:8px;overflow-x:auto;padding:12px 16px;scrollbar-width:none;border-bottom:1px solid var(--border);background:var(--black2);}
+.filter-bar::-webkit-scrollbar{display:none;}
+.fpill{display:flex;align-items:center;gap:4px;background:var(--white10);border:1px solid var(--border);border-radius:20px;padding:5px 14px;font-size:12px;font-weight:500;white-space:nowrap;cursor:pointer;transition:all .2s;flex-shrink:0;color:var(--white70);}
+.fpill:hover,.fpill.active{background:var(--red);border-color:var(--red);color:var(--white);}
+
+/* CONTENT */
+.content{max-width:1200px;margin:0 auto;}
+.section{padding:20px 16px;}
+.section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;display:flex;align-items:center;gap:8px;}
+.section-title .dot{width:6px;height:6px;border-radius:50%;background:var(--red);flex-shrink:0;}
+.see-all{font-size:12px;color:var(--red);text-decoration:none;font-weight:600;}
+.section-divider{height:1px;background:var(--border);margin:0 16px;}
+
+/* FLASH DEALS - big cards */
+.flash-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.flash-card{background:var(--card-bg);border:1px solid rgba(232,20,42,.3);border-radius:var(--radius);overflow:hidden;cursor:pointer;text-decoration:none;color:inherit;display:block;position:relative;transition:transform .2s,border-color .2s;}
+.flash-card:hover{transform:translateY(-2px);border-color:var(--red);}
+.flash-timer{position:absolute;top:8px;right:8px;background:rgba(0,0,0,.8);border:1px solid rgba(232,20,42,.5);border-radius:6px;padding:4px 8px;font-size:10px;font-weight:700;color:var(--red);backdrop-filter:blur(4px);z-index:2;}
+.flash-img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:var(--black3);}
+.flash-body{padding:10px 12px;}
+.flash-tag{display:inline-block;background:var(--red);color:var(--white);font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;margin-bottom:5px;}
+.flash-name{font-size:14px;font-weight:700;margin-bottom:3px;line-height:1.2;}
+.flash-meta{font-size:11px;color:var(--white40);margin-bottom:8px;}
+.flash-pricing{display:flex;align-items:baseline;gap:8px;}
+.flash-new{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--green);letter-spacing:.5px;}
+.flash-old{font-size:12px;color:var(--white40);text-decoration:line-through;}
+.flash-save{font-size:10px;font-weight:700;color:var(--red);background:rgba(232,20,42,.1);border:1px solid rgba(232,20,42,.3);padding:1px 6px;border-radius:3px;}
+
+/* STANDARD DEAL CARDS */
+.deals-grid{display:grid;grid-template-columns:1fr;gap:10px;}
+.deal-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;cursor:pointer;text-decoration:none;color:inherit;transition:border-color .2s;}
+.deal-card:hover{border-color:rgba(232,20,42,.4);}
+.deal-card-img{width:110px;flex-shrink:0;object-fit:cover;display:block;background:var(--black3);}
+.deal-card-body{padding:12px 14px;flex:1;min-width:0;display:flex;flex-direction:column;justify-content:space-between;}
+.deal-card-top{}
+.deal-card-tag{display:inline-block;border-radius:4px;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:2px 7px;margin-bottom:5px;}
+.tag-flash{background:rgba(232,20,42,.2);color:var(--red);border:1px solid rgba(232,20,42,.4);}
+.tag-weekend{background:rgba(99,102,241,.2);color:#a5b4fc;border:1px solid rgba(99,102,241,.4);}
+.tag-seasonal{background:rgba(212,168,71,.2);color:var(--gold);border:1px solid rgba(212,168,71,.4);}
+.tag-opening{background:rgba(34,197,94,.2);color:var(--green);border:1px solid rgba(34,197,94,.4);}
+.tag-pct{background:rgba(249,115,22,.2);color:var(--orange);border:1px solid rgba(249,115,22,.4);}
+.deal-card-name{font-size:14px;font-weight:700;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.deal-card-meta{font-size:11px;color:var(--white40);margin-bottom:8px;}
+.deal-card-bottom{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;}
+.deal-price-new{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--green);letter-spacing:.5px;}
+.deal-price-old{font-size:11px;color:var(--white40);text-decoration:line-through;}
+.deal-expires{font-size:10px;color:var(--white40);margin-left:auto;}
+
+/* COUNTDOWN */
+.countdown{display:flex;gap:6px;align-items:center;font-size:11px;color:var(--white70);margin-top:4px;}
+.countdown-unit{background:var(--black3);border:1px solid var(--border);border-radius:4px;padding:3px 6px;text-align:center;min-width:32px;}
+.countdown-val{font-family:'Bebas Neue',sans-serif;font-size:16px;color:var(--red);display:block;line-height:1;}
+.countdown-lbl{font-size:8px;color:var(--white40);}
+.countdown-sep{color:var(--red);font-weight:700;}
+
+/* CITY DEAL TABS */
+.city-tabs{display:flex;gap:8px;overflow-x:auto;padding:10px 16px;scrollbar-width:none;background:var(--black2);border-bottom:1px solid var(--border);}
+.city-tabs::-webkit-scrollbar{display:none;}
+.ctab{display:flex;align-items:center;gap:5px;background:var(--white10);border:1px solid var(--border);border-radius:8px;padding:5px 12px;font-size:12px;font-weight:500;white-space:nowrap;cursor:pointer;color:var(--white70);transition:all .2s;flex-shrink:0;}
+.ctab:hover,.ctab.active{background:rgba(232,20,42,.15);border-color:var(--red);color:var(--white);}
+
+/* BOTTOM NAV */
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;z-index:90;background:var(--black2);border-top:1px solid var(--border);display:flex;padding:8px 0 calc(8px + env(safe-area-inset-bottom));}
+.bnav-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;color:var(--white40);text-decoration:none;transition:color .2s;}
+.bnav-item.active{color:var(--red);}
+.bnav-icon{font-size:20px;}.bnav-label{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
+.bottom-nav-spacer{height:70px;}
+@media(min-width:768px){.bottom-nav,.bottom-nav-spacer{display:none;}.flash-grid{grid-template-columns:repeat(4,1fr);}.deals-grid{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="index.html"><img src="https://swanpass.com/assets/swanpass_logo_rev-bd3cf3c257fac0af2b938b74d4b6ae8907fb1f7b4e10c0dc15add74fe1427363.png" alt="Swanpass"></a>
+    <div style="flex:1"></div>
+    <a href="index.html" class="back-btn">← Home</a>
+    <button class="btn-login">Login</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="deals-hero">
+  <div class="deals-hero-tag">🏷️ Live Deals</div>
+  <div class="deals-hero-title">DEALS &amp; PROMOTIONS</div>
+  <div class="deals-hero-sub">Exclusive discounts updated daily across Southeast Asia</div>
+  <div class="deals-hero-stats">
+    <div class="dstat"><div class="dstat-val">24</div><div class="dstat-label">Active Deals</div></div>
+    <div class="dstat"><div class="dstat-val">Up to 40%</div><div class="dstat-label">Max Discount</div></div>
+    <div class="dstat"><div class="dstat-val">6</div><div class="dstat-label">Cities</div></div>
+  </div>
+</div>
+
+<!-- FILTER -->
+<div class="filter-bar">
+  <div class="fpill active" onclick="setFilter(this)">🔥 All Deals</div>
+  <div class="fpill" onclick="setFilter(this)">⚡ Flash Deals</div>
+  <div class="fpill" onclick="setFilter(this)">📅 Weekend</div>
+  <div class="fpill" onclick="setFilter(this)">🆕 Opening</div>
+  <div class="fpill" onclick="setFilter(this)">% Off</div>
+  <div class="fpill" onclick="setFilter(this)">👄 Massage</div>
+  <div class="fpill" onclick="setFilter(this)">🛁 Soapy</div>
+  <div class="fpill" onclick="setFilter(this)">💃 Clubs</div>
+</div>
+
+<!-- CITY TABS -->
+<div class="city-tabs">
+  <div class="ctab active" onclick="setCityTab(this)">🌏 All Cities</div>
+  <div class="ctab" onclick="setCityTab(this)">🏙️ Bangkok</div>
+  <div class="ctab" onclick="setCityTab(this)">🌴 Pattaya</div>
+  <div class="ctab" onclick="setCityTab(this)">🌺 Bali</div>
+  <div class="ctab" onclick="setCityTab(this)">🛵 Ho Chi Minh</div>
+  <div class="ctab" onclick="setCityTab(this)">⛩️ Chiang Mai</div>
+</div>
+
+<div class="content">
+
+<!-- FLASH DEALS -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-title"><span class="dot"></span>⚡ Flash Deals — Ending Soon</div>
+  </div>
+  <div class="flash-grid">
+    <a href="listing-chairman-nuru.html" class="flash-card">
+      <div class="flash-timer" id="timer1">⏱ 14:32:08</div>
+      <img class="flash-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
+      <div class="flash-body">
+        <div class="flash-tag">⚡ Flash Deal</div>
+        <div class="flash-name">Chairman Nuru Massage</div>
+        <div class="flash-meta">👄 Massage · 📍 Bangkok</div>
+        <div class="flash-pricing">
+          <span class="flash-new">฿800</span>
+          <span class="flash-old">฿1,200</span>
+          <span class="flash-save">SAVE ฿400</span>
+        </div>
+      </div>
+    </a>
+    <a href="listing-jspot.html" class="flash-card">
+      <div class="flash-timer" id="timer2">⏱ 08:15:44</div>
+      <img class="flash-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
+      <div class="flash-body">
+        <div class="flash-tag">⚡ Flash Deal</div>
+        <div class="flash-name">JSpot Massage</div>
+        <div class="flash-meta">🛁 Soapy · 📍 Bangkok</div>
+        <div class="flash-pricing">
+          <span class="flash-new">฿1,600</span>
+          <span class="flash-old">฿2,000</span>
+          <span class="flash-save">20% OFF</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ALL DEALS -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-title"><span class="dot"></span>🏷️ All Active Deals</div>
+    <span style="font-size:12px;color:var(--white40)">24 deals</span>
+  </div>
+  <div class="deals-grid">
+
+    <a href="listing-the333.html" class="deal-card">
+      <img class="deal-card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
+      <div class="deal-card-body">
+        <div class="deal-card-top">
+          <div class="deal-card-tag tag-weekend">📅 Weekend Only</div>
+          <div class="deal-card-name">The333</div>
+          <div class="deal-card-meta">🛁 Soapy · 📍 Bangkok, Sukhumvit 33</div>
+        </div>
+        <div class="deal-card-bottom">
+          <span class="deal-price-new">฿1,800</span>
+          <span class="deal-price-old">฿2,500</span>
+          <span class="deal-expires">Ends Sun</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="listing-amor888.html" class="deal-card">
+      <img class="deal-card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
+      <div class="deal-card-body">
+        <div class="deal-card-top">
+          <div class="deal-card-tag tag-pct">15% OFF</div>
+          <div class="deal-card-name">AMOR888</div>
+          <div class="deal-card-meta">🛁 Soapy · 📍 Bangkok, Sukhumvit 18</div>
+        </div>
+        <div class="deal-card-bottom">
+          <span class="deal-price-new">฿1,020</span>
+          <span class="deal-price-old">฿1,200</span>
+          <span class="deal-expires">Ends Mar 1</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="#" class="deal-card">
+      <img class="deal-card-img" src="https://swanpass.com/wp-content/uploads/2023/05/room07-3.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
+      <div class="deal-card-body">
+        <div class="deal-card-top">
+          <div class="deal-card-tag tag-weekend">📅 Weekend Only</div>
+          <div class="deal-card-name">Club Cozmo</div>
+          <div class="deal-card-meta">💃 Club · 📍 Bangkok, Taniya</div>
+        </div>
+        <div class="deal-card-bottom">
+          <span class="deal-price-new">Free Entry</span>
+          <span class="deal-price-old">฿500</span>
+          <span class="deal-expires">Sat–Sun</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="#" class="deal-card">
+      <img class="deal-card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12090/seminyak.jpg2.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
+      <div class="deal-card-body">
+        <div class="deal-card-top">
+          <div class="deal-card-tag tag-seasonal">🌴 Seasonal</div>
+          <div class="deal-card-name">Flame Spa Seminyak</div>
+          <div class="deal-card-meta">👄 Massage · 📍 Bali, Seminyak</div>
+        </div>
+        <div class="deal-card-bottom">
+          <span class="deal-price-new">Rp180K</span>
+          <span class="deal-price-old">Rp250K</span>
+          <span class="deal-expires">Ends Mar 15</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="listing-lunarnuru.html" class="deal-card">
+      <img class="deal-card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15233/store01.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
+      <div class="deal-card-body">
+        <div class="deal-card-top">
+          <div class="deal-card-tag tag-opening">🆕 Opening Special</div>
+          <div class="deal-card-name">Lunar Nuru</div>
+          <div class="deal-card-meta">🛁 Soapy · 📍 Bangkok, Sukhumvit 30</div>
+        </div>
+        <div class="deal-card-bottom">
+          <span class="deal-price-new">฿900</span>
+          <span class="deal-price-old">฿1,500</span>
+          <span class="deal-expires">Ends Mar 31</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="#" class="deal-card">
+      <img class="deal-card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/813/314591480_681428673470423_3006201469555310398_n.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
+      <div class="deal-card-body">
+        <div class="deal-card-top">
+          <div class="deal-card-tag tag-pct">20% OFF</div>
+          <div class="deal-card-name">Galaxy Walking Street</div>
+          <div class="deal-card-meta">👯 Go-Go · 📍 Pattaya, Walking Street</div>
+        </div>
+        <div class="deal-card-bottom">
+          <span class="deal-price-new">Free Entry</span>
+          <span class="deal-price-old">฿400</span>
+          <span class="deal-expires">Ongoing</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="#" class="deal-card">
+      <img class="deal-card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12102/Screenshot_2024-08-30_at_6.23.00_PM.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
+      <div class="deal-card-body">
+        <div class="deal-card-top">
+          <div class="deal-card-tag tag-seasonal">🌺 Bali Special</div>
+          <div class="deal-card-name">Ibiza Spa</div>
+          <div class="deal-card-meta">🛁 Soapy · 📍 Bali, Kuta</div>
+        </div>
+        <div class="deal-card-bottom">
+          <span class="deal-price-new">Rp150K</span>
+          <span class="deal-price-old">Rp220K</span>
+          <span class="deal-expires">Ends Mar 20</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="#" class="deal-card">
+      <img class="deal-card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8884/01.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
+      <div class="deal-card-body">
+        <div class="deal-card-top">
+          <div class="deal-card-tag tag-weekend">📅 Weekday Special</div>
+          <div class="deal-card-name">Taki</div>
+          <div class="deal-card-meta">💃 Club · 📍 Bangkok, Pridi Banomyong</div>
+        </div>
+        <div class="deal-card-bottom">
+          <span class="deal-price-new">฿1,200</span>
+          <span class="deal-price-old">฿1,800</span>
+          <span class="deal-expires">Mon–Thu</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+</div><!-- /content -->
+
+<div class="bottom-nav-spacer"></div>
+<nav class="bottom-nav">
+  <a href="index.html" class="bnav-item"><span class="bnav-icon">🏠</span><span class="bnav-label">Home</span></a>
+  <a href="map.html" class="bnav-item"><span class="bnav-icon">🗺️</span><span class="bnav-label">Map</span></a>
+  <a href="deals.html" class="bnav-item active"><span class="bnav-icon">🏷️</span><span class="bnav-label">Deals</span></a>
+  <a href="listings.html" class="bnav-item"><span class="bnav-icon">🔍</span><span class="bnav-label">Browse</span></a>
+  <a href="admin.html" class="bnav-item"><span class="bnav-icon">⚙️</span><span class="bnav-label">Admin</span></a>
+</nav>
+<script>
+function setFilter(el){document.querySelectorAll('.fpill').forEach(p=>p.classList.remove('active'));el.classList.add('active');}
+function setCityTab(el){document.querySelectorAll('.ctab').forEach(t=>t.classList.remove('active'));el.classList.add('active');}
+
+// Live countdown timers
+function updateTimers(){
+  ['timer1','timer2'].forEach((id,i)=>{
+    const el=document.getElementById(id);
+    if(!el)return;
+    const txt=el.textContent.replace('⏱ ','').split(':');
+    let h=parseInt(txt[0]),m=parseInt(txt[1]),s=parseInt(txt[2]);
+    s--;if(s<0){s=59;m--;if(m<0){m=59;h--;if(h<0){h=0;m=0;s=0;}}}
+    el.textContent=`⏱ ${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  });
+}
+setInterval(updateTimers,1000);
+</script>
+</body>
+</html>

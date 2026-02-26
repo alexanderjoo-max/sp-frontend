@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Profile — Swanpass</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0a0a;--black2:#111111;--black3:#1a1a1a;--card-bg:#161616;--red:#e8142a;--white:#fff;--white70:rgba(255,255,255,.7);--white40:rgba(255,255,255,.4);--white10:rgba(255,255,255,.08);--gold:#d4a847;--green:#22c55e;--border:rgba(255,255,255,.08);--radius:10px;--radius-sm:6px;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;}
+header{background:var(--black);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:0 16px;}
+.hi{display:flex;align-items:center;gap:12px;height:52px;max-width:1200px;margin:0 auto;}
+.hi img{height:26px;}
+.bk{background:var(--white10);border:1px solid var(--border);border-radius:6px;padding:6px 12px;color:var(--white);font-size:12px;text-decoration:none;}
+/* PROFILE HERO */
+.profile-hero{background:linear-gradient(180deg,#1a0305 0%,var(--black) 100%);padding:28px 16px 0;}
+.profile-hero-inner{max-width:1200px;margin:0 auto;display:flex;align-items:flex-end;gap:16px;padding-bottom:0;}
+.avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--red),#ff4d6d);display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0;border:3px solid var(--black);}
+.profile-info{flex:1;}
+.profile-name{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1px;margin-bottom:3px;}
+.profile-meta{font-size:12px;color:var(--white40);margin-bottom:10px;}
+.profile-badges{display:flex;gap:6px;flex-wrap:wrap;}
+.pbadge{display:inline-flex;align-items:center;gap:3px;background:var(--white10);border:1px solid var(--border);border-radius:10px;padding:3px 8px;font-size:10px;color:var(--white70);}
+/* PROFILE TABS */
+.profile-tabs{background:var(--black2);border-bottom:1px solid var(--border);display:flex;overflow-x:auto;scrollbar-width:none;padding:0 16px;max-width:1200px;margin:0 auto;}
+.profile-tabs::-webkit-scrollbar{display:none;}
+.ptab{padding:12px 14px;font-size:12px;font-weight:600;color:var(--white40);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:all .2s;flex-shrink:0;}
+.ptab:hover{color:var(--white);}.ptab.active{color:var(--red);border-bottom-color:var(--red);}
+/* STATS ROW */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-bottom:1px solid var(--border);}
+.sitem{background:var(--black2);padding:14px;text-align:center;}
+.sval{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.5px;margin-bottom:2px;}
+.slbl{font-size:10px;color:var(--white40);text-transform:uppercase;letter-spacing:.5px;}
+/* CONTENT */
+.content{max-width:1200px;margin:0 auto;padding:20px 16px;}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1px;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.section-title .dot{width:5px;height:5px;border-radius:50%;background:var(--red);}
+/* SAVED CARDS */
+.saved-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:28px;}
+.saved-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;text-decoration:none;color:inherit;transition:border-color .2s;position:relative;}
+.saved-card:hover{border-color:rgba(232,20,42,.4);}
+.saved-img{width:80px;height:80px;object-fit:cover;flex-shrink:0;background:var(--black3);}
+.saved-body{padding:8px 10px;flex:1;min-width:0;}
+.saved-name{font-size:12px;font-weight:600;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.saved-meta{font-size:10px;color:var(--white40);margin-bottom:5px;}
+.saved-rating{font-size:11px;color:var(--gold);font-weight:600;}
+.saved-remove{position:absolute;top:6px;right:6px;background:rgba(0,0,0,.6);border:none;border-radius:50%;width:20px;height:20px;color:var(--white40);font-size:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+/* HISTORY */
+.history-list{margin-bottom:28px;}
+.history-item{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:12px 14px;margin-bottom:8px;display:flex;align-items:center;gap:12px;}
+.hist-img{width:44px;height:44px;border-radius:6px;object-fit:cover;flex-shrink:0;background:var(--black3);}
+.hist-body{flex:1;min-width:0;}
+.hist-name{font-size:13px;font-weight:600;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.hist-meta{font-size:11px;color:var(--white40);}
+.hist-date{font-size:11px;color:var(--white40);flex-shrink:0;}
+.hist-rating{font-size:11px;color:var(--gold);flex-shrink:0;}
+/* REVIEWS TAB */
+.review-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:14px;margin-bottom:10px;}
+.review-shop{display:flex;align-items:center;gap:8px;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.rv-img{width:36px;height:36px;border-radius:6px;object-fit:cover;background:var(--black3);}
+.rv-name{font-size:12px;font-weight:600;}
+.rv-meta{font-size:10px;color:var(--white40);}
+.rv-stars{color:var(--gold);font-size:13px;margin-bottom:6px;}
+.rv-text{font-size:13px;color:var(--white70);line-height:1.5;}
+.rv-date{font-size:11px;color:var(--white40);margin-top:8px;}
+/* SETTINGS TAB */
+.settings-section{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:16px;}
+.setting-row{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--border);}
+.setting-row:last-child{border-bottom:none;}
+.setting-icon{font-size:18px;flex-shrink:0;}
+.setting-info{flex:1;}
+.setting-label{font-size:13px;font-weight:500;margin-bottom:1px;}
+.setting-sub{font-size:11px;color:var(--white40);}
+.setting-action{color:var(--red);font-size:12px;font-weight:600;cursor:pointer;flex-shrink:0;}
+.toggle{width:40px;height:22px;background:var(--green);border-radius:11px;position:relative;cursor:pointer;flex-shrink:0;}
+.toggle::after{content:'';position:absolute;right:3px;top:3px;width:16px;height:16px;border-radius:50%;background:white;}
+.toggle.off{background:var(--white10);}
+.toggle.off::after{right:auto;left:3px;}
+.btn-danger{width:100%;background:rgba(232,20,42,.1);color:var(--red);border:1px solid rgba(232,20,42,.3);border-radius:8px;padding:12px;font-size:13px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;margin-top:8px;}
+/* BOTTOM NAV */
+.bot{position:fixed;bottom:0;left:0;right:0;z-index:90;background:var(--black2);border-top:1px solid var(--border);display:flex;padding:8px 0 calc(8px + env(safe-area-inset-bottom));}
+.bi{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;color:var(--white40);text-decoration:none;}
+.bi.active{color:var(--red);}
+.bic{font-size:20px;}.bil{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
+.bsp{height:70px;}
+.tab-panel{display:none;}.tab-panel.active{display:block;}
+@media(min-width:768px){.bot,.bsp{display:none;}.saved-grid{grid-template-columns:repeat(3,1fr);}}
+</style>
+</head>
+<body>
+<header>
+  <div class="hi">
+    <a href="index.html" class="bk">← Home</a>
+    <a href="index.html"><img src="https://swanpass.com/assets/swanpass_logo_rev-bd3cf3c257fac0af2b938b74d4b6ae8907fb1f7b4e10c0dc15add74fe1427363.png" alt="Swanpass"></a>
+    <div style="flex:1"></div>
+    <a href="login.html" style="font-size:12px;color:var(--white40);text-decoration:none;">Log Out</a>
+  </div>
+</header>
+
+<div class="profile-hero">
+  <div class="profile-hero-inner">
+    <div class="avatar">🧑</div>
+    <div class="profile-info">
+      <div class="profile-name">Mike Bangkok</div>
+      <div class="profile-meta">Member since Jan 2024 · Bangkok, Thailand</div>
+      <div class="profile-badges">
+        <span class="pbadge">⭐ Verified Member</span>
+        <span class="pbadge">✍️ 12 Reviews</span>
+        <span class="pbadge">🏆 Top Reviewer</span>
+      </div>
+    </div>
+  </div>
+  <div class="profile-tabs" style="margin-top:16px;margin-left:-16px;margin-right:-16px;padding:0 16px;">
+    <div class="ptab active" onclick="switchTab('saved',this)">♡ Saved (8)</div>
+    <div class="ptab" onclick="switchTab('history',this)">📜 History (24)</div>
+    <div class="ptab" onclick="switchTab('reviews',this)">✍️ Reviews (12)</div>
+    <div class="ptab" onclick="switchTab('settings',this)">⚙️ Settings</div>
+  </div>
+</div>
+
+<div class="stats-row">
+  <div class="sitem"><div class="sval">24</div><div class="slbl">Visits</div></div>
+  <div class="sitem"><div class="sval">8</div><div class="slbl">Saved</div></div>
+  <div class="sitem"><div class="sval">12</div><div class="slbl">Reviews</div></div>
+  <div class="sitem"><div class="sval" style="color:var(--gold)">4.8</div><div class="slbl">Avg Given</div></div>
+</div>
+
+<div class="content">
+
+  <!-- SAVED -->
+  <div class="tab-panel active" id="tab-saved">
+    <div class="section-title"><span class="dot"></span> Saved Listings</div>
+    <div class="saved-grid">
+      <a href="listing-chairman-nuru.html" class="saved-card">
+        <img class="saved-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
+        <div class="saved-body"><div class="saved-name">Chairman Nuru Massage</div><div class="saved-meta">👄 Bangkok</div><div class="saved-rating">★ 4.9</div></div>
+        <button class="saved-remove">✕</button>
+      </a>
+      <a href="listing-g2g.html" class="saved-card">
+        <img class="saved-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
+        <div class="saved-body"><div class="saved-name">G2G Massage</div><div class="saved-meta">👄 Bangkok</div><div class="saved-rating">★ 4.9</div></div>
+        <button class="saved-remove">✕</button>
+      </a>
+      <a href="listing-the333.html" class="saved-card">
+        <img class="saved-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
+        <div class="saved-body"><div class="saved-name">The333</div><div class="saved-meta">🛁 Bangkok</div><div class="saved-rating">★ 4.8</div></div>
+        <button class="saved-remove">✕</button>
+      </a>
+      <a href="listing-flamespa.html" class="saved-card">
+        <img class="saved-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12090/seminyak.jpg2.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
+        <div class="saved-body"><div class="saved-name">Flame Spa Seminyak</div><div class="saved-meta">👄 Bali</div><div class="saved-rating">★ 4.8</div></div>
+        <button class="saved-remove">✕</button>
+      </a>
+      <a href="listing-jspot.html" class="saved-card">
+        <img class="saved-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
+        <div class="saved-body"><div class="saved-name">JSpot Massage</div><div class="saved-meta">🛁 Bangkok 🏷️ Deal</div><div class="saved-rating">★ 4.7</div></div>
+        <button class="saved-remove">✕</button>
+      </a>
+      <a href="listing-lunarnuru.html" class="saved-card">
+        <img class="saved-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15233/store01.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
+        <div class="saved-body"><div class="saved-name">Lunar Nuru</div><div class="saved-meta">🛁 Bangkok 🆕 New</div><div class="saved-rating">★ 4.9</div></div>
+        <button class="saved-remove">✕</button>
+      </a>
+    </div>
+  </div>
+
+  <!-- HISTORY -->
+  <div class="tab-panel" id="tab-history">
+    <div class="section-title"><span class="dot"></span> Visit History</div>
+    <div class="history-list">
+      <div class="history-item">
+        <img class="hist-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
+        <div class="hist-body"><div class="hist-name">Chairman Nuru Massage</div><div class="hist-meta">👄 Bangkok · Sukhumvit 33</div></div>
+        <div class="hist-rating">★ 5.0</div>
+        <div class="hist-date">Feb 20</div>
+      </div>
+      <div class="history-item">
+        <img class="hist-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
+        <div class="hist-body"><div class="hist-name">G2G Massage</div><div class="hist-meta">👄 Bangkok · Sukhumvit 33</div></div>
+        <div class="hist-rating">★ 5.0</div>
+        <div class="hist-date">Feb 14</div>
+      </div>
+      <div class="history-item">
+        <img class="hist-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12090/seminyak.jpg2.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
+        <div class="hist-body"><div class="hist-name">Flame Spa Seminyak</div><div class="hist-meta">👄 Bali · Seminyak</div></div>
+        <div class="hist-rating">★ 4.5</div>
+        <div class="hist-date">Jan 28</div>
+      </div>
+      <div class="history-item">
+        <img class="hist-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
+        <div class="hist-body"><div class="hist-name">The333</div><div class="hist-meta">🛁 Bangkok · Sukhumvit 33</div></div>
+        <div class="hist-rating">★ 4.0</div>
+        <div class="hist-date">Jan 15</div>
+      </div>
+      <div class="history-item">
+        <img class="hist-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14215/666-class.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
+        <div class="hist-body"><div class="hist-name">666 Class</div><div class="hist-meta">👄 Bangkok · Sukhumvit 33</div></div>
+        <div class="hist-rating">★ 5.0</div>
+        <div class="hist-date">Jan 3</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REVIEWS -->
+  <div class="tab-panel" id="tab-reviews">
+    <div class="section-title"><span class="dot"></span> My Reviews</div>
+    <div class="review-card">
+      <div class="review-shop">
+        <img class="rv-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
+        <div><div class="rv-name">Chairman Nuru Massage</div><div class="rv-meta">👄 Bangkok</div></div>
+      </div>
+      <div class="rv-stars">★★★★★</div>
+      <div class="rv-text">Absolutely fantastic. The staff are professional and the nuru massage experience here is unmatched in Bangkok. Clean, discreet, and well worth the money. My go-to on every visit.</div>
+      <div class="rv-date">February 20, 2026</div>
+    </div>
+    <div class="review-card">
+      <div class="review-shop">
+        <img class="rv-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
+        <div><div class="rv-name">G2G Massage</div><div class="rv-meta">👄 Bangkok</div></div>
+      </div>
+      <div class="rv-stars">★★★★★</div>
+      <div class="rv-text">Just as good as Chairman Nuru but slightly different vibe. Both are worth visiting if you're in the Sukhumvit 33 area. Great staff, spotless facilities.</div>
+      <div class="rv-date">February 14, 2026</div>
+    </div>
+    <div class="review-card">
+      <div class="review-shop">
+        <img class="rv-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12090/seminyak.jpg2.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
+        <div><div class="rv-name">Flame Spa Seminyak</div><div class="rv-meta">👄 Bali</div></div>
+      </div>
+      <div class="rv-stars">★★★★☆</div>
+      <div class="rv-text">Amazing setting in Seminyak. Worth every rupiah. The tropical atmosphere adds something special. A must-visit if you're in Bali.</div>
+      <div class="rv-date">January 28, 2026</div>
+    </div>
+  </div>
+
+  <!-- SETTINGS -->
+  <div class="tab-panel" id="tab-settings">
+    <div class="section-title"><span class="dot"></span> Account Settings</div>
+    <div class="settings-section">
+      <div class="setting-row"><span class="setting-icon">👤</span><div class="setting-info"><div class="setting-label">Profile Name</div><div class="setting-sub">Mike Bangkok</div></div><span class="setting-action">Edit</span></div>
+      <div class="setting-row"><span class="setting-icon">📧</span><div class="setting-info"><div class="setting-label">Email</div><div class="setting-sub">mike@example.com</div></div><span class="setting-action">Edit</span></div>
+      <div class="setting-row"><span class="setting-icon">🔒</span><div class="setting-info"><div class="setting-label">Password</div><div class="setting-sub">Last changed 60 days ago</div></div><span class="setting-action">Change</span></div>
+    </div>
+    <div class="section-title"><span class="dot"></span> Notifications</div>
+    <div class="settings-section">
+      <div class="setting-row"><span class="setting-icon">🔔</span><div class="setting-info"><div class="setting-label">Deal alerts</div><div class="setting-sub">Get notified of new deals for saved shops</div></div><div class="toggle"></div></div>
+      <div class="setting-row"><span class="setting-icon">📰</span><div class="setting-info"><div class="setting-label">Weekly digest</div><div class="setting-sub">New listings in your cities</div></div><div class="toggle off"></div></div>
+      <div class="setting-row"><span class="setting-icon">💬</span><div class="setting-info"><div class="setting-label">Review replies</div><div class="setting-sub">When shops reply to your reviews</div></div><div class="toggle"></div></div>
+    </div>
+    <div class="section-title"><span class="dot"></span> Privacy</div>
+    <div class="settings-section">
+      <div class="setting-row"><span class="setting-icon">🕵️</span><div class="setting-info"><div class="setting-label">Anonymous reviews</div><div class="setting-sub">Show username as "Anonymous"</div></div><div class="toggle off"></div></div>
+      <div class="setting-row"><span class="setting-icon">📜</span><div class="setting-info"><div class="setting-label">Private history</div><div class="setting-sub">Only visible to you</div></div><div class="toggle"></div></div>
+    </div>
+    <button class="btn-danger">Delete Account</button>
+  </div>
+
+</div>
+
+<div class="bsp"></div>
+<nav class="bot">
+  <a href="index.html" class="bi"><span class="bic">🏠</span><span class="bil">Home</span></a>
+  <a href="map.html" class="bi"><span class="bic">🗺️</span><span class="bil">Map</span></a>
+  <a href="deals.html" class="bi"><span class="bic">🏷️</span><span class="bil">Deals</span></a>
+  <a href="listings.html" class="bi"><span class="bic">🔍</span><span class="bil">Browse</span></a>
+  <a href="profile.html" class="bi active"><span class="bic">👤</span><span class="bil">Profile</span></a>
+</nav>
+<script>
+function switchTab(id,el){
+  document.querySelectorAll('.ptab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('tab-'+id).classList.add('active');
+}
+document.querySelectorAll('.toggle').forEach(t=>{
+  t.addEventListener('click',()=>t.classList.toggle('off'));
+});
+document.querySelectorAll('.saved-remove').forEach(btn=>{
+  btn.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();btn.closest('.saved-card').remove();});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Your Listing — Swanpass</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0a0a;--black2:#111111;--black3:#1a1a1a;--card-bg:#161616;--red:#e8142a;--red-dark:#b80f20;--white:#fff;--white70:rgba(255,255,255,.7);--white40:rgba(255,255,255,.4);--white10:rgba(255,255,255,.08);--gold:#d4a847;--green:#22c55e;--border:rgba(255,255,255,.08);--radius:10px;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;}
+header{background:var(--black);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:0 16px;}
+.hi{display:flex;align-items:center;gap:12px;height:52px;max-width:1200px;margin:0 auto;}
+.hi img{height:26px;}
+.bk{background:var(--white10);border:1px solid var(--border);border-radius:6px;padding:6px 12px;color:var(--white);font-size:12px;text-decoration:none;}
+/* HERO */
+.page-hero{background:linear-gradient(135deg,#1a0008,#0a0a0a);padding:32px 16px;text-align:center;border-bottom:1px solid var(--border);}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:40px;letter-spacing:2px;margin-bottom:8px;}
+.hero-title span{color:var(--red);}
+.hero-sub{font-size:14px;color:var(--white70);margin-bottom:20px;max-width:480px;margin-left:auto;margin-right:auto;}
+.perks{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;}
+.perk{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--white70);}
+.perk-icon{font-size:16px;}
+/* STEP INDICATOR */
+.steps{display:flex;align-items:center;padding:20px 16px;max-width:700px;margin:0 auto;}
+.step{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;}
+.step-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;transition:all .2s;}
+.step.done .step-num{background:var(--green);color:#000;}
+.step.active .step-num{background:var(--red);color:var(--white);}
+.step.pending .step-num{background:var(--white10);color:var(--white40);}
+.step-label{font-size:10px;color:var(--white40);text-align:center;white-space:nowrap;}
+.step.active .step-label{color:var(--white);}
+.step-line{flex:1;height:2px;background:var(--border);margin:0 4px;margin-bottom:18px;}
+.step-line.done{background:var(--green);}
+/* FORM */
+.form-wrap{max-width:700px;margin:0 auto;padding:20px 16px 40px;}
+.form-section{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px;}
+.form-section-title{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1px;margin-bottom:16px;display:flex;align-items:center;gap:8px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+.form-group{margin-bottom:16px;}
+.form-label{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--white40);margin-bottom:6px;}
+.form-label .req{color:var(--red);}
+.form-input,.form-select,.form-textarea{width:100%;background:var(--white10);border:1px solid var(--border);border-radius:8px;padding:11px 14px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;transition:border-color .2s;}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--red);}
+.form-input::placeholder,.form-textarea::placeholder{color:var(--white40);}
+.form-select option{background:#1a1a1a;}
+.form-textarea{resize:vertical;min-height:100px;line-height:1.5;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.form-hint{font-size:11px;color:var(--white40);margin-top:4px;}
+/* CATEGORY CHECKBOXES */
+.cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.cat-option{display:flex;align-items:center;gap:8px;background:var(--white10);border:1px solid var(--border);border-radius:8px;padding:10px 12px;cursor:pointer;transition:all .2s;font-size:13px;}
+.cat-option.selected{background:rgba(232,20,42,.15);border-color:var(--red);color:var(--white);}
+.cat-option input{accent-color:var(--red);width:14px;height:14px;}
+/* PHOTO UPLOAD */
+.photo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
+.photo-slot{aspect-ratio:1;border:2px dashed var(--border);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:border-color .2s;font-size:24px;background:var(--white10);gap:4px;}
+.photo-slot:hover{border-color:var(--red);}
+.photo-slot .ph-label{font-size:10px;color:var(--white40);}
+.photo-slot.filled{border-style:solid;border-color:var(--green);position:relative;overflow:hidden;}
+.photo-slot.filled img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+/* PRICING TABLE */
+.pricing-rows{}
+.pricing-row{display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center;margin-bottom:8px;}
+.pricing-row .form-input{margin:0;}
+.pricing-dur{background:var(--white10);border:1px solid var(--border);border-radius:8px;padding:11px 10px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:13px;outline:none;width:90px;}
+.btn-add-row{background:none;border:1px dashed var(--border);border-radius:8px;padding:8px;color:var(--white40);cursor:pointer;width:100%;font-size:12px;margin-top:4px;transition:all .2s;}
+.btn-add-row:hover{border-color:var(--red);color:var(--white);}
+/* PACKAGES */
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.pkg{border:1px solid var(--border);border-radius:var(--radius);padding:16px;cursor:pointer;transition:all .2s;text-align:center;}
+.pkg:hover,.pkg.active{border-color:var(--red);background:rgba(232,20,42,.08);}
+.pkg-icon{font-size:28px;margin-bottom:8px;}
+.pkg-name{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1px;margin-bottom:4px;}
+.pkg-price{font-size:22px;font-weight:700;color:var(--gold);margin-bottom:4px;}
+.pkg-period{font-size:11px;color:var(--white40);margin-bottom:10px;}
+.pkg-features{list-style:none;text-align:left;}
+.pkg-features li{font-size:11px;color:var(--white70);padding:3px 0;display:flex;align-items:center;gap:5px;}
+.pkg-features li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;}
+.pkg.active .pkg-name{color:var(--red);}
+/* SUBMIT */
+.submit-section{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center;}
+.submit-section h3{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1px;margin-bottom:8px;}
+.submit-section p{font-size:13px;color:var(--white70);margin-bottom:20px;}
+.btn-submit{background:var(--red);color:var(--white);border:none;border-radius:8px;padding:14px 32px;font-size:15px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;transition:background .2s;}
+.btn-submit:hover{background:var(--red-dark);}
+.terms-note{font-size:11px;color:var(--white40);margin-top:12px;}
+.terms-note a{color:var(--red);text-decoration:none;}
+/* BOTTOM NAV */
+.bot{position:fixed;bottom:0;left:0;right:0;z-index:90;background:var(--black2);border-top:1px solid var(--border);display:flex;padding:8px 0 calc(8px + env(safe-area-inset-bottom));}
+.bi{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;color:var(--white40);text-decoration:none;}
+.bi.active{color:var(--red);}
+.bic{font-size:20px;}.bil{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
+.bsp{height:70px;}
+@media(min-width:768px){.bot,.bsp{display:none;}.form-row{grid-template-columns:1fr 1fr;}.cat-grid{grid-template-columns:repeat(3,1fr);}}
+</style>
+</head>
+<body>
+<header>
+  <div class="hi">
+    <a href="index.html" class="bk">← Home</a>
+    <a href="index.html"><img src="https://swanpass.com/assets/swanpass_logo_rev-bd3cf3c257fac0af2b938b74d4b6ae8907fb1f7b4e10c0dc15add74fe1427363.png" alt="Swanpass"></a>
+    <div style="flex:1"></div>
+    <a href="login.html" style="font-size:12px;color:var(--white40);text-decoration:none;">Login</a>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="hero-title">List Your <span>Business</span></div>
+  <div class="hero-sub">Reach thousands of visitors across Southeast Asia every month. Get verified and start attracting customers today.</div>
+  <div class="perks">
+    <div class="perk"><span class="perk-icon">👁️</span> 500K+ monthly users</div>
+    <div class="perk"><span class="perk-icon">🌏</span> 11 cities covered</div>
+    <div class="perk"><span class="perk-icon">⚡</span> Live within 24 hours</div>
+    <div class="perk"><span class="perk-icon">📣</span> Promo tools included</div>
+  </div>
+</div>
+
+<!-- STEP INDICATOR -->
+<div class="steps">
+  <div class="step active"><div class="step-num">1</div><div class="step-label">Basic Info</div></div>
+  <div class="step-line"></div>
+  <div class="step pending"><div class="step-num">2</div><div class="step-label">Details</div></div>
+  <div class="step-line"></div>
+  <div class="step pending"><div class="step-num">3</div><div class="step-label">Photos</div></div>
+  <div class="step-line"></div>
+  <div class="step pending"><div class="step-num">4</div><div class="step-label">Package</div></div>
+</div>
+
+<div class="form-wrap">
+
+  <!-- STEP 1: BASIC INFO -->
+  <div class="form-section">
+    <div class="form-section-title">📋 Basic Information</div>
+    <div class="form-group">
+      <label class="form-label">Business Name <span class="req">*</span></label>
+      <input class="form-input" type="text" placeholder="e.g. Chairman Nuru Massage">
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Country <span class="req">*</span></label>
+        <select class="form-select">
+          <option>Thailand</option><option>Vietnam</option><option>Indonesia</option>
+          <option>Cambodia</option><option>Malaysia</option><option>Singapore</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">City <span class="req">*</span></label>
+        <select class="form-select">
+          <option>Bangkok</option><option>Pattaya</option><option>Chiang Mai</option>
+          <option>Phuket</option><option>Ho Chi Minh City</option><option>Hanoi</option>
+          <option>Bali</option><option>Jakarta</option><option>Singapore</option><option>Kuala Lumpur</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Address <span class="req">*</span></label>
+      <input class="form-input" type="text" placeholder="Full street address">
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Phone Number</label>
+        <input class="form-input" type="tel" placeholder="+66 XX XXX XXXX">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Website (optional)</label>
+        <input class="form-input" type="url" placeholder="https://...">
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORIES -->
+  <div class="form-section">
+    <div class="form-section-title">🏷️ Categories <span style="font-size:12px;font-weight:400;color:var(--white40)">(select all that apply)</span></div>
+    <div class="cat-grid">
+      <label class="cat-option" onclick="this.classList.toggle('selected')"><input type="checkbox"> 👄 Massage</label>
+      <label class="cat-option" onclick="this.classList.toggle('selected')"><input type="checkbox"> 🛁 Soapy</label>
+      <label class="cat-option" onclick="this.classList.toggle('selected')"><input type="checkbox"> 💃 Gentlemen's Club</label>
+      <label class="cat-option" onclick="this.classList.toggle('selected')"><input type="checkbox"> 👯 Go-Go Bars</label>
+      <label class="cat-option" onclick="this.classList.toggle('selected')"><input type="checkbox"> ❤️‍🔥 Freelancers</label>
+      <label class="cat-option" onclick="this.classList.toggle('selected')"><input type="checkbox"> 📍 Red Light</label>
+    </div>
+  </div>
+
+  <!-- HOURS -->
+  <div class="form-section">
+    <div class="form-section-title">🕐 Operating Hours</div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Opens</label>
+        <select class="form-select">
+          <option>12:00 PM</option><option>1:00 PM</option><option>2:00 PM</option>
+          <option>3:00 PM</option><option>4:00 PM</option><option>5:00 PM</option>
+          <option>6:00 PM</option><option>7:00 PM</option><option>8:00 PM</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Closes</label>
+        <select class="form-select">
+          <option>12:00 AM</option><option>1:00 AM</option><option>2:00 AM</option>
+          <option>3:00 AM</option><option>4:00 AM</option><option>5:00 AM</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Days Open</label>
+      <select class="form-select">
+        <option>Daily (7 days)</option><option>Mon–Fri only</option><option>Weekends only</option><option>Custom</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- DESCRIPTION -->
+  <div class="form-section">
+    <div class="form-section-title">📝 Description</div>
+    <div class="form-group">
+      <label class="form-label">About Your Business <span class="req">*</span></label>
+      <textarea class="form-textarea" placeholder="Describe your business, services, atmosphere, and what makes you unique..."></textarea>
+      <div class="form-hint">Min 50 characters. Be specific — good descriptions get more clicks.</div>
+    </div>
+  </div>
+
+  <!-- PHOTOS -->
+  <div class="form-section">
+    <div class="form-section-title">📷 Photos</div>
+    <p style="font-size:13px;color:var(--white70);margin-bottom:14px;">Upload up to 8 photos. First photo will be your main thumbnail. High quality photos get significantly more views.</p>
+    <div class="photo-grid">
+      <div class="photo-slot filled"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg" alt=""><span style="position:absolute;bottom:4px;right:4px;background:var(--green);color:#000;font-size:8px;font-weight:800;padding:2px 5px;border-radius:3px;z-index:1;">MAIN</span></div>
+      <div class="photo-slot">➕<span class="ph-label">Add photo</span></div>
+      <div class="photo-slot">➕<span class="ph-label">Add photo</span></div>
+      <div class="photo-slot">➕<span class="ph-label">Add photo</span></div>
+    </div>
+  </div>
+
+  <!-- PRICING -->
+  <div class="form-section">
+    <div class="form-section-title">💰 Services & Pricing <span style="font-size:12px;font-weight:400;color:var(--white40)">(optional)</span></div>
+    <div class="pricing-rows" id="pricingRows">
+      <div class="pricing-row">
+        <input class="form-input" type="text" placeholder="Service name (e.g. Nuru Massage)">
+        <select class="pricing-dur"><option>60 min</option><option>30 min</option><option>90 min</option><option>120 min</option></select>
+        <input class="form-input" type="text" placeholder="Price" style="width:100px">
+      </div>
+      <div class="pricing-row">
+        <input class="form-input" type="text" placeholder="Service name">
+        <select class="pricing-dur"><option>60 min</option><option>30 min</option><option>90 min</option><option>120 min</option></select>
+        <input class="form-input" type="text" placeholder="Price" style="width:100px">
+      </div>
+    </div>
+    <button class="btn-add-row" onclick="addRow()">+ Add another service</button>
+  </div>
+
+  <!-- PACKAGE -->
+  <div class="form-section">
+    <div class="form-section-title">📦 Choose Your Package</div>
+    <div class="pkg-grid">
+      <div class="pkg" onclick="selectPkg(this)">
+        <div class="pkg-icon">📋</div>
+        <div class="pkg-name">Basic</div>
+        <div class="pkg-price">Free</div>
+        <div class="pkg-period">forever</div>
+        <ul class="pkg-features">
+          <li>Listed in directory</li>
+          <li>Basic profile page</li>
+          <li>Up to 4 photos</li>
+          <li>Customer reviews</li>
+        </ul>
+      </div>
+      <div class="pkg active" onclick="selectPkg(this)">
+        <div class="pkg-icon">⭐</div>
+        <div class="pkg-name">Featured</div>
+        <div class="pkg-price">฿2,500</div>
+        <div class="pkg-period">/ month</div>
+        <ul class="pkg-features">
+          <li>Everything in Basic</li>
+          <li>Featured badge</li>
+          <li>Priority in search</li>
+          <li>Up to 12 photos</li>
+          <li>Deal posting</li>
+        </ul>
+      </div>
+      <div class="pkg" onclick="selectPkg(this)">
+        <div class="pkg-icon">📣</div>
+        <div class="pkg-name">Sponsored</div>
+        <div class="pkg-price">฿6,000</div>
+        <div class="pkg-period">/ month</div>
+        <ul class="pkg-features">
+          <li>Everything in Featured</li>
+          <li>Homepage banner slot</li>
+          <li>Sponsored badge</li>
+          <li>Top of search results</li>
+          <li>Monthly analytics report</li>
+          <li>Account manager</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUBMIT -->
+  <div class="submit-section">
+    <h3>Ready to Go Live?</h3>
+    <p>Your listing will be reviewed within 24 hours and published once approved. You'll receive an email confirmation.</p>
+    <button class="btn-submit" onclick="alert('Submission coming soon — this is a demo!')">Submit Listing →</button>
+    <div class="terms-note">By submitting you agree to our <a href="#">Terms of Use</a> and <a href="#">Content Policy</a></div>
+  </div>
+
+</div>
+
+<div class="bsp"></div>
+<nav class="bot">
+  <a href="index.html" class="bi"><span class="bic">🏠</span><span class="bil">Home</span></a>
+  <a href="map.html" class="bi"><span class="bic">🗺️</span><span class="bil">Map</span></a>
+  <a href="deals.html" class="bi"><span class="bic">🏷️</span><span class="bil">Deals</span></a>
+  <a href="listings.html" class="bi"><span class="bic">🔍</span><span class="bil">Browse</span></a>
+  <a href="admin.html" class="bi"><span class="bic">⚙️</span><span class="bil">Admin</span></a>
+</nav>
+<script>
+function selectPkg(el){document.querySelectorAll('.pkg').forEach(p=>p.classList.remove('active'));el.classList.add('active');}
+function addRow(){
+  const row=document.createElement('div');row.className='pricing-row';
+  row.innerHTML='<input class="form-input" type="text" placeholder="Service name"><select class="pricing-dur"><option>60 min</option><option>30 min</option><option>90 min</option><option>120 min</option></select><input class="form-input" type="text" placeholder="Price" style="width:100px">';
+  document.getElementById('pricingRows').appendChild(row);
+}
+</script>
+</body>
+</html>

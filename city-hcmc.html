@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ho Chi Minh City — Swanpass</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0a0a;--black2:#111111;--black3:#1a1a1a;--card-bg:#161616;--red:#e8142a;--white:#fff;--white70:rgba(255,255,255,.7);--white40:rgba(255,255,255,.4);--white10:rgba(255,255,255,.08);--gold:#d4a847;--green:#22c55e;--border:rgba(255,255,255,.08);--radius:10px;--radius-sm:6px;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;}
+header{background:var(--black);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:0 16px;}
+.hi{display:flex;align-items:center;gap:12px;height:52px;max-width:1200px;margin:0 auto;}
+.hi img{height:26px;display:block;}
+.bk{background:var(--white10);border:1px solid var(--border);border-radius:6px;padding:6px 12px;color:var(--white);font-size:12px;text-decoration:none;}
+.bl{background:var(--red);color:var(--white);border:none;border-radius:6px;padding:7px 14px;font-size:12px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;}
+.city-hero{position:relative;height:250px;overflow:hidden;}
+.chi{width:100%;height:100%;object-fit:cover;filter:brightness(.4);}
+.cho{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.85) 0%,transparent 60%);}
+.chc{position:absolute;bottom:0;left:0;right:0;padding:20px;max-width:1200px;margin:0 auto;}
+.cf{font-size:32px;margin-bottom:4px;}
+.cn{font-family:'Bebas Neue',sans-serif;font-size:52px;letter-spacing:3px;line-height:1;margin-bottom:6px;}
+.csr{display:flex;gap:16px;flex-wrap:wrap;}
+.cs{font-size:12px;color:var(--white70);}
+.cs strong{color:var(--white);}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-bottom:1px solid var(--border);}
+.sbi{background:var(--black2);padding:14px;text-align:center;}
+.sbv{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1px;margin-bottom:2px;}
+.sbl{font-size:10px;color:var(--white40);text-transform:uppercase;letter-spacing:.5px;}
+.filter-tabs{background:var(--black2);border-bottom:1px solid var(--border);display:flex;overflow-x:auto;scrollbar-width:none;padding:0 16px;}
+.filter-tabs::-webkit-scrollbar{display:none;}
+.ft{padding:11px 14px;font-size:12px;font-weight:500;color:var(--white70);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:all .2s;flex-shrink:0;}
+.ft:hover{color:var(--white);}.ft.active{color:var(--red);border-bottom-color:var(--red);}
+.area-bar{display:flex;gap:8px;overflow-x:auto;padding:10px 16px;scrollbar-width:none;background:var(--black2);border-bottom:1px solid var(--border);}
+.area-bar::-webkit-scrollbar{display:none;}
+.ap{background:var(--white10);border:1px solid var(--border);border-radius:16px;padding:4px 12px;font-size:11px;font-weight:500;white-space:nowrap;cursor:pointer;color:var(--white70);transition:all .2s;flex-shrink:0;}
+.ap:hover,.ap.active{background:var(--red);border-color:var(--red);color:var(--white);}
+.pw{max-width:1200px;margin:0 auto;}
+.section{padding:20px 16px;}
+.sh{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.st{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;display:flex;align-items:center;gap:8px;}
+.st .dot{width:6px;height:6px;border-radius:50%;background:var(--red);flex-shrink:0;}
+.sa{font-size:12px;color:var(--red);text-decoration:none;font-weight:600;}
+.sd{height:1px;background:var(--border);margin:0 16px;}
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.sc{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:transform .2s,border-color .2s;position:relative;text-decoration:none;color:inherit;display:block;}
+.sc:hover{transform:translateY(-2px);border-color:rgba(232,20,42,.4);}
+.ci{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--black3);}
+.cb{position:absolute;top:6px;left:6px;display:flex;flex-direction:column;gap:3px;}
+.badge{display:inline-flex;padding:2px 6px;border-radius:4px;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;backdrop-filter:blur(4px);}
+.bsp{background:rgba(212,168,71,.9);color:#000;}.bft{background:rgba(232,20,42,.9);color:#fff;}.bdl{background:rgba(34,197,94,.9);color:#000;}.bnw{background:rgba(99,102,241,.9);color:#fff;}
+.cbd{padding:8px 10px 10px;}
+.cc{font-size:10px;color:var(--white40);margin-bottom:2px;}
+.cna{font-size:13px;font-weight:600;line-height:1.2;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.cl{font-size:11px;color:var(--white40);margin-bottom:6px;}
+.cf2{display:flex;align-items:center;justify-content:space-between;}
+.cr{display:flex;align-items:center;gap:3px;font-size:11px;font-weight:600;}
+.stars{color:var(--gold);font-size:10px;}
+.cv{font-size:10px;color:var(--white40);background:var(--white10);padding:2px 6px;border-radius:10px;}
+.cds{background:linear-gradient(90deg,var(--red),#ff4d6d);padding:4px 10px;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:space-between;}
+.dpc{font-family:'Bebas Neue',sans-serif;font-size:14px;}
+.hs{display:flex;gap:10px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none;}
+.hs::-webkit-scrollbar{display:none;}
+.hc{flex-shrink:0;width:150px;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;cursor:pointer;text-decoration:none;color:inherit;display:block;transition:border-color .2s;}
+.hc:hover{border-color:var(--red);}
+.hci{width:100%;height:100px;object-fit:cover;background:var(--black3);}
+.hcb{padding:8px;}
+.hcn{font-size:11px;font-weight:600;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.hcm{font-size:10px;color:var(--white40);}
+.bot{position:fixed;bottom:0;left:0;right:0;z-index:90;background:var(--black2);border-top:1px solid var(--border);display:flex;padding:8px 0 calc(8px + env(safe-area-inset-bottom));}
+.bi{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;color:var(--white40);text-decoration:none;transition:color .2s;}
+.bi.active{color:var(--red);}
+.bic{font-size:20px;}.bil{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
+.bsp2{height:70px;}
+@media(min-width:768px){.bot,.bsp2{display:none;}.cg{grid-template-columns:repeat(4,1fr);}}
+@media(min-width:1024px){.cg{grid-template-columns:repeat(5,1fr);}}
+</style>
+</head>
+<body>
+<header>
+  <div class="hi">
+    <a href="index.html"><img src="https://swanpass.com/assets/swanpass_logo_rev-bd3cf3c257fac0af2b938b74d4b6ae8907fb1f7b4e10c0dc15add74fe1427363.png" alt="Swanpass"></a>
+    <div style="flex:1"></div>
+    <a href="listings.html" class="bk">← All Cities</a>
+    <button class="bl">Login</button>
+  </div>
+</header>
+<div class="city-hero">
+  <img class="chi" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Ho_Chi_Minh_City_Skyline.jpg/800px-Ho_Chi_Minh_City_Skyline.jpg" onerror="this.style.background='linear-gradient(135deg,#1a0305,#4a000f)';this.removeAttribute('src')" alt="Ho Chi Minh City">
+  <div class="cho"></div>
+  <div class="chc">
+    <div class="cf">🇻🇳</div>
+    <div class="cn">Ho Chi Minh City</div>
+    <div class="csr">
+      <div class="cs"><strong>124</strong> listings</div>
+      <div class="cs"><strong>12</strong> active deals</div>
+      <div class="cs">🇹🇭 Vietnam</div>
+    </div>
+  </div>
+</div>
+<div class="stats-bar">
+  <div class="sbi"><div class="sbv" style="color:var(--gold)">4.4</div><div class="sbl">Avg Rating</div></div>
+  <div class="sbi"><div class="sbv">124</div><div class="sbl">Listings</div></div>
+  <div class="sbi"><div class="sbv" style="color:var(--red)">12</div><div class="sbl">Active Deals</div></div>
+  <div class="sbi"><div class="sbv" style="color:var(--green)">✓</div><div class="sbl">Verified</div></div>
+</div>
+<div class="filter-tabs">
+  <div class="ft active" onclick="setT(this)">🔥 All</div>
+  <div class="ft" onclick="setT(this)">👄 Massage</div>
+  <div class="ft" onclick="setT(this)">🛁 Soapy</div>
+  <div class="ft" onclick="setT(this)">💃 Clubs</div>
+  <div class="ft" onclick="setT(this)">👯 Go-Go</div>
+  <div class="ft" onclick="setT(this)">❤️‍🔥 Freelancers</div>
+  <div class="ft" onclick="setT(this)">📍 Red Light</div>
+</div>
+<div class="area-bar">
+  <div class="ap active">All Areas</div>
+  <div class="ap">District 1 <span style="color:var(--white40);font-size:10px">48</span></div>
+  <div class="ap">District 3 <span style="color:var(--white40);font-size:10px">22</span></div>
+  <div class="ap">Phu Nhuan <span style="color:var(--white40);font-size:10px">18</span></div>
+  <div class="ap">District 7 <span style="color:var(--white40);font-size:10px">16</span></div>
+  <div class="ap">Binh Thanh <span style="color:var(--white40);font-size:10px">12</span></div>
+  <div class="ap">Other <span style="color:var(--white40);font-size:10px">8</span></div>
+</div>
+<div class="pw">
+<div class="section">
+  <div class="sh"><div class="st"><span class="dot"></span>📣 Sponsored</div><a href="listings.html" class="sa">See all →</a></div>
+  <div class="hs">
+    <a href="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/10270/428620459_122128115618121887_1384297310139856392_n.jpg" class="hc"><img class="hci" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/10270/428620459_122128115618121887_1384297310139856392_n.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt=""><div class="hcb"><div class="hcn">Top Sponsor</div><div class="hcm">👄 ★ 4.9 · 5K+</div></div></a>
+    <a href="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5814/700px-FYou-massage.jpg" class="hc"><img class="hci" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5814/700px-FYou-massage.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt=""><div class="hcb"><div class="hcn">Featured Venue</div><div class="hcm">🛁 ★ 4.8 · 3K+</div></div></a>
+    <a href="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/9151/massage-sala-tan-quy-district7.jpeg" class="hc"><img class="hci" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/9151/massage-sala-tan-quy-district7.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt=""><div class="hcb"><div class="hcn">Deals Available</div><div class="hcm">💃 ★ 4.5 · 2K+</div></div></a>
+  </div>
+</div>
+<div class="sd"></div>
+<div class="section">
+  <div class="sh"><div class="st"><span class="dot"></span>⭐ Top Rated in Ho Chi Minh City</div><a href="listings.html" class="sa">See all →</a></div>
+  <div class="cg" id="grid"></div>
+</div>
+<div class="sd"></div>
+<div class="section">
+  <div class="sh"><div class="st"><span class="dot"></span>📍 Browse HCMC Districts</div></div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;cursor:pointer;"><div style="font-size:24px;margin-bottom:4px">🏖️</div><div style="font-size:12px;font-weight:600">District 1</div><div style="font-size:10px;color:var(--white40)">48 listings</div></div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;cursor:pointer;"><div style="font-size:24px;margin-bottom:4px">🌴</div><div style="font-size:12px;font-weight:600">District 3</div><div style="font-size:10px;color:var(--white40)">22 listings</div></div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;cursor:pointer;"><div style="font-size:24px;margin-bottom:4px">🌙</div><div style="font-size:12px;font-weight:600">Phu Nhuan</div><div style="font-size:10px;color:var(--white40)">18 listings</div></div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;cursor:pointer;"><div style="font-size:24px;margin-bottom:4px">🎶</div><div style="font-size:12px;font-weight:600">District 7</div><div style="font-size:10px;color:var(--white40)">16 listings</div></div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;cursor:pointer;"><div style="font-size:24px;margin-bottom:4px">🏙️</div><div style="font-size:12px;font-weight:600">Binh Thanh</div><div style="font-size:10px;color:var(--white40)">12 listings</div></div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;cursor:pointer;"><div style="font-size:24px;margin-bottom:4px">🗺️</div><div style="font-size:12px;font-weight:600">Other</div><div style="font-size:10px;color:var(--white40)">8+ listings</div></div>
+  </div>
+</div>
+</div>
+<div class="bsp2"></div>
+<nav class="bot">
+  <a href="index.html" class="bi"><span class="bic">🏠</span><span class="bil">Home</span></a>
+  <a href="map.html" class="bi"><span class="bic">🗺️</span><span class="bil">Map</span></a>
+  <a href="deals.html" class="bi"><span class="bic">🏷️</span><span class="bil">Deals</span></a>
+  <a href="listings.html" class="bi active"><span class="bic">🔍</span><span class="bil">Browse</span></a>
+  <a href="admin.html" class="bi"><span class="bic">⚙️</span><span class="bil">Admin</span></a>
+</nav>
+<script>
+const imgs=["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/10270/428620459_122128115618121887_1384297310139856392_n.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5814/700px-FYou-massage.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/9151/massage-sala-tan-quy-district7.jpeg","https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Ho_Chi_Minh_City_Skyline.jpg/800px-Ho_Chi_Minh_City_Skyline.jpg"];
+const names=["Top Rated Venue","Popular Spot","Fan Favourite","Highly Reviewed"];
+const metas=["👄 Massage · ★ 4.9","🛁 Soapy · ★ 4.8","💃 Club · ★ 4.6","👄 Massage · ★ 4.7"];
+const g=document.getElementById('grid');
+for(let i=0;i<8;i++){
+  const a=document.createElement('a');a.href='listings.html';a.className='sc';
+  a.innerHTML='<img class="ci" src="'+imgs[i%imgs.length]+'" onerror="this.style.background=\'#2a1a1a\';this.removeAttribute(\'src\')" alt=""><div class="cbd"><div class="cc">'+metas[i%metas.length]+'</div><div class="cna">'+names[i%names.length]+' '+(i+1)+'</div><div class="cl">📍 Ho Chi Minh City</div><div class="cf2"><div class="cr"><span class="stars">★★★★★</span> '+(4.5+Math.random()*.4).toFixed(1)+'</div><div class="cv">'+(Math.floor(Math.random()*8+1))+'K+</div></div></div>';
+  g.appendChild(a);
+}
+function setT(el){document.querySelectorAll('.ft').forEach(t=>t.classList.remove('active'));el.classList.add('active');}
+document.querySelectorAll('.ap').forEach(p=>{p.addEventListener('click',()=>{document.querySelectorAll('.ap').forEach(x=>x.classList.remove('active'));p.classList.add('active');});});
+</script>
+</body>
+</html>

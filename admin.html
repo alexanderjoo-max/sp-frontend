@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swanpass Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black:#0a0a0a; --black2:#111111; --black3:#1a1a1a; --card-bg:#161616;
+  --red:#e8142a; --red-dark:#b80f20; --white:#ffffff;
+  --white70:rgba(255,255,255,0.7); --white40:rgba(255,255,255,0.4);
+  --white10:rgba(255,255,255,0.08); --gold:#d4a847; --green:#22c55e;
+  --orange:#f97316; --blue:#3b82f6; --purple:#a855f7;
+  --border:rgba(255,255,255,0.08); --radius:10px; --radius-sm:6px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--black); color:var(--white); font-family:'DM Sans',sans-serif; font-size:14px; display:flex; min-height:100vh; }
+
+/* SIDEBAR NAV */
+.admin-nav {
+  width:220px; flex-shrink:0; background:var(--black2);
+  border-right:1px solid var(--border); display:flex; flex-direction:column;
+  position:fixed; top:0; left:0; height:100vh; overflow-y:auto; z-index:50;
+}
+.nav-logo {
+  padding:20px 20px 16px; border-bottom:1px solid var(--border);
+  font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:2px;
+}
+.nav-logo span { color:var(--red); }
+.nav-logo small { display:block; font-size:10px; font-family:'DM Sans',sans-serif; color:var(--white40); letter-spacing:0; font-weight:400; margin-top:2px; }
+.nav-section { padding:12px 12px 4px; font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--white40); }
+.nav-item {
+  display:flex; align-items:center; gap:10px; padding:9px 16px;
+  cursor:pointer; transition:all 0.15s; color:var(--white70);
+  text-decoration:none; border-radius:6px; margin:1px 8px;
+  font-size:13px;
+}
+.nav-item:hover { background:var(--white10); color:var(--white); }
+.nav-item.active { background:rgba(232,20,42,0.15); color:var(--red); }
+.nav-item .icon { font-size:16px; flex-shrink:0; }
+.nav-badge {
+  margin-left:auto; background:var(--red); color:var(--white);
+  font-size:9px; font-weight:800; padding:1px 5px; border-radius:8px;
+}
+.nav-spacer { flex:1; }
+.nav-footer { padding:12px 16px; border-top:1px solid var(--border); }
+.nav-user { display:flex; align-items:center; gap:8px; }
+.nav-avatar { width:30px; height:30px; border-radius:50%; background:var(--red); display:flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0; }
+.nav-user-info { flex:1; min-width:0; }
+.nav-user-name { font-size:12px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.nav-user-role { font-size:10px; color:var(--white40); }
+
+/* MAIN CONTENT */
+.admin-main { margin-left:220px; flex:1; display:flex; flex-direction:column; min-height:100vh; }
+
+/* TOP BAR */
+.topbar {
+  background:var(--black2); border-bottom:1px solid var(--border);
+  padding:0 24px; height:56px; display:flex; align-items:center;
+  gap:16px; position:sticky; top:0; z-index:40;
+}
+.topbar-title { font-family:'Bebas Neue',sans-serif; font-size:20px; letter-spacing:1px; flex:1; }
+.topbar-actions { display:flex; gap:8px; }
+.btn { border:none; border-radius:6px; padding:7px 14px; font-size:12px; font-weight:600; font-family:'DM Sans',sans-serif; cursor:pointer; transition:all 0.15s; }
+.btn-primary { background:var(--red); color:var(--white); }
+.btn-primary:hover { background:var(--red-dark); }
+.btn-secondary { background:var(--white10); color:var(--white); border:1px solid var(--border); }
+.btn-secondary:hover { background:rgba(255,255,255,0.12); }
+.btn-sm { padding:5px 10px; font-size:11px; }
+.btn-icon { padding:7px 10px; font-size:14px; }
+.btn-green { background:rgba(34,197,94,0.15); color:var(--green); border:1px solid rgba(34,197,94,0.3); }
+.btn-orange { background:rgba(249,115,22,0.15); color:var(--orange); border:1px solid rgba(249,115,22,0.3); }
+.btn-red { background:rgba(232,20,42,0.15); color:var(--red); border:1px solid rgba(232,20,42,0.3); }
+
+/* CONTENT */
+.content { padding:24px; }
+
+/* STATS CARDS */
+.stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:24px; }
+.stat-card { background:var(--card-bg); border:1px solid var(--border); border-radius:var(--radius); padding:16px; }
+.stat-icon { font-size:24px; margin-bottom:8px; }
+.stat-value { font-family:'Bebas Neue',sans-serif; font-size:32px; letter-spacing:1px; line-height:1; margin-bottom:2px; }
+.stat-label { font-size:11px; color:var(--white40); }
+.stat-change { font-size:11px; margin-top:6px; }
+.stat-up { color:var(--green); }
+.stat-down { color:var(--red); }
+
+/* SECTION */
+.admin-section { margin-bottom:24px; }
+.admin-section-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
+.admin-section-title { font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:1px; display:flex; align-items:center; gap:8px; }
+.admin-section-title .dot { width:6px; height:6px; border-radius:50%; background:var(--red); }
+
+/* TABLE */
+.table-wrap { background:var(--card-bg); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; }
+.table-toolbar { padding:12px 16px; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:10px; }
+.table-search { display:flex; align-items:center; gap:6px; background:var(--white10); border:1px solid var(--border); border-radius:6px; padding:6px 12px; flex:1; max-width:300px; }
+.table-search input { background:none; border:none; outline:none; color:var(--white); font-family:'DM Sans',sans-serif; font-size:13px; flex:1; }
+.table-search input::placeholder { color:var(--white40); }
+.table-filters { display:flex; gap:6px; flex-wrap:wrap; }
+.filter-chip { padding:4px 10px; background:var(--white10); border:1px solid var(--border); border-radius:12px; font-size:11px; cursor:pointer; color:var(--white70); }
+.filter-chip.active { background:rgba(232,20,42,0.2); border-color:var(--red); color:var(--white); }
+table { width:100%; border-collapse:collapse; }
+th { padding:10px 14px; text-align:left; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:var(--white40); border-bottom:1px solid var(--border); white-space:nowrap; }
+td { padding:10px 14px; border-bottom:1px solid var(--border); vertical-align:middle; }
+tr:last-child td { border-bottom:none; }
+tr:hover td { background:var(--white10); }
+.td-name { font-weight:600; font-size:13px; display:flex; align-items:center; gap:8px; }
+.td-name .emoji { font-size:18px; }
+.td-city { font-size:12px; color:var(--white70); }
+.td-badges { display:flex; gap:4px; flex-wrap:wrap; }
+.badge { display:inline-flex; padding:2px 6px; border-radius:4px; font-size:9px; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; }
+.badge-sponsored { background:rgba(212,168,71,0.2); color:var(--gold); border:1px solid rgba(212,168,71,0.3); }
+.badge-featured { background:rgba(232,20,42,0.2); color:var(--red); border:1px solid rgba(232,20,42,0.3); }
+.badge-deal { background:rgba(34,197,94,0.2); color:var(--green); border:1px solid rgba(34,197,94,0.3); }
+.badge-new { background:rgba(99,102,241,0.2); color:#a5b4fc; border:1px solid rgba(99,102,241,0.3); }
+.badge-active { background:rgba(34,197,94,0.15); color:var(--green); border:1px solid rgba(34,197,94,0.3); }
+.badge-inactive { background:rgba(255,255,255,0.05); color:var(--white40); border:1px solid var(--border); }
+.td-rating { color:var(--gold); font-size:12px; font-weight:600; }
+.td-actions { display:flex; gap:4px; }
+.td-toggle { cursor:pointer; font-size:18px; }
+
+/* TOGGLE SWITCH */
+.toggle { position:relative; width:36px; height:20px; }
+.toggle input { opacity:0; width:0; height:0; }
+.toggle-slider { position:absolute; inset:0; background:rgba(255,255,255,0.1); border-radius:10px; cursor:pointer; transition:0.2s; }
+.toggle-slider:before { content:''; position:absolute; width:14px; height:14px; background:#fff; border-radius:50%; top:3px; left:3px; transition:0.2s; }
+.toggle input:checked + .toggle-slider { background:var(--green); }
+.toggle input:checked + .toggle-slider:before { transform:translateX(16px); }
+
+/* AD BANNERS */
+.ads-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.ad-manage-card { background:var(--card-bg); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; }
+.ad-preview { height:80px; display:flex; align-items:center; padding:16px; gap:12px; }
+.ad-preview-1 { background:linear-gradient(135deg,#1a0008,#6b0015); }
+.ad-preview-2 { background:linear-gradient(135deg,#0a1628,#1a3a6b); }
+.ad-preview-3 { background:linear-gradient(135deg,#1a1200,#6b4a00); }
+.ad-preview-empty { background:var(--black3); border:2px dashed var(--border); justify-content:center; color:var(--white40); flex-direction:column; text-align:center; }
+.ad-preview-name { font-family:'Bebas Neue',sans-serif; font-size:18px; }
+.ad-preview-sub { font-size:10px; color:var(--white70); }
+.ad-manage-body { padding:10px 14px; display:flex; align-items:center; gap:8px; }
+.ad-manage-info { flex:1; font-size:12px; }
+.ad-manage-info strong { display:block; font-size:13px; margin-bottom:1px; }
+.ad-manage-info span { color:var(--white40); font-size:11px; }
+
+/* MODAL */
+.modal-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:200; display:none; align-items:center; justify-content:center; padding:24px; }
+.modal-overlay.show { display:flex; }
+.modal { background:var(--black2); border:1px solid var(--border); border-radius:14px; width:100%; max-width:560px; max-height:90vh; overflow-y:auto; }
+.modal-header { padding:20px 24px 16px; border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; }
+.modal-title { font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:1px; }
+.modal-close { background:var(--white10); border:none; border-radius:50%; width:30px; height:30px; color:var(--white); cursor:pointer; font-size:16px; }
+.modal-body { padding:20px 24px; }
+.form-row { margin-bottom:16px; }
+.form-label { display:block; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:var(--white40); margin-bottom:6px; }
+.form-input, .form-select, .form-textarea {
+  width:100%; background:var(--white10); border:1px solid var(--border);
+  border-radius:6px; padding:9px 12px; color:var(--white);
+  font-family:'DM Sans',sans-serif; font-size:13px; outline:none;
+  transition:border-color 0.2s;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color:var(--red); }
+.form-textarea { resize:vertical; min-height:80px; }
+.form-select option { background:#1a1a1a; }
+.form-row-2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.form-checkboxes { display:flex; flex-wrap:wrap; gap:8px; }
+.form-checkbox { display:flex; align-items:center; gap:6px; cursor:pointer; font-size:12px; }
+.form-checkbox input { accent-color:var(--red); width:14px; height:14px; }
+.modal-footer { padding:16px 24px; border-top:1px solid var(--border); display:flex; justify-content:flex-end; gap:8px; }
+
+/* DEALS GRID */
+.deals-admin-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.deal-admin-card { background:var(--card-bg); border:1px solid var(--border); border-radius:var(--radius); padding:14px; display:flex; gap:10px; }
+.deal-emoji { font-size:28px; }
+.deal-info { flex:1; }
+.deal-name { font-size:13px; font-weight:600; margin-bottom:3px; }
+.deal-meta { font-size:11px; color:var(--white40); margin-bottom:6px; }
+.deal-strip { display:flex; align-items:center; gap:6px; }
+.deal-tag-badge { background:var(--red); color:#fff; font-size:9px; font-weight:800; padding:2px 6px; border-radius:3px; }
+.deal-discount { font-family:'Bebas Neue',sans-serif; font-size:16px; color:var(--green); }
+.deal-actions { display:flex; flex-direction:column; gap:4px; justify-content:center; }
+
+/* RESPONSIVE */
+@media (max-width:900px) {
+  .admin-nav { display:none; }
+  .admin-main { margin-left:0; }
+  .stats-grid { grid-template-columns:repeat(2,1fr); }
+  .ads-grid, .deals-admin-grid { grid-template-columns:1fr; }
+}
+@media (max-width:600px) {
+  .stats-grid { grid-template-columns:1fr 1fr; }
+  table { font-size:12px; }
+  th, td { padding:8px 10px; }
+}
+
+/* TABS */
+.admin-tabs { display:flex; border-bottom:1px solid var(--border); margin-bottom:20px; overflow-x:auto; scrollbar-width:none; }
+.admin-tab { padding:10px 16px; font-size:13px; font-weight:500; color:var(--white40); cursor:pointer; border-bottom:2px solid transparent; transition:all 0.2s; white-space:nowrap; flex-shrink:0; }
+.admin-tab:hover { color:var(--white); }
+.admin-tab.active { color:var(--red); border-bottom-color:var(--red); }
+
+/* TOAST */
+.toast { position:fixed; bottom:24px; right:24px; background:var(--green); color:#000; padding:10px 18px; border-radius:8px; font-size:13px; font-weight:600; z-index:999; display:none; animation:slideUp 0.3s; }
+@keyframes slideUp { from{transform:translateY(20px);opacity:0} to{transform:translateY(0);opacity:1} }
+</style>
+</head>
+<body>
+
+<!-- ADMIN NAV -->
+<nav class="admin-nav">
+  <div class="nav-logo">SWAN<span>PASS</span> <small>Admin Panel</small></div>
+  <div class="nav-section">Dashboard</div>
+  <a class="nav-item active" href="#" onclick="showTab('dashboard')"><span class="icon">📊</span> Overview</a>
+  <div class="nav-section">Content</div>
+  <a class="nav-item" href="#" onclick="showTab('listings')"><span class="icon">🏪</span> Listings <span class="nav-badge">847</span></a>
+  <a class="nav-item" href="#" onclick="showTab('deals')"><span class="icon">🏷️</span> Deals</a>
+  <a class="nav-item" href="#" onclick="showTab('ads')"><span class="icon">📣</span> Banner Ads</a>
+  <div class="nav-section">Settings</div>
+  <a class="nav-item" href="#" onclick="showTab('users')"><span class="icon">👥</span> Users</a>
+  <a class="nav-item" href="#"><span class="icon">⚙️</span> Settings</a>
+  <div class="nav-spacer"></div>
+  <div class="nav-footer">
+    <div class="nav-user">
+      <div class="nav-avatar">👑</div>
+      <div class="nav-user-info">
+        <div class="nav-user-name">Admin</div>
+        <div class="nav-user-role">Super Admin</div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<div class="admin-main">
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-title" id="topbarTitle">Dashboard Overview</div>
+    <div class="topbar-actions">
+      <a href="index.html" class="btn btn-secondary btn-sm">← View Site</a>
+      <button class="btn btn-primary btn-sm" onclick="openModal('addListing')">+ Add Listing</button>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- DASHBOARD TAB -->
+    <div id="tab-dashboard">
+      <!-- STATS -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">🏪</div>
+          <div class="stat-value">847</div>
+          <div class="stat-label">Total Listings</div>
+          <div class="stat-change stat-up">↑ 12 this week</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">👁️</div>
+          <div class="stat-value">124K</div>
+          <div class="stat-label">Monthly Visits</div>
+          <div class="stat-change stat-up">↑ 8% vs last month</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📣</div>
+          <div class="stat-value">18</div>
+          <div class="stat-label">Active Sponsors</div>
+          <div class="stat-change stat-up">↑ 3 new</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🏷️</div>
+          <div class="stat-value">24</div>
+          <div class="stat-label">Active Deals</div>
+          <div class="stat-change stat-down">↓ 2 expired</div>
+        </div>
+      </div>
+
+      <!-- RECENT LISTINGS -->
+      <div class="admin-section">
+        <div class="admin-section-header">
+          <div class="admin-section-title"><span class="dot"></span>Recent Listings</div>
+          <button class="btn btn-secondary btn-sm" onclick="showTab('listings')">View All</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Shop</th><th>City</th><th>Category</th><th>Rating</th><th>Status</th><th>Tags</th><th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="recentListingsBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- LISTINGS TAB -->
+    <div id="tab-listings" style="display:none">
+      <div class="admin-section">
+        <div class="admin-section-header">
+          <div class="admin-section-title"><span class="dot"></span>All Listings</div>
+          <button class="btn btn-primary btn-sm" onclick="openModal('addListing')">+ Add Listing</button>
+        </div>
+        <div class="table-wrap">
+          <div class="table-toolbar">
+            <div class="table-search">
+              <span>🔍</span>
+              <input type="text" placeholder="Search listings..." oninput="filterListings(this.value)">
+            </div>
+            <div class="table-filters">
+              <span class="filter-chip active" onclick="filterListingsCat(this,'all')">All</span>
+              <span class="filter-chip" onclick="filterListingsCat(this,'massage')">💆</span>
+              <span class="filter-chip" onclick="filterListingsCat(this,'soapy')">🛁</span>
+              <span class="filter-chip" onclick="filterListingsCat(this,'club')">🎤</span>
+              <span class="filter-chip" onclick="filterListingsCat(this,'gogo')">💃</span>
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Shop</th><th>City</th><th>Category</th><th>Rating</th><th>Visits</th><th>Status</th><th>Tags</th><th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="allListingsBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEALS TAB -->
+    <div id="tab-deals" style="display:none">
+      <div class="admin-section">
+        <div class="admin-section-header">
+          <div class="admin-section-title"><span class="dot"></span>Deals & Promotions</div>
+          <button class="btn btn-primary btn-sm" onclick="openModal('addDeal')">+ Add Deal</button>
+        </div>
+        <div class="deals-admin-grid" id="dealsGrid"></div>
+      </div>
+    </div>
+
+    <!-- ADS TAB -->
+    <div id="tab-ads" style="display:none">
+      <div class="admin-section">
+        <div class="admin-section-header">
+          <div class="admin-section-title"><span class="dot"></span>Banner Ad Slots</div>
+          <button class="btn btn-primary btn-sm" onclick="openModal('addAd')">+ New Ad</button>
+        </div>
+        <div class="ads-grid">
+          <div class="ad-manage-card">
+            <div class="ad-preview ad-preview-1">
+              <div style="flex:1">
+                <div style="font-size:9px;font-weight:800;background:var(--red);display:inline-block;padding:2px 6px;border-radius:3px;margin-bottom:4px">📣 Slot 1 — LIVE</div>
+                <div class="ad-preview-name">Chairman Nuru Massage</div>
+                <div class="ad-preview-sub">Sukhumvit Soi 33 · Bangkok</div>
+              </div>
+            </div>
+            <div class="ad-manage-body">
+              <div class="ad-manage-info"><strong>Chairman Nuru Massage</strong><span>Expires: Mar 31, 2026 · ฿3,500/mo</span></div>
+              <button class="btn btn-secondary btn-sm">Edit</button>
+              <button class="btn btn-red btn-sm">Remove</button>
+            </div>
+          </div>
+          <div class="ad-manage-card">
+            <div class="ad-preview ad-preview-2">
+              <div style="flex:1">
+                <div style="font-size:9px;font-weight:800;background:#3b82f6;display:inline-block;padding:2px 6px;border-radius:3px;margin-bottom:4px">🏷️ Slot 2 — LIVE</div>
+                <div class="ad-preview-name">JSpot Massage</div>
+                <div class="ad-preview-sub">20% OFF Limited Time Deal</div>
+              </div>
+            </div>
+            <div class="ad-manage-body">
+              <div class="ad-manage-info"><strong>JSpot Massage</strong><span>Expires: Feb 28, 2026 · ฿2,000/mo</span></div>
+              <button class="btn btn-secondary btn-sm">Edit</button>
+              <button class="btn btn-red btn-sm">Remove</button>
+            </div>
+          </div>
+          <div class="ad-manage-card">
+            <div class="ad-preview ad-preview-3">
+              <div style="flex:1">
+                <div style="font-size:9px;font-weight:800;background:var(--gold);color:#000;display:inline-block;padding:2px 6px;border-radius:3px;margin-bottom:4px">⭐ Slot 3 — LIVE</div>
+                <div class="ad-preview-name">Flame Spa Canggu</div>
+                <div class="ad-preview-sub">Canggu, Bali · Indonesia</div>
+              </div>
+            </div>
+            <div class="ad-manage-body">
+              <div class="ad-manage-info"><strong>Flame Spa Canggu</strong><span>Expires: Apr 15, 2026 · Rp850K/mo</span></div>
+              <button class="btn btn-secondary btn-sm">Edit</button>
+              <button class="btn btn-red btn-sm">Remove</button>
+            </div>
+          </div>
+          <div class="ad-manage-card">
+            <div class="ad-preview ad-preview-empty">
+              <div style="font-size:28px;margin-bottom:6px">➕</div>
+              <div style="font-size:12px;font-weight:600">Slot 4 — Available</div>
+              <div style="font-size:10px;margin-top:2px">฿2,500/month</div>
+            </div>
+            <div class="ad-manage-body">
+              <div class="ad-manage-info"><strong>Available Slot</strong><span>Contact to advertise here</span></div>
+              <button class="btn btn-primary btn-sm" onclick="openModal('addAd')">+ Add Ad</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- USERS TAB -->
+    <div id="tab-users" style="display:none">
+      <div class="admin-section">
+        <div class="admin-section-header">
+          <div class="admin-section-title"><span class="dot"></span>User Management</div>
+          <button class="btn btn-primary btn-sm">+ Add User</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>User</th><th>Email</th><th>Role</th><th>Joined</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody>
+              <tr><td><div class="td-name">👑 Super Admin</div></td><td style="color:var(--white70);font-size:12px">admin@swanpass.com</td><td><span class="badge badge-featured">Admin</span></td><td style="color:var(--white40);font-size:11px">Jan 2023</td><td><span class="badge badge-active">Active</span></td><td><div class="td-actions"><button class="btn btn-secondary btn-sm">Edit</button></div></td></tr>
+              <tr><td><div class="td-name">👤 John Editor</div></td><td style="color:var(--white70);font-size:12px">john@swanpass.com</td><td><span class="badge badge-new">Editor</span></td><td style="color:var(--white40);font-size:11px">Mar 2024</td><td><span class="badge badge-active">Active</span></td><td><div class="td-actions"><button class="btn btn-secondary btn-sm">Edit</button></div></td></tr>
+              <tr><td><div class="td-name">👤 Sam Reviewer</div></td><td style="color:var(--white70);font-size:12px">sam@swanpass.com</td><td><span class="badge">Viewer</span></td><td style="color:var(--white40);font-size:11px">Aug 2024</td><td><span class="badge badge-inactive">Inactive</span></td><td><div class="td-actions"><button class="btn btn-secondary btn-sm">Edit</button></div></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /content -->
+</div><!-- /main -->
+
+<!-- ADD LISTING MODAL -->
+<div class="modal-overlay" id="modal-addListing">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">Add New Listing</div>
+      <button class="modal-close" onclick="closeModal('addListing')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-row"><label class="form-label">Shop Name</label><input class="form-input" type="text" placeholder="e.g. Chairman Nuru Massage"></div>
+      <div class="form-row-2">
+        <div class="form-row"><label class="form-label">Category</label>
+          <select class="form-select">
+            <option>💆 Massage</option><option>🛁 Soapy</option><option>🎤 Gentlemen's Club</option>
+            <option>💃 Go-Go Bar</option><option>👤 Freelancers</option><option>🌙 Red Light District</option>
+          </select>
+        </div>
+        <div class="form-row"><label class="form-label">City</label>
+          <select class="form-select">
+            <option>Bangkok</option><option>Pattaya</option><option>Chiang Mai</option><option>Phuket</option>
+            <option>Ho Chi Minh City</option><option>Hanoi</option><option>Bali</option><option>Jakarta</option>
+            <option>Singapore</option><option>Kuala Lumpur</option><option>Phnom Penh</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row"><label class="form-label">Address</label><input class="form-input" type="text" placeholder="Full address"></div>
+      <div class="form-row-2">
+        <div class="form-row"><label class="form-label">Phone</label><input class="form-input" type="text" placeholder="+66 XX XXX XXXX"></div>
+        <div class="form-row"><label class="form-label">Rating</label><input class="form-input" type="number" placeholder="4.5" min="1" max="5" step="0.1"></div>
+      </div>
+      <div class="form-row"><label class="form-label">Description</label><textarea class="form-textarea" placeholder="Short description of the shop..."></textarea></div>
+      <div class="form-row">
+        <label class="form-label">Tags</label>
+        <div class="form-checkboxes">
+          <label class="form-checkbox"><input type="checkbox"> 📣 Sponsored</label>
+          <label class="form-checkbox"><input type="checkbox"> ⭐ Featured</label>
+          <label class="form-checkbox"><input type="checkbox"> 🏷️ Has Deal</label>
+          <label class="form-checkbox"><input type="checkbox"> 🆕 New</label>
+        </div>
+      </div>
+      <div class="form-row-2">
+        <div class="form-row"><label class="form-label">Status</label>
+          <select class="form-select"><option>Active</option><option>Inactive</option><option>Pending Review</option></select>
+        </div>
+        <div class="form-row"><label class="form-label">Visit Count</label><input class="form-input" type="text" placeholder="e.g. 5K+"></div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('addListing')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveAndToast('addListing','Listing saved!')">Save Listing</button>
+    </div>
+  </div>
+</div>
+
+<!-- ADD DEAL MODAL -->
+<div class="modal-overlay" id="modal-addDeal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">Add New Deal</div>
+      <button class="modal-close" onclick="closeModal('addDeal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-row"><label class="form-label">Shop</label><input class="form-input" type="text" placeholder="Search shop name..."></div>
+      <div class="form-row-2">
+        <div class="form-row"><label class="form-label">Deal Type</label>
+          <select class="form-select">
+            <option>🔥 Flash Deal</option><option>% OFF</option><option>📅 Weekend Only</option>
+            <option>🆕 Opening Special</option><option>🌴 Seasonal</option><option>Free Entry</option>
+          </select>
+        </div>
+        <div class="form-row"><label class="form-label">Discount</label><input class="form-input" type="text" placeholder="e.g. 20% or Free Entry"></div>
+      </div>
+      <div class="form-row-2">
+        <div class="form-row"><label class="form-label">Original Price</label><input class="form-input" type="text" placeholder="฿1,200"></div>
+        <div class="form-row"><label class="form-label">Deal Price</label><input class="form-input" type="text" placeholder="฿800"></div>
+      </div>
+      <div class="form-row-2">
+        <div class="form-row"><label class="form-label">Start Date</label><input class="form-input" type="date"></div>
+        <div class="form-row"><label class="form-label">End Date</label><input class="form-input" type="date"></div>
+      </div>
+      <div class="form-row"><label class="form-label">Deal Description</label><textarea class="form-textarea" placeholder="Describe the deal..."></textarea></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('addDeal')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveAndToast('addDeal','Deal saved!')">Save Deal</button>
+    </div>
+  </div>
+</div>
+
+<!-- ADD AD MODAL -->
+<div class="modal-overlay" id="modal-addAd">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">Add Banner Ad</div>
+      <button class="modal-close" onclick="closeModal('addAd')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-row"><label class="form-label">Advertiser / Shop Name</label><input class="form-input" type="text" placeholder="e.g. Chairman Nuru Massage"></div>
+      <div class="form-row-2">
+        <div class="form-row"><label class="form-label">Ad Slot</label>
+          <select class="form-select"><option>Slot 1</option><option>Slot 2</option><option>Slot 3</option><option>Slot 4 (Available)</option></select>
+        </div>
+        <div class="form-row"><label class="form-label">Ad Type</label>
+          <select class="form-select"><option>📣 Sponsored</option><option>🏷️ Deal Banner</option><option>⭐ Featured</option></select>
+        </div>
+      </div>
+      <div class="form-row"><label class="form-label">Ad Subtitle / Tagline</label><input class="form-input" type="text" placeholder="e.g. Sukhumvit Soi 33 · Bangkok"></div>
+      <div class="form-row"><label class="form-label">CTA Button Text</label><input class="form-input" type="text" placeholder="e.g. Book Now, View Deal, Explore"></div>
+      <div class="form-row-2">
+        <div class="form-row"><label class="form-label">Start Date</label><input class="form-input" type="date"></div>
+        <div class="form-row"><label class="form-label">End Date</label><input class="form-input" type="date"></div>
+      </div>
+      <div class="form-row-2">
+        <div class="form-row"><label class="form-label">Monthly Rate</label><input class="form-input" type="text" placeholder="฿3,500"></div>
+        <div class="form-row"><label class="form-label">Background Theme</label>
+          <select class="form-select"><option>Red/Dark</option><option>Blue/Dark</option><option>Gold/Dark</option><option>Custom</option></select>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('addAd')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveAndToast('addAd','Banner ad saved!')">Save Ad</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+const shops = [
+  { id:1, name:'Chairman Nuru Massage', cat:'massage', emoji:'💆', city:'Bangkok', rating:4.9, visits:'9K+', status:'active', tags:['sponsored','featured'] },
+  { id:2, name:'JSpot Massage', cat:'soapy', emoji:'🛁', city:'Bangkok', rating:4.7, visits:'5K+', status:'active', tags:['sponsored','deal'] },
+  { id:3, name:'AMOR888', cat:'soapy', emoji:'🛁', city:'Bangkok', rating:4.8, visits:'2K+', status:'active', tags:['sponsored'] },
+  { id:4, name:'The333', cat:'soapy', emoji:'🛁', city:'Bangkok', rating:4.8, visits:'2K+', status:'active', tags:['featured','deal'] },
+  { id:5, name:'G2G Massage', cat:'massage', emoji:'💆', city:'Bangkok', rating:4.9, visits:'8K+', status:'active', tags:['featured'] },
+  { id:6, name:'Czech Club', cat:'club', emoji:'🎤', city:'Bangkok', rating:4.7, visits:'1K+', status:'active', tags:['featured'] },
+  { id:7, name:'DRAKE Luxury Lounge', cat:'club', emoji:'🎤', city:'Bangkok', rating:4.2, visits:'<100', status:'active', tags:['sponsored','new'] },
+  { id:8, name:'Suzie Wong', cat:'gogo', emoji:'💃', city:'Bangkok', rating:4.4, visits:'3K+', status:'active', tags:['featured'] },
+  { id:9, name:'Happy BKK', cat:'massage', emoji:'💆', city:'Bangkok', rating:4.8, visits:'6K+', status:'active', tags:[] },
+  { id:10, name:'Flame Spa Canggu', cat:'massage', emoji:'💆', city:'Bali', rating:4.8, visits:'3K+', status:'active', tags:['featured','deal'] },
+  { id:11, name:'Lunar Nuru', cat:'soapy', emoji:'🛁', city:'Bangkok', rating:4.9, visits:'100+', status:'active', tags:['new','deal'] },
+  { id:12, name:'Dragon Lady BKK', cat:'massage', emoji:'💆', city:'Bangkok', rating:3.8, visits:'100+', status:'pending', tags:['new'] },
+];
+
+const deals = [
+  { name:'G2G Massage', emoji:'💆', type:'🔥 Flash Deal', discount:'33% OFF', original:'฿1,200', price:'฿800', expires:'Mar 1' },
+  { name:'JSpot Massage', emoji:'🛁', type:'% OFF', discount:'20% OFF', original:'฿2,000', price:'฿1,600', expires:'Feb 28' },
+  { name:'Club Cozmo', emoji:'🎤', type:'📅 Weekend Only', discount:'Free Entry', original:'฿500', price:'Free', expires:'Ongoing' },
+  { name:'Flame Spa Canggu', emoji:'🌴', type:'🌴 Seasonal', discount:'28% OFF', original:'Rp250K', price:'Rp180K', expires:'Mar 15' },
+  { name:'Lunar Nuru', emoji:'💆', type:'🆕 Opening Special', discount:'40% OFF', original:'฿1,500', price:'฿900', expires:'Mar 31' },
+  { name:'The333', emoji:'🛁', type:'📅 Weekend Only', discount:'Weekend Deal', original:'฿2,500', price:'฿1,800', expires:'Ongoing' },
+];
+
+function renderRow(shop, showVisits=false) {
+  return `<tr>
+    <td><div class="td-name"><span class="emoji">${shop.emoji}</span>${shop.name}</div></td>
+    <td class="td-city">${shop.city}</td>
+    <td class="td-city">${shop.cat}</td>
+    <td class="td-rating">★ ${shop.rating}</td>
+    ${showVisits ? `<td class="td-city">${shop.visits}</td>` : ''}
+    <td><span class="badge ${shop.status==='active'?'badge-active':shop.status==='pending'?'badge-new':'badge-inactive'}">${shop.status}</span></td>
+    <td><div class="td-badges">
+      ${shop.tags.includes('sponsored')?'<span class="badge badge-sponsored">Spons</span>':''}
+      ${shop.tags.includes('featured')?'<span class="badge badge-featured">★ Feat</span>':''}
+      ${shop.tags.includes('deal')?'<span class="badge badge-deal">Deal</span>':''}
+      ${shop.tags.includes('new')?'<span class="badge badge-new">New</span>':''}
+    </div></td>
+    <td><div class="td-actions">
+      <button class="btn btn-secondary btn-sm">Edit</button>
+      <button class="btn btn-red btn-sm">✕</button>
+    </div></td>
+  </tr>`;
+}
+
+// Render tables
+document.getElementById('recentListingsBody').innerHTML = shops.slice(0,6).map(s=>renderRow(s,false)).join('');
+document.getElementById('allListingsBody').innerHTML = shops.map(s=>renderRow(s,true)).join('');
+document.getElementById('dealsGrid').innerHTML = deals.map(d=>`
+  <div class="deal-admin-card">
+    <div class="deal-emoji">${d.emoji}</div>
+    <div class="deal-info">
+      <div class="deal-name">${d.name}</div>
+      <div class="deal-meta">Expires: ${d.expires}</div>
+      <div class="deal-strip">
+        <span class="deal-tag-badge">${d.type}</span>
+        <span class="deal-discount">${d.discount}</span>
+        <span style="font-size:10px;color:var(--white40)">${d.original} → ${d.price}</span>
+      </div>
+    </div>
+    <div class="deal-actions">
+      <button class="btn btn-secondary btn-sm">Edit</button>
+      <button class="btn btn-red btn-sm">✕</button>
+    </div>
+  </div>`).join('');
+
+// Tab switching
+const tabs = ['dashboard','listings','deals','ads','users'];
+const titles = { dashboard:'Dashboard Overview', listings:'All Listings', deals:'Deals & Promotions', ads:'Banner Ads', users:'User Management' };
+function showTab(tab) {
+  tabs.forEach(t => {
+    const el = document.getElementById('tab-'+t);
+    if(el) el.style.display = t===tab ? 'block' : 'none';
+  });
+  document.getElementById('topbarTitle').textContent = titles[tab]||'Admin';
+  document.querySelectorAll('.nav-item').forEach(item => {
+    item.classList.toggle('active', item.getAttribute('onclick')?.includes(`'${tab}'`));
+  });
+}
+
+// Modal
+function openModal(id) { document.getElementById('modal-'+id).classList.add('show'); }
+function closeModal(id) { document.getElementById('modal-'+id).classList.remove('show'); }
+function saveAndToast(id, msg) {
+  closeModal(id);
+  const t = document.getElementById('toast');
+  t.textContent = '✅ '+msg; t.style.display='block';
+  setTimeout(()=>{ t.style.display='none'; }, 2500);
+}
+
+// Filter listings
+function filterListings(val) {
+  const rows = document.querySelectorAll('#allListingsBody tr');
+  rows.forEach(row => {
+    row.style.display = row.textContent.toLowerCase().includes(val.toLowerCase()) ? '' : 'none';
+  });
+}
+function filterListingsCat(el, cat) {
+  document.querySelectorAll('.filter-chip').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// Close modals on overlay click
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+  overlay.addEventListener('click', e => { if(e.target===overlay) overlay.classList.remove('show'); });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Browse by City — Swanpass</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0a0a;--black2:#111111;--black3:#1a1a1a;--card-bg:#161616;--red:#e8142a;--white:#fff;--white70:rgba(255,255,255,.7);--white40:rgba(255,255,255,.4);--white10:rgba(255,255,255,.08);--gold:#d4a847;--green:#22c55e;--border:rgba(255,255,255,.08);--radius:10px;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;}
+header{background:var(--black);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:0 16px;}
+.hi{display:flex;align-items:center;gap:12px;height:52px;max-width:1200px;margin:0 auto;}
+.hi img{height:26px;}
+.bk{background:var(--white10);border:1px solid var(--border);border-radius:6px;padding:6px 12px;color:var(--white);font-size:12px;text-decoration:none;}
+.bl{background:var(--red);color:var(--white);border:none;border-radius:6px;padding:7px 14px;font-size:12px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;}
+/* PAGE HERO */
+.page-hero{padding:28px 16px;text-align:center;border-bottom:1px solid var(--border);background:linear-gradient(180deg,#1a0305 0%,var(--black) 100%);}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:38px;letter-spacing:2px;margin-bottom:6px;}
+.page-sub{font-size:13px;color:var(--white70);}
+/* STATS */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-bottom:1px solid var(--border);}
+.si{background:var(--black2);padding:12px;text-align:center;}
+.sv{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.5px;margin-bottom:1px;}
+.sl{font-size:10px;color:var(--white40);text-transform:uppercase;letter-spacing:.5px;}
+/* COUNTRY FILTER */
+.country-bar{display:flex;gap:8px;overflow-x:auto;padding:12px 16px;scrollbar-width:none;border-bottom:1px solid var(--border);background:var(--black2);}
+.country-bar::-webkit-scrollbar{display:none;}
+.cpill{background:var(--white10);border:1px solid var(--border);border-radius:16px;padding:5px 14px;font-size:12px;font-weight:500;white-space:nowrap;cursor:pointer;color:var(--white70);transition:all .2s;flex-shrink:0;}
+.cpill:hover,.cpill.active{background:var(--red);border-color:var(--red);color:var(--white);}
+/* CONTENT */
+.content{max-width:1200px;margin:0 auto;padding:20px 16px;}
+.country-section{margin-bottom:32px;}
+.country-title{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1px;margin-bottom:14px;display:flex;align-items:center;gap:10px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.country-flag{font-size:24px;}
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.city-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;text-decoration:none;color:inherit;display:block;position:relative;transition:transform .2s,border-color .2s;}
+.city-card:hover{transform:translateY(-2px);border-color:rgba(232,20,42,.4);}
+.city-card-img{width:100%;height:120px;object-fit:cover;display:block;background:var(--black3);filter:brightness(.5);}
+.city-card-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.85) 0%,transparent 50%);}
+.city-card-content{position:absolute;bottom:0;left:0;right:0;padding:10px 12px;}
+.city-card-flag{font-size:16px;margin-bottom:2px;}
+.city-card-name{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;line-height:1;margin-bottom:4px;}
+.city-card-meta{display:flex;align-items:center;gap:8px;}
+.city-count{font-size:10px;color:var(--white70);background:rgba(0,0,0,.5);padding:2px 6px;border-radius:8px;}
+.city-deals{font-size:10px;color:var(--green);font-weight:700;background:rgba(34,197,94,.15);padding:2px 6px;border-radius:8px;}
+.city-hot{position:absolute;top:8px;right:8px;background:var(--red);color:var(--white);font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:3px 6px;border-radius:4px;}
+/* COMING SOON */
+.coming-soon{background:var(--card-bg);border:1px dashed var(--border);border-radius:var(--radius);padding:20px;text-align:center;color:var(--white40);}
+.cs-icon{font-size:28px;margin-bottom:6px;}
+.cs-label{font-size:12px;font-weight:600;margin-bottom:3px;}
+.cs-sub{font-size:11px;}
+/* BOTTOM NAV */
+.bot{position:fixed;bottom:0;left:0;right:0;z-index:90;background:var(--black2);border-top:1px solid var(--border);display:flex;padding:8px 0 calc(8px + env(safe-area-inset-bottom));}
+.bi{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;color:var(--white40);text-decoration:none;}
+.bi.active{color:var(--red);}
+.bic{font-size:20px;}.bil{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
+.bsp{height:70px;}
+@media(min-width:768px){.bot,.bsp{display:none;}.city-grid{grid-template-columns:repeat(3,1fr);}}
+@media(min-width:1024px){.city-grid{grid-template-columns:repeat(4,1fr);}}
+</style>
+</head>
+<body>
+<header>
+  <div class="hi">
+    <a href="index.html"><img src="https://swanpass.com/assets/swanpass_logo_rev-bd3cf3c257fac0af2b938b74d4b6ae8907fb1f7b4e10c0dc15add74fe1427363.png" alt="Swanpass"></a>
+    <div style="flex:1"></div>
+    <a href="index.html" class="bk">← Home</a>
+    <button class="bl">Login</button>
+  </div>
+</header>
+<div class="page-hero">
+  <div class="page-title">🌏 Browse by City</div>
+  <div class="page-sub">11 cities covered across Southeast Asia</div>
+</div>
+<div class="stats-row">
+  <div class="si"><div class="sv">11</div><div class="sl">Cities</div></div>
+  <div class="si"><div class="sv">715</div><div class="sl">Listings</div></div>
+  <div class="si"><div class="sv" style="color:var(--red)">58</div><div class="sl">Active Deals</div></div>
+  <div class="si"><div class="sv" style="color:var(--gold)">4.6</div><div class="sl">Avg Rating</div></div>
+</div>
+<div class="country-bar">
+  <div class="cpill active" onclick="filterCountry(this,'all')">🌏 All Countries</div>
+  <div class="cpill" onclick="filterCountry(this,'th')">🇹🇭 Thailand</div>
+  <div class="cpill" onclick="filterCountry(this,'vn')">🇻🇳 Vietnam</div>
+  <div class="cpill" onclick="filterCountry(this,'id')">🇮🇩 Indonesia</div>
+  <div class="cpill" onclick="filterCountry(this,'kh')">🇰🇭 Cambodia</div>
+  <div class="cpill" onclick="filterCountry(this,'sg')">🇸🇬 Singapore</div>
+  <div class="cpill" onclick="filterCountry(this,'my')">🇲🇾 Malaysia</div>
+</div>
+<div class="content">
+
+  <!-- THAILAND -->
+  <div class="country-section" data-country="th">
+    <div class="country-title"><span class="country-flag">🇹🇭</span> Thailand</div>
+    <div class="city-grid">
+      <a href="city-bangkok.html" class="city-card">
+        <img class="city-card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Bangkok_Montage_2017.png/800px-Bangkok_Montage_2017.png" onerror="this.style.background='linear-gradient(135deg,#1a0305,#4a000f)';this.removeAttribute('src')" alt="Bangkok">
+        <div class="city-card-overlay"></div>
+        <div class="city-hot">🏆 #1</div>
+        <div class="city-card-content">
+          <div class="city-card-flag">🇹🇭</div>
+          <div class="city-card-name">Bangkok</div>
+          <div class="city-card-meta"><span class="city-count">301 listings</span><span class="city-deals">24 deals</span></div>
+        </div>
+      </a>
+      <a href="city-pattaya.html" class="city-card">
+        <img class="city-card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Pattaya_Beach_at_night.jpg/800px-Pattaya_Beach_at_night.jpg" onerror="this.style.background='linear-gradient(135deg,#0a1a2a,#1a3a5a)';this.removeAttribute('src')" alt="Pattaya">
+        <div class="city-card-overlay"></div>
+        <div class="city-card-content">
+          <div class="city-card-flag">🇹🇭</div>
+          <div class="city-card-name">Pattaya</div>
+          <div class="city-card-meta"><span class="city-count">42 listings</span><span class="city-deals">8 deals</span></div>
+        </div>
+      </a>
+      <a href="city-chiangmai.html" class="city-card">
+        <img class="city-card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Wat_Chedi_Luang%2C_Chiang_Mai.jpg/800px-Wat_Chedi_Luang%2C_Chiang_Mai.jpg" onerror="this.style.background='linear-gradient(135deg,#1a1a0a,#3a3a1a)';this.removeAttribute('src')" alt="Chiang Mai">
+        <div class="city-card-overlay"></div>
+        <div class="city-card-content">
+          <div class="city-card-flag">🇹🇭</div>
+          <div class="city-card-name">Chiang Mai</div>
+          <div class="city-card-meta"><span class="city-count">38 listings</span><span class="city-deals">4 deals</span></div>
+        </div>
+      </a>
+      <a href="listings.html" class="city-card">
+        <img class="city-card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Patong_Beach%2C_Phuket.jpg/800px-Patong_Beach%2C_Phuket.jpg" onerror="this.style.background='linear-gradient(135deg,#0a1a2a,#1a2a4a)';this.removeAttribute('src')" alt="Phuket">
+        <div class="city-card-overlay"></div>
+        <div class="city-card-content">
+          <div class="city-card-flag">🇹🇭</div>
+          <div class="city-card-name">Phuket</div>
+          <div class="city-card-meta"><span class="city-count">22 listings</span><span class="city-deals">3 deals</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- VIETNAM -->
+  <div class="country-section" data-country="vn">
+    <div class="country-title"><span class="country-flag">🇻🇳</span> Vietnam</div>
+    <div class="city-grid">
+      <a href="city-hcmc.html" class="city-card">
+        <img class="city-card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Ho_Chi_Minh_City_Skyline.jpg/800px-Ho_Chi_Minh_City_Skyline.jpg" onerror="this.style.background='linear-gradient(135deg,#1a0a05,#3a1a05)';this.removeAttribute('src')" alt="HCMC">
+        <div class="city-card-overlay"></div>
+        <div class="city-hot">🔥 Hot</div>
+        <div class="city-card-content">
+          <div class="city-card-flag">🇻🇳</div>
+          <div class="city-card-name">Ho Chi Minh City</div>
+          <div class="city-card-meta"><span class="city-count">124 listings</span><span class="city-deals">12 deals</span></div>
+        </div>
+      </a>
+      <a href="listings.html" class="city-card">
+        <img class="city-card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Hoan_Kiem_Lake%2C_Hanoi.jpg/800px-Hoan_Kiem_Lake%2C_Hanoi.jpg" onerror="this.style.background='linear-gradient(135deg,#0a1a0a,#1a3a1a)';this.removeAttribute('src')" alt="Hanoi">
+        <div class="city-card-overlay"></div>
+        <div class="city-card-content">
+          <div class="city-card-flag">🇻🇳</div>
+          <div class="city-card-name">Hanoi</div>
+          <div class="city-card-meta"><span class="city-count">34 listings</span><span class="city-deals">5 deals</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- INDONESIA -->
+  <div class="country-section" data-country="id">
+    <div class="country-title"><span class="country-flag">🇮🇩</span> Indonesia</div>
+    <div class="city-grid">
+      <a href="city-bali.html" class="city-card">
+        <img class="city-card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Seminyak_Beach_Bali_Indonesia.jpg/800px-Seminyak_Beach_Bali_Indonesia.jpg" onerror="this.style.background='linear-gradient(135deg,#1a1a0a,#2a2a0a)';this.removeAttribute('src')" alt="Bali">
+        <div class="city-card-overlay"></div>
+        <div class="city-card-content">
+          <div class="city-card-flag">🇮🇩</div>
+          <div class="city-card-name">Bali</div>
+          <div class="city-card-meta"><span class="city-count">28 listings</span><span class="city-deals">5 deals</span></div>
+        </div>
+      </a>
+      <a href="listings.html" class="city-card">
+        <img class="city-card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Monas_jakarta_2018.jpg/800px-Monas_jakarta_2018.jpg" onerror="this.style.background='linear-gradient(135deg,#1a0a1a,#2a0a2a)';this.removeAttribute('src')" alt="Jakarta">
+        <div class="city-card-overlay"></div>
+        <div class="city-card-content">
+          <div class="city-card-flag">🇮🇩</div>
+          <div class="city-card-name">Jakarta</div>
+          <div class="city-card-meta"><span class="city-count">30 listings</span><span class="city-deals">6 deals</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- CAMBODIA -->
+  <div class="country-section" data-country="kh">
+    <div class="country-title"><span class="country-flag">🇰🇭</span> Cambodia</div>
+    <div class="city-grid">
+      <a href="listings.html" class="city-card">
+        <img class="city-card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Phnom_Penh_skyline.jpg/800px-Phnom_Penh_skyline.jpg" onerror="this.style.background='linear-gradient(135deg,#1a0a05,#2a1a05)';this.removeAttribute('src')" alt="Phnom Penh">
+        <div class="city-card-overlay"></div>
+        <div class="city-card-content">
+          <div class="city-card-flag">🇰🇭</div>
+          <div class="city-card-name">Phnom Penh</div>
+          <div class="city-card-meta"><span class="city-count">25 listings</span><span class="city-deals">2 deals</span></div>
+        </div>
+      </a>
+      <div class="coming-soon"><div class="cs-icon">🏙️</div><div class="cs-label">Siem Reap</div><div class="cs-sub">Coming soon</div></div>
+    </div>
+  </div>
+
+  <!-- SINGAPORE / MALAYSIA -->
+  <div class="country-section" data-country="sg">
+    <div class="country-title"><span class="country-flag">🇸🇬</span> Singapore &amp; <span class="country-flag">🇲🇾</span> Malaysia</div>
+    <div class="city-grid">
+      <a href="listings.html" class="city-card">
+        <img class="city-card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Singapore_Skyline_2019.jpg/800px-Singapore_Skyline_2019.jpg" onerror="this.style.background='linear-gradient(135deg,#0a1a2a,#1a2a3a)';this.removeAttribute('src')" alt="Singapore">
+        <div class="city-card-overlay"></div>
+        <div class="city-card-content">
+          <div class="city-card-flag">🇸🇬</div>
+          <div class="city-card-name">Singapore</div>
+          <div class="city-card-meta"><span class="city-count">20 listings</span><span class="city-deals">2 deals</span></div>
+        </div>
+      </a>
+      <a href="listings.html" class="city-card">
+        <img class="city-card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Kuala_Lumpur_at_Night.jpg/800px-Kuala_Lumpur_at_Night.jpg" onerror="this.style.background='linear-gradient(135deg,#0a0a1a,#1a1a3a)';this.removeAttribute('src')" alt="Kuala Lumpur">
+        <div class="city-card-overlay"></div>
+        <div class="city-card-content">
+          <div class="city-card-flag">🇲🇾</div>
+          <div class="city-card-name">Kuala Lumpur</div>
+          <div class="city-card-meta"><span class="city-count">12 listings</span><span class="city-deals">1 deal</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<div class="bsp"></div>
+<nav class="bot">
+  <a href="index.html" class="bi"><span class="bic">🏠</span><span class="bil">Home</span></a>
+  <a href="map.html" class="bi"><span class="bic">🗺️</span><span class="bil">Map</span></a>
+  <a href="deals.html" class="bi"><span class="bic">🏷️</span><span class="bil">Deals</span></a>
+  <a href="listings.html" class="bi active"><span class="bic">🔍</span><span class="bil">Browse</span></a>
+  <a href="admin.html" class="bi"><span class="bic">⚙️</span><span class="bil">Admin</span></a>
+</nav>
+<script>
+function filterCountry(el, country) {
+  document.querySelectorAll('.cpill').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('.country-section').forEach(s => {
+    if (country === 'all') { s.style.display = ''; }
+    else if (s.dataset.country === country) { s.style.display = ''; }
+    else if (country === 'sg' && (s.dataset.country === 'sg' || s.dataset.country === 'my')) { s.style.display = ''; }
+    else { s.style.display = 'none'; }
+  });
+}
+</script>
+</body>
+</html>
