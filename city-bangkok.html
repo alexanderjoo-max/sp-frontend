@@ -97,14 +97,34 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
 .bnav-item.active{color:var(--red);}
 .bnav-icon{font-size:20px;}.bnav-label{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
 .bottom-nav-spacer{height:70px;}
-@media(min-width:768px){.bottom-nav,.bottom-nav-spacer{display:none;}.cards-grid{grid-template-columns:repeat(4,1fr);}.area-grid{grid-template-columns:repeat(6,1fr);}}
-@media(min-width:1024px){.cards-grid{grid-template-columns:repeat(5,1fr);}}
+@media(max-width:479px){
+  .stats-bar{grid-template-columns:1fr 1fr;}
+  .stats-bar-val{font-size:22px;}
+  .city-name-big{font-size:36px;}
+  .h-card{width:130px;}
+  .area-grid{grid-template-columns:repeat(3,1fr);}
+}
+@media(max-width:767px){
+  .stats-bar{grid-template-columns:repeat(2,1fr);}
+  .cards-grid{grid-template-columns:1fr 1fr;}
+  .area-grid{grid-template-columns:repeat(3,1fr);}
+  .section{padding:16px 12px;}
+  .filter-tabs,.area-wrap{padding:8px 12px;}
+}
+@media(min-width:768px){
+  .bottom-nav,.bottom-nav-spacer{display:none!important;}
+  .cards-grid{grid-template-columns:repeat(4,1fr);}
+  .area-grid{grid-template-columns:repeat(6,1fr);}
+}
+@media(min-width:1024px){
+  .cards-grid{grid-template-columns:repeat(5,1fr);}
+}
 </style>
 </head>
 <body>
 <header>
   <div class="header-inner">
-    <a href="index.html"><img src="https://swanpass.com/assets/swanpass_logo_rev-bd3cf3c257fac0af2b938b74d4b6ae8907fb1f7b4e10c0dc15add74fe1427363.png" alt="Swanpass"></a>
+    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass"></a>
     <div style="flex:1"></div>
     <a href="listings.html" class="back-btn">← All Cities</a>
     <button class="btn-login">Login</button>

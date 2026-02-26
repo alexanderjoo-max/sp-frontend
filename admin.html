@@ -415,9 +415,9 @@ tr:hover td { background:var(--white10); }
           <table>
             <thead><tr><th>User</th><th>Email</th><th>Role</th><th>Joined</th><th>Status</th><th>Actions</th></tr></thead>
             <tbody>
-              <tr><td><div class="td-name">👑 Super Admin</div></td><td style="color:var(--white70);font-size:12px">admin@swanpass.com</td><td><span class="badge badge-featured">Admin</span></td><td style="color:var(--white40);font-size:11px">Jan 2023</td><td><span class="badge badge-active">Active</span></td><td><div class="td-actions"><button class="btn btn-secondary btn-sm">Edit</button></div></td></tr>
-              <tr><td><div class="td-name">👤 John Editor</div></td><td style="color:var(--white70);font-size:12px">john@swanpass.com</td><td><span class="badge badge-new">Editor</span></td><td style="color:var(--white40);font-size:11px">Mar 2024</td><td><span class="badge badge-active">Active</span></td><td><div class="td-actions"><button class="btn btn-secondary btn-sm">Edit</button></div></td></tr>
-              <tr><td><div class="td-name">👤 Sam Reviewer</div></td><td style="color:var(--white70);font-size:12px">sam@swanpass.com</td><td><span class="badge">Viewer</span></td><td style="color:var(--white40);font-size:11px">Aug 2024</td><td><span class="badge badge-inactive">Inactive</span></td><td><div class="td-actions"><button class="btn btn-secondary btn-sm">Edit</button></div></td></tr>
+              <tr><td><div class="td-name">👑 Super Admin</div></td><td style="color:var(--white70);font-size:12px"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="59383d343037192a2e383729382a2a773a3634">[email&#160;protected]</a></td><td><span class="badge badge-featured">Admin</span></td><td style="color:var(--white40);font-size:11px">Jan 2023</td><td><span class="badge badge-active">Active</span></td><td><div class="td-actions"><button class="btn btn-secondary btn-sm">Edit</button></div></td></tr>
+              <tr><td><div class="td-name">👤 John Editor</div></td><td style="color:var(--white70);font-size:12px"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b2d8dddadcf2c1c5d3dcc2d3c1c19cd1dddf">[email&#160;protected]</a></td><td><span class="badge badge-new">Editor</span></td><td style="color:var(--white40);font-size:11px">Mar 2024</td><td><span class="badge badge-active">Active</span></td><td><div class="td-actions"><button class="btn btn-secondary btn-sm">Edit</button></div></td></tr>
+              <tr><td><div class="td-name">👤 Sam Reviewer</div></td><td style="color:var(--white70);font-size:12px"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="55263438152622343b253426267b363a38">[email&#160;protected]</a></td><td><span class="badge">Viewer</span></td><td style="color:var(--white40);font-size:11px">Aug 2024</td><td><span class="badge badge-inactive">Inactive</span></td><td><div class="td-actions"><button class="btn btn-secondary btn-sm">Edit</button></div></td></tr>
             </tbody>
           </table>
         </div>
@@ -555,7 +555,7 @@ tr:hover td { background:var(--white10); }
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const shops = [
   { id:1, name:'Chairman Nuru Massage', cat:'massage', emoji:'💆', city:'Bangkok', rating:4.9, visits:'9K+', status:'active', tags:['sponsored','featured'] },
   { id:2, name:'JSpot Massage', cat:'soapy', emoji:'🛁', city:'Bangkok', rating:4.7, visits:'5K+', status:'active', tags:['sponsored','deal'] },
@@ -650,18 +650,4 @@ function saveAndToast(id, msg) {
 function filterListings(val) {
   const rows = document.querySelectorAll('#allListingsBody tr');
   rows.forEach(row => {
-    row.style.display = row.textContent.toLowerCase().includes(val.toLowerCase()) ? '' : 'none';
-  });
-}
-function filterListingsCat(el, cat) {
-  document.querySelectorAll('.filter-chip').forEach(c=>c.classList.remove('active'));
-  el.classList.add('active');
-}
-
-// Close modals on overlay click
-document.querySelectorAll('.modal-overlay').forEach(overlay => {
-  overlay.addEventListener('click', e => { if(e.target===overlay) overlay.classList.remove('show'); });
-});
-</script>
-</body>
-</html>
+    row.style.display = ro

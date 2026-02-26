@@ -68,14 +68,19 @@ header{background:var(--black);border-bottom:1px solid var(--border);padding:0 1
 .bnav-item.active{color:var(--red);}
 .bnav-icon{font-size:20px;}
 .bnav-label{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
-@media(max-width:767px){.sidebar{display:none;}.map-popup{bottom:72px;}}
+@media(max-width:767px){
+  .sidebar{display:none;}
+  .map-popup{bottom:72px;width:calc(100% - 24px);}
+  .filter-bar{padding:8px 12px;}
+  .map-container{height:calc(100vh - 52px - 44px);}
+}
 </style>
 </head>
 <body>
 <header>
   <div class="header-inner">
     <a href="index.html" class="back-btn">← Back</a>
-    <a href="index.html"><img src="https://swanpass.com/assets/swanpass_logo_rev-bd3cf3c257fac0af2b938b74d4b6ae8907fb1f7b4e10c0dc15add74fe1427363.png" alt="Swanpass"></a>
+    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass"></a>
     <div style="flex:1"></div>
     <span style="font-size:11px;color:var(--white40)">🗺️ Map View</span>
   </div>

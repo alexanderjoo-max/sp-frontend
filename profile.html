@@ -91,7 +91,7 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
 <header>
   <div class="hi">
     <a href="index.html" class="bk">← Home</a>
-    <a href="index.html"><img src="https://swanpass.com/assets/swanpass_logo_rev-bd3cf3c257fac0af2b938b74d4b6ae8907fb1f7b4e10c0dc15add74fe1427363.png" alt="Swanpass"></a>
+    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass"></a>
     <div style="flex:1"></div>
     <a href="login.html" style="font-size:12px;color:var(--white40);text-decoration:none;">Log Out</a>
   </div>
@@ -238,7 +238,7 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
     <div class="section-title"><span class="dot"></span> Account Settings</div>
     <div class="settings-section">
       <div class="setting-row"><span class="setting-icon">👤</span><div class="setting-info"><div class="setting-label">Profile Name</div><div class="setting-sub">Mike Bangkok</div></div><span class="setting-action">Edit</span></div>
-      <div class="setting-row"><span class="setting-icon">📧</span><div class="setting-info"><div class="setting-label">Email</div><div class="setting-sub">mike@example.com</div></div><span class="setting-action">Edit</span></div>
+      <div class="setting-row"><span class="setting-icon">📧</span><div class="setting-info"><div class="setting-label">Email</div><div class="setting-sub"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7d101416183d18051c100d1118531e1210">[email&#160;protected]</a></div></div><span class="setting-action">Edit</span></div>
       <div class="setting-row"><span class="setting-icon">🔒</span><div class="setting-info"><div class="setting-label">Password</div><div class="setting-sub">Last changed 60 days ago</div></div><span class="setting-action">Change</span></div>
     </div>
     <div class="section-title"><span class="dot"></span> Notifications</div>
@@ -265,7 +265,7 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
   <a href="listings.html" class="bi"><span class="bic">🔍</span><span class="bil">Browse</span></a>
   <a href="profile.html" class="bi active"><span class="bic">👤</span><span class="bil">Profile</span></a>
 </nav>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function switchTab(id,el){
   document.querySelectorAll('.ptab').forEach(t=>t.classList.remove('active'));
   document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
@@ -273,11 +273,4 @@ function switchTab(id,el){
   document.getElementById('tab-'+id).classList.add('active');
 }
 document.querySelectorAll('.toggle').forEach(t=>{
-  t.addEventListener('click',()=>t.classList.toggle('off'));
-});
-document.querySelectorAll('.saved-remove').forEach(btn=>{
-  btn.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();btn.closest('.saved-card').remove();});
-});
-</script>
-</body>
-</html>
+  t.addEventListener('click',()=>t.class

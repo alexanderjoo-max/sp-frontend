@@ -172,6 +172,21 @@ footer{background:var(--black2);border-top:1px solid var(--border);padding:24px 
 .bottom-nav-spacer{height:70px;}
 
 /* DESKTOP */
+@media(max-width:479px){
+  .btn-login{font-size:11px;padding:6px 10px;}
+  .header-search{max-width:140px;}
+  .hero-title{font-size:28px;}
+  .cards-grid{grid-template-columns:1fr 1fr;}
+  .city-grid{grid-template-columns:repeat(3,1fr);}
+  .ad-title{font-size:16px;}
+  .wide-img{width:80px;}
+}
+@media(max-width:767px){
+  .cards-grid{grid-template-columns:1fr 1fr;}
+  .city-grid{grid-template-columns:repeat(3,1fr);}
+  .section{padding:16px 12px;}
+  .nav-tabs-inner{padding:0 12px;}
+}
 @media(min-width:768px){
   .bottom-nav{display:none;}
   .bottom-nav-spacer{display:none;}
@@ -195,7 +210,7 @@ footer{background:var(--black2);border-top:1px solid var(--border);padding:24px 
 <!-- AGE GATE -->
 <div class="age-gate" id="ageGate">
   <div class="age-gate-box">
-    <div class="age-gate-logo"><img src="https://swanpass.com/assets/swanpass_logo_rev-bd3cf3c257fac0af2b938b74d4b6ae8907fb1f7b4e10c0dc15add74fe1427363.png" alt="Swanpass"></div>
+    <div class="age-gate-logo"><img src="./swanpass_logo_rev.png" alt="Swanpass"></div>
     <div class="age-gate-icon">🔞</div>
     <div class="age-gate-title">Adults Only</div>
     <div class="age-gate-text">This website contains adult content suitable only for those 18 years and older. Please confirm your age to continue.</div>
@@ -209,7 +224,7 @@ footer{background:var(--black2);border-top:1px solid var(--border);padding:24px 
 <!-- HEADER -->
 <header>
   <div class="header-inner">
-    <a href="index.html"><img src="https://swanpass.com/assets/swanpass_logo_rev-bd3cf3c257fac0af2b938b74d4b6ae8907fb1f7b4e10c0dc15add74fe1427363.png" alt="Swanpass" style="height:28px;display:block;"></a>
+    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" style="height:28px;display:block;"></a>
     <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
       <span style="color:var(--white40)">🔍</span>
       <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
@@ -636,7 +651,7 @@ footer{background:var(--black2);border-top:1px solid var(--border);padding:24px 
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo"><img src="https://swanpass.com/assets/swanpass_logo_padded-7cbecf397ca11369d2f98d09d1990d1a6de9d2f50e0b62da52c528173aabe663.png" alt="Swanpass"></div>
+  <div class="footer-logo"><img src="./swanpass_logo_padded.png" alt="Swanpass"></div>
   <div class="footer-links">
     <a href="index.html">Home</a><a href="map.html">Map</a><a href="deals.html">Deals</a><a href="listings.html">Browse</a><a href="cities.html">Cities</a><a href="search.html">Search</a><a href="add-listing.html">Add Listing</a><a href="login.html">Login</a><a href="profile.html">My Profile</a><a href="about.html">About</a><a href="admin.html">Admin</a>
     <a href="#">Add Listing</a><a href="#">Advertise</a>

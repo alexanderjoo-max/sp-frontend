@@ -88,14 +88,34 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
 .bnav-icon{font-size:20px;}
 .bnav-label{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
 .bottom-nav-spacer{height:70px;}
-@media(max-width:768px){.sidebar-filters{display:none;}.cards-grid{grid-template-columns:1fr 1fr;}.search-bar{flex-wrap:wrap;}.search-select{display:none;}}
-@media(min-width:768px){.bottom-nav{display:none;}.bottom-nav-spacer{display:none;}.cards-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:767px){
+  .sidebar-filters{display:none!important;}
+  .browse-layout{padding:0!important;}
+  .search-bar{flex-wrap:wrap;gap:6px;padding:10px 12px;}
+  .search-input-wrap{width:100%;order:1;}
+  .search-select,.search-city{width:calc(50% - 3px);font-size:12px;padding:7px 10px;}
+  .view-toggle{margin-left:auto;}
+  .cards-grid{grid-template-columns:1fr 1fr!important;}
+  .list-card{flex-direction:row;}
+  .list-card-img{width:90px!important;height:90px!important;flex-shrink:0;}
+  .filter-pills{padding:8px 12px;}
+  .cat-pill{font-size:11px;padding:5px 11px;}
+  .page-header{padding:16px 12px 12px;}
+  .page-header-title{font-size:26px;}
+}
+@media(min-width:768px){
+  .bottom-nav,.bottom-nav-spacer{display:none!important;}
+  .cards-grid{grid-template-columns:repeat(3,1fr)!important;}
+}
+@media(min-width:1024px){
+  .cards-grid{grid-template-columns:repeat(4,1fr)!important;}
+}
 </style>
 </head>
 <body>
 <header>
   <div class="header-inner">
-    <a href="index.html"><img src="https://swanpass.com/assets/swanpass_logo_rev-bd3cf3c257fac0af2b938b74d4b6ae8907fb1f7b4e10c0dc15add74fe1427363.png" alt="Swanpass"></a>
+    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass"></a>
     <div style="flex:1"></div>
     <a href="index.html" class="back-btn">← Home</a>
     <button class="btn-login">Login</button>

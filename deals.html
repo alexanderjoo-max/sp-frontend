@@ -95,13 +95,30 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
 .bnav-item.active{color:var(--red);}
 .bnav-icon{font-size:20px;}.bnav-label{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
 .bottom-nav-spacer{height:70px;}
-@media(min-width:768px){.bottom-nav,.bottom-nav-spacer{display:none;}.flash-grid{grid-template-columns:repeat(4,1fr);}.deals-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:479px){
+  .flash-grid{grid-template-columns:1fr!important;}
+  .deals-hero-title{font-size:32px;}
+  .deals-hero-stats{gap:16px;}
+  .dstat-val{font-size:22px;}
+  .deal-card-img{width:85px;}
+}
+@media(max-width:767px){
+  .flash-grid{grid-template-columns:1fr 1fr;}
+  .deals-grid{grid-template-columns:1fr;}
+  .filter-bar,.city-tabs{padding:10px 12px;}
+  .section{padding:16px 12px;}
+}
+@media(min-width:768px){
+  .bottom-nav,.bottom-nav-spacer{display:none!important;}
+  .flash-grid{grid-template-columns:repeat(4,1fr);}
+  .deals-grid{grid-template-columns:1fr 1fr;}
+}
 </style>
 </head>
 <body>
 <header>
   <div class="header-inner">
-    <a href="index.html"><img src="https://swanpass.com/assets/swanpass_logo_rev-bd3cf3c257fac0af2b938b74d4b6ae8907fb1f7b4e10c0dc15add74fe1427363.png" alt="Swanpass"></a>
+    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass"></a>
     <div style="flex:1"></div>
     <a href="index.html" class="back-btn">← Home</a>
     <button class="btn-login">Login</button>

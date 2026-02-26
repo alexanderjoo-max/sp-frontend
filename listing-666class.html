@@ -77,14 +77,14 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
 .bnav-icon{font-size:20px;}.bnav-label{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
 .bottom-nav-spacer{height:70px;}
 @media(max-width:768px){.page-sidebar{display:none;}.gallery{height:200px;grid-template-columns:1fr;}.gallery img:first-child{grid-row:auto;}.gallery img:nth-child(n+2){display:none;}}
-@media(min-width:768px){.bottom-nav,.bottom-nav-spacer{display:none;}}
-</style>
+
+.mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:91;background:var(--black2);border-top:2px solid var(--border);padding:10px 16px calc(10px + env(safe-area-inset-bottom));gap:10px;}.mobile-cta-bar .btn-call{flex:1;background:var(--red);color:var(--white);border:none;border-radius:8px;padding:13px;font-size:15px;font-weight:700;font-family:"DM Sans",sans-serif;cursor:pointer;text-decoration:none;text-align:center;}.mobile-cta-bar .btn-save{background:var(--white10);color:var(--white);border:1px solid var(--border);border-radius:8px;padding:13px 16px;font-size:20px;cursor:pointer;}@media(max-width:767px){.mobile-cta-bar{display:flex!important;}.page-sidebar{display:none!important;}.bottom-nav-spacer{height:130px!important;}.gallery{height:220px;grid-template-columns:1fr!important;grid-template-rows:auto!important;}.gallery img:first-child{grid-row:auto!important;height:220px;}.gallery img:nth-child(n+2){display:none;}.listing-name{font-size:26px!important;}.page-layout{padding:14px 12px;}}@media(min-width:768px){.bottom-nav,.bottom-nav-spacer,.mobile-cta-bar{display:none!important;}}</style>
 </head>
 <body>
 <header>
   <div class="header-inner">
     <a href="listings.html" class="back-btn">← Listings</a>
-    <a href="index.html"><img src="https://swanpass.com/assets/swanpass_logo_rev-bd3cf3c257fac0af2b938b74d4b6ae8907fb1f7b4e10c0dc15add74fe1427363.png" alt="Swanpass"></a>
+    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass"></a>
     <div style="flex:1"></div>
     <button class="btn-login">Login</button>
   </div>
@@ -190,6 +190,7 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
     </div>
   </div>
 </div>
+<div class="mobile-cta-bar"><a href="tel:064-807-0932" class="btn-call">📞 Call Now</a><a href="#" class="btn-save">♡</a><a href="map.html" class="btn-save">🗺️</a></div>
 <div class="bottom-nav-spacer"></div>
 <nav class="bottom-nav">
   <a href="index.html" class="bnav-item"><span class="bnav-icon">🏠</span><span class="bnav-label">Home</span></a>
