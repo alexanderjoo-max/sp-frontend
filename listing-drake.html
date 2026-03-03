@@ -192,7 +192,7 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
 <!-- GALLERY -->
 <div class="gallery">
   <img class="gallery-main" id="galleryMain" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp" alt="DRAKE Luxury Lounge" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
-  <div class="gallery-count" id="galleryCount">1 / 3</div>
+  <div class="gallery-count" id="galleryCount">1 / 10</div>
   <div class="gallery-dots" id="galleryDots"></div>
 </div>
 <div class="gallery-thumbs" id="galleryThumbs"></div>
@@ -393,7 +393,18 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
 <div style="height:80px"></div>
 
 <script>
-const photos = ['https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp', 'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg', 'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8884/01.jpg'];
+const photos = [
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15247/photo_2026-02-16_19-39-54-2.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15248/IMAGE_2026-02-23_16_22_43.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15249/IMAGE_2026-02-23_16_22_55.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15251/2026-02-25_17.13.11.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15252/2026-02-25_17.12.56.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15237/5132ebf8-197c-4a16-b912-c8ad4bace25d.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15238/5eb6f24a-7bc2-4d66-acfd-064eeebf057c.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15239/90c92fbf-15b3-40ec-b456-dc5cc06092ce.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15240/e8d10af6-eaa0-42f9-9dfa-9963359faebd.jpg',
+];
 let current = 0;
 const mainImg = document.getElementById('galleryMain');
 const thumbsEl = document.getElementById('galleryThumbs');
