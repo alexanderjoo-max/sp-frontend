@@ -3,151 +3,437 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>666 Class — Swanpass Thailand</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>666 Class Massage — Swanpass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--black:#0a0a0a;--black2:#111111;--black3:#1a1a1a;--card-bg:#161616;--red:#e8142a;--red-dk:#b80f20;--white:#fff;--w70:rgba(255,255,255,.7);--w40:rgba(255,255,255,.4);--w10:rgba(255,255,255,.08);--gold:#d4a847;--green:#22c55e;--border:rgba(255,255,255,.08);--r:10px;}
-*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
-body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.4;overflow-x:hidden;}
+:root {
+  --black:#0a0a0a; --black2:#111111; --black3:#1a1a1a; --card-bg:#161616;
+  --red:#e8142a; --red-dark:#b80f20; --white:#ffffff;
+  --white70:rgba(255,255,255,0.7); --white40:rgba(255,255,255,0.4);
+  --white10:rgba(255,255,255,0.08); --gold:#d4a847; --green:#22c55e;
+  --border:rgba(255,255,255,0.08); --radius:10px; --radius-sm:6px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.5;overflow-x:hidden;}
 a{color:inherit;}
 
-header{background:var(--black);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:0 14px;}
-.header-inner{display:flex;align-items:center;gap:10px;height:52px;max-width:1200px;margin:0 auto;}
-.logo img{height:26px;display:block;}
-.back-btn{background:var(--w10);border:1px solid var(--border);border-radius:6px;padding:6px 12px;color:var(--white);font-size:12px;text-decoration:none;}
-.btn-login{background:var(--red);color:var(--white);border:none;border-radius:6px;padding:7px 12px;font-size:12px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;flex-shrink:0;}
+/* MOBILE LAYOUT CODE — primary */
+header{background:var(--black);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:0 16px;}
+.header-inner{display:flex;align-items:center;gap:12px;height:52px;max-width:1200px;margin:0 auto;}
+.logo-img{height:28px;display:block;}
+.header-search{flex:1;display:flex;align-items:center;background:var(--white10);border:1px solid var(--border);border-radius:8px;padding:0 12px;height:36px;gap:8px;cursor:pointer;transition:border-color .2s;}
+.header-search:hover{border-color:var(--red);}
+.header-search input{background:none;border:none;outline:none;color:var(--white);font-family:'DM Sans',sans-serif;font-size:13px;flex:1;}
+.header-search input::placeholder{color:var(--white40);}
+.btn-login{background:var(--red);color:var(--white);border:none;border-radius:6px;padding:7px 14px;font-size:12px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;white-space:nowrap;}
+.btn-menu{background:var(--white10);color:var(--white);border:1px solid var(--border);border-radius:6px;padding:7px 10px;font-size:16px;cursor:pointer;}
+.nav-tabs{background:var(--black2);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none;}
+.nav-tabs::-webkit-scrollbar{display:none;}
+.nav-tabs-inner{display:flex;padding:0 16px;max-width:1200px;margin:0 auto;gap:4px;white-space:nowrap;}
+.nav-tab{padding:10px 14px;font-size:12px;font-weight:500;color:var(--white70);border-bottom:2px solid transparent;transition:all .2s;flex-shrink:0;text-decoration:none;}
+.nav-tab:hover{color:var(--white);}
+.nav-tab.active{color:var(--red);border-bottom-color:var(--red);}
 
-.gallery{display:grid;grid-template-columns:2fr 1fr;gap:3px;height:200px;}
-.gal-main{position:relative;overflow:hidden;}
-.gal-main img{width:100%;height:100%;object-fit:cover;background:linear-gradient(135deg,#2a1a1a,#1a0a0a);}
-.gal-side{display:flex;flex-direction:column;gap:3px;}
-.gal-side img{flex:1;width:100%;object-fit:cover;background:linear-gradient(135deg,#1a1a2a,#0a0a1a);}
-.gal-btn{position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.2);border-radius:6px;padding:5px 10px;font-size:11px;font-weight:600;color:var(--white);cursor:pointer;}
+.gallery{position:relative;background:#000;overflow:hidden;}
+.gallery-main{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;cursor:pointer;}
+.gallery-count{position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,0.7);color:#fff;font-size:12px;font-weight:600;padding:5px 10px;border-radius:20px;backdrop-filter:blur(4px);}
+.gallery-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:5px;}
+.gallery-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.4);cursor:pointer;transition:background .2s;}
+.gallery-dot.active{background:#fff;}
+.gallery-thumbs{display:flex;gap:4px;padding:4px;background:#000;overflow-x:auto;scrollbar-width:none;}
+.gallery-thumbs::-webkit-scrollbar{display:none;}
+.gallery-thumb{width:72px;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;opacity:0.6;flex-shrink:0;transition:opacity .2s;border:2px solid transparent;}
+.gallery-thumb.active,.gallery-thumb:hover{opacity:1;border-color:var(--red);}
 
-.listing-body{padding:16px 14px;max-width:1200px;margin:0 auto;}
-.listing-name{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:2px;line-height:1;margin-bottom:6px;}
-.listing-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px;}
-.listing-cat{font-size:13px;color:var(--w70);}
-.listing-city{font-size:13px;color:var(--w70);}
-.badge{display:inline-flex;padding:3px 8px;border-radius:4px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;}
-.b-sp{background:rgba(212,168,71,.9);color:#000;}.b-ft{background:rgba(232,20,42,.9);color:#fff;}.b-nw{background:rgba(99,102,241,.9);color:#fff;}
+.listing-info{padding:16px;max-width:900px;margin:0 auto;}
+.listing-badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
+.badge{font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:.5px;}
+.badge-sponsored{background:var(--gold);color:#000;}
+.badge-featured{background:var(--red);color:#fff;}
+.badge-deal{background:var(--green);color:#000;}
+.badge-new{background:#6366f1;color:#fff;}
+.badge-verified{background:var(--green);color:#000;}
+.badge-cat{background:var(--white10);color:var(--white70);border:1px solid var(--border);}
+.listing-name{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1px;margin-bottom:6px;}
+.listing-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:var(--white40);font-size:12px;margin-bottom:10px;}
+.rating-row{display:flex;align-items:center;gap:6px;}
+.stars{color:var(--gold);font-size:14px;letter-spacing:-1px;}
+.rating-num{font-size:14px;font-weight:700;color:var(--white);}
+.review-count{color:var(--white40);font-size:12px;}
+.action-row{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0;}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border-radius:8px;font-size:13px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;border:none;text-decoration:none;transition:all .2s;}
+.btn-primary{background:var(--red);color:#fff;}
+.btn-primary:hover{background:var(--red-dark);}
+.btn-outline{background:transparent;color:var(--white);border:1px solid var(--border);}
+.btn-outline:hover{border-color:var(--white40);}
+.btn-green{background:#16a34a;color:#fff;}
+.btn-green:hover{background:#15803d;}
 
-.rating-row{display:flex;align-items:center;gap:16px;margin-bottom:14px;padding:12px;background:var(--black2);border-radius:8px;flex-wrap:wrap;}
-.stars-big{color:var(--gold);font-size:18px;letter-spacing:2px;}
-.rating-val{font-size:20px;font-weight:700;}
-.rating-sub{font-size:11px;color:var(--w40);}
-.stat-item{text-align:center;}
-.stat-val{font-size:16px;font-weight:700;display:block;}
-.stat-lbl{font-size:10px;color:var(--w40);}
+.tabs{border-bottom:1px solid var(--border);display:flex;gap:0;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:0 16px;}
+.tabs::-webkit-scrollbar{display:none;}
+.tab-btn{padding:12px 16px;font-size:13px;font-weight:500;color:var(--white40);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:all .2s;background:none;border-top:none;border-left:none;border-right:none;font-family:'DM Sans',sans-serif;}
+.tab-btn:hover{color:var(--white);}
+.tab-btn.active{color:var(--red);border-bottom-color:var(--red);}
+.tab-content{display:none;padding:16px 0;}
+.tab-content.active{display:block;}
 
-.section-title{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1px;margin-bottom:12px;display:flex;align-items:center;gap:6px;}
-.dot{width:5px;height:5px;border-radius:50%;background:var(--red);flex-shrink:0;}
+.section-title{font-size:14px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.section-title::before{content:'';width:3px;height:14px;background:var(--red);border-radius:2px;flex-shrink:0;}
+.description{color:var(--white70);line-height:1.7;font-size:14px;}
+.description p{margin-bottom:12px;}
+.read-more{color:var(--red);font-size:13px;cursor:pointer;font-weight:500;margin-top:4px;display:inline-block;}
 
-.info-list{display:flex;flex-direction:column;gap:10px;margin-bottom:20px;}
-.info-row{display:flex;align-items:flex-start;gap:12px;padding:12px;background:var(--black2);border-radius:8px;}
-.info-icon{font-size:16px;flex-shrink:0;margin-top:1px;}
-.info-label{font-size:11px;color:var(--w40);margin-bottom:2px;}
-.info-value{font-size:13px;font-weight:500;}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px;}
+.feature-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:14px;display:flex;gap:12px;align-items:flex-start;}
+.feature-num{background:var(--red);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:18px;width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.feature-title{font-weight:600;font-size:13px;margin-bottom:3px;}
+.feature-desc{font-size:12px;color:var(--white40);line-height:1.5;}
 
-.price-table{width:100%;border-collapse:collapse;margin-bottom:20px;}
-.price-table th{text-align:left;font-size:11px;font-weight:600;color:var(--w40);text-transform:uppercase;letter-spacing:.5px;padding:8px 12px;border-bottom:1px solid var(--border);}
-.price-table td{padding:10px 12px;border-bottom:1px solid var(--border);font-size:13px;}
-.price-table tr:last-child td{border-bottom:none;}
-.price-table td:last-child{text-align:right;font-weight:700;color:var(--gold);}
+.collapsible{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:8px;}
+.collapsible-header{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;cursor:pointer;background:var(--card-bg);font-weight:600;font-size:13px;}
+.collapsible-header:hover{background:var(--black3);}
+.collapsible-arrow{transition:transform .2s;font-size:12px;color:var(--white40);}
+.collapsible.open .collapsible-arrow{transform:rotate(180deg);}
+.collapsible-body{display:none;padding:12px 14px;background:var(--black2);}
+.collapsible.open .collapsible-body{display:block;}
+.price-table{width:100%;border-collapse:collapse;}
+.price-table tr{border-bottom:1px solid var(--border);}
+.price-table tr:last-child{border-bottom:none;}
+.price-table td{padding:9px 0;font-size:13px;}
+.price-table td:last-child{text-align:right;color:var(--gold);font-weight:600;}
+.price-table tr:first-child td{color:var(--white40);font-size:11px;text-transform:uppercase;letter-spacing:.5px;padding-bottom:6px;}
 
-.mobile-cta{position:fixed;bottom:0;left:0;right:0;z-index:90;background:var(--black2);border-top:1px solid var(--border);padding:12px 14px calc(12px + env(safe-area-inset-bottom));display:flex;gap:10px;}
-.btn-call{flex:1;background:var(--red);color:var(--white);border:none;border-radius:10px;padding:13px;font-size:14px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;}
-.btn-save{background:var(--w10);border:1px solid var(--border);color:var(--white);border-radius:10px;padding:13px 16px;font-size:18px;cursor:pointer;}
-.cta-spacer{height:80px;}
+.review-summary{display:flex;gap:16px;align-items:center;margin-bottom:16px;padding:14px;background:var(--card-bg);border-radius:var(--radius);}
+.review-big-num{font-family:'Bebas Neue',sans-serif;font-size:48px;color:var(--white);line-height:1;}
+.review-stars-big{color:var(--gold);font-size:20px;letter-spacing:-1px;}
+.review-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:14px;margin-bottom:8px;}
+.review-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;}
+.reviewer{font-weight:600;font-size:13px;}
+.review-date{font-size:11px;color:var(--white40);}
+.review-text{font-size:13px;color:var(--white70);line-height:1.6;}
 
+.contact-list{display:flex;flex-direction:column;gap:10px;}
+.contact-item{display:flex;align-items:center;gap:10px;font-size:13px;}
+.contact-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.contact-icon.phone{background:rgba(34,197,94,0.15);}
+.contact-icon.tg{background:rgba(0,136,204,0.15);}
+.contact-icon.line{background:rgba(6,199,85,0.15);}
+.contact-icon.web{background:rgba(232,20,42,0.15);}
+.contact-icon.ig{background:rgba(225,48,108,0.15);}
+.contact-item a{color:var(--white);text-decoration:none;}
+.contact-item a:hover{color:var(--red);}
+
+.hours-grid{display:grid;gap:4px;}
+.hours-row{display:flex;justify-content:space-between;font-size:13px;padding:5px 0;border-bottom:1px solid var(--border);}
+.hours-row:last-child{border:none;}
+.hours-day{color:var(--white70);}
+.hours-time{color:var(--green);font-weight:500;}
+
+.map-embed{width:100%;height:200px;border:none;border-radius:var(--radius);display:block;}
+.address-text{font-size:13px;color:var(--white70);margin-top:10px;line-height:1.5;}
+
+/* NEARBY SHOPS */
+.nearby-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;}
+.nearby-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;text-decoration:none;color:inherit;display:block;transition:border-color .2s;}
+.nearby-card:hover{border-color:rgba(232,20,42,.5);}
+.nearby-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:linear-gradient(135deg,#2a1a1a,#1a0a0a);display:block;}
+.nearby-body{padding:8px 10px;}
+.nearby-name{font-size:12px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:3px;}
+.nearby-meta{font-size:11px;color:var(--white40);}
+
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:90;background:var(--black2);border-top:1px solid var(--border);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;gap:8px;}
+.sticky-cta .btn{flex:1;justify-content:center;}
+
+/* DESKTOP LAYOUT CODE — secondary */
 @media(min-width:768px){
-  .mobile-cta,.cta-spacer{display:none!important;}
-  header{padding:0 24px;}
-  .gallery{height:340px;}
-  .listing-body{padding:28px 24px;display:grid;grid-template-columns:1fr 320px;gap:32px;align-items:start;}
-  .listing-sidebar{background:var(--black2);border:1px solid var(--border);border-radius:12px;padding:20px;position:sticky;top:72px;}
-  .sidebar-name{font-size:15px;font-weight:700;margin-bottom:8px;}
-  .sidebar-rating{display:flex;align-items:center;gap:6px;margin-bottom:16px;}
-  .btn-call-desk{display:block;background:var(--red);color:var(--white);border:none;border-radius:10px;padding:14px;font-size:15px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;width:100%;text-align:center;margin-bottom:8px;text-decoration:none;}
-  .btn-map-desk{display:block;background:var(--w10);border:1px solid var(--border);color:var(--white);border-radius:10px;padding:12px;font-size:13px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;width:100%;text-align:center;text-decoration:none;}
-  .sidebar-info{margin-top:16px;display:flex;flex-direction:column;gap:10px;}
-  .sidebar-row{font-size:12px;color:var(--w70);display:flex;gap:8px;}
-  .sidebar-row strong{color:var(--white);}
+  .sticky-cta{display:none;}
+  .gallery-main{aspect-ratio:21/9;max-height:480px;}
+  .listing-layout{display:grid;grid-template-columns:1fr 320px;gap:20px;max-width:900px;margin:0 auto;padding:20px 16px;}
+  .listing-info{padding:0;}
+  .sidebar-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:12px;}
+  .nearby-grid{grid-template-columns:repeat(4,1fr);}
+}
+@media(max-width:767px){
+  .features-grid{grid-template-columns:1fr;}
+  .listing-name{font-size:22px;}
+  .review-summary{flex-direction:column;text-align:center;}
 }
 </style>
 </head>
 <body>
+
 <header>
   <div class="header-inner">
-    <a href="index.html" class="logo"><img src="./swanpass_logo_rev.png" alt="Swanpass"></a>
-    <div style="flex:1"></div>
-    <a href="city-bangkok.html" class="back-btn">← Bangkok</a>
+    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
+    <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
+      <span style="color:var(--white40)">🔍</span>
+      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
+    </div>
+    <button class="btn-menu">☰</button>
     <button class="btn-login" onclick="window.location='login.html'">Login</button>
   </div>
 </header>
+<nav class="nav-tabs">
+  <div class="nav-tabs-inner">
+    <a href="index.html" class="nav-tab">🏠 Home</a>
+    <a href="map.html" class="nav-tab">🗺️ Map</a>
+    <a href="deals.html" class="nav-tab">🏷️ Deals</a>
+    <a href="listings.html" class="nav-tab active">🔍 Browse</a>
+    <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
+    <a href="cities.html" class="nav-tab">📍 Cities</a>
+    <a href="search.html" class="nav-tab">🔎 Search</a>
+    <a href="add-listing.html" class="nav-tab">➕ List Your Business</a>
+    <a href="admin.html" class="nav-tab">⚙️ Admin</a>
+  </div>
+</nav>
 
+<!-- GALLERY -->
 <div class="gallery">
-  <div class="gal-main">
-    <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14215/666-class.jpeg" onerror="this.style.background='linear-gradient(135deg,#1a0000,#3a0000)';this.removeAttribute('src')" alt="">
-    <span class="gal-btn">📷 View Photos</span>
-  </div>
-  <div class="gal-side">
-    <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg" onerror="this.style.background='linear-gradient(135deg,#1a1a2a,#0a0a2a)';this.removeAttribute('src')" alt="">
-    <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg" onerror="this.style.background='linear-gradient(135deg,#1a2a1a,#0a1a0a)';this.removeAttribute('src')" alt="">
-  </div>
+  <img class="gallery-main" id="galleryMain" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14215/666-class.jpeg" alt="666 Class" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+  <div class="gallery-count" id="galleryCount">1 / 3</div>
+  <div class="gallery-dots" id="galleryDots"></div>
 </div>
+<div class="gallery-thumbs" id="galleryThumbs"></div>
 
-<div class="listing-body">
-<div class="listing-main">
-  <div class="listing-name">666 Class</div>
+<!-- MAIN LAYOUT -->
+<div id="mainLayout">
+
+<!-- LISTING INFO -->
+<div class="listing-info">
+  <div class="listing-badges">
+    <span class="badge badge-sponsored">⭐ Sponsored</span>
+    <span class="badge badge-verified">✓ Verified</span>
+    <span class="badge badge-cat">💆 Massage</span>
+  </div>
+  <h1 class="listing-name">666 Class</h1>
   <div class="listing-meta">
-    <span class="badge b-sp">★ Sponsored</span>
-    <span class="listing-cat">Massage · Soapy</span>
-    <span class="listing-city">📍 Sukhumvit, Bangkok</span>
+    <span>📍 Sukhumvit, Bangkok</span>
+    <span>·</span>
+    <span>1:00 PM – 3:00 AM</span>
+    <span>·</span>
+    <span class="rating-row"><span class="stars">★★★★★</span> <span class="rating-num">4.8</span> <span class="review-count">(25 reviews)</span></span>
+  </div>
+  <div class="action-row">
+    <a href="tel:+6663567890" class="btn btn-primary">📞 Call Now</a>
+    <button class="btn btn-outline" onclick="this.textContent=this.textContent==='♡ Save'?'♥ Saved':'♡ Save'">♡ Save</button>
   </div>
 
-  <div class="rating-row">
-    <div><div class="stars-big">★★★★★</div><div style="display:flex;align-items:baseline;gap:6px;margin-top:2px"><span class="rating-val">4.8</span><span class="rating-sub">/ 5.0 (15 reviews)</span></div></div>
-    <div class="stat-item"><span class="stat-val">3K+</span><span class="stat-lbl">Visits</span></div>
-    <div class="stat-item"><span class="stat-val" style="color:var(--green)">✓</span><span class="stat-lbl">Verified</span></div>
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
+    <button class="tab-btn" onclick="switchTab('prices')">Prices</button>
+    <button class="tab-btn" onclick="switchTab('reviews')">Reviews (25)</button>
+    <button class="tab-btn" onclick="switchTab('contact')">Contact & Hours</button>
+    <button class="tab-btn" onclick="switchTab('location')">Location</button>
   </div>
 
-  <div class="section-title"><span class="dot"></span>Business Details</div>
-  <div class="info-list">
-    <div class="info-row"><span class="info-icon">📍</span><div><div class="info-label">Address</div><div class="info-value">Sukhumvit Road, Bangkok</div></div></div>
-    <div class="info-row"><span class="info-icon">📞</span><div><div class="info-label">Phone</div><div class="info-value"><a href="tel:+6663567890" style="color:var(--red)">+66 63 567 8901</a></div></div></div>
-    <div class="info-row"><span class="info-icon">🕐</span><div><div class="info-label">Hours</div><div class="info-value">Daily 1:00 PM – 3:00 AM</div></div></div>
-    <div class="info-row"><span class="info-icon">🌐</span><div><div class="info-label">Category</div><div class="info-value">Massage · Soapy</div></div></div>
+  <!-- OVERVIEW TAB -->
+  <div class="tab-content active" id="tab-overview">
+    <div class="section-title">About 666 Class</div>
+    <div class="description" id="descText">
+      <p>666 Class is a premium massage establishment on Sukhumvit with a bold name and an even bolder reputation. Known for its professional management and wide range of services, 666 Class caters to discerning guests looking for quality and discretion.</p>
+    </div>
+    <span class="read-more" onclick="toggleDesc()">Read more ▾</span>
+
+    <div style="height:16px"></div>
+    <div class="section-title">Why 666 Class?</div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-num">1</div>
+        <div><div class="feature-title">Late Night Hours</div><div class="feature-desc">Open until 3:00 AM — one of the latest on Sukhumvit.</div></div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">2</div>
+        <div><div class="feature-title">Professional Management</div><div class="feature-desc">Well-run establishment with structured, efficient service.</div></div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">3</div>
+        <div><div class="feature-title">Premium Experience</div><div class="feature-desc">High standards maintained consistently across every visit.</div></div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">4</div>
+        <div><div class="feature-title">Wide Service Range</div><div class="feature-desc">Multiple massage types and special packages available.</div></div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">5</div>
+        <div><div class="feature-title">Strong Reputation</div><div class="feature-desc">A 4.8 rating built on genuine customer satisfaction.</div></div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">6</div>
+        <div><div class="feature-title">Discreet Entry</div><div class="feature-desc">Private, discreet access for all guests.</div></div>
+      </div>
+    </div>
   </div>
 
-  <div class="section-title"><span class="dot"></span>Pricing</div>
-  <table class="price-table">
-    <thead><tr><th>Service</th><th>Duration</th><th>Price</th></tr></thead>
-    <tbody>
-<tr><td>Thai Massage</td><td>60 min</td><td>฿500</td></tr>
-<tr><td>Oil Massage</td><td>60 min</td><td>฿650</td></tr>
-<tr><td>Nuru Massage</td><td>60 min</td><td>฿1,100</td></tr>
-<tr><td>Full Body</td><td>90 min</td><td>฿1,900</td></tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="listing-sidebar">
-  <div class="sidebar-name">666 Class</div>
-  <div class="sidebar-rating"><span style="color:var(--gold)">★★★★★</span> <strong>4.8</strong> <span style="font-size:11px;color:var(--w40)">(15)</span></div>
-  <a class="btn-call-desk" href="tel:+6663567890">📞 Call Now</a>
-  <a class="btn-map-desk" href="map.html">🗺️ View on Map</a>
-  <div class="sidebar-info">
-    <div class="sidebar-row">📍 <div><strong>Address</strong><br>Sukhumvit Road, Bangkok</div></div>
-    <div class="sidebar-row">🕐 <div><strong>Hours</strong><br>Daily 1:00 PM – 3:00 AM</div></div>
+  <!-- PRICES TAB -->
+  <div class="tab-content" id="tab-prices">
+    <div class="section-title">Price List</div>
+    <div class="collapsible open" onclick="toggleCollapsible(this)">
+      <div class="collapsible-header">Massage Services <span class="collapsible-arrow">▼</span></div>
+      <div class="collapsible-body">
+        <table class="price-table">
+          <tr style="font-size:11px;color:var(--white40)"><td>Service</td><td>Duration</td><td style="text-align:right">Price</td></tr>
+          <tr><td>Thai Massage</td><td>60 min</td><td>฿500</td></tr>
+          <tr><td>Oil Massage</td><td>60 min</td><td>฿700</td></tr>
+          <tr><td>Full Body</td><td>90 min</td><td>฿1,100</td></tr>
+          <tr><td>Special Course</td><td>60 min</td><td>฿1,500</td></tr>
+          <tr><td>VIP Package</td><td>90 min</td><td>฿2,200</td></tr>
+        </table>
+      </div>
+    </div>
   </div>
-</div>
-</div>
 
-<div class="cta-spacer"></div>
-<div class="mobile-cta">
-  <button class="btn-call" onclick="window.location='tel:+6663567890'">📞 Call Now</button>
-  <button class="btn-save">🔖</button>
+  <!-- REVIEWS TAB -->
+  <div class="tab-content" id="tab-reviews">
+    <div class="review-summary">
+      <div>
+        <div class="review-big-num">4.8</div>
+        <div class="review-stars-big">★★★★★</div>
+        <div style="font-size:12px;color:var(--white40);margin-top:4px;">25 Reviews</div>
+      </div>
+      <div style="flex:1">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;"><span style="font-size:12px;color:var(--white40);width:40px">5 ★</span><div style="flex:1;height:6px;background:var(--white10);border-radius:3px;overflow:hidden;"><div style="width:85%;height:100%;background:var(--gold);border-radius:3px"></div></div></div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;"><span style="font-size:12px;color:var(--white40);width:40px">4 ★</span><div style="flex:1;height:6px;background:var(--white10);border-radius:3px;overflow:hidden;"><div style="width:12%;height:100%;background:var(--gold);border-radius:3px"></div></div></div>
+        <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:12px;color:var(--white40);width:40px">3 ★</span><div style="flex:1;height:6px;background:var(--white10);border-radius:3px;overflow:hidden;"><div style="width:3%;height:100%;background:var(--gold);border-radius:3px"></div></div></div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-top"><span class="reviewer">JS***</span><span class="review-date">February 2026</span></div>
+      <div style="color:var(--gold);font-size:13px;margin-bottom:6px;">★★★★★</div>
+      <p class="review-text">Great place with very professional staff. Late hours are a huge bonus. One of my favorite spots on Sukhumvit.</p>
+    </div>
+    <div class="review-card">
+      <div class="review-top"><span class="reviewer">KP***</span><span class="review-date">January 2026</span></div>
+      <div style="color:var(--gold);font-size:13px;margin-bottom:6px;">★★★★★</div>
+      <p class="review-text">The name sounds wild but the service is top class. 4 visits in 2 months and never disappointed once.</p>
+    </div>
+    <div style="text-align:center;padding:16px 0;">
+      <a href="https://swanpass.com/listing/666-class" target="_blank" class="btn btn-outline">View all 25 reviews →</a>
+    </div>
+  </div>
+
+  <!-- CONTACT TAB -->
+  <div class="tab-content" id="tab-contact">
+    <div class="section-title">Contact Details</div>
+    <div class="contact-list">
+      <div class="contact-item">
+        <div class="contact-icon phone">📞</div>
+        <a href="tel:+6663567890">+66 63 567 8901</a>
+      </div>
+    </div>
+    <div style="height:20px"></div>
+    <div class="section-title">Business Hours</div>
+    <div class="hours-grid">
+      <div class="hours-row"><span class="hours-day">Monday–Sunday</span><span class="hours-time">1:00 PM – 3:00 AM</span></div>
+    </div>
+  </div>
+
+  <!-- LOCATION TAB -->
+  <div class="tab-content" id="tab-location">
+    <div class="section-title">Location</div>
+    <iframe class="map-embed"
+      src="https://maps.google.com/maps?q=13.7306,100.5651&z=16&output=embed"
+      allowfullscreen loading="lazy"></iframe>
+    <p class="address-text">📍 Sukhumvit Road, Khlong Toei, Bangkok 10110</p>
+    <div style="margin-top:12px">
+      <a href="https://maps.google.com/?q=13.7306,100.5651" target="_blank" class="btn btn-outline">🗺️ Open in Google Maps</a>
+    </div>
+  </div>
+
+  <!-- NEARBY SHOPS -->
+  <div style="margin-top:24px;padding-top:24px;border-top:1px solid var(--border);">
+    <div class="section-title">Nearby Shops</div>
+    <div class="nearby-grid">
+        <a href="listing-suwon.html" class="nearby-card">
+          <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14615/Suwon.jpg" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')" alt="Suwon Man's Spa">
+          <div class="nearby-body">
+            <div class="nearby-name">Suwon Man's Spa</div>
+            <div class="nearby-meta">Massage · ★ 4.3</div>
+          </div>
+        </a>
+        <a href="listing-exotic.html" class="nearby-card">
+          <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12049/2024-08-16-1.jpg" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')" alt="Exotic Massage BKK">
+          <div class="nearby-body">
+            <div class="nearby-name">Exotic Massage BKK</div>
+            <div class="nearby-meta">Massage · ★ 4.8</div>
+          </div>
+        </a>
+        <a href="listing-donquixote.html" class="nearby-card">
+          <img class="nearby-img" style="background:linear-gradient(135deg,#2a1a1a,#1a0a0a)" alt="Don Quixote">
+          <div class="nearby-body">
+            <div class="nearby-name">Don Quixote</div>
+            <div class="nearby-meta">Massage · ★ 4.7</div>
+          </div>
+        </a>
+        <a href="listing-the333.html" class="nearby-card">
+          <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')" alt="The333">
+          <div class="nearby-body">
+            <div class="nearby-name">The333</div>
+            <div class="nearby-meta">Massage · Soapy · ★ 4.8</div>
+          </div>
+        </a>
+    </div>
+  </div>
+
+</div><!-- /listing-info -->
+</div><!-- /mainLayout -->
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta">
+  <a href="tel:+6663567890" class="btn btn-primary">📞 Call</a>
+  <button class="btn btn-outline" onclick="this.textContent=this.textContent==='♡ Save'?'♥ Saved':'♡ Save'">♡ Save</button>
 </div>
+<div style="height:80px"></div>
+
+<script>
+const photos = ['https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14215/666-class.jpeg', 'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg', 'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg'];
+let current = 0;
+const mainImg = document.getElementById('galleryMain');
+const thumbsEl = document.getElementById('galleryThumbs');
+const countEl = document.getElementById('galleryCount');
+const dotsEl = document.getElementById('galleryDots');
+
+function setPhoto(i) {
+  current = i;
+  mainImg.src = photos[i];
+  countEl.textContent = (i+1) + ' / ' + photos.length;
+  document.querySelectorAll('.gallery-thumb').forEach((t,j) => t.classList.toggle('active', j===i));
+  document.querySelectorAll('.gallery-dot').forEach((d,j) => d.classList.toggle('active', j===i));
+}
+
+photos.forEach((p,i) => {
+  const t = document.createElement('img');
+  t.className = 'gallery-thumb' + (i===0?' active':'');
+  t.src = p; t.onclick = () => setPhoto(i);
+  t.onerror = function(){ this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)'; this.removeAttribute('src'); };
+  thumbsEl.appendChild(t);
+  const d = document.createElement('div');
+  d.className = 'gallery-dot' + (i===0?' active':'');
+  d.onclick = () => setPhoto(i);
+  dotsEl.appendChild(d);
+});
+
+mainImg.onclick = () => setPhoto((current+1) % photos.length);
+
+function switchTab(name) {
+  const names = ['overview','prices','reviews','contact','location'];
+  document.querySelectorAll('.tab-btn').forEach((b,i) => b.classList.toggle('active', names[i] === name));
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+}
+
+function toggleCollapsible(el) { el.classList.toggle('open'); }
+
+let descExpanded = false;
+const fullDesc = `<p>666 Class is a premium massage establishment on Sukhumvit with a bold name and an even bolder reputation. Known for its professional management and wide range of services, 666 Class caters to discerning guests looking for quality and discretion.</p><p>The establishment has built a strong following thanks to its consistently high standards, attentive staff, and late operating hours. With a 4.8 rating and growing review count, 666 Class is firmly established among Bangkok's top venues.</p><p>Open until 3:00 AM daily, 666 Class is a premier choice for late-night entertainment in the Sukhumvit corridor.</p>`;
+const shortDesc = `<p>666 Class is a premium massage establishment on Sukhumvit with a bold name and an even bolder reputation. Known for its professional management and wide range of services, 666 Class caters to discerning guests looking for quality and discretion.</p>`;
+function toggleDesc() {
+  descExpanded = !descExpanded;
+  document.getElementById('descText').innerHTML = descExpanded ? fullDesc : shortDesc;
+  document.querySelector('.read-more').textContent = descExpanded ? 'Read less ▴' : 'Read more ▾';
+}
+</script>
 </body>
 </html>

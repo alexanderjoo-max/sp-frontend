@@ -4,290 +4,446 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AMOR888 — Swanpass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--black:#0a0a0a;--black2:#111111;--black3:#1a1a1a;--card-bg:#161616;--red:#e8142a;--red-dark:#b80f20;--white:#fff;--white70:rgba(255,255,255,.7);--white40:rgba(255,255,255,.4);--white10:rgba(255,255,255,.08);--gold:#d4a847;--green:#22c55e;--border:rgba(255,255,255,.08);--radius:10px;}
+:root {
+  --black:#0a0a0a; --black2:#111111; --black3:#1a1a1a; --card-bg:#161616;
+  --red:#e8142a; --red-dark:#b80f20; --white:#ffffff;
+  --white70:rgba(255,255,255,0.7); --white40:rgba(255,255,255,0.4);
+  --white10:rgba(255,255,255,0.08); --gold:#d4a847; --green:#22c55e;
+  --border:rgba(255,255,255,0.08); --radius:10px; --radius-sm:6px;
+}
 *{margin:0;padding:0;box-sizing:border-box;}
-body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;}
-header{background:var(--black);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:0 16px;}
-.logo-img{height:28px;display:block;}
-.header-inner{display:flex;align-items:center;gap:12px;height:52px;max-width:1200px;margin:0 auto;}
-.logo img{height:26px;display:block;}
-.back-btn{background:var(--white10);border:1px solid var(--border);border-radius:6px;padding:6px 12px;color:var(--white);font-size:12px;text-decoration:none;display:flex;align-items:center;gap:4px;}
-.btn-login{background:var(--red);color:var(--white);border:none;border-radius:6px;padding:7px 14px;font-size:12px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;}
-/* GALLERY */
-.gallery{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:4px;height:280px;max-width:1200px;margin:0 auto;}
-.gallery img{width:100%;height:100%;object-fit:cover;cursor:pointer;background:var(--black3);}
-.gallery img:first-child{grid-row:1/3;border-radius:0;}
-.gallery-more{position:relative;}
-.gallery-more-btn{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.2);border-radius:6px;padding:5px 10px;color:var(--white);font-size:11px;font-weight:600;cursor:pointer;backdrop-filter:blur(4px);}
-/* MAIN LAYOUT */
-.page-layout{display:flex;gap:24px;max-width:1200px;margin:0 auto;padding:20px 16px;}
-.page-main{flex:1;min-width:0;}
-.page-sidebar{width:300px;flex-shrink:0;}
-/* TITLE SECTION */
-.listing-header{margin-bottom:20px;}
-.listing-cats{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;}
-.cat-tag{display:inline-flex;align-items:center;gap:4px;background:var(--white10);border:1px solid var(--border);border-radius:12px;padding:3px 10px;font-size:11px;color:var(--white70);}
-.listing-name{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:1px;line-height:1;margin-bottom:8px;}
-.listing-badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;}
-.badge{display:inline-flex;align-items:center;gap:3px;padding:3px 8px;border-radius:4px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;}
-.badge-sponsored{background:rgba(212,168,71,.2);color:var(--gold);border:1px solid rgba(212,168,71,.4);}
-.badge-featured{background:rgba(232,20,42,.2);color:var(--red);border:1px solid rgba(232,20,42,.4);}
-.badge-deal{background:rgba(34,197,94,.2);color:var(--green);border:1px solid rgba(34,197,94,.4);}
-.badge-new{background:rgba(99,102,241,.2);color:#a5b4fc;border:1px solid rgba(99,102,241,.4);}
-.listing-stats{display:flex;align-items:center;gap:16px;padding:12px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:16px;}
-.stat-item{display:flex;flex-direction:column;align-items:center;gap:2px;}
-.stat-val{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:1px;color:var(--white);}
-.stat-val.gold{color:var(--gold);}
-.stat-val.red{color:var(--red);}
-.stat-label{font-size:10px;color:var(--white40);text-transform:uppercase;letter-spacing:.5px;}
-.stat-divider{width:1px;height:30px;background:var(--border);}
-/* RATING STARS ROW */
-.rating-row{display:flex;align-items:center;gap:8px;margin-bottom:16px;}
-.big-stars{font-size:20px;color:var(--gold);letter-spacing:2px;}
-.rating-num{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--gold);}
-.rating-of{font-size:12px;color:var(--white40);margin-top:6px;}
-/* INFO SECTION */
-.info-section{margin-bottom:20px;}
-.info-title{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1px;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
-.info-title::after{content:'';flex:1;height:1px;background:var(--border);}
-.info-row{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:13px;}
-.info-row:last-child{border-bottom:none;}
-.info-icon{font-size:16px;flex-shrink:0;width:20px;text-align:center;margin-top:1px;}
-.info-label{color:var(--white40);font-size:11px;flex-shrink:0;width:70px;margin-top:2px;}
-.info-val{flex:1;line-height:1.4;}
-.info-val a{color:var(--red);text-decoration:none;}
-/* DESC */
-.desc-text{font-size:14px;line-height:1.7;color:var(--white70);margin-bottom:16px;}
-/* PRICE TABLE */
-.price-table{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:20px;}
-.price-row{display:flex;align-items:center;padding:10px 14px;border-bottom:1px solid var(--border);font-size:13px;}
-.price-row:last-child{border-bottom:none;}
-.price-service{flex:1;font-weight:500;}
-.price-duration{color:var(--white40);font-size:12px;margin-right:16px;}
-.price-amount{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--green);letter-spacing:.5px;}
-/* REVIEWS */
-.review-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:14px;margin-bottom:10px;}
-.review-header{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
-.review-avatar{width:32px;height:32px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
-.review-user{font-weight:600;font-size:13px;}
-.review-date{font-size:11px;color:var(--white40);margin-left:auto;}
-.review-stars{color:var(--gold);font-size:12px;margin-bottom:6px;}
-.review-text{font-size:13px;color:var(--white70);line-height:1.5;}
-/* SIDEBAR CARD */
-.sidebar-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:16px;position:sticky;top:72px;}
-.sidebar-img{width:100%;height:150px;object-fit:cover;display:block;background:var(--black3);}
-.sidebar-body{padding:16px;}
-.sidebar-name{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;margin-bottom:4px;}
-.sidebar-meta{font-size:12px;color:var(--white40);margin-bottom:12px;}
-.btn-cta{width:100%;background:var(--red);color:var(--white);border:none;border-radius:8px;padding:12px;font-size:14px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;margin-bottom:8px;transition:background .2s;}
-.btn-cta:hover{background:var(--red-dark);}
-.btn-secondary{width:100%;background:var(--white10);color:var(--white);border:1px solid var(--border);border-radius:8px;padding:10px;font-size:13px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;margin-bottom:8px;}
-.sidebar-info{padding:12px 0;border-top:1px solid var(--border);}
-.sidebar-info-row{display:flex;gap:8px;font-size:12px;padding:4px 0;color:var(--white70);}
-.sidebar-info-row span:first-child{flex-shrink:0;}
-/* DEAL BANNER */
-.deal-banner{background:linear-gradient(135deg,#1a0008,#4a000f);border:1px solid rgba(232,20,42,.3);border-radius:var(--radius);padding:14px 16px;margin-bottom:20px;display:flex;align-items:center;gap:12px;}
-.deal-banner-content{flex:1;}
-.deal-banner-tag{display:inline-block;background:var(--red);color:var(--white);font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1px;padding:2px 6px;border-radius:3px;margin-bottom:4px;}
-.deal-banner-title{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1px;margin-bottom:2px;}
-.deal-banner-sub{font-size:12px;color:var(--white70);}
-.deal-banner-pct{font-family:'Bebas Neue',sans-serif;font-size:40px;color:var(--green);letter-spacing:-1px;line-height:1;}
-/* NEARBY */
-.nearby-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
-.nearby-card{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;overflow:hidden;text-decoration:none;color:inherit;display:block;transition:border-color .2s;}
-.nearby-card:hover{border-color:rgba(232,20,42,.4);}
-.nearby-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--black3);}
-.nearby-body{padding:6px 8px;}
-.nearby-name{font-size:11px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.nearby-meta{font-size:10px;color:var(--white40);}
-/* BOTTOM NAV */
-.bottom-nav{position:fixed;bottom:0;left:0;right:0;z-index:90;background:var(--black2);border-top:1px solid var(--border);display:flex;padding:8px 0 calc(8px + env(safe-area-inset-bottom));}
-.bnav-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;color:var(--white40);text-decoration:none;transition:color .2s;}
-.bnav-item.active{color:var(--red);}
-.bnav-icon{font-size:20px;}
-.bnav-label{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
-.bottom-nav-spacer{height:70px;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.5;overflow-x:hidden;}
+a{color:inherit;}
 
-@media(min-width:768px){.bottom-nav{display:none;}.bottom-nav-spacer{display:none;}}
-.mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:91;background:var(--black2);border-top:2px solid var(--border);padding:10px 16px calc(10px + env(safe-area-inset-bottom));gap:10px;}.mobile-cta-bar .btn-call{flex:1;background:var(--red);color:var(--white);border:none;border-radius:8px;padding:13px;font-size:15px;font-weight:700;font-family:"DM Sans",sans-serif;cursor:pointer;text-decoration:none;text-align:center;}.mobile-cta-bar .btn-save{background:var(--white10);color:var(--white);border:1px solid var(--border);border-radius:8px;padding:13px 16px;font-size:20px;cursor:pointer;}@media(max-width:767px){.mobile-cta-bar{display:flex!important;}.page-sidebar{display:none!important;}.bottom-nav-spacer{height:130px!important;}.gallery{height:220px;grid-template-columns:1fr!important;grid-template-rows:auto!important;}.gallery img:first-child{grid-row:auto!important;height:220px;}.gallery img:nth-child(n+2){display:none;}.listing-name{font-size:26px!important;}.page-layout{padding:14px 12px;}}@media(min-width:768px){.bottom-nav,.bottom-nav-spacer,.mobile-cta-bar{display:none!important;}}</style>
+/* MOBILE LAYOUT CODE — primary */
+header{background:var(--black);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:0 16px;}
+.header-inner{display:flex;align-items:center;gap:12px;height:52px;max-width:1200px;margin:0 auto;}
+.logo-img{height:28px;display:block;}
+.header-search{flex:1;display:flex;align-items:center;background:var(--white10);border:1px solid var(--border);border-radius:8px;padding:0 12px;height:36px;gap:8px;cursor:pointer;transition:border-color .2s;}
+.header-search:hover{border-color:var(--red);}
+.header-search input{background:none;border:none;outline:none;color:var(--white);font-family:'DM Sans',sans-serif;font-size:13px;flex:1;}
+.header-search input::placeholder{color:var(--white40);}
+.btn-login{background:var(--red);color:var(--white);border:none;border-radius:6px;padding:7px 14px;font-size:12px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;white-space:nowrap;}
+.btn-menu{background:var(--white10);color:var(--white);border:1px solid var(--border);border-radius:6px;padding:7px 10px;font-size:16px;cursor:pointer;}
+.nav-tabs{background:var(--black2);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none;}
+.nav-tabs::-webkit-scrollbar{display:none;}
+.nav-tabs-inner{display:flex;padding:0 16px;max-width:1200px;margin:0 auto;gap:4px;white-space:nowrap;}
+.nav-tab{padding:10px 14px;font-size:12px;font-weight:500;color:var(--white70);border-bottom:2px solid transparent;transition:all .2s;flex-shrink:0;text-decoration:none;}
+.nav-tab:hover{color:var(--white);}
+.nav-tab.active{color:var(--red);border-bottom-color:var(--red);}
+
+.gallery{position:relative;background:#000;overflow:hidden;}
+.gallery-main{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;cursor:pointer;}
+.gallery-count{position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,0.7);color:#fff;font-size:12px;font-weight:600;padding:5px 10px;border-radius:20px;backdrop-filter:blur(4px);}
+.gallery-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:5px;}
+.gallery-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.4);cursor:pointer;transition:background .2s;}
+.gallery-dot.active{background:#fff;}
+.gallery-thumbs{display:flex;gap:4px;padding:4px;background:#000;overflow-x:auto;scrollbar-width:none;}
+.gallery-thumbs::-webkit-scrollbar{display:none;}
+.gallery-thumb{width:72px;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;opacity:0.6;flex-shrink:0;transition:opacity .2s;border:2px solid transparent;}
+.gallery-thumb.active,.gallery-thumb:hover{opacity:1;border-color:var(--red);}
+
+.listing-info{padding:16px;max-width:900px;margin:0 auto;}
+.listing-badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
+.badge{font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:.5px;}
+.badge-sponsored{background:var(--gold);color:#000;}
+.badge-featured{background:var(--red);color:#fff;}
+.badge-deal{background:var(--green);color:#000;}
+.badge-new{background:#6366f1;color:#fff;}
+.badge-verified{background:var(--green);color:#000;}
+.badge-cat{background:var(--white10);color:var(--white70);border:1px solid var(--border);}
+.listing-name{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1px;margin-bottom:6px;}
+.listing-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:var(--white40);font-size:12px;margin-bottom:10px;}
+.rating-row{display:flex;align-items:center;gap:6px;}
+.stars{color:var(--gold);font-size:14px;letter-spacing:-1px;}
+.rating-num{font-size:14px;font-weight:700;color:var(--white);}
+.review-count{color:var(--white40);font-size:12px;}
+.action-row{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0;}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border-radius:8px;font-size:13px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;border:none;text-decoration:none;transition:all .2s;}
+.btn-primary{background:var(--red);color:#fff;}
+.btn-primary:hover{background:var(--red-dark);}
+.btn-outline{background:transparent;color:var(--white);border:1px solid var(--border);}
+.btn-outline:hover{border-color:var(--white40);}
+.btn-green{background:#16a34a;color:#fff;}
+.btn-green:hover{background:#15803d;}
+
+.tabs{border-bottom:1px solid var(--border);display:flex;gap:0;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:0 16px;}
+.tabs::-webkit-scrollbar{display:none;}
+.tab-btn{padding:12px 16px;font-size:13px;font-weight:500;color:var(--white40);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:all .2s;background:none;border-top:none;border-left:none;border-right:none;font-family:'DM Sans',sans-serif;}
+.tab-btn:hover{color:var(--white);}
+.tab-btn.active{color:var(--red);border-bottom-color:var(--red);}
+.tab-content{display:none;padding:16px 0;}
+.tab-content.active{display:block;}
+
+.section-title{font-size:14px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.section-title::before{content:'';width:3px;height:14px;background:var(--red);border-radius:2px;flex-shrink:0;}
+.description{color:var(--white70);line-height:1.7;font-size:14px;}
+.description p{margin-bottom:12px;}
+.read-more{color:var(--red);font-size:13px;cursor:pointer;font-weight:500;margin-top:4px;display:inline-block;}
+
+.features-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px;}
+.feature-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:14px;display:flex;gap:12px;align-items:flex-start;}
+.feature-num{background:var(--red);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:18px;width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.feature-title{font-weight:600;font-size:13px;margin-bottom:3px;}
+.feature-desc{font-size:12px;color:var(--white40);line-height:1.5;}
+
+.collapsible{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:8px;}
+.collapsible-header{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;cursor:pointer;background:var(--card-bg);font-weight:600;font-size:13px;}
+.collapsible-header:hover{background:var(--black3);}
+.collapsible-arrow{transition:transform .2s;font-size:12px;color:var(--white40);}
+.collapsible.open .collapsible-arrow{transform:rotate(180deg);}
+.collapsible-body{display:none;padding:12px 14px;background:var(--black2);}
+.collapsible.open .collapsible-body{display:block;}
+.price-table{width:100%;border-collapse:collapse;}
+.price-table tr{border-bottom:1px solid var(--border);}
+.price-table tr:last-child{border-bottom:none;}
+.price-table td{padding:9px 0;font-size:13px;}
+.price-table td:last-child{text-align:right;color:var(--gold);font-weight:600;}
+.price-table tr:first-child td{color:var(--white40);font-size:11px;text-transform:uppercase;letter-spacing:.5px;padding-bottom:6px;}
+
+.review-summary{display:flex;gap:16px;align-items:center;margin-bottom:16px;padding:14px;background:var(--card-bg);border-radius:var(--radius);}
+.review-big-num{font-family:'Bebas Neue',sans-serif;font-size:48px;color:var(--white);line-height:1;}
+.review-stars-big{color:var(--gold);font-size:20px;letter-spacing:-1px;}
+.review-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:14px;margin-bottom:8px;}
+.review-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;}
+.reviewer{font-weight:600;font-size:13px;}
+.review-date{font-size:11px;color:var(--white40);}
+.review-text{font-size:13px;color:var(--white70);line-height:1.6;}
+
+.contact-list{display:flex;flex-direction:column;gap:10px;}
+.contact-item{display:flex;align-items:center;gap:10px;font-size:13px;}
+.contact-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.contact-icon.phone{background:rgba(34,197,94,0.15);}
+.contact-icon.tg{background:rgba(0,136,204,0.15);}
+.contact-icon.line{background:rgba(6,199,85,0.15);}
+.contact-icon.web{background:rgba(232,20,42,0.15);}
+.contact-icon.ig{background:rgba(225,48,108,0.15);}
+.contact-item a{color:var(--white);text-decoration:none;}
+.contact-item a:hover{color:var(--red);}
+
+.hours-grid{display:grid;gap:4px;}
+.hours-row{display:flex;justify-content:space-between;font-size:13px;padding:5px 0;border-bottom:1px solid var(--border);}
+.hours-row:last-child{border:none;}
+.hours-day{color:var(--white70);}
+.hours-time{color:var(--green);font-weight:500;}
+
+.map-embed{width:100%;height:200px;border:none;border-radius:var(--radius);display:block;}
+.address-text{font-size:13px;color:var(--white70);margin-top:10px;line-height:1.5;}
+
+/* NEARBY SHOPS */
+.nearby-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;}
+.nearby-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;text-decoration:none;color:inherit;display:block;transition:border-color .2s;}
+.nearby-card:hover{border-color:rgba(232,20,42,.5);}
+.nearby-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:linear-gradient(135deg,#2a1a1a,#1a0a0a);display:block;}
+.nearby-body{padding:8px 10px;}
+.nearby-name{font-size:12px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:3px;}
+.nearby-meta{font-size:11px;color:var(--white40);}
+
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:90;background:var(--black2);border-top:1px solid var(--border);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;gap:8px;}
+.sticky-cta .btn{flex:1;justify-content:center;}
+
+/* DESKTOP LAYOUT CODE — secondary */
+@media(min-width:768px){
+  .sticky-cta{display:none;}
+  .gallery-main{aspect-ratio:21/9;max-height:480px;}
+  .listing-layout{display:grid;grid-template-columns:1fr 320px;gap:20px;max-width:900px;margin:0 auto;padding:20px 16px;}
+  .listing-info{padding:0;}
+  .sidebar-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:12px;}
+  .nearby-grid{grid-template-columns:repeat(4,1fr);}
+}
+@media(max-width:767px){
+  .features-grid{grid-template-columns:1fr;}
+  .listing-name{font-size:22px;}
+  .review-summary{flex-direction:column;text-align:center;}
+}
+</style>
 </head>
 <body>
+
 <header>
   <div class="header-inner">
-    <a href="listings.html" class="back-btn">← Listings</a>
     <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
-    <div style="flex:1"></div>
-    <button class="btn-login">Login</button>
+    <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
+      <span style="color:var(--white40)">🔍</span>
+      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
+    </div>
+    <button class="btn-menu">☰</button>
+    <button class="btn-login" onclick="window.location='login.html'">Login</button>
   </div>
 </header>
+<nav class="nav-tabs">
+  <div class="nav-tabs-inner">
+    <a href="index.html" class="nav-tab">🏠 Home</a>
+    <a href="map.html" class="nav-tab">🗺️ Map</a>
+    <a href="deals.html" class="nav-tab">🏷️ Deals</a>
+    <a href="listings.html" class="nav-tab active">🔍 Browse</a>
+    <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
+    <a href="cities.html" class="nav-tab">📍 Cities</a>
+    <a href="search.html" class="nav-tab">🔎 Search</a>
+    <a href="add-listing.html" class="nav-tab">➕ List Your Business</a>
+    <a href="admin.html" class="nav-tab">⚙️ Admin</a>
+  </div>
+</nav>
 
 <!-- GALLERY -->
 <div class="gallery">
-  <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg" alt="AMOR888" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')">
-  <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg" alt="AMOR888" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')">
-  <div class="gallery-more">
-    <img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14215/666-class.jpeg" alt="AMOR888" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')">
-    <button class="gallery-more-btn">📷 All photos</button>
-  </div>
+  <img class="gallery-main" id="galleryMain" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg" alt="AMOR888" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+  <div class="gallery-count" id="galleryCount">1 / 4</div>
+  <div class="gallery-dots" id="galleryDots"></div>
 </div>
+<div class="gallery-thumbs" id="galleryThumbs"></div>
 
-<!-- LAYOUT -->
-<div class="page-layout">
-  <div class="page-main">
+<!-- MAIN LAYOUT -->
+<div id="mainLayout">
 
-    <!-- HEADER INFO -->
-    <div class="listing-header">
-      <div class="listing-cats">
-        <span class="cat-tag">👄 Massage · 🛁 Soapy</span>
-        <span class="cat-tag">📍 Bangkok</span>
+<!-- LISTING INFO -->
+<div class="listing-info">
+  <div class="listing-badges">
+    <span class="badge badge-sponsored">⭐ Sponsored</span>
+    <span class="badge badge-verified">✓ Verified</span>
+    <span class="badge badge-cat">💆 Massage</span><span class="badge badge-cat">🛁 Soapy</span>
+  </div>
+  <h1 class="listing-name">AMOR888</h1>
+  <div class="listing-meta">
+    <span>📍 Sukhumvit Soi 18, Bangkok</span>
+    <span>·</span>
+    <span>12:00 PM – 3:00 AM</span>
+    <span>·</span>
+    <span class="rating-row"><span class="stars">★★★★★</span> <span class="rating-num">4.8</span> <span class="review-count">(40 reviews)</span></span>
+  </div>
+  <div class="action-row">
+    <a href="tel:+6661213800" class="btn btn-primary">📞 Call Now</a>
+    <button class="btn btn-outline" onclick="this.textContent=this.textContent==='♡ Save'?'♥ Saved':'♡ Save'">♡ Save</button>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
+    <button class="tab-btn" onclick="switchTab('prices')">Prices</button>
+    <button class="tab-btn" onclick="switchTab('reviews')">Reviews (40)</button>
+    <button class="tab-btn" onclick="switchTab('contact')">Contact & Hours</button>
+    <button class="tab-btn" onclick="switchTab('location')">Location</button>
+  </div>
+
+  <!-- OVERVIEW TAB -->
+  <div class="tab-content active" id="tab-overview">
+    <div class="section-title">About AMOR888</div>
+    <div class="description" id="descText">
+      <p>AMOR888 is a high-end massage and soapy establishment on Sukhumvit Soi 18, Bangkok. Known for its elegant interiors and attentive staff, AMOR888 delivers a premium experience with a wide variety of services. Conveniently close to Asok BTS station.</p>
+    </div>
+    <span class="read-more" onclick="toggleDesc()">Read more ▾</span>
+
+    <div style="height:16px"></div>
+    <div class="section-title">Why AMOR888?</div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-num">1</div>
+        <div><div class="feature-title">Premium Interior</div><div class="feature-desc">Elegant, well-designed rooms that set the mood for relaxation.</div></div>
       </div>
-      <div class="listing-name">AMOR888</div>
-      <div class="listing-badges">
-        <span class="badge badge-sponsored">★ Sponsored</span>
-        
+      <div class="feature-card">
+        <div class="feature-num">2</div>
+        <div><div class="feature-title">Late Hours</div><div class="feature-desc">Open until 3:00 AM — perfect for late-night visits after a night out.</div></div>
       </div>
-      <div class="rating-row">
-        <div class="big-stars">★★★★★</div>
-        <div class="rating-num">4.8</div>
-        <div class="rating-of">/ 5.0<br><span style="color:var(--white40);font-size:11px">(40 reviews)</span></div>
+      <div class="feature-card">
+        <div class="feature-num">3</div>
+        <div><div class="feature-title">Experienced Staff</div><div class="feature-desc">Professional therapists trained in multiple techniques.</div></div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">4</div>
+        <div><div class="feature-title">Near Asok BTS</div><div class="feature-desc">Highly accessible from all major Bangkok transit lines.</div></div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">5</div>
+        <div><div class="feature-title">High Review Score</div><div class="feature-desc">Consistently rated 4.8/5 across hundreds of verified visits.</div></div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">6</div>
+        <div><div class="feature-title">Discreet & Secure</div><div class="feature-desc">Full privacy guaranteed. Discreet entrance and exit.</div></div>
       </div>
     </div>
+  </div>
 
-    <!-- STATS -->
-    <div class="listing-stats">
-      <div class="stat-item"><div class="stat-val gold">4.8</div><div class="stat-label">Rating</div></div>
-      <div class="stat-divider"></div>
-      <div class="stat-item"><div class="stat-val">40</div><div class="stat-label">Reviews</div></div>
-      <div class="stat-divider"></div>
-      <div class="stat-item"><div class="stat-val red">2K+</div><div class="stat-label">Visits</div></div>
-      <div class="stat-divider"></div>
-      <div class="stat-item"><div class="stat-val">✓</div><div class="stat-label">Verified</div></div>
-    </div>
-
-    <!-- DEAL BANNER (if applicable) -->
-    <div class="deal-banner">
-      <div class="deal-banner-content">
-        <div class="deal-banner-tag">🏷️ Current Deal</div>
-        <div class="deal-banner-title">฿1,100 Special Offer</div>
-        <div class="deal-banner-sub">Limited time · Book now to lock in this price</div>
-      </div>
-      <div class="deal-banner-pct">-20%</div>
-    </div>
-
-    <!-- ABOUT -->
-    <div class="info-section">
-      <div class="info-title">About</div>
-      <p class="desc-text">AMOR888 is a high-end massage and soapy establishment in Sukhumvit 18, Bangkok. Known for its elegant interiors and attentive staff, AMOR888 delivers a premium experience with a wide variety of services. Located conveniently close to Asok BTS station, making it easily accessible from anywhere in Bangkok.</p>
-    </div>
-
-    <!-- INFO -->
-    <div class="info-section">
-      <div class="info-title">Details</div>
-      <div class="info-row"><span class="info-icon">📍</span><span class="info-label">Address</span><span class="info-val">390/35 Soi Sukhumvit 18, Khlong Toei, Bangkok</span></div>
-      <div class="info-row"><span class="info-icon">📞</span><span class="info-label">Phone</span><span class="info-val"><a href="tel:+66 61 213 8000">+66 61 213 8000</a></span></div>
-      <div class="info-row"><span class="info-icon">🕐</span><span class="info-label">Hours</span><span class="info-val">Daily 12:00 PM – 3:00 AM</span></div>
-      <div class="info-row"><span class="info-icon">🏷️</span><span class="info-label">Category</span><span class="info-val">Massage, Soapy</span></div>
-      <div class="info-row"><span class="info-icon">🗺️</span><span class="info-label">Map</span><span class="info-val"><a href="map.html">View on Map →</a></span></div>
-    </div>
-
-    <!-- PRICING -->
-    <div class="info-section">
-      <div class="info-title">Pricing</div>
-      <div class="price-table">
-        <div class="price-row"><span class="price-service">Thai Massage</span><span class="price-duration">60 min</span><span class="price-amount">฿500</span></div>
-        <div class="price-row"><span class="price-service">Oil Massage</span><span class="price-duration">60 min</span><span class="price-amount">฿600</span></div>
-        <div class="price-row"><span class="price-service">Nuru Massage</span><span class="price-duration">60 min</span><span class="price-amount">฿1,100</span></div>
-        <div class="price-row"><span class="price-service">Full Body</span><span class="price-duration">90 min</span><span class="price-amount">฿1,800</span></div>
-        <div class="price-row" style="background:rgba(34,197,94,.05)"><span class="price-service" style="color:var(--green)">🏷️ Deal Price (this week)</span><span class="price-duration">60 min</span><span class="price-amount" style="color:var(--red)">฿800</span></div>
+  <!-- PRICES TAB -->
+  <div class="tab-content" id="tab-prices">
+    <div class="section-title">Price List</div>
+    <div class="collapsible open" onclick="toggleCollapsible(this)">
+      <div class="collapsible-header">Massage & Soapy <span class="collapsible-arrow">▼</span></div>
+      <div class="collapsible-body">
+        <table class="price-table">
+          <tr style="font-size:11px;color:var(--white40)"><td>Service</td><td>Duration</td><td style="text-align:right">Price</td></tr>
+          <tr><td>Thai Massage</td><td>60 min</td><td>฿500</td></tr>
+          <tr><td>Oil Massage</td><td>60 min</td><td>฿700</td></tr>
+          <tr><td>Full Soapy</td><td>60 min</td><td>฿1,300</td></tr>
+          <tr><td>Nuru + Soapy</td><td>60 min</td><td>฿1,800</td></tr>
+          <tr><td>Nuru + Soapy</td><td>90 min</td><td>฿2,500</td></tr>
+        </table>
       </div>
     </div>
-
-    <!-- REVIEWS -->
-    <div class="info-section">
-      <div class="info-title">Reviews (40)</div>
-      <div class="review-card">
-        <div class="review-header">
-          <div class="review-avatar">🧑</div>
-          <div><div class="review-user">TravellerMike88</div></div>
-          <div class="review-date">Feb 2026</div>
-        </div>
-        <div class="review-stars">★★★★★</div>
-        <div class="review-text">Absolutely fantastic experience. The staff are professional and the facilities are immaculate. Will definitely be back on my next trip to Bangkok. One of the best in the Sukhumvit area.</div>
-      </div>
-      <div class="review-card">
-        <div class="review-header">
-          <div class="review-avatar">👤</div>
-          <div><div class="review-user">NightOwl_BKK</div></div>
-          <div class="review-date">Jan 2026</div>
-        </div>
-        <div class="review-stars">★★★★★</div>
-        <div class="review-text">Been coming here for 2 years. Consistent quality every time. Great value for money. The girls are friendly and the place is clean. Highly recommend.</div>
-      </div>
-      <div class="review-card">
-        <div class="review-header">
-          <div class="review-avatar">🙂</div>
-          <div><div class="review-user">ExpatsGuide</div></div>
-          <div class="review-date">Jan 2026</div>
-        </div>
-        <div class="review-stars">★★★★☆</div>
-        <div class="review-text">Very good place, busy on weekends so try to go during the week. Prices are fair. Location is easy to find on Sukhumvit.</div>
+    <div class="collapsible " onclick="toggleCollapsible(this)">
+      <div class="collapsible-header">Extras <span class="collapsible-arrow">▼</span></div>
+      <div class="collapsible-body">
+        <table class="price-table">
+          <tr style="font-size:11px;color:var(--white40)"><td>Service</td><td>Duration</td><td style="text-align:right">Price</td></tr>
+          <tr><td>Short Time</td><td>—</td><td>฿2,800</td></tr>
+          <tr><td>Long Time</td><td>—</td><td>฿5,000</td></tr>
+        </table>
       </div>
     </div>
+  </div>
 
-    <!-- NEARBY -->
-    <div class="info-section">
-      <div class="info-title">Nearby Shops</div>
-      <div class="nearby-grid">
-        <a href="listing-the333.html" class="nearby-card">
-          <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg" alt="The333">
-          <div class="nearby-body"><div class="nearby-name">The333</div><div class="nearby-meta">🛁 Soapy · Bangkok · ★ 4.8</div></div>
-        </a>
-        <a href="listing-amor888.html" class="nearby-card">
-          <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg" alt="AMOR888">
-          <div class="nearby-body"><div class="nearby-name">AMOR888</div><div class="nearby-meta">👄 Massage · Bangkok · ★ 4.8</div></div>
+  <!-- REVIEWS TAB -->
+  <div class="tab-content" id="tab-reviews">
+    <div class="review-summary">
+      <div>
+        <div class="review-big-num">4.8</div>
+        <div class="review-stars-big">★★★★★</div>
+        <div style="font-size:12px;color:var(--white40);margin-top:4px;">40 Reviews</div>
+      </div>
+      <div style="flex:1">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;"><span style="font-size:12px;color:var(--white40);width:40px">5 ★</span><div style="flex:1;height:6px;background:var(--white10);border-radius:3px;overflow:hidden;"><div style="width:85%;height:100%;background:var(--gold);border-radius:3px"></div></div></div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;"><span style="font-size:12px;color:var(--white40);width:40px">4 ★</span><div style="flex:1;height:6px;background:var(--white10);border-radius:3px;overflow:hidden;"><div style="width:12%;height:100%;background:var(--gold);border-radius:3px"></div></div></div>
+        <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:12px;color:var(--white40);width:40px">3 ★</span><div style="flex:1;height:6px;background:var(--white10);border-radius:3px;overflow:hidden;"><div style="width:3%;height:100%;background:var(--gold);border-radius:3px"></div></div></div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-top"><span class="reviewer">TM***</span><span class="review-date">February 2026</span></div>
+      <div style="color:var(--gold);font-size:13px;margin-bottom:6px;">★★★★★</div>
+      <p class="review-text">Absolutely fantastic experience. The staff are professional and the facilities are immaculate. One of the best in the Sukhumvit area.</p>
+    </div>
+    <div class="review-card">
+      <div class="review-top"><span class="reviewer">NO***</span><span class="review-date">January 2026</span></div>
+      <div style="color:var(--gold);font-size:13px;margin-bottom:6px;">★★★★★</div>
+      <p class="review-text">Been coming here for 2 years. Consistent quality every time. Great value for money. Highly recommend.</p>
+    </div>
+    <div style="text-align:center;padding:16px 0;">
+      <a href="https://swanpass.com/listing/amor888" target="_blank" class="btn btn-outline">View all 40 reviews →</a>
+    </div>
+  </div>
+
+  <!-- CONTACT TAB -->
+  <div class="tab-content" id="tab-contact">
+    <div class="section-title">Contact Details</div>
+    <div class="contact-list">
+      <div class="contact-item">
+        <div class="contact-icon phone">📞</div>
+        <a href="tel:+6661213800">+66 61 213 8000</a>
+      </div>
+    </div>
+    <div style="height:20px"></div>
+    <div class="section-title">Business Hours</div>
+    <div class="hours-grid">
+      <div class="hours-row"><span class="hours-day">Monday–Sunday</span><span class="hours-time">12:00 PM – 3:00 AM</span></div>
+    </div>
+  </div>
+
+  <!-- LOCATION TAB -->
+  <div class="tab-content" id="tab-location">
+    <div class="section-title">Location</div>
+    <iframe class="map-embed"
+      src="https://maps.google.com/maps?q=13.7272,100.5640&z=16&output=embed"
+      allowfullscreen loading="lazy"></iframe>
+    <p class="address-text">📍 390/35 Soi Sukhumvit 18, Khlong Toei, Bangkok 10110</p>
+    <div style="margin-top:12px">
+      <a href="https://maps.google.com/?q=13.7272,100.5640" target="_blank" class="btn btn-outline">🗺️ Open in Google Maps</a>
+    </div>
+  </div>
+
+  <!-- NEARBY SHOPS -->
+  <div style="margin-top:24px;padding-top:24px;border-top:1px solid var(--border);">
+    <div class="section-title">Nearby Shops</div>
+    <div class="nearby-grid">
+        <a href="listing-chairman-nuru.html" class="nearby-card">
+          <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')" alt="Chairman Nuru Massage">
+          <div class="nearby-body">
+            <div class="nearby-name">Chairman Nuru Massage</div>
+            <div class="nearby-meta">Massage · Soapy · ★ 4.9</div>
+          </div>
         </a>
         <a href="listing-jspot.html" class="nearby-card">
-          <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg" alt="JSpot">
-          <div class="nearby-body"><div class="nearby-name">JSpot Massage</div><div class="nearby-meta">🛁 Soapy · Bangkok · ★ 4.7</div></div>
+          <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')" alt="JSpot Massage">
+          <div class="nearby-body">
+            <div class="nearby-name">JSpot Massage</div>
+            <div class="nearby-meta">Massage · Soapy · ★ 4.7</div>
+          </div>
         </a>
-        <a href="listing-chairman-nuru.html" class="nearby-card">
-          <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg" alt="Chairman Nuru">
-          <div class="nearby-body"><div class="nearby-name">Chairman Nuru</div><div class="nearby-meta">👄 Massage · Bangkok · ★ 4.9</div></div>
+        <a href="listing-the333.html" class="nearby-card">
+          <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')" alt="The333">
+          <div class="nearby-body">
+            <div class="nearby-name">The333</div>
+            <div class="nearby-meta">Massage · Soapy · ★ 4.8</div>
+          </div>
         </a>
-      </div>
+        <a href="listing-g2g.html" class="nearby-card">
+          <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')" alt="G2G Massage">
+          <div class="nearby-body">
+            <div class="nearby-name">G2G Massage</div>
+            <div class="nearby-meta">Massage · ★ 4.9</div>
+          </div>
+        </a>
     </div>
   </div>
 
-  <!-- SIDEBAR -->
-  <div class="page-sidebar">
-    <div class="sidebar-card">
-      <img class="sidebar-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg" alt="AMOR888" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')">
-      <div class="sidebar-body">
-        <div class="sidebar-name">AMOR888</div>
-        <div class="sidebar-meta">👄 Massage · 🛁 Soapy · 📍 Bangkok</div>
-        <button class="btn-cta">📞 Call Now</button>
-        <button class="btn-secondary">♡ Save to Favorites</button>
-        <button class="btn-secondary">🗺️ View on Map</button>
-        <div class="sidebar-info">
-          <div class="sidebar-info-row"><span>📞</span><span>+66 61 213 8000</span></div>
-          <div class="sidebar-info-row"><span>🕐</span><span>Daily 12:00 PM – 3:00 AM</span></div>
-          <div class="sidebar-info-row"><span>📍</span><span>390/35 Soi Sukhumvit 18, Khlong Toei, Bangkok</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
+</div><!-- /listing-info -->
+</div><!-- /mainLayout -->
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta">
+  <a href="tel:+6661213800" class="btn btn-primary">📞 Call</a>
+  <button class="btn btn-outline" onclick="this.textContent=this.textContent==='♡ Save'?'♥ Saved':'♡ Save'">♡ Save</button>
 </div>
+<div style="height:80px"></div>
 
-<div class="mobile-cta-bar"><a href="tel:+66 61 213 8000" class="btn-call">📞 Call Now</a><a href="#" class="btn-save">♡</a><a href="map.html" class="btn-save">🗺️</a></div>
-<div class="bottom-nav-spacer"></div>
-<nav class="bottom-nav">
-  <a href="index.html" class="bnav-item"><span class="bnav-icon">🏠</span><span class="bnav-label">Home</span></a>
-  <a href="map.html" class="bnav-item"><span class="bnav-icon">🗺️</span><span class="bnav-label">Map</span></a>
-  <a href="index.html#deals" class="bnav-item"><span class="bnav-icon">🏷️</span><span class="bnav-label">Deals</span></a>
-  <a href="listings.html" class="bnav-item active"><span class="bnav-icon">🔍</span><span class="bnav-label">Browse</span></a>
-  <a href="admin.html" class="bnav-item"><span class="bnav-icon">⚙️</span><span class="bnav-label">Admin</span></a>
-</nav>
+<script>
+const photos = ['https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg', 'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg', 'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg', 'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg'];
+let current = 0;
+const mainImg = document.getElementById('galleryMain');
+const thumbsEl = document.getElementById('galleryThumbs');
+const countEl = document.getElementById('galleryCount');
+const dotsEl = document.getElementById('galleryDots');
+
+function setPhoto(i) {
+  current = i;
+  mainImg.src = photos[i];
+  countEl.textContent = (i+1) + ' / ' + photos.length;
+  document.querySelectorAll('.gallery-thumb').forEach((t,j) => t.classList.toggle('active', j===i));
+  document.querySelectorAll('.gallery-dot').forEach((d,j) => d.classList.toggle('active', j===i));
+}
+
+photos.forEach((p,i) => {
+  const t = document.createElement('img');
+  t.className = 'gallery-thumb' + (i===0?' active':'');
+  t.src = p; t.onclick = () => setPhoto(i);
+  t.onerror = function(){ this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)'; this.removeAttribute('src'); };
+  thumbsEl.appendChild(t);
+  const d = document.createElement('div');
+  d.className = 'gallery-dot' + (i===0?' active':'');
+  d.onclick = () => setPhoto(i);
+  dotsEl.appendChild(d);
+});
+
+mainImg.onclick = () => setPhoto((current+1) % photos.length);
+
+function switchTab(name) {
+  const names = ['overview','prices','reviews','contact','location'];
+  document.querySelectorAll('.tab-btn').forEach((b,i) => b.classList.toggle('active', names[i] === name));
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+}
+
+function toggleCollapsible(el) { el.classList.toggle('open'); }
+
+let descExpanded = false;
+const fullDesc = `<p>AMOR888 is a high-end massage and soapy establishment on Sukhumvit Soi 18, Bangkok. Known for its elegant interiors and attentive staff, AMOR888 delivers a premium experience with a wide variety of services. Conveniently close to Asok BTS station.</p><p>With over 40 glowing reviews and a loyal customer base, AMOR888 has established itself as one of the go-to destinations for soapy massage in the Asok/Nana area. The establishment is open late — perfect for those enjoying Bangkok's nightlife.</p><p>Whether you're visiting for the first time or a returning regular, AMOR888's team ensures a personalized and satisfying experience every visit.</p>`;
+const shortDesc = `<p>AMOR888 is a high-end massage and soapy establishment on Sukhumvit Soi 18, Bangkok. Known for its elegant interiors and attentive staff, AMOR888 delivers a premium experience with a wide variety of services. Conveniently close to Asok BTS station.</p>`;
+function toggleDesc() {
+  descExpanded = !descExpanded;
+  document.getElementById('descText').innerHTML = descExpanded ? fullDesc : shortDesc;
+  document.querySelector('.read-more').textContent = descExpanded ? 'Read less ▴' : 'Read more ▾';
+}
+</script>
 </body>
 </html>

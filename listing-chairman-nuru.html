@@ -146,6 +146,15 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
 .map-embed{width:100%;height:200px;border:none;border-radius:var(--radius);display:block;}
 .address-text{font-size:13px;color:var(--white70);margin-top:10px;line-height:1.5;}
 
+/* NEARBY SHOPS */
+.nearby-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;}
+.nearby-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;text-decoration:none;color:inherit;display:block;transition:border-color .2s;}
+.nearby-card:hover{border-color:rgba(232,20,42,.5);}
+.nearby-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:linear-gradient(135deg,#2a1a1a,#1a0a0a);display:block;}
+.nearby-body{padding:8px 10px;}
+.nearby-name{font-size:12px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:3px;}
+.nearby-meta{font-size:11px;color:var(--white40);}
+
 /* STICKY CTA (mobile) */
 .sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:90;background:var(--black2);border-top:1px solid var(--border);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;gap:8px;}
 .sticky-cta .btn{flex:1;justify-content:center;}
@@ -156,6 +165,7 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
   .listing-layout{display:grid;grid-template-columns:1fr 320px;gap:20px;max-width:900px;margin:0 auto;padding:20px 16px;}
   .listing-info{padding:0;}
   .sidebar-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:12px;}
+  .nearby-grid{grid-template-columns:repeat(4,1fr);}
 }
 @media(max-width:767px){
   .features-grid{grid-template-columns:1fr;}
@@ -408,6 +418,29 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
     <p class="address-text">📍 12, 4 Soi Sukhumvit 33, Khwaeng Khlong Tan Nuea, Watthana, Bangkok 10110, Thailand</p>
     <div style="margin-top:12px">
       <a href="https://maps.google.com/?q=13.7341643,100.5677519" target="_blank" class="btn btn-outline">🗺️ Open in Google Maps</a>
+    </div>
+  </div>
+
+  <!-- NEARBY SHOPS -->
+  <div style="margin-top:24px;padding-top:24px;border-top:1px solid var(--border);">
+    <div class="section-title">Nearby Shops</div>
+    <div class="nearby-grid">
+      <a href="listing-jspot.html" class="nearby-card">
+        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg" alt="JSpot" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">JSpot Massage</div><div class="nearby-meta">Massage · Soapy · ★ 4.7</div></div>
+      </a>
+      <a href="listing-g2g.html" class="nearby-card">
+        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg" alt="G2G" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">G2G Massage</div><div class="nearby-meta">Massage · ★ 4.9</div></div>
+      </a>
+      <a href="listing-the333.html" class="nearby-card">
+        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg" alt="The333" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">The333</div><div class="nearby-meta">Massage · Soapy · ★ 4.8</div></div>
+      </a>
+      <a href="listing-lunarnuru.html" class="nearby-card">
+        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15233/store01.jpg" alt="Lunar Nuru" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">Lunar Nuru</div><div class="nearby-meta">Nuru · Soapy · ★ 4.9</div></div>
+      </a>
     </div>
   </div>
 
