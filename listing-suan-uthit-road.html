@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suan Uthit Road — Swanpass</title>
+<meta name="description" content="A street full of freelancers at beer bars, massage parlours, pool halls and karaokes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<div data-include="partials/header.html"></div>
+
+<!-- GALLERY -->
+<div class="gallery">
+  <img class="gallery-main" id="galleryMain" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/9024/308487898_613941070232014_1402617348826490700_n.jpg" alt="Suan Uthit Road" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+  <div class="gallery-count" id="galleryCount">1 / 14</div>
+  <div class="gallery-dots" id="galleryDots"></div>
+</div>
+<div class="gallery-thumbs" id="galleryThumbs"></div>
+
+<!-- MAIN LAYOUT -->
+<div id="mainLayout">
+
+<!-- LISTING INFO -->
+<div class="listing-info">
+  <div class="listing-badges">
+    <span class="badge badge-cat">Freelancers</span>
+  </div>
+  <h1 class="listing-name">Suan Uthit Road</h1>
+  <div class="listing-meta">
+    <span>📍 Suan Uthit Rd, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand</span>
+    <span>·</span>
+    <span class="rating-row"><span class="stars">☆☆☆☆☆</span> <span class="rating-num">N/A</span> <span class="review-count">(0 reviews)</span></span>
+  </div>
+  <div class="action-row">
+    
+    <button class="btn btn-outline" onclick="this.textContent=this.textContent==='♡ Save'?'♥ Saved':'♡ Save'">♡ Save</button>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
+    <button class="tab-btn" onclick="switchTab('prices')">Prices</button>
+    <button class="tab-btn" onclick="switchTab('reviews')">Reviews (0)</button>
+    <button class="tab-btn" onclick="switchTab('contact')">Contact & Hours</button>
+    <button class="tab-btn" onclick="switchTab('location')">Location</button>
+  </div>
+
+  <!-- OVERVIEW TAB -->
+  <div class="tab-content active" id="tab-overview">
+    <div class="section-title">About Suan Uthit Road</div>
+    <div class="description">
+      <p>A street full of freelancers at beer bars, massage parlours, pool halls and karaokes.</p>
+    </div>
+  </div>
+
+  <!-- PRICES TAB -->
+  <div class="tab-content" id="tab-prices">
+    <div class="section-title">Price List</div>
+    <p style="color:var(--white40);font-size:13px;">Contact the shop for pricing information.</p>
+  </div>
+
+  <!-- REVIEWS TAB -->
+  <div class="tab-content" id="tab-reviews">
+    <div class="review-summary">
+      <div>
+        <div class="review-big-num">N/A</div>
+        <div class="review-stars-big">☆☆☆☆☆</div>
+        <div style="font-size:12px;color:var(--white40);margin-top:4px;">0 Reviews</div>
+      </div>
+    </div>
+    <div style="text-align:center;padding:16px 0;">
+      <a href="https://swanpass.com/listing/suan-uthit-road#reviews" target="_blank" class="btn btn-outline">View all reviews on SwanPass →</a>
+    </div>
+  </div>
+
+  <!-- CONTACT TAB -->
+  <div class="tab-content" id="tab-contact">
+    <div class="section-title">Contact Details</div>
+    <p style="color:var(--white40);font-size:13px;">No contact information available.</p>
+    <div style="height:20px"></div>
+    <div class="section-title">Business Hours</div>
+    <p style="color:var(--white40);font-size:13px;">Contact the shop for business hours.</p>
+  </div>
+
+  <!-- LOCATION TAB -->
+  <div class="tab-content" id="tab-location">
+    <div class="section-title">Location</div>
+    
+    <iframe class="map-embed"
+      src="https://maps.google.com/maps?q=9.5115074,100.0535645&z=16&output=embed"
+      allowfullscreen loading="lazy"></iframe>
+    <p class="address-text">📍 Suan Uthit Rd, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand</p>
+    <div style="margin-top:12px">
+      <a href="https://maps.google.com/?q=9.5115074,100.0535645" target="_blank" class="btn btn-outline">🗺️ Open in Google Maps</a>
+    </div>
+  </div>
+
+  <!-- NEARBY SHOPS -->
+  
+  <div style="margin-top:24px;padding-top:24px;border-top:1px solid var(--border);">
+    <div class="section-title">Nearby Shops</div>
+    <div class="nearby-grid">
+      <a href="listing-henry-s-africa-bar.html" class="nearby-card">
+        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/861/306827631_497975972333570_5811231044464597535_n.jpg" alt="Henry's Africa Bar" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">Henry's Africa Bar</div><div class="nearby-meta">Go-Go · Freelancers · ★ 3.9</div></div>
+      </a>
+      <a href="listing-pannarai.html" class="nearby-card">
+        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/851/Supaporn_Massage_Samui.webp" alt="Pannarai" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">Pannarai</div><div class="nearby-meta">Soapy · ★ 4.4</div></div>
+      </a>
+      <a href="listing-lamai-beer-bars.html" class="nearby-card">
+        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/9021/20220101_010508.jpg" alt="Lamai Beer Bars" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">Lamai Beer Bars</div><div class="nearby-meta">Red Light Districts · Freelancers · ★ N/A</div></div>
+      </a>
+      <a href="listing-the-resort.html" class="nearby-card">
+        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/858/2023-04-09.jpg" alt="The Resort" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">The Resort</div><div class="nearby-meta">Soapy · ★ 4.0</div></div>
+      </a>
+    </div>
+  </div>
+
+</div><!-- /listing-info -->
+</div><!-- /mainLayout -->
+
+<!-- STICKY MOBILE CTA -->
+
+
+<div data-include="partials/footer.html"></div>
+
+<script src="js/include.js"></script>
+<script>
+
+const photos = [
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/9024/308487898_613941070232014_1402617348826490700_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14615/Suwon.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14215/666-class.jpeg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/861/306827631_497975972333570_5811231044464597535_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/9021/20220101_010508.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/851/Supaporn_Massage_Samui.webp',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5022/GMC-Oct-1-30.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/858/2023-04-09.jpg'
+];
+let current = 0;
+const mainImg = document.getElementById('galleryMain');
+const thumbsEl = document.getElementById('galleryThumbs');
+const countEl = document.getElementById('galleryCount');
+const dotsEl = document.getElementById('galleryDots');
+
+function setPhoto(i) {
+  current = i;
+  mainImg.src = photos[i];
+  countEl.textContent = (i+1) + ' / ' + photos.length;
+  document.querySelectorAll('.gallery-thumb').forEach((t,j) => t.classList.toggle('active', j===i));
+  document.querySelectorAll('.gallery-dot').forEach((d,j) => d.classList.toggle('active', j===i));
+}
+
+photos.forEach((p,i) => {
+  const t = document.createElement('img');
+  t.className = 'gallery-thumb' + (i===0?' active':'');
+  t.src = p; t.onclick = () => setPhoto(i);
+  t.onerror = function() { this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)'; this.removeAttribute('src'); };
+  thumbsEl.appendChild(t);
+  const d = document.createElement('div');
+  d.className = 'gallery-dot' + (i===0?' active':'');
+  d.onclick = () => setPhoto(i);
+  dotsEl.appendChild(d);
+});
+
+mainImg.onclick = () => setPhoto((current+1) % photos.length);
+mainImg.onerror = function() { this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)'; this.removeAttribute('src'); };
+
+
+function switchTab(name) {
+  document.querySelectorAll('.tab-btn').forEach((b,i) => {
+    const tabs = ['overview','prices','reviews','contact','location'];
+    b.classList.toggle('active', tabs[i] === name);
+  });
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+}
+
+function toggleCollapsible(el) {
+  el.classList.toggle('open');
+}
+</script>
+</body>
+</html>

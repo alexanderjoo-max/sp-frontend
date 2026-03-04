@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>277 KTV — Swanpass</title>
+<meta name="description" content="Situated in the heart of Geylang, this venue lacks in playability, but the hostesses spend an unusually long time with guests, likely because of the low custome">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<div data-include="partials/header.html"></div>
+
+<!-- GALLERY -->
+<div class="gallery">
+  <img class="gallery-main" id="galleryMain" src="images/listings/277-ktv-singapore/02.jpeg" alt="277 KTV" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+  <div class="gallery-count" id="galleryCount">1 / 14</div>
+  <div class="gallery-dots" id="galleryDots"></div>
+</div>
+<div class="gallery-thumbs" id="galleryThumbs"></div>
+
+<!-- MAIN LAYOUT -->
+<div id="mainLayout">
+
+<!-- LISTING INFO -->
+<div class="listing-info">
+  <div class="listing-badges">
+    <span class="badge badge-cat">Gentlemen’s Clubs</span>
+  </div>
+  <h1 class="listing-name">277 KTV</h1>
+  <div class="listing-meta">
+    <span>📍 277 Geylang Rd, Singapore, 389327, SG</span>
+    <span>·</span>
+    <span class="rating-row"><span class="stars">★★★★☆</span> <span class="rating-num">3.9</span> <span class="review-count">(14 reviews)</span></span>
+  </div>
+  <div class="action-row">
+    <a href="tel:+65 9777 2575" class="btn btn-primary">📞 Call</a>
+    <button class="btn btn-outline" onclick="this.textContent=this.textContent==='♡ Save'?'♥ Saved':'♡ Save'">♡ Save</button>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
+    <button class="tab-btn" onclick="switchTab('prices')">Prices</button>
+    <button class="tab-btn" onclick="switchTab('reviews')">Reviews (14)</button>
+    <button class="tab-btn" onclick="switchTab('contact')">Contact & Hours</button>
+    <button class="tab-btn" onclick="switchTab('location')">Location</button>
+  </div>
+
+  <!-- OVERVIEW TAB -->
+  <div class="tab-content active" id="tab-overview">
+    <div class="section-title">About 277 KTV</div>
+    <div class="description">
+      <p>Situated in the heart of Geylang, this venue lacks in playability, but the hostesses spend an unusually long time with guests, likely because of the low customer turnout. The prices are steep for a Geylang KTV, though there's hope that with improvements, it could eventually compete with those in the downtown area.</p>
+    </div>
+  </div>
+
+  <!-- PRICES TAB -->
+  <div class="tab-content" id="tab-prices">
+    <div class="section-title">Price List</div>
+    <div class="collapsible open" onclick="toggleCollapsible(this)">
+  <div class="collapsible-header">Services & Prices <span class="collapsible-arrow">▼</span></div>
+  <div class="collapsible-body">
+    <table class="price-table">
+      <tr><td>Prices starting from</td><td>229SGD</td></tr>
+      <tr><td>Girl Tip (Happy Hour)</td><td>50SGD</td></tr>
+      <tr><td>Girl Tip (Night Hour)</td><td>100SGD</td></tr>
+    </table>
+  </div>
+</div>
+  </div>
+
+  <!-- REVIEWS TAB -->
+  <div class="tab-content" id="tab-reviews">
+    <div class="review-summary">
+      <div>
+        <div class="review-big-num">3.9</div>
+        <div class="review-stars-big">★★★★☆</div>
+        <div style="font-size:12px;color:var(--white40);margin-top:4px;">14 Reviews</div>
+      </div>
+    </div>
+    <div style="text-align:center;padding:16px 0;">
+      <a href="https://swanpass.com/listing/277-ktv-singapore#reviews" target="_blank" class="btn btn-outline">View all reviews on SwanPass →</a>
+    </div>
+  </div>
+
+  <!-- CONTACT TAB -->
+  <div class="tab-content" id="tab-contact">
+    <div class="section-title">Contact Details</div>
+    <div class="contact-list"><div class="contact-item"><div class="contact-icon phone">📞</div><a href="tel:+65 9777 2575">+65 9777 2575</a></div></div>
+    <div style="height:20px"></div>
+    <div class="section-title">Business Hours</div>
+    <div class="hours-grid"><div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time">4:00 PM - 3:00 AM</span></div><div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-time">4:00 PM - 3:00 AM</span></div><div class="hours-row"><span class="hours-day">Wednesday</span><span class="hours-time">4:00 PM - 3:00 AM</span></div><div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">4:00 PM - 3:00 AM</span></div><div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">4:00 PM - 3:00 AM</span></div><div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">4:00 PM - 3:00 AM</span></div><div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">4:00 PM - 3:00 AM</span></div></div>
+  </div>
+
+  <!-- LOCATION TAB -->
+  <div class="tab-content" id="tab-location">
+    <div class="section-title">Location</div>
+    
+    <iframe class="map-embed"
+      src="https://maps.google.com/maps?q=1.3124983,103.8779584&z=16&output=embed"
+      allowfullscreen loading="lazy"></iframe>
+    <p class="address-text">📍 277 Geylang Rd, Singapore, 389327, SG</p>
+    <div style="margin-top:12px">
+      <a href="https://maps.google.com/?q=1.3124983,103.8779584" target="_blank" class="btn btn-outline">🗺️ Open in Google Maps</a>
+    </div>
+  </div>
+
+  <!-- NEARBY SHOPS -->
+  
+
+</div><!-- /listing-info -->
+</div><!-- /mainLayout -->
+
+<!-- STICKY MOBILE CTA -->
+
+<div class="sticky-cta">
+  <a href="tel:+65 9777 2575" class="btn btn-primary">📞 Call</a>
+</div>
+<div style="height:80px"></div>
+
+<div data-include="partials/footer.html"></div>
+
+<script src="js/include.js"></script>
+<script>
+
+const photos = [
+  'images/listings/277-ktv-singapore/02.jpeg',
+  'images/listings/277-ktv-singapore/03.jpg',
+  'images/listings/277-ktv-singapore/01.jpg',
+  'images/listings/277-ktv-singapore/05.webp',
+  'images/listings/277-ktv-singapore/04.jpeg',
+  'images/listings/277-ktv-singapore/06.jpeg',
+  'images/listings/277-ktv-singapore/09.jpeg',
+  'images/listings/277-ktv-singapore/08.jpg',
+  'images/listings/277-ktv-singapore/07.jpeg',
+  'images/listings/277-ktv-singapore/11.jpg',
+  'images/listings/277-ktv-singapore/12.jpg',
+  'images/listings/277-ktv-singapore/10.jpg',
+  'images/listings/277-ktv-singapore/13.jpg',
+  'images/listings/277-ktv-singapore/14.jpg'
+];
+let current = 0;
+const mainImg = document.getElementById('galleryMain');
+const thumbsEl = document.getElementById('galleryThumbs');
+const countEl = document.getElementById('galleryCount');
+const dotsEl = document.getElementById('galleryDots');
+
+function setPhoto(i) {
+  current = i;
+  mainImg.src = photos[i];
+  countEl.textContent = (i+1) + ' / ' + photos.length;
+  document.querySelectorAll('.gallery-thumb').forEach((t,j) => t.classList.toggle('active', j===i));
+  document.querySelectorAll('.gallery-dot').forEach((d,j) => d.classList.toggle('active', j===i));
+}
+
+photos.forEach((p,i) => {
+  const t = document.createElement('img');
+  t.className = 'gallery-thumb' + (i===0?' active':'');
+  t.src = p; t.onclick = () => setPhoto(i);
+  t.onerror = function() { this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)'; this.removeAttribute('src'); };
+  thumbsEl.appendChild(t);
+  const d = document.createElement('div');
+  d.className = 'gallery-dot' + (i===0?' active':'');
+  d.onclick = () => setPhoto(i);
+  dotsEl.appendChild(d);
+});
+
+mainImg.onclick = () => setPhoto((current+1) % photos.length);
+mainImg.onerror = function() { this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)'; this.removeAttribute('src'); };
+
+
+function switchTab(name) {
+  document.querySelectorAll('.tab-btn').forEach((b,i) => {
+    const tabs = ['overview','prices','reviews','contact','location'];
+    b.classList.toggle('active', tabs[i] === name);
+  });
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+}
+
+function toggleCollapsible(el) {
+  el.classList.toggle('open');
+}
+</script>
+</body>
+</html>

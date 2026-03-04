@@ -11,11 +11,6 @@
 body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.4;overflow-x:hidden;}
 a{color:inherit;text-decoration:none;}
 /* MOBILE */
-header{background:var(--black);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:0 14px;}
-.header-inner{display:flex;align-items:center;gap:10px;height:52px;max-width:1200px;margin:0 auto;}
-.logo img{height:26px;display:block;}
-.back-btn{background:var(--w10);border:1px solid var(--border);border-radius:6px;padding:6px 12px;color:var(--white);font-size:12px;text-decoration:none;white-space:nowrap;}
-.btn-login{background:var(--red);color:var(--white);border:none;border-radius:6px;padding:7px 12px;font-size:12px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;flex-shrink:0;}
 .city-hero{position:relative;height:220px;overflow:hidden;background:linear-gradient(135deg,#0a1a2a,#1a3a5c);}
 .city-hero img{width:100%;height:100%;object-fit:cover;filter:brightness(.4);}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.85) 0%,transparent 60%);}
@@ -63,8 +58,6 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
 /* DESKTOP */
 @media(min-width:768px){
   .bottom-nav,.bn-spacer{display:none!important;}
-  header{padding:0 24px;}
-  .header-inner{height:58px;}
   .city-hero{height:300px;}
   .city-big{font-size:58px;}
   .stats-bar{grid-template-columns:repeat(4,1fr);}
@@ -73,16 +66,10 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
   .divider{margin:0 24px;}
 }
 </style>
+<link rel="stylesheet" href="css/site.css">
 </head>
 <body>
-<header>
-  <div class="header-inner">
-    <a href="index.html" class="logo"><img src="./swanpass_logo_rev.png" alt="Swanpass"></a>
-    <div style="flex:1"></div>
-    <a href="index.html" class="back-btn">← Thailand</a>
-    <button class="btn-login" onclick="window.location='login.html'">Login</button>
-  </div>
-</header>
+<div data-include="partials/header.html"></div>
 
 <div class="city-hero">
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Pattaya_Beach_2017.jpg/1280px-Pattaya_Beach_2017.jpg"
@@ -147,5 +134,7 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
   <a href="listings.html" class="bnav-item active"><span class="bi">🔍</span><span class="bl">Browse</span></a>
   <a href="search.html"   class="bnav-item"><span class="bi">🔎</span><span class="bl">Search</span></a>
 </nav>
+<div data-include="partials/footer.html"></div>
+<script src="js/include.js"></script>
 </body>
 </html>

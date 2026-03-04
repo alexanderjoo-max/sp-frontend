@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hua Hin Walking Street — Swanpass</title>
+<meta name="description" content="Hua Hin's red-light district and walking street full of go-go bars and freelancers.Soi Bintabaht stands out as Hua Hin's premier nightlife spot, capturing the a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<div data-include="partials/header.html"></div>
+
+<!-- GALLERY -->
+<div class="gallery">
+  <img class="gallery-main" id="galleryMain" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4117/109717-Walking-Street.avif" alt="Hua Hin Walking Street" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+  <div class="gallery-count" id="galleryCount">1 / 14</div>
+  <div class="gallery-dots" id="galleryDots"></div>
+</div>
+<div class="gallery-thumbs" id="galleryThumbs"></div>
+
+<!-- MAIN LAYOUT -->
+<div id="mainLayout">
+
+<!-- LISTING INFO -->
+<div class="listing-info">
+  <div class="listing-badges">
+    <span class="badge badge-cat">Red Light Districts</span>
+    <span class="badge badge-cat">Freelancers</span>
+  </div>
+  <h1 class="listing-name">Hua Hin Walking Street</h1>
+  <div class="listing-meta">
+    <span>📍 Soi Bintabaht, Tambon Hua Hin, Amphoe Hua Hin, Chang Wat Prachuap Khiri Khan 77110, Thailand</span>
+    <span>·</span>
+    <span class="rating-row"><span class="stars">★★★★☆</span> <span class="rating-num">3.9</span> <span class="review-count">(364 reviews)</span></span>
+  </div>
+  <div class="action-row">
+    
+    <button class="btn btn-outline" onclick="this.textContent=this.textContent==='♡ Save'?'♥ Saved':'♡ Save'">♡ Save</button>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
+    <button class="tab-btn" onclick="switchTab('prices')">Prices</button>
+    <button class="tab-btn" onclick="switchTab('reviews')">Reviews (364)</button>
+    <button class="tab-btn" onclick="switchTab('contact')">Contact & Hours</button>
+    <button class="tab-btn" onclick="switchTab('location')">Location</button>
+  </div>
+
+  <!-- OVERVIEW TAB -->
+  <div class="tab-content active" id="tab-overview">
+    <div class="section-title">About Hua Hin Walking Street</div>
+    <div class="description">
+      <p>Hua Hin's red-light district and walking street full of go-go bars and freelancers.Soi Bintabaht stands out as Hua Hin's premier nightlife spot, capturing the attention of both tourists and expats. This lively area resides in the heart of downtown, a bustling narrow street adorned with compact bars, a few guesthouses, and recently, a restaurant.</p>
+      <p>Don't fret about dining options though, as numerous eateries are within walking distance, catering to a wide array of culinary desires.After dinner, Soi Bintabaht becomes the go-to destination for an enjoyable evening. Over the past decade, this road has expanded, spawning several adjacent lanes that offer similar entertainment.</p>
+      <div class="desc-rest" style="display:none">
+      <p>Many expats simply refer to it as the Bintabaht area, acknowledging the overflow of amusement into the surrounding vicinity.Nearly all the bars here are tended to by ladies of the night, making this the primary Hua Hin red light district.</p>
+      <p>Nonetheless, don't anticipate the wild a-go-go bars or anything remotely akin to what's found in Bangkok or other Thai cities.</p>
+      </div>
+      <button class="btn-readmore" onclick="const r=this.previousElementSibling;r.style.display=r.style.display==='none'?'block':'none';this.textContent=r.style.display==='none'?'Read more ▾':'Show less ▴'">Read more ▾</button>
+    </div>
+  </div>
+
+  <!-- PRICES TAB -->
+  <div class="tab-content" id="tab-prices">
+    <div class="section-title">Price List</div>
+    <p style="color:var(--white40);font-size:13px;">Contact the shop for pricing information.</p>
+  </div>
+
+  <!-- REVIEWS TAB -->
+  <div class="tab-content" id="tab-reviews">
+    <div class="review-summary">
+      <div>
+        <div class="review-big-num">3.9</div>
+        <div class="review-stars-big">★★★★☆</div>
+        <div style="font-size:12px;color:var(--white40);margin-top:4px;">364 Reviews</div>
+      </div>
+    </div>
+    <div style="text-align:center;padding:16px 0;">
+      <a href="https://swanpass.com/listing/hua-hin-walking-street#reviews" target="_blank" class="btn btn-outline">View all reviews on SwanPass →</a>
+    </div>
+  </div>
+
+  <!-- CONTACT TAB -->
+  <div class="tab-content" id="tab-contact">
+    <div class="section-title">Contact Details</div>
+    <p style="color:var(--white40);font-size:13px;">No contact information available.</p>
+    <div style="height:20px"></div>
+    <div class="section-title">Business Hours</div>
+    <div class="hours-grid"><div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time">12:00 AM - 12:00 AM</span></div><div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-time">12:00 AM - 12:00 AM</span></div><div class="hours-row"><span class="hours-day">Wednesday</span><span class="hours-time">12:00 AM - 12:00 AM</span></div><div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">12:00 AM - 12:00 AM</span></div><div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">12:00 AM - 12:00 AM</span></div><div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">12:00 AM - 12:00 AM</span></div><div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">12:00 AM - 12:00 AM</span></div></div>
+  </div>
+
+  <!-- LOCATION TAB -->
+  <div class="tab-content" id="tab-location">
+    <div class="section-title">Location</div>
+    
+    <iframe class="map-embed"
+      src="https://maps.google.com/maps?q=12.5701967,99.9589149&z=16&output=embed"
+      allowfullscreen loading="lazy"></iframe>
+    <p class="address-text">📍 Soi Bintabaht, Tambon Hua Hin, Amphoe Hua Hin, Chang Wat Prachuap Khiri Khan 77110, Thailand</p>
+    <div style="margin-top:12px">
+      <a href="https://maps.google.com/?q=12.5701967,99.9589149" target="_blank" class="btn btn-outline">🗺️ Open in Google Maps</a>
+    </div>
+  </div>
+
+  <!-- NEARBY SHOPS -->
+  
+  <div style="margin-top:24px;padding-top:24px;border-top:1px solid var(--border);">
+    <div class="section-title">Nearby Shops</div>
+    <div class="nearby-grid">
+      <a href="listing-wow-leelawadee.html" class="nearby-card">
+        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4099/318571741_134768426050320_2352933203401636309_n.jpg" alt="WoW Leelawadee" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">WoW Leelawadee</div><div class="nearby-meta">Soapy · ★ 3.7</div></div>
+      </a>
+      <a href="listing-cozy-massage.html" class="nearby-card">
+        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4107/images.jpg" alt="Cozy Massage" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">Cozy Massage</div><div class="nearby-meta">Massage · ★ N/A</div></div>
+      </a>
+      <a href="listing-saowanee-massage.html" class="nearby-card">
+        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4060/Screenshot_2023-08-25_at_9.29.40_AM.jpg" alt="Saowanee Massage" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">Saowanee Massage</div><div class="nearby-meta">Massage · ★ N/A</div></div>
+      </a>
+      <a href="listing-baya-massage.html" class="nearby-card">
+        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4059/309429982_132238546219391_4843511381637756240_n.jpg" alt="Baya Massage" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">Baya Massage</div><div class="nearby-meta">Massage · ★ 4.7</div></div>
+      </a>
+    </div>
+  </div>
+
+</div><!-- /listing-info -->
+</div><!-- /mainLayout -->
+
+<!-- STICKY MOBILE CTA -->
+
+
+<div data-include="partials/footer.html"></div>
+
+<script src="js/include.js"></script>
+<script>
+
+const photos = [
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4117/109717-Walking-Street.avif',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14615/Suwon.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14215/666-class.jpeg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4099/318571741_134768426050320_2352933203401636309_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4107/images.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4060/Screenshot_2023-08-25_at_9.29.40_AM.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4059/309429982_132238546219391_4843511381637756240_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4130/sddefault.jpg'
+];
+let current = 0;
+const mainImg = document.getElementById('galleryMain');
+const thumbsEl = document.getElementById('galleryThumbs');
+const countEl = document.getElementById('galleryCount');
+const dotsEl = document.getElementById('galleryDots');
+
+function setPhoto(i) {
+  current = i;
+  mainImg.src = photos[i];
+  countEl.textContent = (i+1) + ' / ' + photos.length;
+  document.querySelectorAll('.gallery-thumb').forEach((t,j) => t.classList.toggle('active', j===i));
+  document.querySelectorAll('.gallery-dot').forEach((d,j) => d.classList.toggle('active', j===i));
+}
+
+photos.forEach((p,i) => {
+  const t = document.createElement('img');
+  t.className = 'gallery-thumb' + (i===0?' active':'');
+  t.src = p; t.onclick = () => setPhoto(i);
+  t.onerror = function() { this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)'; this.removeAttribute('src'); };
+  thumbsEl.appendChild(t);
+  const d = document.createElement('div');
+  d.className = 'gallery-dot' + (i===0?' active':'');
+  d.onclick = () => setPhoto(i);
+  dotsEl.appendChild(d);
+});
+
+mainImg.onclick = () => setPhoto((current+1) % photos.length);
+mainImg.onerror = function() { this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)'; this.removeAttribute('src'); };
+
+
+function switchTab(name) {
+  document.querySelectorAll('.tab-btn').forEach((b,i) => {
+    const tabs = ['overview','prices','reviews','contact','location'];
+    b.classList.toggle('active', tabs[i] === name);
+  });
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+}
+
+function toggleCollapsible(el) {
+  el.classList.toggle('open');
+}
+</script>
+</body>
+</html>

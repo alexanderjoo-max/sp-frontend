@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One 3 Six — Swanpass</title>
+<meta name="description" content="A Casual Take on One 3 SixOne 3 Six: A Phnom Penh StapleOne 3 Six, or 136 Bar, is a classic Phnom Penh hostess bar that's been around for ages. It's not your ty">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<div data-include="partials/header.html"></div>
+
+<!-- GALLERY -->
+<div class="gallery">
+  <img class="gallery-main" id="galleryMain" src="images/listings/one-3-six-phnom-penh/01.jpg" alt="One 3 Six" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+  <div class="gallery-count" id="galleryCount">1 / 14</div>
+  <div class="gallery-dots" id="galleryDots"></div>
+</div>
+<div class="gallery-thumbs" id="galleryThumbs"></div>
+
+<!-- MAIN LAYOUT -->
+<div id="mainLayout">
+
+<!-- LISTING INFO -->
+<div class="listing-info">
+  <div class="listing-badges">
+    <span class="badge badge-cat">Freelancers</span>
+    <span class="badge badge-cat">Go-Go</span>
+  </div>
+  <h1 class="listing-name">One 3 Six</h1>
+  <div class="listing-meta">
+    <span>📍 St 130, Phnom Penh, Phnom Penh, KH</span>
+    <span>·</span>
+    <span class="rating-row"><span class="stars">☆☆☆☆☆</span> <span class="rating-num">N/A</span> <span class="review-count">(0 reviews)</span></span>
+  </div>
+  <div class="action-row">
+    
+    <button class="btn btn-outline" onclick="this.textContent=this.textContent==='♡ Save'?'♥ Saved':'♡ Save'">♡ Save</button>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
+    <button class="tab-btn" onclick="switchTab('prices')">Prices</button>
+    <button class="tab-btn" onclick="switchTab('reviews')">Reviews (0)</button>
+    <button class="tab-btn" onclick="switchTab('contact')">Contact & Hours</button>
+    <button class="tab-btn" onclick="switchTab('location')">Location</button>
+  </div>
+
+  <!-- OVERVIEW TAB -->
+  <div class="tab-content active" id="tab-overview">
+    <div class="section-title">About One 3 Six</div>
+    <div class="description">
+      <p>A Casual Take on One 3 SixOne 3 Six: A Phnom Penh StapleOne 3 Six, or 136 Bar, is a classic Phnom Penh hostess bar that's been around for ages. It's not your typical old-school dive, but it's got that timeless charm. Think of it as the neighborhood bar you always come back to.What Sets It Apart?Live Music: Catch a live show three nights a week.Good Drinks: The bartenders know their stuff.Friendly Staff: The mamasan and the ladies are always welcoming.Great Location: It's right in the heart of the action.Why You Should Check It OutIf you're looking for a place to grab a drink, meet some locals, and enjoy a bit of entertainment, One 3 Six is a solid choice. It's not the flashiest bar in town, but it's got a laid-back vibe that's hard to beat.</p>
+    </div>
+  </div>
+
+  <!-- PRICES TAB -->
+  <div class="tab-content" id="tab-prices">
+    <div class="section-title">Price List</div>
+    <div class="collapsible open" onclick="toggleCollapsible(this)">
+  <div class="collapsible-header">Services & Prices <span class="collapsible-arrow">▼</span></div>
+  <div class="collapsible-body">
+    <table class="price-table">
+      <tr><td>Full Service</td><td>50USD</td></tr>
+      <tr><td>Bar Fine</td><td>10USD</td></tr>
+      <tr><td>Lady Drink</td><td>3.75THB</td></tr>
+    </table>
+  </div>
+</div>
+  </div>
+
+  <!-- REVIEWS TAB -->
+  <div class="tab-content" id="tab-reviews">
+    <div class="review-summary">
+      <div>
+        <div class="review-big-num">N/A</div>
+        <div class="review-stars-big">☆☆☆☆☆</div>
+        <div style="font-size:12px;color:var(--white40);margin-top:4px;">0 Reviews</div>
+      </div>
+    </div>
+    <div style="text-align:center;padding:16px 0;">
+      <a href="https://swanpass.com/listing/one-3-six-phnom-penh#reviews" target="_blank" class="btn btn-outline">View all reviews on SwanPass →</a>
+    </div>
+  </div>
+
+  <!-- CONTACT TAB -->
+  <div class="tab-content" id="tab-contact">
+    <div class="section-title">Contact Details</div>
+    <p style="color:var(--white40);font-size:13px;">No contact information available.</p>
+    <div style="height:20px"></div>
+    <div class="section-title">Business Hours</div>
+    <div class="hours-grid"><div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time">5:00 PM - 3:00 AM</span></div><div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-time">5:00 PM - 3:00 AM</span></div><div class="hours-row"><span class="hours-day">Wednesday</span><span class="hours-time">5:00 PM - 3:00 AM</span></div><div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">5:00 PM - 3:00 AM</span></div><div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">5:00 PM - 3:00 AM</span></div><div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">5:00 PM - 3:00 AM</span></div><div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">5:00 PM - 3:00 AM</span></div></div>
+  </div>
+
+  <!-- LOCATION TAB -->
+  <div class="tab-content" id="tab-location">
+    <div class="section-title">Location</div>
+    
+    <iframe class="map-embed"
+      src="https://maps.google.com/maps?q=11.5717516,104.9284114&z=16&output=embed"
+      allowfullscreen loading="lazy"></iframe>
+    <p class="address-text">📍 St 130, Phnom Penh, Phnom Penh, KH</p>
+    <div style="margin-top:12px">
+      <a href="https://maps.google.com/?q=11.5717516,104.9284114" target="_blank" class="btn btn-outline">🗺️ Open in Google Maps</a>
+    </div>
+  </div>
+
+  <!-- NEARBY SHOPS -->
+  
+
+</div><!-- /listing-info -->
+</div><!-- /mainLayout -->
+
+<!-- STICKY MOBILE CTA -->
+
+
+<div data-include="partials/footer.html"></div>
+
+<script src="js/include.js"></script>
+<script>
+
+const photos = [
+  'images/listings/one-3-six-phnom-penh/01.jpg',
+  'images/listings/one-3-six-phnom-penh/02.jpeg',
+  'images/listings/one-3-six-phnom-penh/03.jpg',
+  'images/listings/one-3-six-phnom-penh/04.jpeg',
+  'images/listings/one-3-six-phnom-penh/05.webp',
+  'images/listings/one-3-six-phnom-penh/06.jpeg',
+  'images/listings/one-3-six-phnom-penh/09.jpeg',
+  'images/listings/one-3-six-phnom-penh/07.jpeg',
+  'images/listings/one-3-six-phnom-penh/08.jpg',
+  'images/listings/one-3-six-phnom-penh/12.jpeg',
+  'images/listings/one-3-six-phnom-penh/10.jpg',
+  'images/listings/one-3-six-phnom-penh/11.jpg',
+  'images/listings/one-3-six-phnom-penh/13.webp',
+  'images/listings/one-3-six-phnom-penh/14.jpg'
+];
+let current = 0;
+const mainImg = document.getElementById('galleryMain');
+const thumbsEl = document.getElementById('galleryThumbs');
+const countEl = document.getElementById('galleryCount');
+const dotsEl = document.getElementById('galleryDots');
+
+function setPhoto(i) {
+  current = i;
+  mainImg.src = photos[i];
+  countEl.textContent = (i+1) + ' / ' + photos.length;
+  document.querySelectorAll('.gallery-thumb').forEach((t,j) => t.classList.toggle('active', j===i));
+  document.querySelectorAll('.gallery-dot').forEach((d,j) => d.classList.toggle('active', j===i));
+}
+
+photos.forEach((p,i) => {
+  const t = document.createElement('img');
+  t.className = 'gallery-thumb' + (i===0?' active':'');
+  t.src = p; t.onclick = () => setPhoto(i);
+  t.onerror = function() { this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)'; this.removeAttribute('src'); };
+  thumbsEl.appendChild(t);
+  const d = document.createElement('div');
+  d.className = 'gallery-dot' + (i===0?' active':'');
+  d.onclick = () => setPhoto(i);
+  dotsEl.appendChild(d);
+});
+
+mainImg.onclick = () => setPhoto((current+1) % photos.length);
+mainImg.onerror = function() { this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)'; this.removeAttribute('src'); };
+
+
+function switchTab(name) {
+  document.querySelectorAll('.tab-btn').forEach((b,i) => {
+    const tabs = ['overview','prices','reviews','contact','location'];
+    b.classList.toggle('active', tabs[i] === name);
+  });
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+}
+
+function toggleCollapsible(el) {
+  el.classList.toggle('open');
+}
+</script>
+</body>
+</html>

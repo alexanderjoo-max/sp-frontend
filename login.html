@@ -8,10 +8,6 @@
 :root{--black:#0a0a0a;--black2:#111111;--card-bg:#161616;--red:#e8142a;--red-dark:#b80f20;--white:#fff;--white70:rgba(255,255,255,.7);--white40:rgba(255,255,255,.4);--white10:rgba(255,255,255,.08);--gold:#d4a847;--green:#22c55e;--border:rgba(255,255,255,.08);--radius:10px;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;min-height:100vh;display:flex;flex-direction:column;}
-header{background:var(--black);border-bottom:1px solid var(--border);padding:0 16px;flex-shrink:0;}
-.hi{display:flex;align-items:center;gap:12px;height:52px;max-width:1200px;margin:0 auto;}
-.hi img{height:26px;display:block;}
-.bk{background:var(--white10);border:1px solid var(--border);border-radius:6px;padding:6px 12px;color:var(--white);font-size:12px;text-decoration:none;}
 .page{flex:1;display:flex;align-items:center;justify-content:center;padding:24px 16px;}
 .auth-card{background:var(--card-bg);border:1px solid var(--border);border-radius:16px;width:100%;max-width:400px;overflow:hidden;}
 .auth-logo{padding:28px 24px 0;text-align:center;}
@@ -47,15 +43,10 @@ header{background:var(--black);border-bottom:1px solid var(--border);padding:0 1
 .benefit-icon{font-size:14px;}
 .logo-img{height:28px;display:block;}
 </style>
+<link rel="stylesheet" href="css/site.css">
 </head>
 <body>
-<header>
-  <div class="hi">
-    <a href="index.html" class="bk">← Home</a>
-    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
-    <div style="flex:1"></div>
-  </div>
-</header>
+<div data-include="partials/header.html"></div>
 <div class="page">
   <div class="auth-card">
     <div class="auth-logo">
@@ -141,5 +132,7 @@ function switchTab(tab, el){
 function doLogin(){alert('Login coming soon — this is a demo!');}
 function doRegister(){alert('Registration coming soon — this is a demo!');}
 </script>
+<div data-include="partials/footer.html"></div>
+<script src="js/include.js"></script>
 </body>
 </html>

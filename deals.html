@@ -9,12 +9,6 @@
 :root{--black:#0a0a0a;--black2:#111111;--black3:#1a1a1a;--card-bg:#161616;--red:#e8142a;--red-dark:#b80f20;--white:#fff;--white70:rgba(255,255,255,.7);--white40:rgba(255,255,255,.4);--white10:rgba(255,255,255,.08);--gold:#d4a847;--green:#22c55e;--orange:#f97316;--purple:#a855f7;--border:rgba(255,255,255,.08);--radius:10px;--radius-sm:6px;}
 *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
 body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;}
-header{background:var(--black);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:0 16px;}
-.logo-img{height:28px;display:block;}
-.header-inner{display:flex;align-items:center;gap:12px;height:52px;max-width:1200px;margin:0 auto;}
-.logo img{height:26px;display:block;}
-.back-btn{background:var(--white10);border:1px solid var(--border);border-radius:6px;padding:6px 12px;color:var(--white);font-size:12px;text-decoration:none;}
-.btn-login{background:var(--red);color:var(--white);border:none;border-radius:6px;padding:7px 14px;font-size:12px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;}
 
 /* HERO */
 .deals-hero{background:linear-gradient(135deg,#1a0008 0%,#0a0a0a 50%,#001a08 100%);padding:28px 16px 24px;text-align:center;position:relative;overflow:hidden;}
@@ -115,16 +109,10 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
   .deals-grid{grid-template-columns:1fr 1fr;}
 }
 </style>
+<link rel="stylesheet" href="css/site.css">
 </head>
 <body>
-<header>
-  <div class="header-inner">
-    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
-    <div style="flex:1"></div>
-    <a href="index.html" class="back-btn">← Home</a>
-    <button class="btn-login">Login</button>
-  </div>
-</header>
+<div data-include="partials/header.html"></div>
 
 <!-- HERO -->
 <div class="deals-hero">
@@ -376,5 +364,7 @@ function updateTimers(){
 }
 setInterval(updateTimers,1000);
 </script>
+<div data-include="partials/footer.html"></div>
+<script src="js/include.js"></script>
 </body>
 </html>

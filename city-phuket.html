@@ -10,11 +10,6 @@
 *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
 body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;overflow-x:hidden;}
 a{color:inherit;text-decoration:none;}
-header{background:var(--black);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:0 14px;}
-.header-inner{display:flex;align-items:center;gap:10px;height:52px;max-width:1200px;margin:0 auto;}
-.logo img{height:26px;display:block;}
-.back-btn{background:var(--w10);border:1px solid var(--border);border-radius:6px;padding:6px 12px;color:var(--white);font-size:12px;}
-.btn-login{background:var(--red);color:var(--white);border:none;border-radius:6px;padding:7px 12px;font-size:12px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;flex-shrink:0;}
 .city-hero{position:relative;height:220px;overflow:hidden;background:linear-gradient(135deg,#0a1a2a,#0a2a3a);}
 .city-hero img{width:100%;height:100%;object-fit:cover;filter:brightness(.4);}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.85) 0%,transparent 60%);}
@@ -32,16 +27,10 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
 .bn-spacer{height:70px;}
 @media(min-width:768px){.bottom-nav,.bn-spacer{display:none!important;}.city-hero{height:300px;}.city-big{font-size:58px;}}
 </style>
+<link rel="stylesheet" href="css/site.css">
 </head>
 <body>
-<header>
-  <div class="header-inner">
-    <a href="index.html" class="logo"><img src="./swanpass_logo_rev.png" alt="Swanpass"></a>
-    <div style="flex:1"></div>
-    <a href="index.html" class="back-btn">← Thailand</a>
-    <button class="btn-login" onclick="window.location='login.html'">Login</button>
-  </div>
-</header>
+<div data-include="partials/header.html"></div>
 <div class="city-hero">
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Patong_Beach_Phuket_Thailand.jpg/1280px-Patong_Beach_Phuket_Thailand.jpg" onerror="this.style.display='none'" alt="Phuket">
   <div class="hero-overlay"></div>
@@ -64,5 +53,7 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
   <a href="listings.html" class="bnav-item"><span class="bi">🔍</span><span class="bl">Browse</span></a>
   <a href="search.html"   class="bnav-item"><span class="bi">🔎</span><span class="bl">Search</span></a>
 </nav>
+<div data-include="partials/footer.html"></div>
+<script src="js/include.js"></script>
 </body>
 </html>

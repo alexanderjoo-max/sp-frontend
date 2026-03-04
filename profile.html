@@ -8,10 +8,6 @@
 :root{--black:#0a0a0a;--black2:#111111;--black3:#1a1a1a;--card-bg:#161616;--red:#e8142a;--white:#fff;--white70:rgba(255,255,255,.7);--white40:rgba(255,255,255,.4);--white10:rgba(255,255,255,.08);--gold:#d4a847;--green:#22c55e;--border:rgba(255,255,255,.08);--radius:10px;--radius-sm:6px;}
 *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
 body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;}
-header{background:var(--black);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:0 16px;}
-.hi{display:flex;align-items:center;gap:12px;height:52px;max-width:1200px;margin:0 auto;}
-.hi img{height:26px;}
-.bk{background:var(--white10);border:1px solid var(--border);border-radius:6px;padding:6px 12px;color:var(--white);font-size:12px;text-decoration:none;}
 /* PROFILE HERO */
 .profile-hero{background:linear-gradient(180deg,#1a0305 0%,var(--black) 100%);padding:28px 16px 0;}
 .profile-hero-inner{max-width:1200px;margin:0 auto;display:flex;align-items:flex-end;gap:16px;padding-bottom:0;}
@@ -87,16 +83,10 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
 @media(min-width:768px){.bot,.bsp{display:none;}.saved-grid{grid-template-columns:repeat(3,1fr);}}
 .logo-img{height:28px;display:block;}
 </style>
+<link rel="stylesheet" href="css/site.css">
 </head>
 <body>
-<header>
-  <div class="hi">
-    <a href="index.html" class="bk">← Home</a>
-    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
-    <div style="flex:1"></div>
-    <a href="login.html" style="font-size:12px;color:var(--white40);text-decoration:none;">Log Out</a>
-  </div>
-</header>
+<div data-include="partials/header.html"></div>
 
 <div class="profile-hero">
   <div class="profile-hero-inner">

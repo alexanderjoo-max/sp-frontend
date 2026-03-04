@@ -13,11 +13,6 @@ body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif
 a{color:inherit;text-decoration:none;}
 
 /* ═══════════════════ MOBILE CODE ═══════════════════ */
-header{background:var(--black);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:0 14px;}
-.header-inner{display:flex;align-items:center;gap:10px;height:52px;max-width:1200px;margin:0 auto;}
-.logo img{height:26px;display:block;}
-.back-btn{background:var(--w10);border:1px solid var(--border);border-radius:6px;padding:6px 12px;color:var(--white);font-size:12px;text-decoration:none;white-space:nowrap;}
-.btn-login{background:var(--red);color:var(--white);border:none;border-radius:6px;padding:7px 12px;font-size:12px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;flex-shrink:0;}
 
 /* Hero */
 .city-hero{position:relative;height:220px;overflow:hidden;}
@@ -105,8 +100,6 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
 /* ═══════════════════ DESKTOP CODE ═══════════════════ */
 @media(min-width:768px){
   .bottom-nav,.bn-spacer{display:none!important;}
-  header{padding:0 24px;}
-  .header-inner{height:58px;}
   .city-hero{height:300px;}
   .city-big{font-size:58px;}
   .stats-bar{grid-template-columns:repeat(4,1fr);}
@@ -122,17 +115,11 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
   .cards-grid{grid-template-columns:repeat(5,1fr);}
 }
 </style>
+<link rel="stylesheet" href="css/site.css">
 </head>
 <body>
 
-<header>
-  <div class="header-inner">
-    <a href="index.html" class="logo"><img src="./swanpass_logo_rev.png" alt="Swanpass"></a>
-    <div style="flex:1"></div>
-    <a href="index.html" class="back-btn">← Thailand</a>
-    <button class="btn-login" onclick="window.location='login.html'">Login</button>
-  </div>
-</header>
+<div data-include="partials/header.html"></div>
 
 <!-- HERO -->
 <div class="city-hero">
@@ -390,5 +377,7 @@ document.getElementById('areaPills').addEventListener('click', e => {
   p.classList.add('active');
 });
 </script>
+<div data-include="partials/footer.html"></div>
+<script src="js/include.js"></script>
 </body>
 </html>

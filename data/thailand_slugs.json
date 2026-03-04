@@ -1,0 +1,6467 @@
+[
+  {
+    "slug": "one-3-six-phnom-penh",
+    "name": "One 3 Six",
+    "address": "St 130, Phnom Penh, Cambodia",
+    "lat": 11.5717516,
+    "lng": 104.9284114,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "astro-bar",
+    "name": "Astro Bar",
+    "address": "312, 66 Soi Lengkee, Muang Pattaya, Amphoe Bang Lamung, Chang Wat Chon Buri 20000, Thailand",
+    "lat": 12.9285555,
+    "lng": 100.885292,
+    "rating": 4.857142857142857,
+    "reviews": 7,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "the333-bangkok",
+    "name": "The333",
+    "address": "12, 34 Soi Sukhumvit 33, Khwaeng Khlong Toei Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7346695,
+    "lng": 100.5677716,
+    "rating": 4.923076923076923,
+    "reviews": 52,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+66 64 984 5333"
+  },
+  {
+    "slug": "the-underground",
+    "name": "The Underground",
+    "address": "Charoen Thani Hotel, Khon Kaen., 260 Sri Chant Rd, Tambon Nai Mueang, Amphoe Mueang Khon Kaen, Chang Wat Khon Kaen 40000, Thailand",
+    "lat": 16.4297027,
+    "lng": 102.83261,
+    "rating": 3.9,
+    "reviews": 20,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+66 63 228 9776"
+  },
+  {
+    "slug": "suwon-man-s-spa-bangkok",
+    "name": "Suwon Man's spa",
+    "address": "186/3-4 Soi Sukhumvit 16, Khwaeng Khlong Toei, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.729112,
+    "lng": 100.5610487,
+    "rating": 5,
+    "reviews": 1,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "083-618-2695"
+  },
+  {
+    "slug": "baccara",
+    "name": "Baccara",
+    "address": "Baccara, Soi Cowboy, Khlong Toei Nuea, Khlong Toei, Bangkok, Thailand",
+    "lat": 13.7370339,
+    "lng": 100.5626718,
+    "rating": 3.448888888888889,
+    "reviews": 225,
+    "categories": [
+      null
+    ],
+    "phone": ""
+  },
+  {
+    "slug": "alaska-bar-136-phnom-penh",
+    "name": "Alaska Bar 136",
+    "address": "53 Oknha In St. (136), Phnom Penh, Cambodia",
+    "lat": 11.5710526,
+    "lng": 104.9281357,
+    "rating": 3.2857142857142856,
+    "reviews": 14,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+855 98 989 697"
+  },
+  {
+    "slug": "floozy-s-phnom-penh",
+    "name": "Floozy's",
+    "address": "30 Ly Yoat Lay St. (172), Phnom Penh 12206, Cambodia",
+    "lat": 11.5669278,
+    "lng": 104.9279523,
+    "rating": 4.473684210526316,
+    "reviews": 19,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+855 97 749 1882"
+  },
+  {
+    "slug": "intoxica-bar-phnom-penh",
+    "name": "Intoxica Bar",
+    "address": "45 Khemarak Phoumin Ave (130), Phnom Penh, Cambodia",
+    "lat": 11.5716479,
+    "lng": 104.9279365,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": " +855 70 889 920"
+  },
+  {
+    "slug": "mclub",
+    "name": "MClub",
+    "address": "444/48 Pattaya Sai 3, soi 14, เมืองพัทยา อำเภอบางละมุง ชลบุรี 20150, Thailand",
+    "lat": 12.9302636,
+    "lng": 100.8912262,
+    "rating": 4,
+    "reviews": 107,
+    "categories": [
+      null
+    ],
+    "phone": "0614466300"
+  },
+  {
+    "slug": "play-girlz-pattaya",
+    "name": "Play Girlz Pattaya",
+    "address": "420, 155/156 Soi Buakhao, Muang Pattaya, Pattaya, Chang Wat Chon Buri 20150, Thailand",
+    "lat": 12.9277036,
+    "lng": 100.8836743,
+    "rating": 4.214285714285714,
+    "reviews": 14,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "06-3228-0488"
+  },
+  {
+    "slug": "cheree-spa",
+    "name": "Cheree Spa",
+    "address": "14 Thanon Ramesean, Tambon Nai Mueang, Amphoe Mueang Phitsanulok, Chang Wat Phitsanulok 65000, Thailand",
+    "lat": 16.8109843,
+    "lng": 100.2664315,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "0811810333"
+  },
+  {
+    "slug": "finspa",
+    "name": "Finspa",
+    "address": "888/203 Tambon Ban Pet, เมือง Chang Wat Khon Kaen 40000, Thailand",
+    "lat": 16.4420864,
+    "lng": 102.7960549,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "0942326955"
+  },
+  {
+    "slug": "the-vip-massage-phuket",
+    "name": "The VIP Massage",
+    "address": "74 ไนท์บาซ่า 131 Thanon Phun Phon, Tambon Talat Nuea, Amphoe Mueang Phuket, Chang Wat Phuket 83000, Thailand",
+    "lat": 7.875052499999999,
+    "lng": 98.38875859999999,
+    "rating": 4.125,
+    "reviews": 8,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "goddess-a-go-go",
+    "name": "Goddess A Go-Go",
+    "address": "66 Bangla Rd, Tambon Patong, Amphoe Kathu, Chang Wat Phuket 83150, Thailand",
+    "lat": 7.894111,
+    "lng": 98.2956089,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": ""
+  },
+  {
+    "slug": "pour-hub-phnom-penh",
+    "name": "Pour Hub",
+    "address": "house 32 Steet 130, Phnom Penh 120205, Cambodia",
+    "lat": 11.5716351,
+    "lng": 104.928382,
+    "rating": 4.666666666666667,
+    "reviews": 78,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+855 87 843 744"
+  },
+  {
+    "slug": "suzy-wong-s-2-devil-s-playground",
+    "name": "Suzy Wong's 2 - Devil's Playground",
+    "address": "23/4-5 Soi Sea Dragon Bangla Rd, ตำบลป่าตอง อำเภอกะทู้ ภูเก็ต 83150, Thailand",
+    "lat": 7.893985499999999,
+    "lng": 98.2970964,
+    "rating": 4.134328358208955,
+    "reviews": 67,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "08 7272 2588"
+  },
+  {
+    "slug": "momoya-massage",
+    "name": "Momoya 桃屋 Massage",
+    "address": "10/6 Sukhumvit Road, Khwaeng Khlong Tan, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.728307,
+    "lng": 100.5702415,
+    "rating": 3.9047619047619047,
+    "reviews": 21,
+    "categories": [
+      null
+    ],
+    "phone": "0925807462"
+  },
+  {
+    "slug": "luna-wow-massage-chiang-mai",
+    "name": "Luna WoW Massage",
+    "address": "27 8, 2F Soi 13, Tambon Su Thep, Amphoe Mueang Chiang Mai, Chang Wat Chiang Mai 50200, Thailand",
+    "lat": 18.7929703,
+    "lng": 98.97256349999999,
+    "rating": 4.9655172413793105,
+    "reviews": 29,
+    "categories": [
+      null
+    ],
+    "phone": "098 4659981"
+  },
+  {
+    "slug": "eric-s-bar",
+    "name": "Eric's Bar",
+    "address": "Prachasumran Rd Tambon Nai Mueang, Amphoe Mueang Khon Kaen, Chang Wat Khon Kaen 40000, Thailand",
+    "lat": 16.4298983,
+    "lng": 102.8310852,
+    "rating": 4.071428571428571,
+    "reviews": 84,
+    "categories": [
+      null
+    ],
+    "phone": "+66 84 515 6450"
+  },
+  {
+    "slug": "aqua-entertainment",
+    "name": "Aqua Entertainment",
+    "address": "Aqua, Phetchaburi 39 Alley, Makkasan, Ratchathewi, Bangkok, Thailand",
+    "lat": 13.7510449,
+    "lng": 100.5558611,
+    "rating": 3.5384615384615383,
+    "reviews": 13,
+    "categories": [
+      null
+    ],
+    "phone": "02 253 1335"
+  },
+  {
+    "slug": "belle",
+    "name": "Belle",
+    "address": "8 Yu Yen Rd, Khwaeng Tha Raeng, Khet Bang Khen, Krung Thep Maha Nakhon 10220, Thailand",
+    "lat": 13.8513219,
+    "lng": 100.637916,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "phoenix-spa-rangsit",
+    "name": "Phoenix Spa Rangsit",
+    "address": "Bueng Yitho, Thanyaburi District, Pathum Thani, Thailand",
+    "lat": 13.999594,
+    "lng": 100.6859438,
+    "rating": 5,
+    "reviews": 5,
+    "categories": [
+      null
+    ],
+    "phone": "0948964563"
+  },
+  {
+    "slug": "lovelove",
+    "name": "LoveLove",
+    "address": "6/17, 1 Sukhumvit soi 24, Klongton, เขตคลองเตย กรุงเทพมหานคร 10110, Thailand",
+    "lat": 13.7291873,
+    "lng": 100.5706467,
+    "rating": 2,
+    "reviews": 3,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "02-661-3689"
+  },
+  {
+    "slug": "u-bar-korat",
+    "name": "U Bar Korat",
+    "address": "885/8-9 Changphuak Rd, Tambon Nai Mueang, Amphoe Mueang Nakhon Ratchasima, Chang Wat Nakhon Ratchasima 30000, Thailand",
+    "lat": 14.9950631,
+    "lng": 102.1037931,
+    "rating": 3.9833333333333334,
+    "reviews": 240,
+    "categories": [
+      null
+    ],
+    "phone": "+66 44 271 088"
+  },
+  {
+    "slug": "sayuri-complex",
+    "name": "Sayuri Complex",
+    "address": "Sayuri Complex, บำรุงราษฎร์ ซอย 2 Wat Ket, Mueang Chiang Mai District, Chiang Mai, Thailand",
+    "lat": 18.7902935,
+    "lng": 99.0081405,
+    "rating": 3.4220183486238533,
+    "reviews": 109,
+    "categories": [
+      null
+    ],
+    "phone": "06 5324 2361"
+  },
+  {
+    "slug": "poseidon-entertainment-complex",
+    "name": "Poseidon Entertainment Complex",
+    "address": "Poseidon Entertainment Complex, Ratchadaphisek Road, Din Daeng, Bangkok, Thailand",
+    "lat": 13.785349,
+    "lng": 100.5734511,
+    "rating": 3.7695652173913046,
+    "reviews": 230,
+    "categories": [
+      null
+    ],
+    "phone": "02 693 8222"
+  },
+  {
+    "slug": "wow-leelawadee",
+    "name": "WoW Leelawadee",
+    "address": "HXG3+R66, Hua Hin, Hua Hin District, Prachuap Khiri Khan 77110, Thailand",
+    "lat": 12.5771343,
+    "lng": 99.9529934,
+    "rating": 3.6666666666666665,
+    "reviews": 9,
+    "categories": [
+      null
+    ],
+    "phone": "032 513 411"
+  },
+  {
+    "slug": "suzie-wong",
+    "name": "Suzie Wong",
+    "address": "4/13 Soi Cowboy, Khwaeng Khlong Toei Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7369461,
+    "lng": 100.5625823,
+    "rating": 3.148936170212766,
+    "reviews": 47,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "bangkok-stocking-massage",
+    "name": "Bangkok Stocking Massage",
+    "address": "Thailand, Bangkok, Vadhana, Bangkok, Soi 37 promitr 스타킹마사지 (stocking massage spa)",
+    "lat": 13.7307205,
+    "lng": 100.5702635,
+    "rating": 4.476190476190476,
+    "reviews": 21,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "09 7247 9800"
+  },
+  {
+    "slug": "golden-vine-phnom-penh",
+    "name": "Golden Vine",
+    "address": "81 Street 108, Oknha Ing Bun Hau, Phnom Penh, Cambodia",
+    "lat": 11.5729386,
+    "lng": 104.9222952,
+    "rating": 4.15,
+    "reviews": 20,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "gig-spa-50",
+    "name": "GIG SPA กิ๊กสปา (ลาดปลาเค้า 50)",
+    "address": "1/10 โครงการ Count 50 Soi Lat Pla Khao 50, Khwaeng Chorakhe Bua, Khet Lat Phrao, Krung Thep Maha Nakhon 10230, Thailand",
+    "lat": 13.8453678,
+    "lng": 100.6018311,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "+66 62 726 9891"
+  },
+  {
+    "slug": "the-lord",
+    "name": "The Lord - CLOSED DOWN",
+    "address": "The Lord Palace Hotel & Spa, Ratchadaphisek 7, Din Daeng, Bangkok, Thailand",
+    "lat": 13.7732468,
+    "lng": 100.5723104,
+    "rating": 4.103896103896104,
+    "reviews": 77,
+    "categories": [
+      null
+    ],
+    "phone": "02 248 8888"
+  },
+  {
+    "slug": "galaxy",
+    "name": "Galaxy",
+    "address": "Walking St, Muang Pattaya, Amphoe Bang Lamung, Chang Wat Chon Buri 20150, Thailand",
+    "lat": 12.9274258,
+    "lng": 100.8746721,
+    "rating": 2.736842105263158,
+    "reviews": 19,
+    "categories": [
+      null,
+      null,
+      null
+    ],
+    "phone": "088 060 6070"
+  },
+  {
+    "slug": "the-castle-bdsm-fetish-club",
+    "name": "The Castle BDSM Fetish Club",
+    "address": "406 A, 26 Soi Durian Pattaya Sai 3, Muang Pattaya, Amphoe Bang Lamung, Chang Wat Chon Buri 20150, Thailand",
+    "lat": 12.9266752,
+    "lng": 100.8863479,
+    "rating": 3.764705882352941,
+    "reviews": 17,
+    "categories": [
+      null
+    ],
+    "phone": "038-415-162"
+  },
+  {
+    "slug": "meeting-club",
+    "name": "Meeting Club",
+    "address": "27 Thanon Lat Phrao Wanghin, Khwaeng Lat Phrao, Khet Lat Phrao, Krung Thep Maha Nakhon 10230, Thailand",
+    "lat": 13.8307466,
+    "lng": 100.5909799,
+    "rating": 1,
+    "reviews": 1,
+    "categories": [
+      null
+    ],
+    "phone": "099-907-2547"
+  },
+  {
+    "slug": "farenheit",
+    "name": "Farenheit",
+    "address": "FAHRENHEIT A GOGO, Walking Street, Pattaya City, Bang Lamung District, Chon Buri, Thailand",
+    "lat": 12.9266301,
+    "lng": 100.873681,
+    "rating": 3.7152777777777777,
+    "reviews": 144,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "09 1816 9905"
+  },
+  {
+    "slug": "boss-26-massage",
+    "name": "Boss 26 Massage",
+    "address": "Soi Sukhumvit 24/1, Khwaeng Khlong Tan, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.729026,
+    "lng": 100.5705306,
+    "rating": 4.44,
+    "reviews": 25,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "089-917-7074"
+  },
+  {
+    "slug": "mermaid",
+    "name": "Mermaid",
+    "address": "Soi9, Khwaeng Sala Thammasop, Khet Thawi Watthana, Krung Thep Maha Nakhon 10170, Thailand",
+    "lat": 13.7720107,
+    "lng": 100.4049125,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "fin-club-vx",
+    "name": "FIN Club VX",
+    "address": "169/140 โครงการสายสี่สแควร์ ถนน พุทธมณฑล สาย 4 กระทุ่มล้ม Amphoe Sam Phran, Chang Wat Nakhon Pathom 73220, Thailand",
+    "lat": 13.7435478,
+    "lng": 100.3288863,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "0982741810"
+  },
+  {
+    "slug": "paco-club-19",
+    "name": "Paco Club 19",
+    "address": "10 5 Soi Sukhumvit 33, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7338726,
+    "lng": 100.5675197,
+    "rating": 4.444444444444445,
+    "reviews": 9,
+    "categories": [
+      null
+    ],
+    "phone": "02-006-6672"
+  },
+  {
+    "slug": "lamer-restaurant-karaoke",
+    "name": "ละเมอ (Lamer) Restaurant & Karaoke",
+    "address": "2223 8 Sirinakhon Rd, Tambon Nai Mueang, Amphoe Mueang Nakhon Ratchasima, Chang Wat Nakhon Ratchasima 30000, Thailand",
+    "lat": 14.9582434,
+    "lng": 102.0629784,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "+66 94 617 8828"
+  },
+  {
+    "slug": "momo",
+    "name": "Momo",
+    "address": "Momo Massage Thonglor, Sukhumvit 53/1 Alley, Khlong Tan Nuea, Watthana, Bangkok, Thailand",
+    "lat": 13.7245469,
+    "lng": 100.5787779,
+    "rating": 3.9,
+    "reviews": 60,
+    "categories": [
+      null
+    ],
+    "phone": "095-836-5738"
+  },
+  {
+    "slug": "henry-s-africa-bar",
+    "name": "Henry's Africa Bar",
+    "address": "162/10-15 Chaweng / Bophut Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
+    "lat": 9.532253299999999,
+    "lng": 100.0635127,
+    "rating": 3.932926829268293,
+    "reviews": 328,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "flora-spa",
+    "name": "Flora Spa",
+    "address": "Phutthamonthon Sai 4 Rd, Tambon Krathum Lom, Amphoe Sam Phran, Chang Wat Nakhon Pathom 73220, Thailand",
+    "lat": 13.7294744,
+    "lng": 100.3305517,
+    "rating": 5,
+    "reviews": 2,
+    "categories": [
+      null
+    ],
+    "phone": "0917645526"
+  },
+  {
+    "slug": "tiara",
+    "name": "Tiara",
+    "address": "61, 3 Soi Ari, Khwaeng Khlong Tan, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7254338,
+    "lng": 100.5695884,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+66 64 995 7198"
+  },
+  {
+    "slug": "bkk-vice",
+    "name": "BKK Vice",
+    "address": "20/1, 20/2 Sukhumvit soi 39, Klong Tan Nuea, Wattana, Bangkok",
+    "lat": 13.7322895,
+    "lng": 100.5710962,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "the-bank",
+    "name": "The Bank",
+    "address": "The Bank Massage Club, ซอย เพชรบุรี 47 Bang Kapi, Huai Khwang, Bangkok, Thailand",
+    "lat": 13.7485117,
+    "lng": 100.5930668,
+    "rating": 4.688888888888889,
+    "reviews": 45,
+    "categories": [
+      null
+    ],
+    "phone": "02 7182 0503"
+  },
+  {
+    "slug": "leciel",
+    "name": "Leciel ",
+    "address": "33 Phahon Yothin 5, แขวงพญาไท Khet Phaya Thai, Krung Thep Maha Nakhon 10400, Thailand",
+    "lat": 13.7768424,
+    "lng": 100.5428808,
+    "rating": 3.8181818181818183,
+    "reviews": 11,
+    "categories": [
+      null
+    ],
+    "phone": "085-2221211"
+  },
+  {
+    "slug": "sansuk-sanctuary-massage-patong",
+    "name": "Sansuk Sanctuary Massage Patong",
+    "address": "171/55 Rat-u-thit 200 Pee Road, ตำบลป่าตอง อำเภอกะทู้ ภูเก็ต 83150, Thailand",
+    "lat": 7.8912828,
+    "lng": 98.29786879999999,
+    "rating": 4.27027027027027,
+    "reviews": 37,
+    "categories": [
+      null
+    ],
+    "phone": "085 571 1356"
+  },
+  {
+    "slug": "ruan-chotika",
+    "name": "Ruan Chotika",
+    "address": "เลขที่ 8 ธนุพงษ์ ซอย1 Tambon Nong Pa Khrang, Amphoe Mueang Chiang Mai, Chang Wat Chiang Mai 50000, Thailand",
+    "lat": 18.7880136,
+    "lng": 99.02400089999999,
+    "rating": 3.7142857142857144,
+    "reviews": 21,
+    "categories": [
+      null
+    ],
+    "phone": "088-2692659"
+  },
+  {
+    "slug": "grazip-modelling",
+    "name": "Grazip Modelling",
+    "address": "255 ซอย รามคำแหง 21 Khwaeng Phlabphla, Khet Wang Thonglang, Krung Thep Maha Nakhon 10312, Thailand",
+    "lat": 13.7585741,
+    "lng": 100.6062317,
+    "rating": 5,
+    "reviews": 1,
+    "categories": [
+      null
+    ],
+    "phone": "065-563-8498 "
+  },
+  {
+    "slug": "walking-street",
+    "name": "Walking Street",
+    "address": "Walking St, Muang Pattaya, Amphoe Bang Lamung, Chang Wat Chon Buri 20150, Thailand",
+    "lat": 12.9262746,
+    "lng": 100.8729478,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "pancake-spa",
+    "name": "Pancake Spa",
+    "address": "9 18 Lat Phrao 23, Khwaeng Chan Kasem, Khet Chatuchak, Krung Thep Maha Nakhon 10900, Thailand",
+    "lat": 13.8081894,
+    "lng": 100.575355,
+    "rating": 1,
+    "reviews": 1,
+    "categories": [
+      null
+    ],
+    "phone": "086-924-9298 "
+  },
+  {
+    "slug": "alaina",
+    "name": "Alaina",
+    "address": "Alaina, Ratchadaphisek Road, Din Daeng, Bangkok, Thailand",
+    "lat": 13.7722914,
+    "lng": 100.5730309,
+    "rating": 2.3333333333333335,
+    "reviews": 3,
+    "categories": [
+      null
+    ],
+    "phone": ""
+  },
+  {
+    "slug": "the-best-babylon",
+    "name": "The Best Babylon",
+    "address": "โรงแรมโคราชโฮเต็ล Assadang Rd, Tambon Nai Mueang, Amphoe Mueang Nakhon Ratchasima, Chang Wat Nakhon Ratchasima 30000, Thailand",
+    "lat": 14.9768224,
+    "lng": 102.1015104,
+    "rating": 3.9,
+    "reviews": 20,
+    "categories": [
+      null
+    ],
+    "phone": "+66 99 823 6415"
+  },
+  {
+    "slug": "bangkok-bunny",
+    "name": "Bangkok Bunny",
+    "address": "261/33 Sukhumvit Road, Khlong Tan, Khlong Toei, Bangkok, Thailand",
+    "lat": 13.7295129,
+    "lng": 100.5653552,
+    "rating": 4,
+    "reviews": 4,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "09 7085 1731"
+  },
+  {
+    "slug": "7-heaven",
+    "name": "7 Heaven",
+    "address": "7-Heaven, Sukhumvit 33 Alley, Khlong Tan Nuea, Watthana, Bangkok, Thailand",
+    "lat": 13.7330131,
+    "lng": 100.567891,
+    "rating": 3.950310559006211,
+    "reviews": 161,
+    "categories": [
+      null
+    ],
+    "phone": "08 3086 3840"
+  },
+  {
+    "slug": "roze-nuru-massage-bangkok",
+    "name": "Roze Nuru Massage",
+    "address": "188 Sukhumvit Soi 22, Khwaeng Khlong Tan, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7237822,
+    "lng": 100.5647087,
+    "rating": 5,
+    "reviews": 18,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+66 63 265 9937"
+  },
+  {
+    "slug": "cozy-massage",
+    "name": "Cozy Massage",
+    "address": "190 16 ซอย80 Tambon Hua Hin, Amphoe Hua Hin, Chang Wat Prachuap Khiri Khan 77110, Thailand",
+    "lat": 12.5649664,
+    "lng": 99.9556496,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "+66 85 006 7613"
+  },
+  {
+    "slug": "deluxe-massage-bangkok",
+    "name": "Deluxe Massage",
+    "address": "51/2 Soi Sukhumvit 39, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7363803,
+    "lng": 100.5716301,
+    "rating": 4.9375,
+    "reviews": 16,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "094 351 8915"
+  },
+  {
+    "slug": "kiss-massage",
+    "name": "Kiss Massage",
+    "address": "265/3 Soi Sukhumvit 22, Khlong Tan, Khlong Toei, Bangkok, Thailand",
+    "lat": 13.7271464,
+    "lng": 100.5653212,
+    "rating": 4.241379310344827,
+    "reviews": 116,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "09 4208 2884"
+  },
+  {
+    "slug": "milky-way",
+    "name": "Milky Way",
+    "address": "555 Pradit Manutham Rd, Khwaeng Saphansong, Khet Wang Thonglang, Krung Thep Maha Nakhon 10310, Thailand",
+    "lat": 13.7892743,
+    "lng": 100.6092069,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "0988914368"
+  },
+  {
+    "slug": "clubhouse-exclusive",
+    "name": "Clubhouse Exclusive",
+    "address": "9 Soi Lat Phrao 73, Khwaeng Saphansong, Khet Wang Thonglang, Krung Thep Maha Nakhon 10310, Thailand",
+    "lat": 13.7876868,
+    "lng": 100.6087235,
+    "rating": 4.636363636363637,
+    "reviews": 11,
+    "categories": [
+      null
+    ],
+    "phone": "+66 65 146 4492"
+  },
+  {
+    "slug": "nicha-home-spa-lanna",
+    "name": "Nicha Home Spa Lanna",
+    "address": "41/49 Soi Mu Ban Monwadi Park 6, Tambon Bang Rak Phatthana, Amphoe Bang Bua Thong, Chang Wat Nonthaburi 11110, Thailand",
+    "lat": 13.9087861,
+    "lng": 100.3907529,
+    "rating": 4,
+    "reviews": 3,
+    "categories": [
+      null
+    ],
+    "phone": "083-694-4562"
+  },
+  {
+    "slug": "wow-bangkok-massage",
+    "name": "Wow! Bangkok Massage",
+    "address": "12 Soi Sukhumvit 23, Khwaeng Khlong Toei Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7373837,
+    "lng": 100.5629315,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": " 084-297-3797"
+  },
+  {
+    "slug": "princess-spa",
+    "name": "Princess Spa",
+    "address": "Soi King Kaeo 14/1, Tambon Rachathewa, Amphoe Bang Phli, Chang Wat Samut Prakan 10540, Thailand",
+    "lat": 13.6489608,
+    "lng": 100.7178115,
+    "rating": 3.909090909090909,
+    "reviews": 22,
+    "categories": [
+      null
+    ],
+    "phone": "0918290600"
+  },
+  {
+    "slug": "klerm-relax-massage",
+    "name": "Klerm Relax Massage",
+    "address": "Soi On Nut 63, Khwaeng Prawet, Khet Prawet, Krung Thep Maha Nakhon 10250, Thailand",
+    "lat": 13.7219969,
+    "lng": 100.6805344,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "0944425922 "
+  },
+  {
+    "slug": "lollipop",
+    "name": "Lollipop",
+    "address": "3, 1 Sukhumvit Road, Khwaeng Khlong Tan, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7414439,
+    "lng": 100.55307,
+    "rating": 2.375,
+    "reviews": 8,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "happy-bkk",
+    "name": "Happy BKK",
+    "address": "Happybkk Massage, Sukhumvit Road, Khlong Tan, Khlong Toei, Bangkok, Thailand",
+    "lat": 13.7290022,
+    "lng": 100.5707559,
+    "rating": 3.838709677419355,
+    "reviews": 31,
+    "categories": [
+      null
+    ],
+    "phone": "08 8930 6941"
+  },
+  {
+    "slug": "tulip",
+    "name": "Tulip",
+    "address": "TULIP MASSAGE, Sukhumvit 38 Alley, Phra Khanong, Khlong Toei, Bangkok, Thailand",
+    "lat": 13.7238524,
+    "lng": 100.5788853,
+    "rating": 3.873015873015873,
+    "reviews": 63,
+    "categories": [
+      null
+    ],
+    "phone": "02 391 7564"
+  },
+  {
+    "slug": "marina-massage",
+    "name": "Marina Massage",
+    "address": "1, ท่าศาลา 5 ถนนเลียบทางรถไฟ Tambon Wat Ket, เมือง Chang Wat Chiang Mai 50000, Thailand",
+    "lat": 18.7744764,
+    "lng": 99.0174435,
+    "rating": 4.833333333333333,
+    "reviews": 6,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "rca-entertainment-e230b23c-03f2-4327-8567-f176e307b169",
+    "name": "RCA Entertainment",
+    "address": "A nong soi RCA A nong, ตำบล อ่าวนาง Meung, กระบี่ 81000, Thailand",
+    "lat": 8.0323468,
+    "lng": 98.8249587,
+    "rating": 3.9688385269121813,
+    "reviews": 353,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "cube-massage-bangkok",
+    "name": "Cube Massage",
+    "address": "20/2-3 Sukhumvit Soi 22, Khwaeng Khlong Toei, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.730957,
+    "lng": 100.5649895,
+    "rating": 5,
+    "reviews": 9,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "0946359614"
+  },
+  {
+    "slug": "ten-percent-bangkok",
+    "name": "Ten Percent",
+    "address": "19/3 Sukhumvit 33 Road Khlong Tan Nuea Subdistrict Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7360578,
+    "lng": 100.5678474,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "083-758-0747"
+  },
+  {
+    "slug": "aries",
+    "name": "Aries",
+    "address": "เลขที่245/6 Soi Sukhumvit 31, Khwaeng Khlong Toei Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7381459,
+    "lng": 100.566642,
+    "rating": 5,
+    "reviews": 5,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "0658545708"
+  },
+  {
+    "slug": "nob-exclusive",
+    "name": "NOB Exclusive",
+    "address": "9/7 Thanon Bang Phrom, Khwaeng Bang Phrom, Khet Taling Chan, Krung Thep Maha Nakhon 10170, Thailand",
+    "lat": 13.751755,
+    "lng": 100.437,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "095-3836956"
+  },
+  {
+    "slug": "rasputin",
+    "name": "Rasputin - CLOSED DOWN",
+    "address": "Second Road, Pattaya City, Bang Lamung District, Chon Buri, Thailand",
+    "lat": 12.9326301,
+    "lng": 100.8828624,
+    "rating": 5,
+    "reviews": 1,
+    "categories": [
+      null
+    ],
+    "phone": "08 6815 7209"
+  },
+  {
+    "slug": "koi-fish-spa",
+    "name": "Koi Fish Spa",
+    "address": "QXHX+FR6, Changklan Rd, Tambon Chang Khlan, Amphoe Mueang Chiang Mai, Chang Wat Chiang Mai 50100, Thailand",
+    "lat": 18.778662,
+    "lng": 98.99953,
+    "rating": 0,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "+66640278173"
+  },
+  {
+    "slug": "the-great-rama-9",
+    "name": "The Great Rama 9",
+    "address": "278/36 Thanon Asok - Din Daeng, Khwaeng Bang Kapi, Khet Huai Khwang, Krung Thep Maha Nakhon 10310, Thailand",
+    "lat": 13.7535273,
+    "lng": 100.5656756,
+    "rating": 3.9375,
+    "reviews": 16,
+    "categories": [
+      null
+    ],
+    "phone": "0864130230 "
+  },
+  {
+    "slug": "hua-hin-walking-street",
+    "name": "Hua Hin Walking Street",
+    "address": "Soi Bintabaht, Tambon Hua Hin, Amphoe Hua Hin, Chang Wat Prachuap Khiri Khan 77110, Thailand",
+    "lat": 12.5701967,
+    "lng": 99.9589149,
+    "rating": 3.9368131868131866,
+    "reviews": 364,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "bkk48",
+    "name": "BKK48",
+    "address": "BKK48, Sukhumvit Road, Khlong Tan, Khlong Toei, Bangkok, Thailand",
+    "lat": 13.7314369,
+    "lng": 100.5655962,
+    "rating": 3.3333333333333335,
+    "reviews": 12,
+    "categories": [
+      null
+    ],
+    "phone": "02- 663 6942"
+  },
+  {
+    "slug": "colonze-massage-entertainment",
+    "name": "Colonze Massage & Entertainment",
+    "address": "Colonze Soapy Massage & Hotel Rama IX Road, Bang Kapi, Huai Khwang, Bangkok, Thailand",
+    "lat": 13.7495087,
+    "lng": 100.6008906,
+    "rating": 4.087378640776699,
+    "reviews": 103,
+    "categories": [
+      null
+    ],
+    "phone": "02 716 9555"
+  },
+  {
+    "slug": "thai-candy-2",
+    "name": "Thai Candy",
+    "address": "261/4 Sukhumvit Road, Khlong Tan, Khlong Toei, Bangkok, Thailand",
+    "lat": 13.7296571,
+    "lng": 100.5653688,
+    "rating": 3.9,
+    "reviews": 10,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "09 6394 5872"
+  },
+  {
+    "slug": "pp-body-massage",
+    "name": "PP Body Massage",
+    "address": "PP Body Massage, Chaloem Phrakiat 21 Alley, Pattaya City, Bang Lamung District, Chon Buri, Thailand",
+    "lat": 12.9313885,
+    "lng": 100.8881703,
+    "rating": 4.014044943820225,
+    "reviews": 356,
+    "categories": [
+      null
+    ],
+    "phone": "03 841 1111"
+  },
+  {
+    "slug": "aya-massage-bangkok",
+    "name": "Aya Massage Bangkok",
+    "address": "Aya Massage Bangkok, Soi Sukhumvit 23, Khlong Toei Nuea, Watthana, Bangkok, Thailand",
+    "lat": 13.7382824,
+    "lng": 100.5649883,
+    "rating": 4.67741935483871,
+    "reviews": 31,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "02 007 0077"
+  },
+  {
+    "slug": "magic",
+    "name": "Magic",
+    "address": "6, 1 Soi Sukhumvit 26, เเขวงคลองตัน, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.728993,
+    "lng": 100.5707773,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "0909 365 597"
+  },
+  {
+    "slug": "foxy-lady-go-go",
+    "name": "Foxy Lady Go Go",
+    "address": "80, 12 ท่าแพ ซอย 1 ตำบล ช้างคลาน อำเภอ เมืองเชียงใหม่ Chang Wat Chiang Mai 50100, Thailand",
+    "lat": 18.7860614,
+    "lng": 98.9995735,
+    "rating": 2.75,
+    "reviews": 40,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "christin-massage",
+    "name": "Christin Massage",
+    "address": "Christin Massage, Soi Rat Uthit 200 Pi 2, Pa Tong, Kathu District, Phuket, Thailand",
+    "lat": 7.8906229,
+    "lng": 98.2964358,
+    "rating": 3.3070866141732282,
+    "reviews": 127,
+    "categories": [
+      null
+    ],
+    "phone": "07 634 0369"
+  },
+  {
+    "slug": "happy-times-bar",
+    "name": "Happy Times Bar",
+    "address": "147 Sri Chant Rd, Tambon Nai Mueang, Amphoe Mueang Khon Kaen, Chang Wat Khon Kaen 40000, Thailand",
+    "lat": 16.4298876,
+    "lng": 102.8310293,
+    "rating": 4.0476190476190474,
+    "reviews": 21,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+66 61 954 1987"
+  },
+  {
+    "slug": "lips-lounge",
+    "name": "Lips Lounge",
+    "address": "WVJM+5WJ, Soi Honey, Muang Pattaya, Amphoe Bang Lamung, Chang Wat Chon Buri 20150, Thailand",
+    "lat": 12.9304719,
+    "lng": 100.8847685,
+    "rating": 5,
+    "reviews": 5,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+66 97 317 6343"
+  },
+  {
+    "slug": "relax-room",
+    "name": "Relax Room",
+    "address": "Relax Room Sukhumvit Road, Khlong Tan, Khlong Toei, Bangkok, Thailand",
+    "lat": 13.7300157,
+    "lng": 100.5693028,
+    "rating": 5,
+    "reviews": 4,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "09 0953 4164"
+  },
+  {
+    "slug": "baccara-phnom-penh",
+    "name": "Baccara",
+    "address": "Street 118, #40e0, Phnom Penh, Cambodia",
+    "lat": 11.5721322,
+    "lng": 104.9281686,
+    "rating": 4.688888888888889,
+    "reviews": 45,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+855 77 278 839"
+  },
+  {
+    "slug": "buzzin-bar",
+    "name": "Buzzin Bar",
+    "address": "Buzzin Bar, Soi Buakhao, Muang Pattaya, Amphoe Bang Lamung, Chang Wat Chon Buri 20150, Thailand",
+    "lat": 12.9319333,
+    "lng": 100.8857536,
+    "rating": 4.242424242424242,
+    "reviews": 66,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "aurora-bangkok",
+    "name": "Aurora Bangkok",
+    "address": "Thailand, Bangkok, Sukhumvit 24 Alley, オーロラバンコク マッサージ Aurora Bangkok Massage",
+    "lat": 13.7294522,
+    "lng": 100.5697123,
+    "rating": 3.6923076923076925,
+    "reviews": 13,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "09 0992 6075"
+  },
+  {
+    "slug": "fruity-spa",
+    "name": "Fruity Spa",
+    "address": "1697/8, 1697/8 Lat Phrao Rd, Khwaeng Samsen Nok, Khet Huai Khwang, Krung Thep Maha Nakhon 10310, Thailand",
+    "lat": 13.7985876,
+    "lng": 100.5875035,
+    "rating": 4.16,
+    "reviews": 25,
+    "categories": [
+      null
+    ],
+    "phone": "083-980-9583"
+  },
+  {
+    "slug": "white-room-spa",
+    "name": "White Room Spa",
+    "address": "16 Soi Nak Niwat 27, Lane 22, Khwaeng Lat Phrao, Khet Lat Phrao, Krung Thep Maha Nakhon 10230, Thailand",
+    "lat": 13.8055609,
+    "lng": 100.6036412,
+    "rating": 5,
+    "reviews": 2,
+    "categories": [
+      null
+    ],
+    "phone": "096-116-2725"
+  },
+  {
+    "slug": "suzy-wong-s-3",
+    "name": "Suzy Wong's 3",
+    "address": "21/3-4 Soi Sea Dragon Off, ถนนบางลา ตำบลป่าตอง อำเภอกะทู้ ภูเก็ต 83150, Thailand",
+    "lat": 7.8938318,
+    "lng": 98.2967226,
+    "rating": 4.0625,
+    "reviews": 48,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "08 7272 2588"
+  },
+  {
+    "slug": "safe-house",
+    "name": "Safe House",
+    "address": "729 96-97 Ratchadaphisek Rd, Khwaeng Bang Phong Phang, Khet Yan Nawa, Krung Thep Maha Nakhon 10120, Thailand",
+    "lat": 13.6887131,
+    "lng": 100.5243283,
+    "rating": 5,
+    "reviews": 1,
+    "categories": [
+      null
+    ],
+    "phone": "083-094-7494"
+  },
+  {
+    "slug": "villa-massage",
+    "name": "Villa Massage",
+    "address": "CRMP+QFM, Thanon Klang Mueang, Tambon Nai Mueang, Amphoe Mueang Khon Kaen, Chang Wat Khon Kaen 40000, Thailand",
+    "lat": 16.4344644,
+    "lng": 102.8361831,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "olivia-spa-9f89d02b-383e-4f92-ac81-e0dcd10fed2a",
+    "name": "Olivia Spa",
+    "address": "111/4-5 Khwaeng Suriya Wong, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
+    "lat": 13.7294755,
+    "lng": 100.5304725,
+    "rating": 4.562043795620438,
+    "reviews": 685,
+    "categories": [
+      null
+    ],
+    "phone": "083-0536938"
+  },
+  {
+    "slug": "secret-room",
+    "name": "Secret Spa",
+    "address": "ร้าน เดอะ ซีเครท สปา 1377 Sriwara Road, Ladprao Plabpla, ทาวน์อินทาวน์ ซอย 3/2 แขวงพลับพลา เขตวังทองหลาง กรุงเทพมหานคร 10310, Thailand",
+    "lat": 13.7689968,
+    "lng": 100.6073029,
+    "rating": 4.333333333333333,
+    "reviews": 3,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "080 520 3787"
+  },
+  {
+    "slug": "venus-nuru-massage-bangkok",
+    "name": "Venus Nuru Massage",
+    "address": "1/23 Soi Sukhumvit 3, Khwaeng Khlong Toei Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7429741,
+    "lng": 100.552729,
+    "rating": 4.46969696969697,
+    "reviews": 66,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "080-6393006"
+  },
+  {
+    "slug": "pegasus-spa-rama-3",
+    "name": "Pegasus Spa Rama 3",
+    "address": "762 7 Thanon Rama Ill, Khwaeng Bang Phong Phang, Khet Yan Nawa, Krung Thep Maha Nakhon 10120, Thailand",
+    "lat": 13.6727733,
+    "lng": 100.5346221,
+    "rating": 4,
+    "reviews": 2,
+    "categories": [
+      null
+    ],
+    "phone": "0985393585"
+  },
+  {
+    "slug": "dubai-luxury-club",
+    "name": "Dubai Luxury Club",
+    "address": "Dubai Luxury Club, Ratchadaphisek 13, Din Daeng, Bangkok, Thailand",
+    "lat": 13.7811041,
+    "lng": 100.5730315,
+    "rating": 4.375,
+    "reviews": 64,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "09 7496 1111"
+  },
+  {
+    "slug": "angel-33-bangkok",
+    "name": "Angel 33",
+    "address": "10/5 Soi Sukhumvit 33, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7337509,
+    "lng": 100.5675837,
+    "rating": 4.285714285714286,
+    "reviews": 7,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "065-123-3095"
+  },
+  {
+    "slug": "barbie-18-bangkok",
+    "name": "Barbie 18",
+    "address": "41 Soi Sukhumvit 18, Khwaeng Khlong Toei, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.730636,
+    "lng": 100.5628283,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": " (+66)986 854 108"
+  },
+  {
+    "slug": "nightingale-club",
+    "name": "Nightingale Club ",
+    "address": "82/34 Tambon Fa Ham, Amphoe Mueang Chiang Mai, Chang Wat Chiang Mai 50300, Thailand",
+    "lat": 18.8227252,
+    "lng": 99.0133755,
+    "rating": 5,
+    "reviews": 1,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "nuat-kao",
+    "name": "Nuat Kao",
+    "address": "250 252 Sri Chant Rd, Tambon Nai Mueang, Amphoe Mueang Khon Kaen, Chang Wat Khon Kaen 40000, Thailand",
+    "lat": 16.4294865,
+    "lng": 102.8321272,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "lola-love-massage-chiang-mai",
+    "name": "Lola Love Massage",
+    "address": "2 2 ซอย จำปี, Tambon Su Thep, Amphoe Mueang Chiang Mai, Chang Wat Chiang Mai 50200, Thailand",
+    "lat": 18.7936896,
+    "lng": 98.9705931,
+    "rating": 4.922077922077922,
+    "reviews": 77,
+    "categories": [
+      null,
+      null,
+      null
+    ],
+    "phone": "0829979858"
+  },
+  {
+    "slug": "aiyume-bangkok-bangkok",
+    "name": "Aiyume Bangkok",
+    "address": "45 Soi Sukhumvit 18, Khwaeng Khlong Toei, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7305348,
+    "lng": 100.5628143,
+    "rating": 5,
+    "reviews": 40,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "sluts-club",
+    "name": "Slutz Club",
+    "address": "Red Light District, Soi L K Metro, Muang Pattaya, Amphoe Bang Lamung, Chang Wat Chon Buri 20150, Thailand",
+    "lat": 12.929941,
+    "lng": 100.8843924,
+    "rating": 5,
+    "reviews": 1,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "palace-a-gogo",
+    "name": "Palace A Gogo",
+    "address": "Palace A Go Go, Walking Street, Pattaya City, Bang Lamung District, Chon Buri, Thailand",
+    "lat": 12.9261735,
+    "lng": 100.8729829,
+    "rating": 3.8506787330316743,
+    "reviews": 221,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "08 9416 7151"
+  },
+  {
+    "slug": "shark",
+    "name": "Shark",
+    "address": "Soi Cowboy, Khwaeng Khlong Toei Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7370674,
+    "lng": 100.5618986,
+    "rating": 2.7333333333333334,
+    "reviews": 15,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "penthouse-spa",
+    "name": "Penthouse Spa",
+    "address": "222 Pridi Banomyong 31 Alley, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7297515,
+    "lng": 100.5935355,
+    "rating": 4.2727272727272725,
+    "reviews": 11,
+    "categories": [
+      null
+    ],
+    "phone": "+66 65 146 4636"
+  },
+  {
+    "slug": "69-nuru-massage-chiang-mai",
+    "name": "69 Nuru Massage",
+    "address": "164 41 Changklan Rd, Tambon Chang Khlan, เมือง Chang Wat Chiang Mai 50100, Thailand",
+    "lat": 18.7781507,
+    "lng": 98.9990656,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "062 263 5457"
+  },
+  {
+    "slug": "3-angels-bar-soi-6",
+    "name": "3 Angels Bar Soi 6",
+    "address": "Red light district, Pattaya Soi 6, Muang Pattaya, Amphoe Bang Lamung, Chang Wat Chon Buri 20150, Thailand",
+    "lat": 12.9424268,
+    "lng": 100.8862487,
+    "rating": 3.923076923076923,
+    "reviews": 13,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "maria-massage-bangkok",
+    "name": "Maria Massage Bangkok",
+    "address": "Maria Massage Bangkok, 234 Ratchadaphisek Rd, Din Daeng, Bangkok 10400, Thailand",
+    "lat": 13.784076,
+    "lng": 100.5745193,
+    "rating": 3.8728813559322033,
+    "reviews": 118,
+    "categories": [
+      null
+    ],
+    "phone": "02 274 1305"
+  },
+  {
+    "slug": "relax-kan",
+    "name": "Relax@Kan",
+    "address": "125, 26 ถนนเลี่ยงเมืองกาญจนบุรี Tambon Pak Phraek, เมือง, Chang Wat Kanchanaburi 71000, Thailand",
+    "lat": 14.0281067,
+    "lng": 99.5524361,
+    "rating": 5,
+    "reviews": 4,
+    "categories": [
+      null
+    ],
+    "phone": "+66 98 945 5362"
+  },
+  {
+    "slug": "pannarai",
+    "name": "Pannarai",
+    "address": "140/14 Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
+    "lat": 9.5427422,
+    "lng": 100.0467592,
+    "rating": 4.351351351351352,
+    "reviews": 148,
+    "categories": [
+      null
+    ],
+    "phone": "08 0065 9000"
+  },
+  {
+    "slug": "asoke-first-class",
+    "name": "Asoke First class",
+    "address": "Asoke First Class massage Sukhumvit 14 Alley, Khlong Toei, Bangkok, Thailand",
+    "lat": 13.7367865,
+    "lng": 100.5597271,
+    "rating": 4.2,
+    "reviews": 5,
+    "categories": [
+      null
+    ],
+    "phone": "09 2 265 3024"
+  },
+  {
+    "slug": "lux-spa",
+    "name": "Lux Spa",
+    "address": "Tiwanon Rd, Tambon Ban Mai, Amphoe Pak Kret, Chang Wat Nonthaburi, Thailand",
+    "lat": 13.9374915,
+    "lng": 100.539505,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "061-262-2255"
+  },
+  {
+    "slug": "celeb-shower-massage",
+    "name": "Celeb Shower Massage",
+    "address": "10-11 Charoen Prathet Road, ตำบล ช้างคลาน Mueang Chiang Mai District, Chiang Mai, Thailand",
+    "lat": 18.7841302,
+    "lng": 99.0031481,
+    "rating": 0,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": ""
+  },
+  {
+    "slug": "k-avenue",
+    "name": "K Avenue",
+    "address": "RCA, 21/50 Soi RCA, Khwaeng Bang Kapi, Khet Huai Khwang, Krung Thep Maha Nakhon 10310, Thailand",
+    "lat": 13.7511486,
+    "lng": 100.5760232,
+    "rating": 5,
+    "reviews": 1,
+    "categories": [
+      null
+    ],
+    "phone": "0902645191 "
+  },
+  {
+    "slug": "whiskey-gogo",
+    "name": "Whiskey & GoGO",
+    "address": "3, 1 Sukhumvit Road, Khwaeng Khlong Tan, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7414439,
+    "lng": 100.55307,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "angry-birds-bar-phnom-penh",
+    "name": "Angry Birds Bar",
+    "address": "130 Street Number 35, Phnom Penh, Cambodia",
+    "lat": 11.5717941,
+    "lng": 104.9282384,
+    "rating": 3.732142857142857,
+    "reviews": 56,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+855 97 338 7764"
+  },
+  {
+    "slug": "badabing",
+    "name": "Badabing",
+    "address": "Soi Patpong 2, Soi Surawong, Khwaeng Suriya Wong, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
+    "lat": 13.7285028,
+    "lng": 100.5323113,
+    "rating": 4.14792899408284,
+    "reviews": 169,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": " +66 89 204 9523"
+  },
+  {
+    "slug": "chicky-spa",
+    "name": "Chicky Spa",
+    "address": "277 Chok Chai Chong Charoen, Khwaeng Bang Phong Phang, Khet Yan Nawa, Krung Thep Maha Nakhon 10120, Thailand",
+    "lat": 13.6836829,
+    "lng": 100.5373981,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "063-296-9626"
+  },
+  {
+    "slug": "the-one",
+    "name": "The One",
+    "address": "74 Thanon Phun Phon, Tambon Talat Nuea, Amphoe Mueang Phuket, Chang Wat Phuket 83000, Thailand",
+    "lat": 7.8759022,
+    "lng": 98.3885684,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "083 036 6357"
+  },
+  {
+    "slug": "angelwitch",
+    "name": "Angelwitch",
+    "address": "1/7 Sukhumvit Road, Khwaeng Khlong Toei, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7415888,
+    "lng": 100.5532739,
+    "rating": 4,
+    "reviews": 75,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "pegasus-spa",
+    "name": "Pegasus Spa",
+    "address": "762 7 Thanon Rama Ill, Khwaeng Bang Phong Phang, Khet Yan Nawa, Krung Thep Maha Nakhon 10120, Thailand",
+    "lat": 13.6727733,
+    "lng": 100.5346221,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "098-539-3585 "
+  },
+  {
+    "slug": "paradise-massage-26",
+    "name": "Paradise Massage 26",
+    "address": "25 Soi Sukhumvit 26, Khlong Tan, Khlong Toei, Bangkok 10110, Thailand",
+    "lat": 13.7282072,
+    "lng": 100.570602,
+    "rating": 3.94,
+    "reviews": 50,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "089-496-2594"
+  },
+  {
+    "slug": "hunny-bunny",
+    "name": "Hunny Bunny",
+    "address": "14 Hunny Bunny bkk 4 Soi Sukhumvit 33, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7353897,
+    "lng": 100.5678578,
+    "rating": 4.333333333333333,
+    "reviews": 12,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "06 1396 0425"
+  },
+  {
+    "slug": "pink-spa",
+    "name": "Pink Spa",
+    "address": "312 ซอย เพชรเกษม 73/1 Khwaeng Nong Khang Phlu, Khet Nong Khaem, Krung Thep Maha Nakhon 10160, Thailand",
+    "lat": 13.7065087,
+    "lng": 100.3676072,
+    "rating": 4.666666666666667,
+    "reviews": 6,
+    "categories": [
+      null
+    ],
+    "phone": "094 943 4344"
+  },
+  {
+    "slug": "venus",
+    "name": "Venus Spa",
+    "address": "29 Soi Sukhumvit 20, Khwaeng Khlong Toei, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7303127,
+    "lng": 100.5638539,
+    "rating": 4.6,
+    "reviews": 20,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "083-926-7454"
+  },
+  {
+    "slug": "ostex-136-phnom-penh",
+    "name": "Ostex 136",
+    "address": "12204 Street 136, Phnom Penh, Cambodia",
+    "lat": 11.5710307,
+    "lng": 104.9286148,
+    "rating": 3.773026315789474,
+    "reviews": 304,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+855069466008"
+  },
+  {
+    "slug": "2-peace",
+    "name": "2 Peace",
+    "address": "ซอย โคราช Tambon Pru Yai, Amphoe Mueang Nakhon Ratchasima, Chang Wat Nakhon Ratchasima 30000, Thailand",
+    "lat": 14.9192678,
+    "lng": 102.0596076,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "patpong",
+    "name": "Patpong",
+    "address": "Thanon Patpong 1, Khwaeng Suriya Wong, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
+    "lat": 13.7288752,
+    "lng": 100.5317455,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "aurora33",
+    "name": "Aurora 33",
+    "address": "14/8 Soi Sukhumvit 33, Khlong Tan Nuea, Watthana, Bangkok, Thailand",
+    "lat": 13.7352131,
+    "lng": 100.5679029,
+    "rating": 5,
+    "reviews": 2,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "06 3271 8820"
+  },
+  {
+    "slug": "no-19",
+    "name": "No. 19",
+    "address": "Thailand, Krung Thep Maha Nakhon, Khlong Toei, Krung Thep Maha Nakhon, Sukhumvit Rd26 12/10",
+    "lat": 13.7284263,
+    "lng": 100.5699899,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "092 430 4110"
+  },
+  {
+    "slug": "erotic-massage-bangkok-bangkok",
+    "name": "Erotic Massage Bangkok",
+    "address": "Sukhumvit Soi 22, Khwaeng Khlong Tan, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7213461,
+    "lng": 100.5653276,
+    "rating": 4.808510638297872,
+    "reviews": 94,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+66 66 068 7684"
+  },
+  {
+    "slug": "cancam",
+    "name": "CanCam",
+    "address": "Can Cam Massage & Spa, Sukhumvit Road, Khlong Tan, Khlong Toei, Bangkok, Thailand",
+    "lat": 13.7293158,
+    "lng": 100.5706891,
+    "rating": 3.975,
+    "reviews": 40,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": ""
+  },
+  {
+    "slug": "cbody-spa-club-bangkok",
+    "name": "Cbody Spa Club",
+    "address": "21/131, 2nd Floor, Soi RCA, Khwaeng Bang Kapi, Khet Huai Khwang, Krung Thep Maha Nakhon 10310泰国",
+    "lat": 13.7502025,
+    "lng": 100.5767473,
+    "rating": 4.545454545454546,
+    "reviews": 77,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "milking-table",
+    "name": "Milking Table",
+    "address": "Asok Place, Khlong Toei Nuea, Khlong Toei Nuae, Bangkok 10110, Thailand",
+    "lat": 13.74172,
+    "lng": 100.562355,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+66 (0)99 630 4052"
+  },
+  {
+    "slug": "relax-ratchaburi",
+    "name": "Relax@Ratchaburi",
+    "address": "73 6 Phet Kasem Rd, Tambon Na Muang, Amphoe Mueang Ratchaburi, Chang Wat Ratchaburi 70000, Thailand",
+    "lat": 13.5497595,
+    "lng": 99.81365029999999,
+    "rating": 4.111111111111111,
+    "reviews": 9,
+    "categories": [
+      null
+    ],
+    "phone": "+66 98 945 5362"
+  },
+  {
+    "slug": "tilac",
+    "name": "Tilac",
+    "address": "23 Soi Cowboy, Khwaeng Khlong Toei Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.737077,
+    "lng": 100.5619725,
+    "rating": 3.8623481781376516,
+    "reviews": 247,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "don-quixote",
+    "name": "Don Quixote",
+    "address": "Thailand, Bangkok, Soi Sukhumvit 26, Don Quixote（ドンキホーテ）",
+    "lat": 13.7282072,
+    "lng": 100.570602,
+    "rating": 4.264705882352941,
+    "reviews": 34,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "08 8947 4986"
+  },
+  {
+    "slug": "my-bar",
+    "name": "My Bar",
+    "address": "CRHJ+VCQ, Nai Mueang, Mueang Khon Kaen District, Khon Kaen 40000, Thailand",
+    "lat": 16.4297177,
+    "lng": 102.8311203,
+    "rating": 3.5357142857142856,
+    "reviews": 28,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "butterfly",
+    "name": "Butterfly",
+    "address": "Butterfly Sukhumvit 3 Alley Khlong Tan, Khlong Toei, Bangkok, Thailand",
+    "lat": 13.7295001,
+    "lng": 100.5696854,
+    "rating": 5,
+    "reviews": 1,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "02 663 4117"
+  },
+  {
+    "slug": "club-level-41-bangkok",
+    "name": "Club Level 41",
+    "address": "2 คลับเลเวล41 สุขุ, 2/12 Soi Sukhumvit 41, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7294464,
+    "lng": 100.572243,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "091-775-6021"
+  },
+  {
+    "slug": "la-belle",
+    "name": "La Belle",
+    "address": "La Belle, New Petchaburi Road, Bang Kapi, Huai Khwang, Bangkok, Thailand",
+    "lat": 13.7493315,
+    "lng": 100.5660782,
+    "rating": 5,
+    "reviews": 1,
+    "categories": [
+      null
+    ],
+    "phone": "02 652 8700"
+  },
+  {
+    "slug": "massage-bangkok-city-ho-chi-minh-city",
+    "name": "Massage Bangkok City",
+    "address": "120 Yên Thế, Phường 2, Tân Bình, Thành phố Hồ Chí Minh, Vietnam",
+    "lat": 10.8139468,
+    "lng": 106.6687209,
+    "rating": 5,
+    "reviews": 7,
+    "categories": [
+      null
+    ],
+    "phone": "0938-779-777"
+  },
+  {
+    "slug": "exotic-massage-bangkok-bangkok",
+    "name": "Exotic Massage Bangkok",
+    "address": "392 คลองเตย Khlong Toei,  Bangkok 10110, Thailand",
+    "lat": 13.7337896,
+    "lng": 100.5634857,
+    "rating": 5,
+    "reviews": 2,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+66996124363"
+  },
+  {
+    "slug": "entertain-karaoke",
+    "name": "Entertain Karaoke",
+    "address": "25 Thanon Pracha Samran, Tambon Nai Mueang, Amphoe Mueang Khon Kaen, Chang Wat Khon Kaen 40000, Thailand",
+    "lat": 16.4288773,
+    "lng": 102.8288868,
+    "rating": 4.5,
+    "reviews": 12,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "081-0537006"
+  },
+  {
+    "slug": "hwang-jae-relax-bangkok",
+    "name": "Hwang Jae Relax",
+    "address": "1, 34 Soi Sukhumvit 37, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.730867,
+    "lng": 100.5702833,
+    "rating": 4.428571428571429,
+    "reviews": 35,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "thonglor-one-massage",
+    "name": "Thonglor ONE Massage",
+    "address": "Thong Lo ONE Massage Sukhumvit Road, Khlong Tan Nuea, Watthana, Bangkok, Thailand",
+    "lat": 13.7271493,
+    "lng": 100.5786501,
+    "rating": 4.285714285714286,
+    "reviews": 21,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "063-190-2874"
+  },
+  {
+    "slug": "lunar-nuru-bangkok",
+    "name": "Lunar Nuru",
+    "address": "1/4 Soi Sukhumvit 30, Khwaeng Khlong Tan, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7273639,
+    "lng": 100.5733552,
+    "rating": 4.595744680851064,
+    "reviews": 47,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+66 091-0165-498"
+  },
+  {
+    "slug": "rakuen",
+    "name": "Rakuen",
+    "address": "RAKUEN 楽園トンロー Sukhumvit Road, Khlong Tan Nuea, Watthana, Bangkok, Thailand",
+    "lat": 13.7245902,
+    "lng": 100.5783953,
+    "rating": 4.3125,
+    "reviews": 16,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "098-9908595"
+  },
+  {
+    "slug": "riviere-77-bangkok",
+    "name": "Riviere 77",
+    "address": "2023 Soi Sukhumvit 77/1, Khwaeng Phra Khanong Nuea, Watthana, Krung Thep Maha Nakhon 10260, Thailand",
+    "lat": 13.7080325,
+    "lng": 100.6005124,
+    "rating": 4.155172413793103,
+    "reviews": 58,
+    "categories": [
+      null
+    ],
+    "phone": "081-3743400"
+  },
+  {
+    "slug": "windmill-club",
+    "name": "Windmill Club",
+    "address": "29/79 หมู่ที่ 10 Muang Pattaya, Amphoe Bang Lamung, Chang Wat Chon Buri 20150, Thailand",
+    "lat": 12.925877,
+    "lng": 100.8738265,
+    "rating": 4.098191214470284,
+    "reviews": 387,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+66 80 016 8499"
+  },
+  {
+    "slug": "lucy-nuru-massage-bangkok",
+    "name": "Lucy Nuru Massage",
+    "address": "2, 21 Sukhumvit Soi 22, Khwaeng Khlong Tan, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7330686,
+    "lng": 100.5646551,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+66644261464"
+  },
+  {
+    "slug": "mimi-massage-bangkok",
+    "name": "MiMi Massage",
+    "address": "267 2 Sukhumvit Soi 22, Khwaeng Khlong Tan, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7292288,
+    "lng": 100.5652203,
+    "rating": 5,
+    "reviews": 8,
+    "categories": [
+      null
+    ],
+    "phone": "+66 98 333 4347"
+  },
+  {
+    "slug": "lolita-s",
+    "name": "Lolita's",
+    "address": "4/30 Soi Sukhumvit 8, Khwaeng Khlong Toei, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7392547,
+    "lng": 100.555684,
+    "rating": 4.451612903225806,
+    "reviews": 217,
+    "categories": [
+      null
+    ],
+    "phone": "+66 86 010 2284"
+  },
+  {
+    "slug": "annies",
+    "name": "Annie's",
+    "address": "131/16 Sukhumvit Road, Khlong Toei Nuea, Watthana, Bangkok, Thailand",
+    "lat": 13.741403,
+    "lng": 100.5555815,
+    "rating": 3.5636363636363635,
+    "reviews": 55,
+    "categories": [
+      null
+    ],
+    "phone": "02 651 3312"
+  },
+  {
+    "slug": "kram-spa-heaven69",
+    "name": "Kram Spa (Heaven69)",
+    "address": "1,46 ถ.พัฒนาการ เขตสวนหลวง เเขวง Phatthanakan Rd, Khwaeng Suan Luang, สวนหลวง Krung Thep Maha Nakhon 10250, Thailand",
+    "lat": 13.7359494,
+    "lng": 100.631356,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "082-504-3560"
+  },
+  {
+    "slug": "polly-spa",
+    "name": "Polly Spa",
+    "address": "101/02 หมู่ที่ 10 Tambon Bang Rak Phatthana, Amphoe Bang Bua Thong, Chang Wat Nonthaburi 11110, Thailand",
+    "lat": 13.8908487,
+    "lng": 100.3991465,
+    "rating": 4.666666666666667,
+    "reviews": 15,
+    "categories": [
+      null
+    ],
+    "phone": "0928015513"
+  },
+  {
+    "slug": "meeting-point",
+    "name": "Meeting Point",
+    "address": "Unnamed Road 9Q7C+3H4, Tambon Chiang Phin, Amphoe Mueang Udon Thani, Chang Wat Udon Thani 41000, Thailand",
+    "lat": 17.3626309,
+    "lng": 102.7714479,
+    "rating": 5,
+    "reviews": 1,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "lord-carnation",
+    "name": "Lord (Carnation)",
+    "address": "2อ.The Carnation Massage Tambon Talat Nuea, Amphoe Mueang Phuket, Chang Wat Phuket 83000, Thailand",
+    "lat": 7.8793183,
+    "lng": 98.3822952,
+    "rating": 5,
+    "reviews": 2,
+    "categories": [
+      null
+    ],
+    "phone": "0989657888"
+  },
+  {
+    "slug": "sherbet",
+    "name": "Sherbet",
+    "address": "Sherbet Soi Sukhumvit 63, Khlong Tan Nuea, Watthana, Bangkok, Thailand",
+    "lat": 13.7284538,
+    "lng": 100.5853892,
+    "rating": 4.364485981308412,
+    "reviews": 107,
+    "categories": [
+      null
+    ],
+    "phone": "02 714 0979"
+  },
+  {
+    "slug": "hong-massage-chiang-mai",
+    "name": "HONG Massage 红天鹅泰浴",
+    "address": "81/9 Thanon Arak, Tambon Phra Sing, Amphoe Mueang Chiang Mai, Chang Wat Chiang Mai 50200泰国",
+    "lat": 18.7827791,
+    "lng": 98.9780744,
+    "rating": 4.125,
+    "reviews": 8,
+    "categories": [
+      null,
+      null,
+      null
+    ],
+    "phone": "092 250 8096"
+  },
+  {
+    "slug": "666-class",
+    "name": "666 Class",
+    "address": "666 class massage, Sukhumvit 33 Alley, Khlong Tan Nuea, Watthana, Bangkok, Thailand",
+    "lat": 13.7341545,
+    "lng": 100.5676335,
+    "rating": 4.5510948905109485,
+    "reviews": 274,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "06 4807 0932"
+  },
+  {
+    "slug": "heaven-prime-nuru-massage-bangkok",
+    "name": "Heaven Prime Nuru Massage",
+    "address": "33, 25 Soi Sukhumvit 11, Khwaeng Khlong Toei Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7449574,
+    "lng": 100.556361,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "092 837 9795"
+  },
+  {
+    "slug": "mossa-hue",
+    "name": "Mossa HUE",
+    "address": "50000, 10-12 Rat Chiang Saen 1 Kor Rd, Tambon Hai Ya, Amphoe Mueang Chiang Mai, Chang Wat Chiang Mai 50100, Thailand",
+    "lat": 18.7807373,
+    "lng": 98.9898394,
+    "rating": 3.52,
+    "reviews": 25,
+    "categories": [
+      null
+    ],
+    "phone": "080-490-7227"
+  },
+  {
+    "slug": "honey-lemon-spa",
+    "name": "Honey Lemon Spa",
+    "address": "เลขที่17 Soi Naradhiwas Rajanagarindra 15, Khwaeng Thung Maha Mek, Khet Sathon, Krung Thep Maha Nakhon 10120, Thailand",
+    "lat": 13.7174061,
+    "lng": 100.5356113,
+    "rating": 4.8,
+    "reviews": 5,
+    "categories": [
+      null
+    ],
+    "phone": "081-875-4728"
+  },
+  {
+    "slug": "absolute-paradise-spa",
+    "name": "Absolute Paradise Spa",
+    "address": "Absolute Paradise Spa Hotel, 12 Srijundon Rd, Tambon Chang Khlan, Amphoe Mueang Chiang Mai, Chang Wat Chiang Mai 50100, Thailand",
+    "lat": 18.7727153,
+    "lng": 98.99673279999999,
+    "rating": 5,
+    "reviews": 4,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "caesar-massage",
+    "name": "Caesar Massage",
+    "address": "152 6 ถนน Lang Mueang Rd, Tambon Nai Mueang, Amphoe Mueang Khon Kaen, Chang Wat Khon Kaen 40000, Thailand",
+    "lat": 16.4309128,
+    "lng": 102.8376707,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "+66 43 237 261"
+  },
+  {
+    "slug": "taragon",
+    "name": "Taragon",
+    "address": "TARAGON MASSAGE, Ratchada Niwet Road, Samsen Nok, Huai Khwang, Bangkok, Thailand",
+    "lat": 13.7734928,
+    "lng": 100.5865684,
+    "rating": 4.333333333333333,
+    "reviews": 3,
+    "categories": [
+      null
+    ],
+    "phone": "088 959 8808"
+  },
+  {
+    "slug": "zood-spa-zapa",
+    "name": "Zood Spa (Zapa)",
+    "address": "VGXV+4V8, Thanon Chaeng Watthana, Tambon Khlong Klua, Amphoe Pak Kret, Chang Wat Nonthaburi 11120, Thailand",
+    "lat": 13.8977838,
+    "lng": 100.5447186,
+    "rating": 3,
+    "reviews": 5,
+    "categories": [
+      null
+    ],
+    "phone": "080 1257788"
+  },
+  {
+    "slug": "melody-spa",
+    "name": "Melody Spa",
+    "address": "เลขที่ 169/9 ซอยโยธินพัฒนา โครงการ แพลตตินั่มเพลส เลียบทางด่วน ถนน เอกมัย คลองจั่น Khwaeng Khlong Chan, Khet Bang Kapi, Krung Thep Maha Nakhon 10240, Thailand",
+    "lat": 13.8107573,
+    "lng": 100.6215998,
+    "rating": 3.6315789473684212,
+    "reviews": 19,
+    "categories": [
+      null
+    ],
+    "phone": "+66 91 780 8000"
+  },
+  {
+    "slug": "purple-gentlemen-club-2",
+    "name": "Purple Gentlemen Club",
+    "address": "Purple Club, Bong Koch 8, Pattaya City, Bang Lamung District, Chon Buri, Thailand",
+    "lat": 12.9283057,
+    "lng": 100.8918977,
+    "rating": 3.1,
+    "reviews": 10,
+    "categories": [
+      null,
+      null,
+      null
+    ],
+    "phone": "08 9055 9353"
+  },
+  {
+    "slug": "qian-qian-massage-spa",
+    "name": "Qian Qian Massage & Spa",
+    "address": "70 Jed Yod - Yu Yen Soi 6, Tambon Chang Phueak, เมือง Chang Wat Chiang Mai 50300, Thailand",
+    "lat": 18.8097631,
+    "lng": 98.97072779999999,
+    "rating": 4.25,
+    "reviews": 4,
+    "categories": [
+      null
+    ],
+    "phone": "+66 64 636 3943"
+  },
+  {
+    "slug": "sweet-at-heart",
+    "name": "Sweet At Heart",
+    "address": "415 Soi Naradhiwas Rajanagarindra 24, Khwaeng Chong Nonsi, Khet Yan Nawa, Krung Thep Maha Nakhon 10120, Thailand",
+    "lat": 13.701498,
+    "lng": 100.538509,
+    "rating": 3.6666666666666665,
+    "reviews": 3,
+    "categories": [
+      null
+    ],
+    "phone": "082-249-9164"
+  },
+  {
+    "slug": "czech-club",
+    "name": "Czech Club",
+    "address": "CZECH Club, Ekkamai Road, Khlong Tan Nuea, Watthana, Bangkok, Thailand",
+    "lat": 13.72622,
+    "lng": 100.5849526,
+    "rating": 4.305084745762712,
+    "reviews": 118,
+    "categories": [
+      null
+    ],
+    "phone": "06 3190 9087"
+  },
+  {
+    "slug": "vovo",
+    "name": "VOVO",
+    "address": "9, 19 ถนน สุขุมวิท Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7349146,
+    "lng": 100.5676235,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "020-036-668"
+  },
+  {
+    "slug": "le-ciel-laputa-bkk",
+    "name": "Le Ciel Laputa BKK",
+    "address": "124 Sukhumvit Road, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7315978,
+    "lng": 100.5784575,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": " +66 97 995 5433"
+  },
+  {
+    "slug": "1society",
+    "name": "1Society",
+    "address": "31 Soi Phrom Chai, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7348925,
+    "lng": 100.5709183,
+    "rating": 3.7777777777777777,
+    "reviews": 18,
+    "categories": [
+      null
+    ],
+    "phone": "0615674799"
+  },
+  {
+    "slug": "little-duck-massage",
+    "name": "Little Duck Massage",
+    "address": "167/21 Ratchadaphisek 7, Din Daeng, Bangkok 10400, Thailand",
+    "lat": 13.776359966922,
+    "lng": 100.57318379634,
+    "rating": 3.5,
+    "reviews": 2,
+    "categories": [
+      null
+    ],
+    "phone": "02 115 0975"
+  },
+  {
+    "slug": "comely",
+    "name": "Comely",
+    "address": "55/5 ซอย นาคนิวาส 4 Thanon Nak Niwat, Khwaeng Lat Phrao, Khet Lat Phrao, Krung Thep Maha Nakhon 10230, Thailand",
+    "lat": 13.8014677,
+    "lng": 100.6102441,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "diamond-spa",
+    "name": "Diamond Spa",
+    "address": "Opposite Big C Kanlapaphruek, Khlong Bang Phran, Khet Bang Bon, Krung Thep Maha Nakhon 10150, Thailand",
+    "lat": 13.6897354,
+    "lng": 100.4316909,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "082-797-8886"
+  },
+  {
+    "slug": "mind-mint-spa",
+    "name": "Mind Mint Spa",
+    "address": "181/295-296 หมู่ 3 ช้างเผือก เมือง Chang Wat Chiang Mai 50300, Thailand",
+    "lat": 18.8136017,
+    "lng": 98.97403299999999,
+    "rating": 4.111111111111111,
+    "reviews": 9,
+    "categories": [
+      null
+    ],
+    "phone": "0932962587"
+  },
+  {
+    "slug": "leelawadee-massage-p-mook",
+    "name": "Leelawadee Massage p.mook",
+    "address": "3WP4+JX8, Pak Nam, Mueang Krabi District, Krabi 81000, Thailand",
+    "lat": 8.086534600000002,
+    "lng": 98.9074526,
+    "rating": 4.5,
+    "reviews": 2,
+    "categories": [
+      null
+    ],
+    "phone": "085 783 2316"
+  },
+  {
+    "slug": "x-ray-exclusive-spa",
+    "name": "X-Ray Exclusive Spa ",
+    "address": "4 3 Sukhumvit Road, Khwaeng Khlong Tan Nuea, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7248589,
+    "lng": 100.575921,
+    "rating": 3.4,
+    "reviews": 5,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "095-496-2964"
+  },
+  {
+    "slug": "alice-in-wonderland",
+    "name": "Alice in Wonderland",
+    "address": "6 Soi Sukhumvit 24/1, Khwaeng Khlong Tan, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7292792,
+    "lng": 100.5707687,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "0963233704"
+  },
+  {
+    "slug": "obsessions-ladyboy-bar",
+    "name": "Obsessions Ladyboy Bar",
+    "address": "PHR3+HC6, Soi Sukhumvit 4, Khwaeng Khlong Toei, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7414146,
+    "lng": 100.5535043,
+    "rating": 4,
+    "reviews": 22,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "crazy-house",
+    "name": "Crazy House",
+    "address": "ซอย สุขุมวิท 23 Sukhumvit Road, Khwaeng Khlong Toei Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7368368,
+    "lng": 100.562765,
+    "rating": 3.206451612903226,
+    "reviews": 310,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "lion-spa",
+    "name": "Lion Spa",
+    "address": "73/1 Khwaeng Bang Phai, Khet Bang Khae, Krung Thep Maha Nakhon 10160, Thailand",
+    "lat": 13.7456924,
+    "lng": 100.3874222,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "0633437073"
+  },
+  {
+    "slug": "saowanee-massage",
+    "name": "Saowanee Massage",
+    "address": "56 Poon Suk Rd, Tambon Hua Hin, Amphoe Hua Hin, Chang Wat Prachuap Khiri Khan 77110, Thailand",
+    "lat": 12.5719727,
+    "lng": 99.9586437,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "where-angels-play-soi-6",
+    "name": "Where Angels Play Soi 6",
+    "address": "437, 42 Pattaya Soi 6, Muang Pattaya, Amphoe Bang Lamung, Chang Wat Chon Buri 20150, Thailand",
+    "lat": 12.9423881,
+    "lng": 100.8863844,
+    "rating": 4.333333333333333,
+    "reviews": 3,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "taki",
+    "name": "Taki",
+    "address": "5/41 Soi Pridi Banomyong 3, Khwaeng Phra Khanong Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.715099,
+    "lng": 100.594436,
+    "rating": 5,
+    "reviews": 3,
+    "categories": [
+      null
+    ],
+    "phone": "0828324798"
+  },
+  {
+    "slug": "nuru-massage-soi-sansabai",
+    "name": "Nuru Massage Soi Sansabai",
+    "address": "Nuru Massage Soi Sansabai, Soi Sansabai, Pa Tong, Kathu District, Phuket, Thailand",
+    "lat": 7.8928111,
+    "lng": 98.2991883,
+    "rating": 4.295454545454546,
+    "reviews": 44,
+    "categories": [
+      null
+    ],
+    "phone": "09 4958 9087"
+  },
+  {
+    "slug": "angel-massage",
+    "name": "Angel Massage",
+    "address": "Angel Massage Phuket Phoonpon Road, Talat Nuea, Mueang Phuket District, Phuket, Thailand",
+    "lat": 7.8751898,
+    "lng": 98.3889567,
+    "rating": 3.9239130434782608,
+    "reviews": 92,
+    "categories": [
+      null
+    ],
+    "phone": "08 1895 9677"
+  },
+  {
+    "slug": "bb-ex",
+    "name": "BB EX",
+    "address": "1096 บางรำหรุ Khwaeng Bang Bumru, Khet Bang Phlat, Krung Thep Maha Nakhon 10700, Thailand",
+    "lat": 13.7862835,
+    "lng": 100.4704424,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "0802476565"
+  },
+  {
+    "slug": "bangkok-passion",
+    "name": "Bangkok Passion",
+    "address": "Bangkok Passion Massage, Soi Sukhumvit 22, Khlong Tan, Khlong Toei, Bangkok, Thailand",
+    "lat": 13.7296581,
+    "lng": 100.5652847,
+    "rating": 4.28,
+    "reviews": 75,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "09 7085 1731"
+  },
+  {
+    "slug": "kitty-spa-rca",
+    "name": "Kitty Spa RCA",
+    "address": "21/117 อาคาร รอยัล ซิตี้ อ เว นิ ว ซอย ศูนย์วิจัย พระราม 9 ซอย 26 Khwaeng Bang Kapi, Khet Huai Khwang, Krung Thep Maha Nakhon 10310, Thailand",
+    "lat": 13.7494832,
+    "lng": 100.5772682,
+    "rating": 3.0454545454545454,
+    "reviews": 22,
+    "categories": [
+      null
+    ],
+    "phone": "02 6414339"
+  },
+  {
+    "slug": "pink-soda",
+    "name": "Pink Soda",
+    "address": "120, 22 ถนน สุขุมวิท Khwaeng Khlong Toei Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7398773,
+    "lng": 100.565499,
+    "rating": 3.6666666666666665,
+    "reviews": 3,
+    "categories": [
+      null
+    ],
+    "phone": "095 524 8947"
+  },
+  {
+    "slug": "the-lovers",
+    "name": "The Lovers",
+    "address": "Thailand, Bangkok, Bang Rak, Bangkok, Thaniya Road, THE LOVERS タニヤ店",
+    "lat": 13.729854,
+    "lng": 100.5332869,
+    "rating": 4.2,
+    "reviews": 5,
+    "categories": [
+      null
+    ],
+    "phone": ""
+  },
+  {
+    "slug": "waterbomb-massage-bangkok",
+    "name": "Waterbomb Massage",
+    "address": "72/5 Soi Sukhumvit 63, Khwaeng Phra Khanong Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7255772,
+    "lng": 100.5850525,
+    "rating": 5,
+    "reviews": 1,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "‪+66 98 917 2429‬"
+  },
+  {
+    "slug": "blue-ocean-spa",
+    "name": "Blue Ocean Spa",
+    "address": "587, 1-2 Thanon Rama Ill, Khwaeng Bang Phong Phang, Khet Yan Nawa, Krung Thep Maha Nakhon 10120, Thailand",
+    "lat": 13.6816159,
+    "lng": 100.5272007,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "093-5409704"
+  },
+  {
+    "slug": "xs-gogo-pattaya",
+    "name": "XS Gogo Pattaya",
+    "address": "113, 2 Walking St, Pattaya City, Bang Lamung District, Chon Buri 20150, Thailand",
+    "lat": 12.9258062,
+    "lng": 100.8711879,
+    "rating": 4,
+    "reviews": 3,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": ""
+  },
+  {
+    "slug": "the-lord-2",
+    "name": "Amsterdam - CLOSED DOWN",
+    "address": "333 Thanon Asok - Din Daeng, Din Daeng, Bangkok 10400, Thailand",
+    "lat": 13.7559024,
+    "lng": 100.5644196,
+    "rating": 0,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "02 642 0801"
+  },
+  {
+    "slug": "bee-nice-spa",
+    "name": "Bee Nice Spa",
+    "address": "เจวา มาร์เก็ต Tambon Bang Mae Nang, Amphoe Bang Yai, Chang Wat Nonthaburi 11140, Thailand",
+    "lat": 13.8547785,
+    "lng": 100.4121502,
+    "rating": 4,
+    "reviews": 4,
+    "categories": [
+      null
+    ],
+    "phone": "085-803-5503"
+  },
+  {
+    "slug": "suan-uthit-road",
+    "name": "Suan Uthit Road",
+    "address": "Suan Uthit Rd, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
+    "lat": 9.5115074,
+    "lng": 100.0535645,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "island-bar-phnom-penh",
+    "name": "Island Bar",
+    "address": "28 Krala Haom Kong St. (118), Phnom Penh, Cambodia",
+    "lat": 11.5722585,
+    "lng": 104.9284908,
+    "rating": 4.111111111111111,
+    "reviews": 18,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "maxim-massage-bangkok",
+    "name": "Maxim Massage",
+    "address": "265 9 Sukhumvit Soi 22, Khwaeng Khlong Tan, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7295578,
+    "lng": 100.5654789,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+66 95 894 5021"
+  },
+  {
+    "slug": "big-bear-club",
+    "name": "Big Bear Club",
+    "address": "Soi Mu Ban Khasa Eureka, Khwaeng Bang Khae Nuea, Khet Bang Khae, Krung Thep Maha Nakhon 10160, Thailand",
+    "lat": 13.7056141,
+    "lng": 100.3851669,
+    "rating": 5,
+    "reviews": 1,
+    "categories": [
+      null
+    ],
+    "phone": "0987981100"
+  },
+  {
+    "slug": "honey",
+    "name": "Honey",
+    "address": "HONEY MASSAGE Sukhumvit 33 Alley, Khlong Tan Nuea, Watthana, Bangkok, Thailand",
+    "lat": 13.7330541,
+    "lng": 100.5673789,
+    "rating": 2.5,
+    "reviews": 2,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "064-249-1868"
+  },
+  {
+    "slug": "juicy-honey",
+    "name": "Juicy Honey",
+    "address": "113/12 Surawong Road, Surawong, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
+    "lat": 13.7294764,
+    "lng": 100.5306116,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "067459442"
+  },
+  {
+    "slug": "summer-spa",
+    "name": "Summer Spa",
+    "address": "Thanon Ratchaphruek, Krung Thep Maha Nakhon 11130, Thailand",
+    "lat": 13.8150672,
+    "lng": 100.4487823,
+    "rating": 3,
+    "reviews": 2,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "065-459-2244"
+  },
+  {
+    "slug": "baan-nine",
+    "name": "Baan Nine ",
+    "address": "555 60 ซอยกำนันปิยะ Tambon Maha Sawat, Amphoe Bang Kruai, Chang Wat Nonthaburi 11130, Thailand",
+    "lat": 13.807244,
+    "lng": 100.452912,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "081-260-6842"
+  },
+  {
+    "slug": "aimi-bangkok-bangkok",
+    "name": "Aimi Bangkok",
+    "address": "21, 8 Soi Sukhumvit 18, Krung Thep Maha Nakhon, Khlong Toei, Maha Nakhon 10110, Thailand",
+    "lat": 13.7337155,
+    "lng": 100.5626588,
+    "rating": 5,
+    "reviews": 2,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "0827387623"
+  },
+  {
+    "slug": "snow-white-massage",
+    "name": "Snow White Massage",
+    "address": "6, 5 Soi Sukhumvit 24/1, Khwaeng Khlong Tan, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7288991,
+    "lng": 100.5706446,
+    "rating": 3.6346153846153846,
+    "reviews": 52,
+    "categories": [
+      null
+    ],
+    "phone": "+66 080-652-3588"
+  },
+  {
+    "slug": "peach-massage-bangkok-20-bangkok",
+    "name": "Peach Massage Bangkok 20",
+    "address": "64/22 คลองเตย Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7305783,
+    "lng": 100.563855,
+    "rating": 5,
+    "reviews": 8,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "0626398297"
+  },
+  {
+    "slug": "pin-up-a-go-go",
+    "name": "Pin-Up A GO GO",
+    "address": "Pin-Up A GO GO, Walking Street, Pattaya City, Bang Lamung District, Chon Buri, Thailand",
+    "lat": 12.9260387,
+    "lng": 100.8726963,
+    "rating": 3,
+    "reviews": 1,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": ""
+  },
+  {
+    "slug": "coffee-room",
+    "name": "Coffee Room",
+    "address": "739/5, Khwaeng Bang Phong Phang, Khet Yan Nawa, Krung Thep Maha Nakhon 10120, Thailand",
+    "lat": 13.6885562,
+    "lng": 100.5231931,
+    "rating": 5,
+    "reviews": 1,
+    "categories": [
+      null
+    ],
+    "phone": "098-865-6666"
+  },
+  {
+    "slug": "baya-massage",
+    "name": "Baya Massage",
+    "address": "Hua Hin, Hua Hin District, Prachuap Khiri Khan 77110, Thailand",
+    "lat": 12.572278,
+    "lng": 99.95858020000001,
+    "rating": 4.666666666666667,
+    "reviews": 12,
+    "categories": [
+      null
+    ],
+    "phone": "+66 88 142 6688"
+  },
+  {
+    "slug": "tubtim-vip",
+    "name": "Tubtim VIP",
+    "address": "74 181 Thanon Phun Phon, Tambon Talat Nuea, Phuket Chang Wat Phuket 83000, Thailand",
+    "lat": 7.876552899999999,
+    "lng": 98.387022,
+    "rating": 4.4375,
+    "reviews": 16,
+    "categories": [
+      null
+    ],
+    "phone": "096 324 9888"
+  },
+  {
+    "slug": "red-spa",
+    "name": "Red Spa",
+    "address": "49/33 หมู่5 นครสวรรค์ตก Tambon Pak Nam Pho, เมือง Chang Wat Nakhon Sawan 60000, Thailand",
+    "lat": 15.6918921,
+    "lng": 100.1025198,
+    "rating": 4,
+    "reviews": 9,
+    "categories": [
+      null
+    ],
+    "phone": "099 -2462888"
+  },
+  {
+    "slug": "l-spa",
+    "name": "L Spa",
+    "address": "223-4,5 PraCha Rat Bamphen 3/1, Khwaeng Huai Khwang, Khet Huai Khwang, Krung Thep Maha Nakhon 10310, Thailand",
+    "lat": 13.7788111,
+    "lng": 100.5758501,
+    "rating": 4.954545454545454,
+    "reviews": 22,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "bb-entertainment-massage",
+    "name": "B&B Entertainment Massage",
+    "address": "B&B Entertainment Massage, Khlong Tan, Khlong Toei, Bangkok, Thailand",
+    "lat": 13.729118,
+    "lng": 100.570574,
+    "rating": 3.5714285714285716,
+    "reviews": 21,
+    "categories": [
+      null
+    ],
+    "phone": "09 0512 8590"
+  },
+  {
+    "slug": "smile-bangkok",
+    "name": "Smile",
+    "address": "ซอย สุขุมวิท 23 ถนน สุขุมวิท Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7385083,
+    "lng": 100.5639844,
+    "rating": 4,
+    "reviews": 5,
+    "categories": [
+      null
+    ],
+    "phone": "082-168-3324"
+  },
+  {
+    "slug": "la-defense",
+    "name": "La Defense",
+    "address": "La Defense, พระราม 9 ซอย พระราม 9 ชอย 11 Bang Kapi, Huai Khwang, Bangkok, Thailand",
+    "lat": 13.7549418,
+    "lng": 100.5842623,
+    "rating": 4.609375,
+    "reviews": 64,
+    "categories": [
+      null
+    ],
+    "phone": "08 2492 8246"
+  },
+  {
+    "slug": "escape-a-go-go",
+    "name": "Escape A Go Go",
+    "address": "Escape, Tree Town, Soi Buakhao, Muang Pattaya, Amphoe Bang Lamung, Chang Wat Chon Buri 20150, Thailand",
+    "lat": 12.9318572,
+    "lng": 100.8858388,
+    "rating": 4.181818181818182,
+    "reviews": 11,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "white-cat-phnom-penh",
+    "name": "White Cat",
+    "address": "21 Krala Haom Kong St. (118), Phnom Penh, Cambodia",
+    "lat": 11.5722857,
+    "lng": 104.9276958,
+    "rating": 3.857142857142857,
+    "reviews": 14,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+855 17 469 919"
+  },
+  {
+    "slug": "lovely-spa",
+    "name": "Lovely Spa ",
+    "address": "51, 223 Soi Hathai Rat, Khwaeng Min Buri, Khet Min Buri, Krung Thep Maha Nakhon 10510, Thailand",
+    "lat": 13.820236,
+    "lng": 100.719291,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "080−949−2055"
+  },
+  {
+    "slug": "mitu",
+    "name": "SOAP MITU",
+    "address": "96, 7 Soi Sukhumvit 23, Klongtan-nua, Khet Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.738507,
+    "lng": 100.5639449,
+    "rating": 4.206185567010309,
+    "reviews": 97,
+    "categories": [
+      null
+    ],
+    "phone": "095-851-0672"
+  },
+  {
+    "slug": "orange-oil-massage",
+    "name": "Orange Oil Massage",
+    "address": "174 Rama II Soi 60, Khwaeng Samae Dam, Khet Bang Khun Thian, Krung Thep Maha Nakhon 10150, Thailand",
+    "lat": 13.6561504,
+    "lng": 100.4238203,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "mai-chan",
+    "name": "Mai Chan",
+    "address": "Mai Chan Massage, Sukhumvit 19 Alley, Lane 2, Khlong Toei Nuea, Watthana, Bangkok, Thailand",
+    "lat": 13.7392922,
+    "lng": 100.5604299,
+    "rating": 3.933333333333333,
+    "reviews": 15,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "02 255 1935"
+  },
+  {
+    "slug": "drake-luxury-lounge-bangkok",
+    "name": "DRAKE Luxury Lounge",
+    "address": "12/16 Soi Sukhumvit 33, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7342969,
+    "lng": 100.5676649,
+    "rating": 5,
+    "reviews": 4,
+    "categories": [
+      null,
+      null,
+      null
+    ],
+    "phone": "081-392-9998"
+  },
+  {
+    "slug": "new-barbados-island-club-phnom-penh",
+    "name": "New Barbados Island Club",
+    "address": "# 42, Street 130, Sangkat Phsar Kandal, 1 Phnom Penh, Phnom Penh 12204, Cambodia",
+    "lat": 11.5715701,
+    "lng": 104.9282411,
+    "rating": 3.8333333333333335,
+    "reviews": 6,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+855 17 417 776"
+  },
+  {
+    "slug": "dr-bj-s-nuru",
+    "name": "Dr. BJ's Nuru",
+    "address": "131, 16 Soi Sukhumvit 7/1, Khwaeng Lumphini, Khet Pathum Wan, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7413579,
+    "lng": 100.5555735,
+    "rating": 3.7971014492753623,
+    "reviews": 69,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "analisa",
+    "name": "Analisa",
+    "address": "17/2 Sukhumvit Soi 6, Khwaeng Khlong Toei, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7390729,
+    "lng": 100.555104,
+    "rating": 3.5606060606060606,
+    "reviews": 132,
+    "categories": [
+      null
+    ],
+    "phone": "+66870101380"
+  },
+  {
+    "slug": "wow",
+    "name": "WoW",
+    "address": "21 Soi Somdet Phra Chao Tak, Khwaeng Bang Yi Ruea, Khet Thon Buri, Krung Thep Maha Nakhon 10600, Thailand",
+    "lat": 13.7215764,
+    "lng": 100.4907139,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "097-135-6847"
+  },
+  {
+    "slug": "mali-massage",
+    "name": "Mali Massage",
+    "address": "24 Thetsaban 1, Tambon Bang Phra, Amphoe Si Racha, Chang Wat Chon Buri 20110, Thailand",
+    "lat": 13.2054639,
+    "lng": 100.9415764,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "080-742-4212"
+  },
+  {
+    "slug": "utopia",
+    "name": "Utopia",
+    "address": "Utopia Sauna & Massage, Watthana Tham Road, Huai Khwang, Bangkok, Thailand",
+    "lat": 13.760499,
+    "lng": 100.572115,
+    "rating": 4.051282051282051,
+    "reviews": 39,
+    "categories": [
+      null
+    ],
+    "phone": "02 354 1300"
+  },
+  {
+    "slug": "lomo-nuru-massage-bangkok",
+    "name": "Lomo Nuru Massage",
+    "address": "8,8/1-8/4, Sukhumvit Soi 22, Khwaeng Khlong Toei, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7325815,
+    "lng": 100.5650887,
+    "rating": 4.538461538461538,
+    "reviews": 13,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "063 198 9638"
+  },
+  {
+    "slug": "club-w-phnom-penh",
+    "name": "Club W",
+    "address": "51 Samdach Sangkreach Tieng St. (222), Phnom Penh, Cambodia",
+    "lat": 11.5594708,
+    "lng": 104.9214442,
+    "rating": 4.285714285714286,
+    "reviews": 7,
+    "categories": [
+      null
+    ],
+    "phone": "+855 99 811 303"
+  },
+  {
+    "slug": "king-s-castle-1",
+    "name": "King's Castle 1",
+    "address": "87 Patpong Soi 1 Thanon Surawong, Khwaeng Suriya Wong, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
+    "lat": 13.7285947,
+    "lng": 100.5319778,
+    "rating": 3.8253968253968256,
+    "reviews": 63,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "yesika",
+    "name": "Yesika",
+    "address": "32 Chok Chai 4 Soi 6, Khwaeng Lat Phrao, Khet Lat Phrao, Krung Thep Maha Nakhon 10230, Thailand",
+    "lat": 13.7951826,
+    "lng": 100.6088751,
+    "rating": 5,
+    "reviews": 1,
+    "categories": [
+      null
+    ],
+    "phone": "061-097-9296"
+  },
+  {
+    "slug": "bunny-s-massage-phuket",
+    "name": "Bunny's Massage",
+    "address": "74, night plaza, 118 - 119 Thanon Phun Phon, Tambon Talat Nuea, Amphoe Mueang Phuket, Chang Wat Phuket 83000, Thailand",
+    "lat": 7.876926699999999,
+    "lng": 98.38689989999999,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "0991187738"
+  },
+  {
+    "slug": "kawaii-bar",
+    "name": "Kawaii Bar",
+    "address": "437, Red light district, 43 Pattaya Soi 6, Muang Pattaya, Amphoe Bang Lamung, Chang Wat Chon Buri 20150, Thailand",
+    "lat": 12.9423873,
+    "lng": 100.8863873,
+    "rating": 4.16,
+    "reviews": 25,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "102-massage",
+    "name": "102 Massage",
+    "address": "102 Massage Bangkok, Sukhumvit 24 Alley, Khlong Tan, Khlong Toei, Bangkok, Thailand",
+    "lat": 13.7297168,
+    "lng": 100.5697562,
+    "rating": 4.5,
+    "reviews": 2,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "02 259 4528"
+  },
+  {
+    "slug": "darlin-darlin-music-lounge-phnom-penh",
+    "name": "Darlin Darlin Music Lounge",
+    "address": "Ground Level, Hotel North Wing, NagaWorld1 Park, 120101, Samdech Hun Sen St, Phnom Penh, Cambodia",
+    "lat": 11.5560769,
+    "lng": 104.9377105,
+    "rating": 4.150214592274678,
+    "reviews": 233,
+    "categories": [
+      null
+    ],
+    "phone": "+855 23 263 031"
+  },
+  {
+    "slug": "senz-diva-massage",
+    "name": "Senz Diva Massage",
+    "address": "14, 5 soi 13, Tambon Su Thep, Amphoe Mueang Chiang Mai, Chang Wat Chiang Mai 50200, Thailand",
+    "lat": 18.7963807,
+    "lng": 98.9685757,
+    "rating": 4.541176470588235,
+    "reviews": 85,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+66 62 992 0446"
+  },
+  {
+    "slug": "thermae-ruamchit-hotel",
+    "name": "Thermae (Ruamchit Hotel)",
+    "address": "199 อาคาร ร่วมจิตต์ Sukhumvit Road, Khwaeng Khlong Toei Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7389663,
+    "lng": 100.5579857,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "tiger-136-phnom-penh",
+    "name": "Tiger 136",
+    "address": "Oknha In St. (136), Phnom Penh, Cambodia",
+    "lat": 11.5712407,
+    "lng": 104.9290777,
+    "rating": 4.304878048780488,
+    "reviews": 82,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": " +855 93 298 007"
+  },
+  {
+    "slug": "new-flowers-on-air",
+    "name": "New Flowers On Air",
+    "address": "PC7C+4R3, Bang Khae Nuea, Bang Khae, Bangkok 10160, Thailand",
+    "lat": 13.7127656,
+    "lng": 100.4220516,
+    "rating": 1,
+    "reviews": 1,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "lily",
+    "name": "Lily",
+    "address": "260 Sri Chant Rd, Tambon Nai Mueang, Amphoe Mueang Khon Kaen, Chang Wat Khon Kaen 40000, Thailand",
+    "lat": 16.4296836,
+    "lng": 102.832641,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "101-premier-massage",
+    "name": "101 Premier Massage",
+    "address": "101 Premier Massage, Soi Sukhumvit 26, Khlong Tan, Khlong Toei, Bangkok, Thailand",
+    "lat": 13.7284918,
+    "lng": 100.5701078,
+    "rating": 4,
+    "reviews": 75,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "08 0782 2120"
+  },
+  {
+    "slug": "heaven",
+    "name": "Heaven",
+    "address": "Heaven, Soi Sukhumvit 31, Khlong Tan Nuea, Watthana, Bangkok, Thailand",
+    "lat": 13.7344893,
+    "lng": 100.5660447,
+    "rating": 4.815789473684211,
+    "reviews": 38,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "06 3217 5693"
+  },
+  {
+    "slug": "spanky-s",
+    "name": "Spanky's",
+    "address": "4 Sukhumvit Road, Khwaeng Khlong Toei, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7416146,
+    "lng": 100.5532215,
+    "rating": 3.772727272727273,
+    "reviews": 132,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "daisuki-massage-by-lolita",
+    "name": "Daisuki Massage by Lolita ",
+    "address": "2, 5 Thanon Santiluk, Tambon Chang Phueak, Amphoe Mueang Chiang Mai, Chang Wat Chiang Mai 50300, Thailand",
+    "lat": 18.8001663,
+    "lng": 98.9798691,
+    "rating": 4.450199203187251,
+    "reviews": 251,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+66 (0)838613817"
+  },
+  {
+    "slug": "unreal-bar",
+    "name": "Unreal Bar",
+    "address": "Red Light District, Soi L K Metro, Muang Pattaya, Amphoe Bang Lamung, Chang Wat Chon Buri 20150, Thailand",
+    "lat": 12.9299395,
+    "lng": 100.8846262,
+    "rating": 3,
+    "reviews": 2,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "erotic-tantra-massage",
+    "name": "Erotic Tantra Massage",
+    "address": "39 43 Udom Suk 7, Khwaeng Bang Na, Khet Bang Na, Krung Thep Maha Nakhon 10260, Thailand",
+    "lat": 13.6790493,
+    "lng": 100.6131259,
+    "rating": 4.428571428571429,
+    "reviews": 14,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "0926266142"
+  },
+  {
+    "slug": "utamaro-22-bangkok",
+    "name": "Utamaro 22",
+    "address": "2, 29 Sukhumvit Soi 22, Khlong Toei, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7329462,
+    "lng": 100.5650099,
+    "rating": 4.865168539325842,
+    "reviews": 89,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "063-882-0392"
+  },
+  {
+    "slug": "osaka",
+    "name": "Osaka",
+    "address": "491 Suranaree Rd, Tambon Nai Mueang, Amphoe Mueang Nakhon Ratchasima, Chang Wat Nakhon Ratchasima 30000, Thailand",
+    "lat": 14.9745887,
+    "lng": 102.0851407,
+    "rating": 4.666666666666667,
+    "reviews": 6,
+    "categories": [
+      null
+    ],
+    "phone": "+66 44 243 406"
+  },
+  {
+    "slug": "soi-80",
+    "name": "Soi 80",
+    "address": "7 Hua Hin 80, Tambon Hua Hin, Amphoe Hua Hin, Chang Wat Prachuap Khiri Khan 77110, Thailand",
+    "lat": 12.5653721,
+    "lng": 99.9574119,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "dolphin-spa",
+    "name": "Dolphin Spa",
+    "address": "Sridonchai Rd, Tambon Phra Sing, Amphoe Mueang Chiang Mai, Chang Wat Chiang Mai 50100, Thailand",
+    "lat": 18.780615,
+    "lng": 98.9943292,
+    "rating": 4.16,
+    "reviews": 25,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "toy-box",
+    "name": "Toy Box",
+    "address": "WVVP+27X, Pattaya Soi 6, Muang Pattaya, Amphoe Bang Lamung, Chang Wat Chon Buri 20150, Thailand",
+    "lat": 12.9426078,
+    "lng": 100.8857225,
+    "rating": 4.019607843137255,
+    "reviews": 51,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "atami-exclusive-club",
+    "name": "Atami Exclusive Club",
+    "address": "304 Soi Suriyat 24, Amphoe Mueang Ubon Ratchathani, Chang Wat Ubon Ratchathani 34000, Thailand",
+    "lat": 15.2386389,
+    "lng": 104.85425,
+    "rating": 1,
+    "reviews": 2,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "pudding-spa",
+    "name": "Pudding Spa",
+    "address": "441 8 Thanon Nak Niwat, Khwaeng Lat Phrao, Khet Lat Phrao, Krung Thep Maha Nakhon 10230, Thailand",
+    "lat": 13.8180962,
+    "lng": 100.6095854,
+    "rating": 3.5,
+    "reviews": 2,
+    "categories": [
+      null
+    ],
+    "phone": "098-696-2929"
+  },
+  {
+    "slug": "ellie-house",
+    "name": "Ellie House",
+    "address": "31/9 Khwaeng Chong Nonsi, Khet Yan Nawa, Krung Thep Maha Nakhon 10120, Thailand",
+    "lat": 13.682314,
+    "lng": 100.5481324,
+    "rating": 4.666666666666667,
+    "reviews": 3,
+    "categories": [
+      null
+    ],
+    "phone": "0963539296"
+  },
+  {
+    "slug": "aurora-club",
+    "name": "Aurora Club",
+    "address": "Aurora Club Cm Nong Pa Khrang Sub-district, Mueang Chiang Mai District, Chiang Mai, Thailand",
+    "lat": 18.7874536,
+    "lng": 99.0411225,
+    "rating": 4.850828729281768,
+    "reviews": 181,
+    "categories": [
+      null
+    ],
+    "phone": "09 5136 6669"
+  },
+  {
+    "slug": "tokimeki-thonglor-story",
+    "name": "Tokimeki Thonglor Story",
+    "address": "1 Soi Thong Lo, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.724245,
+    "lng": 100.5790593,
+    "rating": 5,
+    "reviews": 1,
+    "categories": [
+      null
+    ],
+    "phone": "089 017 9486"
+  },
+  {
+    "slug": "nutty-park",
+    "name": "Nutty Park",
+    "address": "ถนน CR32+WX6, Prajak Sillapakom, Tambon Mak Khaeng, Amphoe Mueang Udon Thani, Chang Wat Udon Thani 41000, Thailand",
+    "lat": 17.4047832,
+    "lng": 102.8023757,
+    "rating": 3.7169811320754715,
+    "reviews": 159,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "akane",
+    "name": "Akane",
+    "address": "12 35 ถนน สุขุมวิท Khwaeng Khlong Toei Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7347202,
+    "lng": 100.56776,
+    "rating": 3.857142857142857,
+    "reviews": 56,
+    "categories": [
+      null
+    ],
+    "phone": "02-662-0366"
+  },
+  {
+    "slug": "godang-8",
+    "name": "Godang 8",
+    "address": "ร้าน โกดัง 8, ตำบล ปากน้ำ อำเภอเมืองกระบี่ กระบี่ 81000, Thailand",
+    "lat": 8.0853491,
+    "lng": 98.90823669999999,
+    "rating": 4.223255813953489,
+    "reviews": 215,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "092 445 6956"
+  },
+  {
+    "slug": "katherine-massage",
+    "name": "Katherine Massage",
+    "address": "74/11 Phoonpon Road, Talat Nuea, Mueang Phuket District, Phuket, Thailand",
+    "lat": 7.8758119,
+    "lng": 98.3886792,
+    "rating": 0,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "08 7341 1499"
+  },
+  {
+    "slug": "pink-panther",
+    "name": "Pink Panther",
+    "address": "37 Soi2 4 Thanon Patpong 1, Khwaeng Suriya Wong, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
+    "lat": 13.7299401,
+    "lng": 100.531741,
+    "rating": 4.258620689655173,
+    "reviews": 116,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": ""
+  },
+  {
+    "slug": "lips-sexxy-club",
+    "name": "Lips Sexxy Club",
+    "address": "3 Soi Sawatdi, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7335916,
+    "lng": 100.5658351,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+66 91 767 2683"
+  },
+  {
+    "slug": "dragon-lady-bkk-bangkok",
+    "name": "Dragon Lady BKK",
+    "address": "14 Thanon Ekkamai, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7353239,
+    "lng": 100.5877886,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+66 64-187-6969"
+  },
+  {
+    "slug": "bamboo-massage-bangkok",
+    "name": "Bamboo Massage Bangkok",
+    "address": "4/3 Soi Sukhumvit 8, Khwaeng Khlong Toei, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7397618,
+    "lng": 100.555849,
+    "rating": 3.7058823529411766,
+    "reviews": 17,
+    "categories": [
+      null
+    ],
+    "phone": " 0-2254-4487"
+  },
+  {
+    "slug": "girlfriends",
+    "name": "Girlfriends",
+    "address": "Girlfriends Massage Sukhumvit Soi 18, Khlong Toei, Bangkok, Thailand",
+    "lat": 13.730647,
+    "lng": 100.5627925,
+    "rating": 4.722222222222222,
+    "reviews": 18,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "097 953 5018"
+  },
+  {
+    "slug": "pontoon-phnom-penh",
+    "name": "Pontoon",
+    "address": "80 Jayavarman 7 St. (172), Phnom Penh City, Cambodia",
+    "lat": 11.565904,
+    "lng": 104.923247,
+    "rating": 3.6925465838509317,
+    "reviews": 322,
+    "categories": [
+      null
+    ],
+    "phone": "+855 10 300 400"
+  },
+  {
+    "slug": "red-angel",
+    "name": "Red Angel",
+    "address": "555/34 บีฮาร์โมนี Thanon Ratchaphruek, Tambon Maha Sawat, Amphoe Bang Kruai, Chang Wat Nonthaburi 11130, Thailand",
+    "lat": 13.8063246,
+    "lng": 100.4520838,
+    "rating": 4,
+    "reviews": 8,
+    "categories": [
+      null
+    ],
+    "phone": "098-887-6316"
+  },
+  {
+    "slug": "booze-club",
+    "name": "Booze (Villa) Club ",
+    "address": "598 Pracha Uthit Rd, Khwaeng Huai Khwang, Khet Huai Khwang, Krung Thep Maha Nakhon 10310, Thailand",
+    "lat": 13.769682,
+    "lng": 100.5852967,
+    "rating": 4.743150684931507,
+    "reviews": 292,
+    "categories": [
+      null
+    ],
+    "phone": "0823533553"
+  },
+  {
+    "slug": "biwa-cafe-massage",
+    "name": "BIWA Cafe Massage",
+    "address": "BIWA Cafe Massage, New Petchaburi Road, Bang Kapi, Huai Khwang, Bangkok, Thailand",
+    "lat": 13.7421583,
+    "lng": 100.5978266,
+    "rating": 3.953488372093023,
+    "reviews": 86,
+    "categories": [
+      null
+    ],
+    "phone": "02 318 1696"
+  },
+  {
+    "slug": "butterflies",
+    "name": "Butterflies",
+    "address": "Nana Plaza 3-3, 3rd Floor, right side, 1 ซ. สุขุมวิท 4 แขวงคลองเตย Klongtoey, กรุงเทพมหานคร 10110, Thailand",
+    "lat": 13.7414352,
+    "lng": 100.5532204,
+    "rating": 3.8444444444444446,
+    "reviews": 45,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "picasso",
+    "name": "Picasso",
+    "address": "28/9 Sukhumvit 19 Alley, Lane 2, Khlong Toei Nuea, Watthana, Bangkok 10110, Thailand",
+    "lat": 13.739291,
+    "lng": 100.5606306,
+    "rating": 4.8,
+    "reviews": 5,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "09 6642 6962"
+  },
+  {
+    "slug": "home-alone-outcall-massage-chiang-mai-chiang-mai",
+    "name": "Home Alone Outcall Massage Chiang Mai",
+    "address": "Chiang Mai, Mueang Chiang Mai District, Chiang Mai, Thailand",
+    "lat": 18.7883439,
+    "lng": 98.98530079999999,
+    "rating": 4.923076923076923,
+    "reviews": 13,
+    "categories": [
+      null,
+      null,
+      null
+    ],
+    "phone": "+66 (0)940159038"
+  },
+  {
+    "slug": "orchid",
+    "name": "Orchid 24",
+    "address": "Phrom Phong BTS Station, Sukhumvit Road, Khlong Tan Nuea, Watthana, Bangkok, Thailand",
+    "lat": 13.7304479,
+    "lng": 100.5697677,
+    "rating": 3,
+    "reviews": 2,
+    "categories": [
+      null
+    ],
+    "phone": "08 9499 4251"
+  },
+  {
+    "slug": "fortune-club",
+    "name": "Fortune Club ",
+    "address": "12, 13 Soi Sukhumvit 33, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7342722,
+    "lng": 100.5679144,
+    "rating": 3.9705882352941178,
+    "reviews": 34,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+66 2 117 3447"
+  },
+  {
+    "slug": "addict-massage",
+    "name": "Addict Massage",
+    "address": "Addict Massage, Sukhumvit 24 Alley, Khlong Tan, Khlong Toei, Bangkok, Thailand",
+    "lat": 13.7297655,
+    "lng": 100.5698176,
+    "rating": 3.9965277777777777,
+    "reviews": 288,
+    "categories": [
+      null
+    ],
+    "phone": "08 1663 2469"
+  },
+  {
+    "slug": "chairman-nuru-massage-bangkok",
+    "name": "Chairman Nuru Massage",
+    "address": "12, 4 Soi Sukhumvit 33, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7341643,
+    "lng": 100.5677519,
+    "rating": 4.973684210526316,
+    "reviews": 38,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "0922718989"
+  },
+  {
+    "slug": "office-massage-club",
+    "name": "Office Massage Club",
+    "address": "The Office Massage Club & Hotel, Rama IX Road, บางกะปิ Huai Khwang, Bangkok, Thailand",
+    "lat": 13.7519317,
+    "lng": 100.589437,
+    "rating": 3.9565217391304346,
+    "reviews": 23,
+    "categories": [
+      null
+    ],
+    "phone": ""
+  },
+  {
+    "slug": "visa-club-phitsanulok",
+    "name": "Visa Club Phitsanulok",
+    "address": "99 89 Tambon Phlai Chumphon, Amphoe Mueang Phitsanulok, Chang Wat Phitsanulok 65000, Thailand",
+    "lat": 16.8430504,
+    "lng": 100.2307889,
+    "rating": 4.7,
+    "reviews": 10,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "air-force-phnom-penh",
+    "name": "Air Force Bar",
+    "address": "House 29 104, Phnom Penh 12201, Cambodia",
+    "lat": 11.5746792,
+    "lng": 104.926467,
+    "rating": 3.759493670886076,
+    "reviews": 79,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+855 93 390 737"
+  },
+  {
+    "slug": "ladies-room",
+    "name": "Ladies Room",
+    "address": "31/1,33 ซอยธัญญะ Surawong Road, Khwaeng Suriya Wong, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
+    "lat": 13.7297529,
+    "lng": 100.5329925,
+    "rating": 5,
+    "reviews": 1,
+    "categories": [
+      null
+    ],
+    "phone": "066-005-6300"
+  },
+  {
+    "slug": "1-2-some",
+    "name": "1-2-some",
+    "address": "555 16 Thanon Sathu Pradit, Khwaeng Chong Nonsi, Khet Yan Nawa, Krung Thep Maha Nakhon 10120, Thailand",
+    "lat": 13.6898202,
+    "lng": 100.5341269,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "0642144723 "
+  },
+  {
+    "slug": "the-loft-30",
+    "name": "The Loft 30",
+    "address": "1144/1 Panya Village, Khwaeng Suan Luang, Khet Suan Luang, Krung Thep Maha Nakhon 10250, Thailand",
+    "lat": 13.736408,
+    "lng": 100.6195169,
+    "rating": 5,
+    "reviews": 1,
+    "categories": [
+      null
+    ],
+    "phone": "+66 97 134 4884"
+  },
+  {
+    "slug": "roxy-bar-soi-6",
+    "name": "Roxy Bar Soi 6",
+    "address": "WVRP+VQM, Pattaya Soi 6, Muang Pattaya, Amphoe Bang Lamung, Chang Wat Chon Buri 20150, Thailand",
+    "lat": 12.9422169,
+    "lng": 100.8869368,
+    "rating": 4.114754098360656,
+    "reviews": 61,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "ginza-entertainment",
+    "name": "Ginza Entertainment",
+    "address": "X3CW+XQ9, Chom Surang Yat Rd, Tambon Nai Mueang, Amphoe Mueang Nakhon Ratchasima, Chang Wat Nakhon Ratchasima 30000, Thailand",
+    "lat": 14.9724199,
+    "lng": 102.0969786,
+    "rating": 3.8333333333333335,
+    "reviews": 18,
+    "categories": [
+      null
+    ],
+    "phone": "+66 61 834 1004"
+  },
+  {
+    "slug": "lamai-beer-bars",
+    "name": "Lamai Beer Bars",
+    "address": "130/3 Thanon Had Lamai, Tambon Maret, Amphoe Ko Samui, Chang Wat Surat Thani 84310, Thailand",
+    "lat": 9.4633328,
+    "lng": 100.0429696,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "ako-spa",
+    "name": "AKO Spa",
+    "address": "72 Phraratchawiriyaphon 5, Lat Luang, Amphoe Phra Pradaeng, Chang Wat Samut Prakan 10330, Thailand",
+    "lat": 13.6633873,
+    "lng": 100.5260201,
+    "rating": 4.957446808510638,
+    "reviews": 47,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+66 97 045 5676"
+  },
+  {
+    "slug": "casanova",
+    "name": "Casanova",
+    "address": "Thailand, Bangkok, Vadhana, Bangkok, Sukhumvit 33/4 Alley, 카사노바 CASANOVA",
+    "lat": 13.7344593,
+    "lng": 100.5679291,
+    "rating": 5,
+    "reviews": 2,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": ""
+  },
+  {
+    "slug": "orient-massage",
+    "name": "Orient Massage",
+    "address": "Orient Massage, Sukhumvit Road, Khlong Tan, Khlong Toei, Bangkok, Thailand",
+    "lat": 13.7296456,
+    "lng": 100.5696192,
+    "rating": 3.7058823529411766,
+    "reviews": 17,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "02 259 8232"
+  },
+  {
+    "slug": "club-fate",
+    "name": "Club Fate",
+    "address": "420 / 161 - 162 Moo 9 Nongprue, เมืองพัทยา อำเภอบางละมุง ชลบุรี 20150, Thailand",
+    "lat": 12.9281647,
+    "lng": 100.8836532,
+    "rating": 4.509803921568627,
+    "reviews": 51,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "ponytails-bar-phnom-penh",
+    "name": "Ponytails Bar",
+    "address": "# 17, Street 130, Sangkat Toul Kork 1 Phnom Penh, Phnom Penh 12204, Cambodia",
+    "lat": 11.5717713,
+    "lng": 104.9281333,
+    "rating": 4.36734693877551,
+    "reviews": 49,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+855 10 572 470"
+  },
+  {
+    "slug": "a-beautiful-day-bangkok",
+    "name": "A Beautiful Day",
+    "address": "95/8 Soi Thong Lo 3, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7279602,
+    "lng": 100.5797047,
+    "rating": 5,
+    "reviews": 1,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "087 789 4299"
+  },
+  {
+    "slug": "butter-nawamin",
+    "name": "@Butter (Nawamin)",
+    "address": "Thanon Nawamin, Khwaeng Nuanchan, Khet Bueng Kum, Krung Thep Maha Nakhon, Thailand",
+    "lat": 13.8238451,
+    "lng": 100.6560611,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "0646351865"
+  },
+  {
+    "slug": "miyabi-old-mermaid",
+    "name": "Miyabi (old Mermaid)",
+    "address": "105 Changklan Rd, Tambon Chang Khlan, Amphoe Mueang Chiang Mai, Chang Wat Chiang Mai 50100, Thailand",
+    "lat": 18.7768821,
+    "lng": 98.9991379,
+    "rating": 4.615384615384615,
+    "reviews": 13,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "sweets-lounge",
+    "name": "Sweet's Lounge",
+    "address": "Sweet lounge, LK Metro Alley, Pattaya, Bang Lamung District, Chon Buri, Thailand",
+    "lat": 12.9299959,
+    "lng": 100.8851381,
+    "rating": 4.5,
+    "reviews": 2,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": ""
+  },
+  {
+    "slug": "linda-massage-outcall",
+    "name": "Linda Massage (Outcall)",
+    "address": "QXPQ+6MM ตำบล พระสิงห์ เมือง เชียงใหม่ 50200, Thailand",
+    "lat": 18.7855973,
+    "lng": 98.98918230000001,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "095 474 927"
+  },
+  {
+    "slug": "madame-claude",
+    "name": "Madame Claude",
+    "address": "25, 20 Soi Sukhumvit 26, Khwaeng Khlong Tan, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7277542,
+    "lng": 100.5707896,
+    "rating": 4.666666666666667,
+    "reviews": 6,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "happy-hour",
+    "name": "Happy Hour",
+    "address": "PHM9+M33, Bangkok, Vadhana, จังหวัด กรุงเทพมหานคร 10110, Thailand",
+    "lat": 13.7341435,
+    "lng": 100.5676649,
+    "rating": 5,
+    "reviews": 3,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "0925370573"
+  },
+  {
+    "slug": "cheongdam-massage",
+    "name": "Cheongdam Massage",
+    "address": "6 6 Thanon Ratchadaphisek, Khwaeng Khlong Toei, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7356697,
+    "lng": 100.5609054,
+    "rating": 5,
+    "reviews": 6,
+    "categories": [
+      null
+    ],
+    "phone": "+66 80 6439 557"
+  },
+  {
+    "slug": "club-bell-bangkok",
+    "name": "Club Bell",
+    "address": "116/15-16 (c3-c4, Soi Sukhumvit 23, Klongtoey Toey Nue, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7405107,
+    "lng": 100.5657889,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "064-123-2225"
+  },
+  {
+    "slug": "lola-love-massage-chiang-mai-2f008171-4599-4231-99e5-f28bde66ced0",
+    "name": "Lola Love Massage",
+    "address": "2 2 ซอย จำปี, Tambon Su Thep, Amphoe Mueang Chiang Mai, Chang Wat Chiang Mai 50200, Thailand",
+    "lat": 18.7936896,
+    "lng": 98.9705931,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "0829979858"
+  },
+  {
+    "slug": "wonder-massage",
+    "name": "Wonder Massage",
+    "address": "Wonder Massage, รัชดา, Khlong Toei, Bangkok, Thailand",
+    "lat": 13.7357125,
+    "lng": 100.5604452,
+    "rating": 5,
+    "reviews": 40,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "06 3269 9667"
+  },
+  {
+    "slug": "hakumi-nuru-massage-bangkok",
+    "name": "Hakumi Nuru Massage",
+    "address": "4/19 Soi Sukhumvit 33 Alley, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7329599,
+    "lng": 100.5681366,
+    "rating": 5,
+    "reviews": 67,
+    "categories": [
+      null
+    ],
+    "phone": "064 576 4265"
+  },
+  {
+    "slug": "u-club",
+    "name": "U Club",
+    "address": "Unnamed Road CQHM+PQW, Tambon Ban Lueam, Amphoe Mueang Udon Thani, Chang Wat Udon Thani 41000, Thailand",
+    "lat": 17.4293576,
+    "lng": 102.7844452,
+    "rating": 4.916666666666667,
+    "reviews": 120,
+    "categories": [
+      null
+    ],
+    "phone": "+66 61 328 6767"
+  },
+  {
+    "slug": "rawhide",
+    "name": "Rawhide",
+    "address": "Soi Cowboy, Khwaeng Khlong Toei Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7370674,
+    "lng": 100.5618986,
+    "rating": 4,
+    "reviews": 4,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "olivia-spa",
+    "name": "Olivia Spa",
+    "address": "222 16 Tambon Bang Rak Phatthana, Amphoe Bang Bua Thong, Chang Wat Nonthaburi 11110, Thailand",
+    "lat": 13.9078546,
+    "lng": 100.3998888,
+    "rating": 4.620689655172414,
+    "reviews": 29,
+    "categories": [
+      null
+    ],
+    "phone": "0830536938"
+  },
+  {
+    "slug": "yoni-massage-bangkok",
+    "name": "Yoni Massage Bangkok",
+    "address": "Бангкок, Таиланд",
+    "lat": 13.7563309,
+    "lng": 100.5017651,
+    "rating": 0,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "oskar-bistro-phnom-penh",
+    "name": "Oskar Bistro",
+    "address": "159 Preah Sisowath Quay, Phnom Penh, Cambodia",
+    "lat": 11.5729319,
+    "lng": 104.9286993,
+    "rating": 4.391061452513966,
+    "reviews": 358,
+    "categories": [
+      null
+    ],
+    "phone": "+855 23 215 179"
+  },
+  {
+    "slug": "dozo-massage",
+    "name": "Dozo Massage",
+    "address": "Dozo Massage, Sukhumvit 33 Alley, Khlong Tan Nuea, Watthana, Bangkok, Thailand",
+    "lat": 13.7348815,
+    "lng": 100.5676324,
+    "rating": 5,
+    "reviews": 1,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "02 014 1283"
+  },
+  {
+    "slug": "kiss2",
+    "name": "Kiss 2 (Absolute Massage)",
+    "address": "265, Absolute Bangkok Massage, 3 Soi Sukhumvit 22, Khlong Tan, Khlong Toei, Bangkok, Thailand",
+    "lat": 13.7327133,
+    "lng": 100.5647922,
+    "rating": 4.166666666666667,
+    "reviews": 24,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "09 4208 2884"
+  },
+  {
+    "slug": "tara-bangkok-soapy-massage",
+    "name": "Tara Bangkok Soapy Massage (Tarawadee)",
+    "address": "Tara Bangkok Soapy Massage Phatthanakan 46 ธาราวดี อาบอบนวด พัฒนาการ 46 | 大浴室 | マッサージ | 마사지 |, Soi Phatthanakan 46, Suan Luang, Bangkok, Thailand",
+    "lat": 13.735829,
+    "lng": 100.631058,
+    "rating": 5,
+    "reviews": 1,
+    "categories": [
+      null
+    ],
+    "phone": "06 3421 7188"
+  },
+  {
+    "slug": "td-spa-vip-the-dormitory",
+    "name": "TD Spa VIP (The Dormitory)",
+    "address": "Unnamed Road, ตำบลเชิงเนิน อำเภอเมืองระยอง ระยอง 21000, Thailand",
+    "lat": 12.7021439,
+    "lng": 101.2947161,
+    "rating": 5,
+    "reviews": 2,
+    "categories": [
+      null
+    ],
+    "phone": "0827898833"
+  },
+  {
+    "slug": "wood-bar",
+    "name": "Wood Bar",
+    "address": "131 31 Soi Sukhumvit 7/1, Khwaeng Khlong Toei Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7412695,
+    "lng": 100.5557259,
+    "rating": 4.141304347826087,
+    "reviews": 92,
+    "categories": [
+      null
+    ],
+    "phone": "02 651 2563"
+  },
+  {
+    "slug": "day-and-night-bar-complex",
+    "name": "Day and Night Bar Complex",
+    "address": "Sampanthamit Rd muong Amphoe Mueang Udon Thani, Chang Wat Udon Thani 41000, Thailand",
+    "lat": 17.4065742,
+    "lng": 102.8022934,
+    "rating": 3.548076923076923,
+    "reviews": 104,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "pink-x-station",
+    "name": "Pink X Station",
+    "address": "Pink X Station Chang Khlan Sub-district, Mueang Chiang Mai District, Chiang Mai, Thailand",
+    "lat": 18.7796127,
+    "lng": 98.9996448,
+    "rating": 4.768518518518518,
+    "reviews": 216,
+    "categories": [
+      null
+    ],
+    "phone": "09 6140 0813"
+  },
+  {
+    "slug": "lady-love",
+    "name": "Lady Love",
+    "address": "33, 102 Soi L K Metro, Muang Pattaya, Amphoe Bang Lamung, Chang Wat Chon Buri 20150, Thailand",
+    "lat": 12.9296724,
+    "lng": 100.8841826,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "0928545030"
+  },
+  {
+    "slug": "nuru-massage-nanai-road",
+    "name": "Nuru Massage Nanai Road",
+    "address": "Nuru Massage, Nanai Road, Pa Tong, Kathu District, Phuket, Thailand",
+    "lat": 7.884788,
+    "lng": 98.3029192,
+    "rating": 4.368932038834951,
+    "reviews": 103,
+    "categories": [
+      null
+    ],
+    "phone": "09 4958 9087"
+  },
+  {
+    "slug": "glamor-nuru-massage",
+    "name": "Glamor Nuru Massage",
+    "address": "43/12 Soi Sukhumvit 31, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7392916,
+    "lng": 100.5664723,
+    "rating": 4.7272727272727275,
+    "reviews": 11,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "096-741-6416"
+  },
+  {
+    "slug": "shanghai-bar-phnom-penh",
+    "name": "Shanghai Bar",
+    "address": "Street 51 corner 172, Phnom Penh, Cambodia",
+    "lat": 11.5658901,
+    "lng": 104.9236055,
+    "rating": 4.108808290155441,
+    "reviews": 193,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+855 15 843 776"
+  },
+  {
+    "slug": "caviar-spa",
+    "name": "Caviar Spa",
+    "address": "ตึกห้อง29/9 Tambon San Sai Noi, Amphoe San Sai, Chang Wat Chiang Mai 50210, Thailand",
+    "lat": 18.8099694,
+    "lng": 99.0254643,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": ""
+  },
+  {
+    "slug": "arena-spa",
+    "name": "Arena Spa",
+    "address": "101/1-2 ถนนท่าข้าม ซอยท่าข้าม 9/1 แสมดำ บางขุนเทียน Krung Thep Maha Nakhon 10150, Thailand",
+    "lat": 13.6495622,
+    "lng": 100.4452922,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "086-411-9891"
+  },
+  {
+    "slug": "julia-spa",
+    "name": "Julia Spa",
+    "address": "249 ทิวลิปสแควร์ 49 Phet Kasem Rd, Tambon Om Noi, Amphoe Krathum Baen, Chang Wat Samut Sakhon 74130, Thailand",
+    "lat": 13.7063073,
+    "lng": 100.3226207,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "094-130-7969"
+  },
+  {
+    "slug": "kinnaree-spa-rangsit",
+    "name": "Kinnaree Spa Rangsit",
+    "address": "1212/377 ต Tambon Prachathipat, Amphoe Thanyaburi, Chang Wat Pathum Thani 12130, Thailand",
+    "lat": 13.9930207,
+    "lng": 100.6618144,
+    "rating": 3.7142857142857144,
+    "reviews": 7,
+    "categories": [
+      null
+    ],
+    "phone": "0896642624 "
+  },
+  {
+    "slug": "dream-massage",
+    "name": "Dream Massage",
+    "address": "22/8 ถนน ซอย Tambon Chang Phueak, Amphoe Mueang Chiang Mai, Chang Wat Chiang Mai 50300, Thailand",
+    "lat": 18.8011063,
+    "lng": 98.9784605,
+    "rating": 4.827160493827161,
+    "reviews": 162,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": ""
+  },
+  {
+    "slug": "slutz-gc-boomerang",
+    "name": "Slutz GC Boomerang",
+    "address": "420, 145 Soi Boomerang, Muang Pattaya, Amphoe Bang Lamung, Chang Wat Chon Buri 20150, Thailand",
+    "lat": 12.9278542,
+    "lng": 100.8837571,
+    "rating": 5,
+    "reviews": 1,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "dna-massage-bangkok",
+    "name": "DNA Massage",
+    "address": "205/22-23 Soi Thong Lo, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7317899,
+    "lng": 100.581546,
+    "rating": 4.884057971014493,
+    "reviews": 69,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "098-276-2588"
+  },
+  {
+    "slug": "emmanuelle",
+    "name": "Emmanuelle",
+    "address": "Emmanuelle Entertainment, Ratchadaphisek Road, Din Daeng, Bangkok, Thailand",
+    "lat": 13.7768004,
+    "lng": 100.5729742,
+    "rating": 5,
+    "reviews": 1,
+    "categories": [
+      null
+    ],
+    "phone": "02 2764 6904"
+  },
+  {
+    "slug": "aa-massage-chiang-mai",
+    "name": "AA Massage & Swedish",
+    "address": "QXVC+RQ, Suthep, Mueang Chiang Mai District, Chiang Mai 50200 태국",
+    "lat": 18.7945625,
+    "lng": 98.97193750000001,
+    "rating": 4.6,
+    "reviews": 10,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "083 479 0707"
+  },
+  {
+    "slug": "ramaix-spa-club",
+    "name": "RamaIX Spa Club",
+    "address": "15 ซอย Rama IX Soi 43, Khwaeng Suan Luang, Khet Suan Luang, Krung Thep Maha Nakhon 10250, Thailand",
+    "lat": 13.7429087,
+    "lng": 100.6298117,
+    "rating": 5,
+    "reviews": 1,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "oscar",
+    "name": "Oscar",
+    "address": "60 Thanon Pho Si, Tambon Mak Khaeng, Amphoe Mueang Udon Thani, Chang Wat Udon Thani 41000, Thailand",
+    "lat": 17.4081954,
+    "lng": 102.7850198,
+    "rating": 2.857142857142857,
+    "reviews": 14,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "sakura-akasuri",
+    "name": "Sakura Akasuri",
+    "address": "10110, 160/4-6 Thonglor Soi 6, Klongtan nuea, เขตวัฒนา Bangkok 10110, Thailand",
+    "lat": 13.7300043,
+    "lng": 100.5813565,
+    "rating": 3.5842696629213484,
+    "reviews": 89,
+    "categories": [
+      null
+    ],
+    "phone": "+66 2 005 0352"
+  },
+  {
+    "slug": "the-moon-lake-spa",
+    "name": "The Moon Lake Spa",
+    "address": "55/28 เดอะมูนเลคสปา ม.5เดอะคอนเนค2 ซ ซอย แจ้งวัฒนะ-ปากเกร็ด ต.บ้านใหม่ Amphoe Pak Kret, Chang Wat Nonthaburi 11120, Thailand",
+    "lat": 13.9198092,
+    "lng": 100.5460972,
+    "rating": 5,
+    "reviews": 1,
+    "categories": [
+      null
+    ],
+    "phone": "097-285-6298 "
+  },
+  {
+    "slug": "madonna-massage-vip",
+    "name": "Madonna Massage VIP",
+    "address": "74/162 ถนน พูนผลไนท์พลาซ่า ต.ตลาดเหนือ อ.เมือง ตลาดเหนือ Tambon Talat Nuea, เมือง Chang Wat Phuket 83000, Thailand",
+    "lat": 7.8759215,
+    "lng": 98.38793799999999,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "0946188018"
+  },
+  {
+    "slug": "dream-heaven-26",
+    "name": "Dream Heaven (Soi 26)",
+    "address": "Dream Heaven Massage Soi 26, Soi Sukhumvit 26, Khlong Tan Nuea, Watthana, Bangkok, Thailand",
+    "lat": 13.728472,
+    "lng": 100.5700988,
+    "rating": 4,
+    "reviews": 3,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "02 661 2699"
+  },
+  {
+    "slug": "hera-club",
+    "name": "Hera Club",
+    "address": "420 THE ONE bangna 107 Numberone-ram 2 Rd, Khwaeng Dok Mai, Khet Prawet, Krung Thep Maha Nakhon 10250, Thailand",
+    "lat": 13.6646885,
+    "lng": 100.6954156,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "065-060-6903"
+  },
+  {
+    "slug": "mango-massage",
+    "name": "Mango Massage",
+    "address": "3/5 Sukhumvit Rd, Khwaeng Khlong Tan, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7295202,
+    "lng": 100.5696424,
+    "rating": 3.3181818181818183,
+    "reviews": 22,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "0865153067"
+  },
+  {
+    "slug": "moulin-rouge",
+    "name": "Moulin Rouge",
+    "address": "94 Walking St, Muang Pattaya, Amphoe Bang Lamung, Chang Wat Chon Buri 20150, Thailand",
+    "lat": 12.9267842,
+    "lng": 100.8735883,
+    "rating": 4.01123595505618,
+    "reviews": 89,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "harem-massage-spa",
+    "name": "Harem Massage & Spa",
+    "address": "QX6R+MX8, Pa Daet Sub-district, Mueang Chiang Mai District, Chiang Mai 50100, Thailand",
+    "lat": 18.7616525,
+    "lng": 98.9924451,
+    "rating": 3.6153846153846154,
+    "reviews": 13,
+    "categories": [
+      null
+    ],
+    "phone": "087-1748583 "
+  },
+  {
+    "slug": "auroramassage",
+    "name": "AuroraMassage",
+    "address": "14/8 Soi Sukhumvit 33, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110 タイ",
+    "lat": 13.7352131,
+    "lng": 100.5679029,
+    "rating": 3.6923076923076925,
+    "reviews": 13,
+    "categories": [
+      null
+    ],
+    "phone": "063-271-8820"
+  },
+  {
+    "slug": "helicopter-bar",
+    "name": "Helicopter Bar ",
+    "address": "Pattaya Soi 6, Muang Pattaya, Amphoe Bang Lamung, Chang Wat Chon Buri 20150, Thailand",
+    "lat": 12.9423701,
+    "lng": 100.8860908,
+    "rating": 4.3,
+    "reviews": 10,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "horny-bar",
+    "name": "Horny Bar",
+    "address": "พัทยา, ซอย 6, Muang Pattaya, Amphoe Bang Lamung, Chang Wat Chon Buri 20150, Thailand",
+    "lat": 12.942444,
+    "lng": 100.8862006,
+    "rating": 3.272727272727273,
+    "reviews": 11,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "thanks-massage",
+    "name": "Thanks Massage",
+    "address": "thanks massage, 10 Phrapaipak Sukhumvit 33/4 Alley, Khlong Tan Nuea, Watthana, Bangkok, Thailand",
+    "lat": 13.733076,
+    "lng": 100.5676442,
+    "rating": 4.2,
+    "reviews": 5,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+66-994448295"
+  },
+  {
+    "slug": "orange-bar-bangkok",
+    "name": "Orange Bar Bangkok",
+    "address": "155-6 Soi Sukhumvit 11/1, คลองเตยเหนือ Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7402049,
+    "lng": 100.556699,
+    "rating": 4.392857142857143,
+    "reviews": 28,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "club-honey",
+    "name": "Club Honey",
+    "address": "43/8 Soi Sukhumvit 31, Khwaeng Khlong Toei Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7392532,
+    "lng": 100.5664643,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "mokaru-massage-spa",
+    "name": "Mokaru Massage & Spa",
+    "address": "Nong Pa Khrang Sub-district, Mueang Chiang Mai District, Chiang Mai 50000, Thailand",
+    "lat": 18.7838066,
+    "lng": 99.0351609,
+    "rating": 5,
+    "reviews": 3,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "allure-house",
+    "name": "Allure House",
+    "address": "55/5, 4 นาคนิวาส Ladphrao, เขตลาดพร้าว กรุงเทพมหานคร 10230, Thailand",
+    "lat": 13.8016698,
+    "lng": 100.6102266,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "061-419-2444"
+  },
+  {
+    "slug": "waterfall-taki-snacks-karaoke-bangkok",
+    "name": "Waterfall (Taki snacks & karaoke)",
+    "address": "5/41 Soi Pridi Banomyong 3, Khwaeng Phra Khanong Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.715099,
+    "lng": 100.594436,
+    "rating": 5,
+    "reviews": 3,
+    "categories": [
+      null
+    ],
+    "phone": "0828324798"
+  },
+  {
+    "slug": "palace",
+    "name": "Palace",
+    "address": "10 Phalochai Rd, ตำบล ในเมือง Amphoe Mueang Ubon Ratchathani, Chang Wat Ubon Ratchathani 34000, Thailand",
+    "lat": 15.2320424,
+    "lng": 104.8507003,
+    "rating": 3.875,
+    "reviews": 8,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "green-mango",
+    "name": "Green Mango",
+    "address": "G3M7+399 ตำบล เกาะสมุย อำเภอเกาะสมุย สุราษฎร์ธานี 84140, Thailand",
+    "lat": 9.5326574,
+    "lng": 100.0634915,
+    "rating": 4.333333333333333,
+    "reviews": 3,
+    "categories": [
+      null
+    ],
+    "phone": "+66 77 300 672"
+  },
+  {
+    "slug": "baan-puen",
+    "name": "Baan Puen",
+    "address": "Soi Suwan Mani 23, Khwaeng Samsen Nok, Khet Huai Khwang, Krung Thep Maha Nakhon 10310, Thailand",
+    "lat": 13.7717821,
+    "lng": 100.5906715,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "099 674 8097"
+  },
+  {
+    "slug": "honey-bee",
+    "name": "Honey Bee",
+    "address": "261/14 Soi Sukhumvit 22, Khlong Toei, Bangkok, Thailand",
+    "lat": 13.7296188,
+    "lng": 100.5651074,
+    "rating": 4.555555555555555,
+    "reviews": 45,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "09 6394 5872"
+  },
+  {
+    "slug": "tata-massage",
+    "name": "Tata Massage",
+    "address": "Sukhumvit Soi 8, Pak Nam, Mueang Samut Prakan District, Samut Prakan, Thailand",
+    "lat": 13.742656590458873,
+    "lng": 100.54728666835939,
+    "rating": 4.537037037037037,
+    "reviews": 54,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "‪+66 81 802 7206‬"
+  },
+  {
+    "slug": "ez-massage",
+    "name": "EZ Massage",
+    "address": "3 Soi Sukhumvit 24, Khwaeng Khlong Tan, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7298488,
+    "lng": 100.5696038,
+    "rating": 4,
+    "reviews": 4,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "0802165867"
+  },
+  {
+    "slug": "khunnoo-spa",
+    "name": "Khunnoo Spa",
+    "address": "2 Soi Nonthaburi 35, Tambon Tha Sai, Amphoe Mueang Nonthaburi, Chang Wat Nonthaburi 11000, Thailand",
+    "lat": 13.8821605,
+    "lng": 100.4968664,
+    "rating": 3,
+    "reviews": 1,
+    "categories": [
+      null
+    ],
+    "phone": "094-667-1004"
+  },
+  {
+    "slug": "kasalong-bj-bar",
+    "name": "Kasalong BJ Bar",
+    "address": "PHQ4+P52, Sukhumvit Soi 6, Khwaeng Khlong Toei, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7392627,
+    "lng": 100.5554001,
+    "rating": 3.6578947368421053,
+    "reviews": 38,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "vnus-spa",
+    "name": "Vnus Spa",
+    "address": "11 Soi Rattanathibech 28, Tambon Bang Kraso, Amphoe Mueang Nonthaburi, Chang Wat Nonthaburi 11000, Thailand",
+    "lat": 13.8662382,
+    "lng": 100.4990371,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "0988266723"
+  },
+  {
+    "slug": "the-unique",
+    "name": "The Unique",
+    "address": "VHQG+XQP, Thung Song Hong, Lak Si, Bangkok 10210, Thailand",
+    "lat": 13.8899606,
+    "lng": 100.5769584,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "099-110-2011"
+  },
+  {
+    "slug": "cherry-massage",
+    "name": "Cherry Massage",
+    "address": "2 PHHC+G6X, 22 Sukhumvit Soi 22, Khwaeng Khlong Tan, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.733044,
+    "lng": 100.5646811,
+    "rating": 4.636363636363637,
+    "reviews": 33,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+669-888-69854"
+  },
+  {
+    "slug": "orbit-spa",
+    "name": "Orbit Spa",
+    "address": "Soi Sukhonthasawat 24, Khwaeng Lat Phrao, Khet Lat Phrao, Krung Thep Maha Nakhon 10230, Thailand",
+    "lat": 13.8259441,
+    "lng": 100.621585,
+    "rating": 5,
+    "reviews": 3,
+    "categories": [
+      null
+    ],
+    "phone": "093-394-9898"
+  },
+  {
+    "slug": "kiss-bar-phnom-penh",
+    "name": "Kiss Bar",
+    "address": "HWFH+467, Street 5, Phnom Penh, Cambodia",
+    "lat": 11.5727863,
+    "lng": 104.9280543,
+    "rating": 3.2413793103448274,
+    "reviews": 29,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": " +855 97 943 7637"
+  },
+  {
+    "slug": "phoenix-club",
+    "name": "Rabbit Club",
+    "address": "Phoenix Club, Tunghotel Road, Nong Pa Khrang Sub-district, Mueang Chiang Mai District, Chiang Mai, Thailand",
+    "lat": 18.7952622,
+    "lng": 99.0211225,
+    "rating": 3.8518518518518516,
+    "reviews": 27,
+    "categories": [
+      null
+    ],
+    "phone": "09 4325 1888"
+  },
+  {
+    "slug": "darin-club",
+    "name": "Darin Club",
+    "address": "Unnamed Road Tambon Chang Khlan, Amphoe Mueang Chiang Mai, Chang Wat Chiang Mai 50100, Thailand",
+    "lat": 18.7658549,
+    "lng": 98.99978019999999,
+    "rating": 4.551724137931035,
+    "reviews": 29,
+    "categories": [
+      null
+    ],
+    "phone": "096 974 5658"
+  },
+  {
+    "slug": "aiei-spa",
+    "name": "Aiei Spa",
+    "address": "72/48 ถนนแจ้งวัฒนะ-ปากเกร็ด ตำบลบางตลาด Amphoe Pak Kret, Chang Wat Nonthaburi 11120, Thailand",
+    "lat": 13.8933436,
+    "lng": 100.5163888,
+    "rating": 4.214285714285714,
+    "reviews": 14,
+    "categories": [
+      null
+    ],
+    "phone": "02-9626788"
+  },
+  {
+    "slug": "mandarin-a-go-go",
+    "name": "Mandarin a-Go-Go",
+    "address": "1, 4 Sukhumvit Road, Khwaeng Khlong Toei, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7415579,
+    "lng": 100.5531463,
+    "rating": 1.5,
+    "reviews": 6,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "melody-spa-284d9442-4508-4300-bfaf-56056c9585dd",
+    "name": "Melody Spa",
+    "address": "456 13 Thanon Si Vara, Khwaeng Phlabphla, Khet Wang Thonglang, Krung Thep Maha Nakhon 10310, Thailand",
+    "lat": 13.7689425,
+    "lng": 100.6056149,
+    "rating": 3.4,
+    "reviews": 5,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "0880080007"
+  },
+  {
+    "slug": "yoshi",
+    "name": "Yoshi",
+    "address": "6 Soi Phatthanakan 74, Khwaeng Prawet, Khet Prawet, Krung Thep Maha Nakhon 10250, Thailand",
+    "lat": 13.7281583,
+    "lng": 100.6559765,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "083-949-8588 "
+  },
+  {
+    "slug": "body-bliss",
+    "name": "Body Bliss (Outcall Only)",
+    "address": "Phrom Phong Bangkok, Thailand",
+    "lat": 13.7387158,
+    "lng": 100.5689948,
+    "rating": 5,
+    "reviews": 1,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+66 9 7348 2622"
+  },
+  {
+    "slug": "tycoon-a-go-go",
+    "name": "Tycoon A Go Go",
+    "address": "1, 11 Soi Sukhumvit 4, Khwaeng Khlong Toei, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.740371,
+    "lng": 100.553071,
+    "rating": 5,
+    "reviews": 1,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "harem",
+    "name": "Harem",
+    "address": "21/2-8 Soi Seadragon, Tambon Patong, Amphoe Kathu, Chang Wat Phuket 83150, Thailand",
+    "lat": 7.8938807,
+    "lng": 98.2967594,
+    "rating": 4.21830985915493,
+    "reviews": 142,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "08 7272 2588"
+  },
+  {
+    "slug": "z-through-spa",
+    "name": "Z-Through Spa",
+    "address": "58 11 Khuanthani Rd, ตำบล ในเมือง Amphoe Mueang Ubon Ratchathani, Chang Wat Ubon Ratchathani 34000, Thailand",
+    "lat": 15.2279642,
+    "lng": 104.8683657,
+    "rating": 4.3076923076923075,
+    "reviews": 26,
+    "categories": [
+      null
+    ],
+    "phone": "+66 86 224 9981"
+  },
+  {
+    "slug": "sapphire-club",
+    "name": "Sapphire Club",
+    "address": "Soi Pattaya 15, Muang Pattaya, Amphoe Bang Lamung, Chang Wat Chon Buri 20150, Thailand",
+    "lat": 12.9261882,
+    "lng": 100.8738598,
+    "rating": 3.5692307692307694,
+    "reviews": 65,
+    "categories": [
+      null
+    ],
+    "phone": "065 727 6444"
+  },
+  {
+    "slug": "in-love",
+    "name": "In Love",
+    "address": "MC9H+M5R, Khlong Bang Bon, Bang Bon, Bangkok 10150, Thailand",
+    "lat": 13.669231,
+    "lng": 100.4278778,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "062-98118"
+  },
+  {
+    "slug": "le-ciel-laputa-bkk-f5453c58-d6bc-4626-998a-9c466b698925",
+    "name": "Le Ciel Laputa BKK",
+    "address": "124 Sukhumvit Road, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7315978,
+    "lng": 100.5784575,
+    "rating": 5,
+    "reviews": 4,
+    "categories": [
+      null
+    ],
+    "phone": " +66 97 995 5433"
+  },
+  {
+    "slug": "top-136-bar-phnom-penh",
+    "name": "Top 136 Bar",
+    "address": "24-26 Street 136, Phnom Penh, Cambodia",
+    "lat": 11.5711571,
+    "lng": 104.9288323,
+    "rating": 3.8,
+    "reviews": 30,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "office-lady",
+    "name": "Office Lady",
+    "address": "92/8 หมู่ 4 ท่าศาลา Amphoe Mueang Chiang Mai, Chang Wat Chiang Mai 50000, Thailand",
+    "lat": 18.7613453,
+    "lng": 99.0386821,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "diva-spa",
+    "name": "Diva Spa",
+    "address": "Lat Phrao 101 Soi 48, Khwaeng Nawamin, Khet Bueng Kum, Krung Thep Maha Nakhon 10240, Thailand",
+    "lat": 13.7961135,
+    "lng": 100.6355188,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "098 198 3588"
+  },
+  {
+    "slug": "maximum-massage",
+    "name": "Maximum Massage",
+    "address": "20 Soi Selakam, Tambon Hua Hin, Amphoe Hua Hin, Chang Wat Prachuap Khiri Khan 77110, Thailand",
+    "lat": 12.5714819,
+    "lng": 99.95939899999999,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "+66 83 614 2294"
+  },
+  {
+    "slug": "mikado",
+    "name": "Mikado",
+    "address": "62/17-18 fl 3 Thani Ya Plaza Khwaeng Suriya Wong, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
+    "lat": 13.7291779,
+    "lng": 100.5337422,
+    "rating": 5,
+    "reviews": 1,
+    "categories": [
+      null
+    ],
+    "phone": "0615575589"
+  },
+  {
+    "slug": "the-bachelor-metropole-hotel",
+    "name": "The Bachelor (Metropole Hotel)",
+    "address": "2802 New Petchaburi Rd, Khwaeng Bang Kapi, Khet Huai Khwang, Krung Thep Maha Nakhon 10310, Thailand",
+    "lat": 13.7438369,
+    "lng": 100.5856528,
+    "rating": 3.1,
+    "reviews": 10,
+    "categories": [
+      null
+    ],
+    "phone": "097-087-1469"
+  },
+  {
+    "slug": "the-queen-club",
+    "name": "The Queen Club",
+    "address": "Chaiyapoom Soi 1, Tambon Si Phum, Amphoe Mueang Chiang Mai, Chang Wat Chiang Mai 50300, Thailand",
+    "lat": 18.7925837,
+    "lng": 98.9950539,
+    "rating": 4.2727272727272725,
+    "reviews": 11,
+    "categories": [
+      null
+    ],
+    "phone": "+66 99 428 5886"
+  },
+  {
+    "slug": "the-kiss",
+    "name": "The Kiss",
+    "address": "74/168-169 Thanon Phun Phon, Tambon Talat Nuea, Amphoe Mueang Phuket, Chang Wat Phuket 83000, Thailand",
+    "lat": 7.876048099999999,
+    "lng": 98.38756479999999,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "095 259 8816"
+  },
+  {
+    "slug": "ola-ola",
+    "name": "Ola Ola",
+    "address": "OLA OLA Massage, Sukhumvit Road, Khlong Toei, Bangkok, Thailand",
+    "lat": 13.7331919,
+    "lng": 100.5646974,
+    "rating": 4.910714285714286,
+    "reviews": 56,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "09 0298 9799"
+  },
+  {
+    "slug": "maggie-mays",
+    "name": "Maggie Mays",
+    "address": "Maggie Mays, 383, 21 ซอย เฉลิมพระเกียรติ 25 เมืองพัทยา อำเภอบางละมุง ชลบุรี 20150, Thailand",
+    "lat": 12.9280531,
+    "lng": 100.8868871,
+    "rating": 4.282051282051282,
+    "reviews": 78,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "sento-bangkok-bangkok",
+    "name": "Sento Bangkok",
+    "address": "582/25-26, Thanon Ekkamai, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7380382,
+    "lng": 100.5890185,
+    "rating": 4.8545454545454545,
+    "reviews": 55,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+66 64 253 7196"
+  },
+  {
+    "slug": "geisha",
+    "name": "Geisha",
+    "address": "109, 61 Thanon Chaeng Watthana, Tambon Pak Kret, Amphoe Pak Kret, Chang Wat Nonthaburi 11120, Thailand",
+    "lat": 13.9085533,
+    "lng": 100.5014042,
+    "rating": 4.472727272727273,
+    "reviews": 55,
+    "categories": [
+      null
+    ],
+    "phone": "083-704-9088"
+  },
+  {
+    "slug": "a7-dj-bar",
+    "name": "A7-DJ Bar",
+    "address": "216/28 Moo 9, Pattaya 7, Sai 2, Na Klua, อำเภอบางละมุง ชลบุรี 20150, Thailand",
+    "lat": 12.9358637,
+    "lng": 100.8856928,
+    "rating": 4.245283018867925,
+    "reviews": 106,
+    "categories": [
+      null
+    ],
+    "phone": "+66 38 361 473"
+  },
+  {
+    "slug": "coffee-cute",
+    "name": "Coffee Cute",
+    "address": "QHXW+869, Saphansong, Lat Phrao, Bangkok 10230, Thailand",
+    "lat": 13.7982846,
+    "lng": 100.5955996,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "0922900291"
+  },
+  {
+    "slug": "dream-heaven-33",
+    "name": "Dream Heaven (Soi 33)",
+    "address": "Dream Heaven Massage 33, Sukhumvit 33 Alley, Khlong Tan Nuea, Watthana, Bangkok, Thailand",
+    "lat": 13.7345212,
+    "lng": 100.5677128,
+    "rating": 4,
+    "reviews": 1,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "08 7829 8928"
+  },
+  {
+    "slug": "red-dragon",
+    "name": "Red Dragon",
+    "address": "3, 1 Sukhumvit Road, Khwaeng Khlong Tan, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7414439,
+    "lng": 100.55307,
+    "rating": 4.5,
+    "reviews": 6,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "romance8083-bangkok",
+    "name": "Romance8083",
+    "address": "1 Soi Sukhumvit 10, เเขวง คลองเตย Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7385197,
+    "lng": 100.5577184,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "082953 2989"
+  },
+  {
+    "slug": "basquiat",
+    "name": "Basquiat",
+    "address": "118 Soi Sukhumvit 23, Khwaeng Khlong Toei Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7405585,
+    "lng": 100.5643577,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "0972921662"
+  },
+  {
+    "slug": "rong-nam-cha",
+    "name": "Rong Nam Cha ",
+    "address": "98 Khwaeng Wat Tha Phra, Khet Bangkok Yai, Krung Thep Maha Nakhon 10600, Thailand",
+    "lat": 13.7280957,
+    "lng": 100.4752528,
+    "rating": 3,
+    "reviews": 1,
+    "categories": [
+      null
+    ],
+    "phone": "0988854491"
+  },
+  {
+    "slug": "lavender-spa",
+    "name": "Lavender Spa",
+    "address": "84, 47 Rama 2 Rd, Khwaeng Samae Dam, Khet Bang Khun Thian, Krung Thep Maha Nakhon 10150, Thailand",
+    "lat": 13.65265,
+    "lng": 100.424573,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "099-504-8122"
+  },
+  {
+    "slug": "paza",
+    "name": "Paza",
+    "address": "Thammasat University Nakhon Ratchasima Campus, 132 132, Tambon Nai Mueang, Amphoe Mueang Nakhon Ratchasima, Chang Wat Nakhon Ratchasima 30000, Thailand",
+    "lat": 14.9733955,
+    "lng": 102.0926372,
+    "rating": 3.8,
+    "reviews": 5,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "g2g-massage-bangkok",
+    "name": "G2G Massage",
+    "address": "12/30 Sukhumvit 33 Soi 4, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7346049,
+    "lng": 100.5679942,
+    "rating": 5,
+    "reviews": 55,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "082 516 1958"
+  },
+  {
+    "slug": "zab-spa",
+    "name": "Zabb Spa",
+    "address": "94/1 Thanon Ngam Wong Wan, Khwaeng Thung Song Hong, Khet Lak Si, Krung Thep Maha Nakhon 10210, Thailand",
+    "lat": 13.8543249,
+    "lng": 100.5510446,
+    "rating": 3.6176470588235294,
+    "reviews": 34,
+    "categories": [
+      null
+    ],
+    "phone": "099-971-7753 "
+  },
+  {
+    "slug": "bar-three-bangkok",
+    "name": "Bar Three",
+    "address": "Thailand, Bangkok, Vadhana, Bangkok, TH Bangkok Watthana KhlongTanNuea Akkaphat Sukumvit 55 44/1-2",
+    "lat": 13.7338633,
+    "lng": 100.5798751,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "02-002-4887"
+  },
+  {
+    "slug": "pink-baby-a-go-go",
+    "name": "Pink Baby a Go Go",
+    "address": "420/146, เมืองพัทยา อำเภอบางละมุง ชลบุรี 20150, Thailand",
+    "lat": 12.9279028,
+    "lng": 100.8837091,
+    "rating": 3,
+    "reviews": 4,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+66 38 197 661"
+  },
+  {
+    "slug": "xxx-lounge-patpong",
+    "name": "XXX Lounge Patpong",
+    "address": "9, 8 Thanon Patpong 2 Khwaeng Silom, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
+    "lat": 13.7285026,
+    "lng": 100.532356,
+    "rating": 4.277777777777778,
+    "reviews": 36,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "usb-spa",
+    "name": "USB Spa",
+    "address": "479 หมู่12 Soi Bang Na-Trat 21, บางนา Khet Bang Na, Krung Thep Maha Nakhon 10260, Thailand",
+    "lat": 13.6696557,
+    "lng": 100.632613,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "0864583768 "
+  },
+  {
+    "slug": "nana-plaza",
+    "name": "Nana Plaza",
+    "address": "3, 1 Sukhumvit Road, Khwaeng Khlong Tan, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7414439,
+    "lng": 100.55307,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "black-lotus-massage-bangkok",
+    "name": "Black Lotus Massage",
+    "address": "25, 5 Sukhumvit Rd, Khwaeng Khlong Tan, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7279578,
+    "lng": 100.5704751,
+    "rating": 4.476190476190476,
+    "reviews": 21,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "moulin-rouge-58db4f65-9f6e-4395-92f0-1ef67fb6d9ef",
+    "name": "Moulin Rouge",
+    "address": "5 T. A., Bangla Rd, Kathu, Kathu District, Phuket 83150, Thailand",
+    "lat": 7.893819100000001,
+    "lng": 98.2959478,
+    "rating": 3.8392857142857144,
+    "reviews": 112,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+66975566669"
+  },
+  {
+    "slug": "grand-honey3-pattaya",
+    "name": "Grand Honey3 ",
+    "address": "456 M.10 Thanon Pattaya Tai, Muang Pattaya, Amphoe Bang Lamung, Chang Wat Chon Buri 20150, Thailand",
+    "lat": 12.9237884,
+    "lng": 100.8793864,
+    "rating": 4.086538461538462,
+    "reviews": 104,
+    "categories": [
+      null
+    ],
+    "phone": "080 083 8310"
+  },
+  {
+    "slug": "seven-house-of-angels",
+    "name": "Seven House of Angels",
+    "address": "Seven House of Angels, Rarm Intra 14 Alley, Chorakhe Bua, Lat Phrao, Bangkok, Thailand",
+    "lat": 13.8340394,
+    "lng": 100.6153448,
+    "rating": 4.487804878048781,
+    "reviews": 41,
+    "categories": [
+      null
+    ],
+    "phone": "08 4344 3553"
+  },
+  {
+    "slug": "inferno-bar",
+    "name": "Inferno Bar",
+    "address": "WVHP+9F4, Pattaya City, Bang Lamung District, Chon Buri 20150, Thailand",
+    "lat": 12.928423,
+    "lng": 100.8862225,
+    "rating": 3.857142857142857,
+    "reviews": 14,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+66 91 056 9627"
+  },
+  {
+    "slug": "full-moon",
+    "name": "Full Moon",
+    "address": "3, 3 Soi Sukhumvit 24, Khwaeng Khlong Tan, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7295196,
+    "lng": 100.569647,
+    "rating": 3,
+    "reviews": 2,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "02-258-8878"
+  },
+  {
+    "slug": "bangla-road",
+    "name": "Bangla Road",
+    "address": "Bangla Rd, Tambon Patong, Amphoe Kathu, Chang Wat Phuket 83150, Thailand",
+    "lat": 7.8935833,
+    "lng": 98.2968039,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "yaya-sweetie-bar-cyrcee-secret-bar-phnom-penh",
+    "name": "Yaya Sweetie Bar (Cyrcee Secret Bar)",
+    "address": "182 street 130 near Central Market, Phnom Penh, Cambodia",
+    "lat": 11.570042,
+    "lng": 104.923757,
+    "rating": 4.010309278350515,
+    "reviews": 97,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+85512739784"
+  },
+  {
+    "slug": "lover-spa",
+    "name": "Lover Spa",
+    "address": "สุเทพ Nimmana Haeminda Rd Lane 13, Tambon Su Thep, Amphoe Mueang Chiang Mai, Chang Wat Chiang Mai 50200, Thailand",
+    "lat": 18.7963751,
+    "lng": 98.9699634,
+    "rating": 4.7631578947368425,
+    "reviews": 38,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "the-resort",
+    "name": "The Resort",
+    "address": "Unnamed Rd, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
+    "lat": 9.5410123,
+    "lng": 100.0544006,
+    "rating": 4,
+    "reviews": 49,
+    "categories": [
+      null
+    ],
+    "phone": "0897266520"
+  },
+  {
+    "slug": "elite-restaurant",
+    "name": "Elite Restaurant",
+    "address": "16 Soi Thong Lo 13, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7343371,
+    "lng": 100.5782642,
+    "rating": 4.6875,
+    "reviews": 80,
+    "categories": [
+      null
+    ],
+    "phone": " +66 95 487 5904"
+  },
+  {
+    "slug": "lusty-lady-bar",
+    "name": "Lusty Lady Bar",
+    "address": "26, 11 Soi Sukhumvit 11, Khwaeng Khlong Toei Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7446028,
+    "lng": 100.5571579,
+    "rating": 4.605263157894737,
+    "reviews": 38,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+66 611 592 622"
+  },
+  {
+    "slug": "dream-girls",
+    "name": "Dream Girls",
+    "address": "1 84320 167/1 ตำบล บ่อผุด Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
+    "lat": 9.5321503,
+    "lng": 100.063381,
+    "rating": 2.4545454545454546,
+    "reviews": 11,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "pimp-exclusive-club",
+    "name": "Pimp Exclusive Club",
+    "address": "THE PIMP CLUB BANGKOK, Opposite PT Gas Station, Rotchanamin Alley, Wang Thonglang, Bangkok, Thailand",
+    "lat": 13.7675311,
+    "lng": 100.6012375,
+    "rating": 4.1234567901234565,
+    "reviews": 243,
+    "categories": [
+      null
+    ],
+    "phone": "08 7360 3666"
+  },
+  {
+    "slug": "honey-1-body-massage-pattaya",
+    "name": "HONEY 1 BODY MASSAGE",
+    "address": "WVJM+CMP, Pattaya City, Bang Lamung District, Chon Buri 20150, Thailand",
+    "lat": 12.9310846,
+    "lng": 100.8842043,
+    "rating": 3.3157894736842106,
+    "reviews": 57,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "dolce-spa",
+    "name": "Dolce Spa",
+    "address": "เลขที่ 366 ซอย เสนานิคม1 ถนน เสนานิคม Khwaeng Chorakhe Bua, Khet Lat Phrao, Krung Thep Maha Nakhon 10230, Thailand",
+    "lat": 13.831819,
+    "lng": 100.6021161,
+    "rating": 4.75,
+    "reviews": 8,
+    "categories": [
+      null
+    ],
+    "phone": "0873593591"
+  },
+  {
+    "slug": "club-cozmo",
+    "name": "Club Cozmo",
+    "address": "Thailand, Bangkok, Bang Rak, Bangkok, Club Cozmo Taniya",
+    "lat": 13.7302127,
+    "lng": 100.533294,
+    "rating": 4,
+    "reviews": 1,
+    "categories": [
+      null,
+      null,
+      null
+    ],
+    "phone": ""
+  },
+  {
+    "slug": "action-room",
+    "name": "Action Room",
+    "address": "551/1 Rama II Soi 69, Khwaeng Samae Dam, Khet Bang Khun Thian, Krung Thep Maha Nakhon 10150, Thailand",
+    "lat": 13.6401382,
+    "lng": 100.4290599,
+    "rating": 5,
+    "reviews": 1,
+    "categories": [
+      null
+    ],
+    "phone": "083-103-4547"
+  },
+  {
+    "slug": "proud",
+    "name": "Proud",
+    "address": "131 7, Tambon Bang Khu Wiang, Amphoe Bang Kruai, Chang Wat Nonthaburi 11130, Thailand",
+    "lat": 13.8219399,
+    "lng": 100.4155063,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "0628576717"
+  },
+  {
+    "slug": "dollhouse",
+    "name": "The Dollhouse",
+    "address": "ซอยคาวบอย แขวง คลองเตยเหนือ, PHP6+QXR แขวงคลองตันเหนือ เขตวัฒนา กรุงเทพมหานคร 10110, Thailand",
+    "lat": 13.7369853,
+    "lng": 100.5623871,
+    "rating": 4.1571428571428575,
+    "reviews": 70,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+66 86 677 5027"
+  },
+  {
+    "slug": "chhing-s-phnom-penh",
+    "name": "Chhing’s",
+    "address": "92 Preah Ang Hassakan St. (144), Phnom Penh 12205, Cambodia",
+    "lat": 11.5693095,
+    "lng": 104.9260428,
+    "rating": 4.05,
+    "reviews": 20,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "funky-spa",
+    "name": "Funky Spa",
+    "address": "215, 1 Thanon Sena Nikhom 1, Khwaeng Sena Nikhom, Khet Chatuchak, Krung Thep Maha Nakhon 10900, Thailand",
+    "lat": 13.8345542,
+    "lng": 100.5853082,
+    "rating": 3.8378378378378377,
+    "reviews": 37,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "085-5027899"
+  },
+  {
+    "slug": "the-colonze",
+    "name": "The Colonze",
+    "address": "74 พูนผลไนท์พลาซ่า 155 Thanon Phun Phon, Tambon Talat Nuea, Amphoe Mueang Phuket, Chang Wat Phuket 83000, Thailand",
+    "lat": 7.875582999999999,
+    "lng": 98.38822530000002,
+    "rating": 4.142857142857143,
+    "reviews": 7,
+    "categories": [
+      null
+    ],
+    "phone": "0817289539"
+  },
+  {
+    "slug": "bada-bing",
+    "name": "Bada Bing",
+    "address": "417, 32 Bong Koch 8, Muang Pattaya, Amphoe Bang Lamung, Chang Wat Chon Buri 20150, Thailand",
+    "lat": 12.9281608,
+    "lng": 100.8921159,
+    "rating": 4.3,
+    "reviews": 30,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "kokoro",
+    "name": "Kokoro",
+    "address": "Kokoro Bangkok Soi Sukhumvit 23, Khlong Toei Nuea, Watthana, Bangkok, Thailand",
+    "lat": 13.7398825,
+    "lng": 100.5656756,
+    "rating": 4.204545454545454,
+    "reviews": 44,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "08 8969 9872"
+  },
+  {
+    "slug": "paradise",
+    "name": "Paradise",
+    "address": "Paradise Massage, Sukhumvit Alley 22, Khlong Tan, Klongtery Bangkok, Thailand",
+    "lat": 13.729649,
+    "lng": 100.5653589,
+    "rating": 4.294117647058823,
+    "reviews": 34,
+    "categories": [
+      null
+    ],
+    "phone": "082 491 4616"
+  },
+  {
+    "slug": "princess",
+    "name": "Princess",
+    "address": "4 Sukhumvit 33 Soi 1, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7330651,
+    "lng": 100.5678284,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "096-886-3598"
+  },
+  {
+    "slug": "xanadu-bar-phnom-penh",
+    "name": "Xanadu Bar",
+    "address": "HWCH+GHC, Oknha In St. (136), Phnom Penh, Cambodia",
+    "lat": 11.5713179,
+    "lng": 104.9289,
+    "rating": 4.024096385542169,
+    "reviews": 83,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+855 69 457 922"
+  },
+  {
+    "slug": "bonita-bangkok",
+    "name": "Bonita",
+    "address": "4 Soi Sukhumvit 33, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7330461,
+    "lng": 100.5676462,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+66-962349792"
+  },
+  {
+    "slug": "sabai-dee-body-massage",
+    "name": "Sabai Dee Body Massage",
+    "address": "Sabai Dee Body Massage, Pattaya Sai Song Road, Pattaya City, Bang Lamung District, Chon Buri, Thailand",
+    "lat": 12.9462048,
+    "lng": 100.8887761,
+    "rating": 3.4457831325301207,
+    "reviews": 166,
+    "categories": [
+      null
+    ],
+    "phone": "03 836 1659"
+  },
+  {
+    "slug": "paa-pretty-premium",
+    "name": "Paa Pretty Premium",
+    "address": "24/5 28 ซอย อรุณอัมรินทร์ Khwaeng Arun Amarin, Khet Bangkok Noi, Krung Thep Maha Nakhon 10700, Thailand",
+    "lat": 13.7668996,
+    "lng": 100.4850203,
+    "rating": 3,
+    "reviews": 3,
+    "categories": [
+      null
+    ],
+    "phone": "092-838-8245"
+  },
+  {
+    "slug": "queen-bangkok",
+    "name": "Queen",
+    "address": "4 Soi Sukhumvit 33/1, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7326188,
+    "lng": 100.5684107,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "02-258-5205"
+  },
+  {
+    "slug": "hannah-pretty-spa",
+    "name": "Hannah Pretty Spa ",
+    "address": "44/6 Ramkhamhaeng Rd, Khwaeng Phlabphla, Khet Wang Thonglang, Krung Thep Maha Nakhon 10312, Thailand",
+    "lat": 13.7621859,
+    "lng": 100.620557,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "062 474 4434"
+  },
+  {
+    "slug": "toro-nuru-massage-bangkok",
+    "name": "Toro Nuru Massage",
+    "address": "12 21 Soi Sukhumvit 33, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7344739,
+    "lng": 100.5676938,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "084-251-2673"
+  },
+  {
+    "slug": "s-way",
+    "name": "S.Way",
+    "address": "Phahon Yothin Rd, Tambon Khlong Nung, Amphoe Khlong Luang, Chang Wat Pathum Thani 12120, Thailand",
+    "lat": 14.0989263,
+    "lng": 100.6180484,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "091-1129666"
+  },
+  {
+    "slug": "heaven-above",
+    "name": "Heaven Above",
+    "address": "420, Muang Pattaya, Amphoe Bang Lamung, Chang Wat Chon Buri 20150, Thailand",
+    "lat": 12.9279195,
+    "lng": 100.8834421,
+    "rating": 4.583892617449664,
+    "reviews": 149,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "icha-icha",
+    "name": "Icha Icha",
+    "address": "icha icha Massage Chiang Mai, Charoen Prathet Road, Chang Moi Sub-district, Mueang Chiang Mai District, Chiang Mai, Thailand",
+    "lat": 18.7842732,
+    "lng": 99.0031202,
+    "rating": 4.411764705882353,
+    "reviews": 34,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "06 3412 5002"
+  },
+  {
+    "slug": "climax-massage",
+    "name": "Climax Massage",
+    "address": "32 Soi Selakam, Tambon Hua Hin, Amphoe Hua Hin, Chang Wat Prachuap Khiri Khan 77110, Thailand",
+    "lat": 12.5714431,
+    "lng": 99.9591739,
+    "rating": 5,
+    "reviews": 4,
+    "categories": [
+      null
+    ],
+    "phone": "+66 92 570 4277"
+  },
+  {
+    "slug": "seasaw-spa",
+    "name": "Seasaw Spa",
+    "address": "811 26-27 ถ Si Visutaram, ในเมือง เมือง Chang Wat Phitsanulok 65000, Thailand",
+    "lat": 16.818529,
+    "lng": 100.2809328,
+    "rating": 4.333333333333333,
+    "reviews": 6,
+    "categories": [
+      null
+    ],
+    "phone": "0868258989"
+  },
+  {
+    "slug": "meow-love-massage",
+    "name": "Meow Love Massage",
+    "address": "G374+X86, Bo Put, Ko Samui District, Surat Thani 84320, Thailand",
+    "lat": 9.5149513,
+    "lng": 100.0557429,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "lala-bangkok",
+    "name": "Lala",
+    "address": "25 Sukhumvit 26, Khwaeng Khlong Tan, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7230131,
+    "lng": 100.569939,
+    "rating": 5,
+    "reviews": 8,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "091-0165-498"
+  },
+  {
+    "slug": "doki-doki",
+    "name": "Doki Doki",
+    "address": "Doki Doki Massage, Soi Sukhumvit 31, Khlong Toei Nuea, Watthana, Bangkok, Thailand",
+    "lat": 13.7345742,
+    "lng": 100.5662567,
+    "rating": 4.358974358974359,
+    "reviews": 78,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "09 8569 8794"
+  },
+  {
+    "slug": "all-about-touch",
+    "name": "All About Touch",
+    "address": "Soi 3, A, ถนนศิริมังคลาจารย์ ตำบลสุเทพ อำเภอเมืองเชียงใหม่ เชียงใหม่ 50200, Thailand",
+    "lat": 18.7958484,
+    "lng": 98.9735218,
+    "rating": 4.631147540983607,
+    "reviews": 122,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "pretty",
+    "name": "Pretty",
+    "address": "Pretty Massage, Soi53/1 Khlong Toei Nuea, Watthana, Bangkok, Thailand",
+    "lat": 13.7245333,
+    "lng": 100.5787256,
+    "rating": 3.375,
+    "reviews": 8,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "09 5428 7836"
+  },
+  {
+    "slug": "black-caviar",
+    "name": "Black Caviar",
+    "address": "Black Caviar Executive Club / Soapy Massage Parlor Bangkok อาบอบนวด รัชดาฯ กรุงเทพฯ | 大浴室 | マッサージ | 마사지 | Din Daeng, ดินแดง Bangkok, Thailand",
+    "lat": 13.7736657,
+    "lng": 100.5711833,
+    "rating": 4.761904761904762,
+    "reviews": 21,
+    "categories": [
+      null
+    ],
+    "phone": "094 251 5868"
+  },
+  {
+    "slug": "nuanchan-spa",
+    "name": "Nuanchan Spa",
+    "address": "432, 1 ถ.นวลจันทร์ นวลจันทร์, Khet Bueng Kum, Krung Thep Maha Nakhon 10230, Thailand",
+    "lat": 13.8279754,
+    "lng": 100.6413825,
+    "rating": 5,
+    "reviews": 2,
+    "categories": [
+      null
+    ],
+    "phone": "099-926-2624"
+  },
+  {
+    "slug": "miss-spa",
+    "name": "Miss Spa",
+    "address": "Fa Ham, Mueang Chiang Mai District, Chiang Mai 50210, Thailand",
+    "lat": 18.828796,
+    "lng": 99.01296930000001,
+    "rating": 4.25,
+    "reviews": 32,
+    "categories": [
+      null
+    ],
+    "phone": "092-778-6622"
+  },
+  {
+    "slug": "lucky",
+    "name": "Lucky ",
+    "address": "Sala Thammasop, Thawi Watthana, Bangkok 10170, Thailand",
+    "lat": 13.7811839,
+    "lng": 100.3778632,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null
+    ],
+    "phone": "098-4192398"
+  },
+  {
+    "slug": "adore-spa",
+    "name": "Adore Spa",
+    "address": "700 Soi Lasalle 38, Khwaeng Bang Na, Khet Bang Na, Krung Thep Maha Nakhon 10260, Thailand",
+    "lat": 13.6600505,
+    "lng": 100.6263176,
+    "rating": 5,
+    "reviews": 1,
+    "categories": [
+      null
+    ],
+    "phone": "0909649597 "
+  },
+  {
+    "slug": "april-spa",
+    "name": "April Spa",
+    "address": "2, 96 ถ.เลียบคลอง Tambon Prachathipat, Amphoe Thanyaburi, Chang Wat Pathum Thani 12130, Thailand",
+    "lat": 13.9834044,
+    "lng": 100.6378021,
+    "rating": 4.111111111111111,
+    "reviews": 9,
+    "categories": [
+      null
+    ],
+    "phone": "065-535-4749"
+  },
+  {
+    "slug": "soi-cowboy",
+    "name": "Soi Cowboy",
+    "address": "Soi Cowboy, Khwaeng Khlong Toei Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7370674,
+    "lng": 100.5618986,
+    "rating": 4,
+    "reviews": 4,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "awesome999-bangkok",
+    "name": "Awesome999",
+    "address": "116/10 ซอย ประสานมิตร, Khwaeng Khlong Toei Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7383786,
+    "lng": 100.5653806,
+    "rating": 4.72093023255814,
+    "reviews": 43,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+66 93 142 6999"
+  },
+  {
+    "slug": "daisy-dream",
+    "name": "Daisy Dream ",
+    "address": "12, 8 Soi Sukhumvit 33, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7340735,
+    "lng": 100.5679676,
+    "rating": 4.184210526315789,
+    "reviews": 76,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+6625507472"
+  },
+  {
+    "slug": "stella-nuru-massage-bangkok",
+    "name": "Stella Nuru Massage",
+    "address": "23/5-6 Soi Sukhumvit 10, Khwaeng Khlong Toei, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7365711,
+    "lng": 100.5573311,
+    "rating": null,
+    "reviews": 0,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "jspot-bangkok",
+    "name": "JSpot",
+    "address": "12/5 Soi Sukhumvit 33, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7340956,
+    "lng": 100.5678083,
+    "rating": 5,
+    "reviews": 1,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "063-094-3888"
+  },
+  {
+    "slug": "billboard",
+    "name": "Billboard",
+    "address": "Billboard Bangkok Go-Go Bar Nana Plaza, Sukhumvit 4 Alley, Khlong Toei Nuea, Watthana, Bangkok, Thailand",
+    "lat": 13.7416492,
+    "lng": 100.5531641,
+    "rating": 3.1621621621621623,
+    "reviews": 74,
+    "categories": [
+      null
+    ],
+    "phone": ""
+  },
+  {
+    "slug": "suzy-wongs",
+    "name": "Suzy Wong's",
+    "address": "Suzy Wong's A Go-Go, Pa Tong, Phuket, Thailand",
+    "lat": 7.8944064,
+    "lng": 98.2969844,
+    "rating": 4.198807157057654,
+    "reviews": 503,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "08 7272 2588"
+  },
+  {
+    "slug": "classy-massage-bangkok",
+    "name": "Classy Massage",
+    "address": "265 9 Sukhumvit Soi 22, Khwaeng Khlong Tan, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7294176,
+    "lng": 100.5652896,
+    "rating": 5,
+    "reviews": 41,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "096 102 8107"
+  },
+  {
+    "slug": "aloha-massage-chiang-mai",
+    "name": "Aloha Massage Chiang Mai",
+    "address": "49/8 Road. Suriyawong Sup-district. Hayya District Rrovince, Mueang Chiang Mai District, Chiang Mai 50100, Thailand",
+    "lat": 18.7747076,
+    "lng": 98.989672,
+    "rating": 4.5131578947368425,
+    "reviews": 76,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "09 5238 6661"
+  },
+  {
+    "slug": "honey2-body-massage",
+    "name": "Honey2 Body Massage",
+    "address": "Honey Body Massage 2, Pattaya Sai Song Road, Pattaya City, Bang Lamung District, Chon Buri, Thailand",
+    "lat": 12.94543,
+    "lng": 100.8888538,
+    "rating": 4.172638436482084,
+    "reviews": 921,
+    "categories": [
+      null
+    ],
+    "phone": "03 842 1666"
+  },
+  {
+    "slug": "kawaii-nuru-massage",
+    "name": "Kawaii Nuru Massage",
+    "address": "392 33 Soi Sukhumvit 20, Khwaeng Khlong Toei, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7338366,
+    "lng": 100.5634872,
+    "rating": 4.333333333333333,
+    "reviews": 6,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+66 92 808 3060"
+  },
+  {
+    "slug": "aiyume-bangkok-bangkok-2007063c-d834-4099-ac3d-c0b224134161",
+    "name": "Aiyume Bangkok",
+    "address": "45 Soi Sukhumvit 18, Khwaeng Khlong Toei, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7305348,
+    "lng": 100.5628143,
+    "rating": 4.428571428571429,
+    "reviews": 35,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": null
+  },
+  {
+    "slug": "amor888",
+    "name": "AMOR888",
+    "address": "390/35 Soi Sukhumvit 18, Khwaeng Khlong Toei, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7352345,
+    "lng": 100.5620266,
+    "rating": 4.7,
+    "reviews": 40,
+    "categories": [
+      null,
+      null
+    ],
+    "phone": "+66612138000"
+  }
+]

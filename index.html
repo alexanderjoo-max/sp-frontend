@@ -77,63 +77,6 @@ a { color: inherit; }
   font-size: 14px; font-weight: 600; font-family: 'DM Sans',sans-serif; cursor: pointer;
 }
 
-/* --- Header --- */
-header {
-  background: var(--black);
-  border-bottom: 1px solid var(--border);
-  position: sticky; top: 0; z-index: 100;
-  padding: 0 14px;
-}
-.header-inner {
-  display: flex; align-items: center; gap: 10px;
-  height: 52px; max-width: 1200px; margin: 0 auto;
-}
-.logo { flex-shrink: 0; }
-.logo img { height: 26px; display: block; }
-.header-search {
-  flex: 1;
-  display: flex; align-items: center; gap: 8px;
-  background: var(--w10); border: 1px solid var(--border);
-  border-radius: 8px; padding: 0 12px; height: 36px;
-  cursor: pointer; transition: border-color .2s;
-}
-.header-search:hover { border-color: var(--red); }
-.header-search input {
-  background: none; border: none; outline: none;
-  color: var(--white); font-family: 'DM Sans',sans-serif;
-  font-size: 13px; flex: 1; min-width: 0;
-}
-.header-search input::placeholder { color: var(--w40); }
-.btn-login {
-  background: var(--red); color: var(--white);
-  border: none; border-radius: 6px; padding: 7px 12px;
-  font-size: 12px; font-weight: 700; font-family: 'DM Sans',sans-serif;
-  cursor: pointer; white-space: nowrap; transition: background .2s; flex-shrink: 0;
-}
-.btn-login:hover { background: var(--red-dk); }
-
-/* --- Nav tabs (horizontal scroll) --- */
-.nav-tabs {
-  background: var(--black2);
-  border-bottom: 1px solid var(--border);
-  overflow-x: auto; scrollbar-width: none;
-}
-.nav-tabs::-webkit-scrollbar { display: none; }
-.nav-tabs-inner {
-  display: flex; padding: 0 14px;
-  max-width: 1200px; margin: 0 auto;
-  gap: 2px; white-space: nowrap;
-}
-.nav-tab {
-  padding: 10px 12px; font-size: 12px; font-weight: 500;
-  color: var(--w70); cursor: pointer;
-  border-bottom: 2px solid transparent;
-  transition: all .2s; flex-shrink: 0;
-  text-decoration: none; display: block;
-}
-.nav-tab:hover { color: var(--white); }
-.nav-tab.active { color: var(--red); border-bottom-color: var(--red); }
-
 /* --- Hero --- */
 .hero {
   background: linear-gradient(180deg, #1a0305 0%, var(--black) 100%);
@@ -482,16 +425,6 @@ footer img { height: 30px; margin: 0 auto 14px; display: block; }
   /* Hide mobile-only elements */
   .bottom-nav, .bn-spacer { display: none !important; }
 
-  /* Header */
-  header { padding: 0 24px; }
-  .header-inner { height: 58px; gap: 16px; }
-  .logo img { height: 30px; }
-
-  /* Nav tabs */
-  .nav-tabs { padding: 0; }
-  .nav-tabs-inner { padding: 0 24px; }
-  .nav-tab { padding: 11px 16px; font-size: 13px; }
-
   /* Hero */
   .hero { padding: 36px 24px 32px; }
   .hero-title { font-size: 52px; }
@@ -572,6 +505,7 @@ footer img { height: 30px; margin: 0 auto 14px; display: block; }
   .btn-login { padding: 6px 10px; font-size: 11px; }
 }
 </style>
+<link rel="stylesheet" href="css/site.css">
 </head>
 <body>
 
@@ -589,35 +523,7 @@ footer img { height: 30px; margin: 0 auto 14px; display: block; }
   </div>
 </div>
 
-<!-- ══ HEADER ════════════════════════════════════════════════ -->
-<header>
-  <div class="header-inner">
-    <a href="index.html" class="logo">
-      <img src="./swanpass_logo_rev.png" alt="Swanpass">
-    </a>
-    <div class="header-search" onclick="this.querySelector('input').focus()">
-      <span style="color:var(--w40);font-size:14px">🔍</span>
-      <input type="text" placeholder="Search Thailand shops..."
-        onkeydown="if(event.key==='Enter')window.location='listings.html?q='+encodeURIComponent(this.value)">
-    </div>
-    <button class="btn-login" onclick="window.location='login.html'">Login</button>
-  </div>
-</header>
-
-<!-- ══ NAV TABS ══════════════════════════════════════════════ -->
-<nav class="nav-tabs">
-  <div class="nav-tabs-inner">
-    <a href="index.html"       class="nav-tab active">🏠 Home</a>
-    <a href="map.html"         class="nav-tab">🗺️ Map</a>
-    <a href="deals.html"       class="nav-tab">🏷️ Deals</a>
-    <a href="listings.html"    class="nav-tab">🔍 Browse</a>
-    <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
-    <a href="cities.html"      class="nav-tab">📍 Cities</a>
-    <a href="search.html"      class="nav-tab">🔎 Search</a>
-    <a href="add-listing.html" class="nav-tab">➕ List Your Business</a>
-    <a href="admin.html"       class="nav-tab">⚙️ Admin</a>
-  </div>
-</nav>
+<div data-include="partials/header.html"></div>
 
 <!-- ══ HERO ══════════════════════════════════════════════════ -->
 <div class="hero">
@@ -1094,5 +1000,7 @@ renderSponsored();
 renderDeals();
 renderAll('all');
 </script>
+<div data-include="partials/footer.html"></div>
+<script src="js/include.js"></script>
 </body>
 </html>

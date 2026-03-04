@@ -1,1 +1,102 @@
-TEMPLATE
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{NAME}} — Swanpass</title>
+<meta name="description" content="{{DESCRIPTION}}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<div data-include="partials/header.html"></div>
+
+<!-- GALLERY -->
+<div class="gallery">
+  <img class="gallery-main" id="galleryMain" src="{{MAIN_IMAGE}}" alt="{{NAME}}">
+  <div class="gallery-count" id="galleryCount">1 / {{IMAGE_COUNT}}</div>
+  <div class="gallery-dots" id="galleryDots"></div>
+</div>
+<div class="gallery-thumbs" id="galleryThumbs"></div>
+
+<!-- MAIN LAYOUT -->
+<div id="mainLayout">
+<div class="listing-info">
+  <div class="listing-badges">
+    {{CATEGORY_BADGES}}
+  </div>
+  <h1 class="listing-name">{{NAME}}</h1>
+  <div class="listing-meta">
+    <span>📍 {{ADDRESS}}</span>
+    <span>·</span>
+    <span class="rating-row"><span class="stars">{{STARS}}</span> <span class="rating-num">{{RATING}}</span> <span class="review-count">({{REVIEW_COUNT}} reviews)</span></span>
+  </div>
+  <div class="action-row">
+    {{ACTION_BUTTONS}}
+  </div>
+
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
+    <button class="tab-btn" onclick="switchTab('prices')">Prices</button>
+    <button class="tab-btn" onclick="switchTab('reviews')">Reviews ({{REVIEW_COUNT}})</button>
+    <button class="tab-btn" onclick="switchTab('contact')">Contact & Hours</button>
+    <button class="tab-btn" onclick="switchTab('location')">Location</button>
+  </div>
+
+  <div class="tab-content active" id="tab-overview">
+    <div class="section-title">About {{NAME}}</div>
+    <div class="description"><p>{{DESCRIPTION}}</p></div>
+  </div>
+
+  <div class="tab-content" id="tab-prices">
+    <div class="section-title">Price List</div>
+    {{SERVICES_HTML}}
+  </div>
+
+  <div class="tab-content" id="tab-reviews">
+    {{REVIEWS_HTML}}
+  </div>
+
+  <div class="tab-content" id="tab-contact">
+    <div class="section-title">Contact Details</div>
+    {{CONTACTS_HTML}}
+    <div style="height:20px"></div>
+    <div class="section-title">Business Hours</div>
+    {{HOURS_HTML}}
+  </div>
+
+  <div class="tab-content" id="tab-location">
+    <div class="section-title">Location</div>
+    {{MAP_HTML}}
+  </div>
+
+  {{NEARBY_HTML}}
+
+</div>
+</div>
+
+{{STICKY_CTA}}
+
+<div data-include="partials/footer.html"></div>
+
+<script src="js/include.js"></script>
+<script>
+{{GALLERY_SCRIPT}}
+
+function switchTab(name) {
+  document.querySelectorAll('.tab-btn').forEach((b,i) => {
+    const tabs = ['overview','prices','reviews','contact','location'];
+    b.classList.toggle('active', tabs[i] === name);
+  });
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+}
+
+function toggleCollapsible(el) {
+  el.classList.toggle('open');
+}
+</script>
+</body>
+</html>
