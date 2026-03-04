@@ -59,7 +59,7 @@
 <!-- GALLERY -->
 <div class="gallery">
   <img class="gallery-main" id="galleryMain" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4437/page-hero-02.jpg" alt="Le Ciel Laputa BKK" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
-  <div class="gallery-count" id="galleryCount">1 / 12</div>
+  <div class="gallery-count" id="galleryCount">1 / 38</div>
   <div class="gallery-dots" id="galleryDots"></div>
 </div>
 <div class="gallery-thumbs" id="galleryThumbs"></div>
@@ -154,7 +154,7 @@
     <div class="section-title">Nearby Shops</div>
     <div class="nearby-grid">
       <a href="listing-baccara.html" class="nearby-card">
-        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg" alt="Baccara" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <img class="nearby-img" src="" alt="Baccara" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
         <div class="nearby-body"><div class="nearby-name">Baccara</div><div class="nearby-meta">Gentlemen’s Clubs · ★ 3.4</div></div>
       </a>
       <a href="listing-galaxy.html" class="nearby-card">
@@ -208,17 +208,43 @@
 
 const photos = [
   'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4437/page-hero-02.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14615/Suwon.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14215/666-class.jpeg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6280/d0YyUSk.jpeg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/55/Madame-Claude-BJ-Bar-Entrance.jpeg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2926/2023-04-08.jpg'
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4424/313407657_174742358483651_2602571210922887675_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4425/313997883_174699981821222_6980755136395426535_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4426/296756631_183037054100534_8162654016480113705_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4427/299630185_600204251752813_8152934183583120024_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4431/316538946_178264341464786_7620898770297280284_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4432/317075506_178264334798120_945757258912356469_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4430/316416465_178264321464788_804574119816853933_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4433/g2.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4434/g3.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4435/g5.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4437/page-hero-02.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4436/page-hero-01-1.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4429/314960459_174765158481371_2599763899729257088_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4400/9cb827b876bc38c6f6362f4289a14f50.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4401/3a50b8d84ebcb0168c3f019df86c69cc-1.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4403/09ba8deebfc14af8881f544abacac18c.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4404/4c850ebc6585a98b1e58e14d0ca9195b.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4402/06a91ed70b817632833997310182d6fa.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4406/42983a910c690c070b588d5f10a7e555.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4405/335717577_125546746999195_3524922840986457095_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4407/316418752_178395458118341_8002892738081503657_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4408/341020619_589585313110476_9136457817738661887_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4409/335718074_6140726319307283_9183484731462756645_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4410/356213715_264862936138259_6062651017852998900_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4411/363413551_281986051092614_4040243315336498450_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4412/363419928_281985857759300_2291264375982859547_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4413/b58949eb7df8a8700d208eaeab75cc9b.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4415/ca13860b62129752c1299c08fdfaef2b.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4414/c822d4f414284b5435b6b5ca688b190a.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4416/d63ac9bcb760611fdbcf02ab054f3f85.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4417/line_oa_chat_221223_175337.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4418/line_oa_chat_230115_175739_group_0.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4419/line_oa_chat_230115_175739_group_1.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4420/S__36937779.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4421/line_oa_chat_230201_160252.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4423/S__36937781.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4422/S__36937780.jpg'
 ];
 let current = 0;
 const mainImg = document.getElementById('galleryMain');

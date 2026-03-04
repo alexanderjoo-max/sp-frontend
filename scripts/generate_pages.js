@@ -70,9 +70,61 @@ function filterImages(urls) {
   return (urls || []).filter(u => u && !u.includes('swanpass.com/wp-content/'));
 }
 
-function generateGalleryScript(listing) {
-  const raw = listing.images.length > 0 ? listing.images : listing.image_urls;
-  const images = filterImages(raw);
+/**
+ * Build a set of "garbage" image URLs that appear across many listings.
+ * These are sidebar/sponsored thumbnails that got scraped into every listing's
+ * image_urls — they don't belong to the listing itself.
+ */
+function buildGarbageImageSet(allListings) {
+  const urlCounts = {};
+  allListings.forEach(l => {
+    const seen = new Set(); // count each URL once per listing
+    (l.image_urls || []).forEach(u => {
+      if (u && !u.includes('swanpass.com/wp-content/') && !seen.has(u)) {
+        seen.add(u);
+        urlCounts[u] = (urlCounts[u] || 0) + 1;
+      }
+    });
+  });
+  // Any image appearing in 20+ different listings is sidebar garbage
+  const garbage = new Set();
+  for (const [url, count] of Object.entries(urlCounts)) {
+    if (count >= 20) garbage.add(url);
+  }
+  return garbage;
+}
+
+/**
+ * Get the correct images for a listing, preferring the categorized photos array
+ * over the unreliable image_urls (which often contain sidebar/related-listing images).
+ *
+ * Priority: photos with valid IDs > image_urls (filtered + de-garbage'd) > empty
+ * Order: featured first, then shop, then talent
+ */
+function getListingImages(listing, garbageSet) {
+  const photos = listing.photos || [];
+  // Check if photos have valid IDs (not garbage sidebar data)
+  const validPhotos = photos.filter(p => p.id !== null && p.url);
+
+  if (validPhotos.length > 0) {
+    // Sort: featured first, then shop, then talent
+    const order = { featured: 0, shop: 1, talent: 2 };
+    const sorted = [...validPhotos].sort((a, b) => {
+      const oa = order[a.category] ?? 1;
+      const ob = order[b.category] ?? 1;
+      if (oa !== ob) return oa - ob;
+      return (a.sort_order || 0) - (b.sort_order || 0);
+    });
+    return sorted.map(p => p.url);
+  }
+
+  // Fallback: use image_urls, filtering out both wp-content AND known garbage sidebar images
+  const filtered = filterImages(listing.image_urls).filter(u => !garbageSet.has(u));
+  return filtered;
+}
+
+function generateGalleryScript(listing, garbageSet) {
+  const images = getListingImages(listing, garbageSet);
   if (images.length === 0) return '';
   const photosArray = images.map(i => `'${i}'`).join(',\n  ');
   return `
@@ -208,9 +260,8 @@ function generateCtaButtons(contacts) {
   return buttons;
 }
 
-function generatePage(listing, allListings) {
-  const raw = listing.images.length > 0 ? listing.images : listing.image_urls;
-  const images = filterImages(raw);
+function generatePage(listing, allListings, garbageSet) {
+  const images = getListingImages(listing, garbageSet);
   const mainImage = images[0] || '';
   const categoryBadges = listing.categories.map(c => `<span class="badge badge-cat">${escapeHtml(c)}</span>`).join('\n    ');
   const rating = listing.rating ? listing.rating.toFixed(1) : 'N/A';
@@ -224,7 +275,7 @@ function generatePage(listing, allListings) {
     : allListings.filter(l => l.slug !== listing.slug && l.categories.some(c => listing.categories.includes(c))).slice(0, 4);
 
   const nearbyHtml = nearby.map(n => {
-    const nImgs = filterImages(n.images && n.images.length > 0 ? n.images : n.image_urls);
+    const nImgs = getListingImages(n, garbageSet);
     const nImg = nImgs[0] || '';
     return `<a href="listing-${n.slug}.html" class="nearby-card">
         <img class="nearby-img" src="${nImg}" alt="${escapeHtml(n.name)}" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
@@ -349,7 +400,7 @@ ${stickyButtons.length > 0 ? `
 ${FOOTER_HTML}
 
 <script>
-${generateGalleryScript(listing)}
+${generateGalleryScript(listing, garbageSet)}
 
 function switchTab(name) {
   document.querySelectorAll('.tab-btn').forEach((b,i) => {
@@ -529,6 +580,11 @@ function main() {
   }
 
   const allListings = JSON.parse(fs.readFileSync(DATA_FILE, 'utf-8'));
+
+  // Build garbage image set (sidebar/sponsored images that got scraped into every listing)
+  const garbageSet = buildGarbageImageSet(allListings);
+  console.log(`Identified ${garbageSet.size} garbage sidebar images to filter out`);
+
   let listings = allListings;
   if (LIMIT < listings.length) {
     listings = listings.slice(0, LIMIT);
@@ -537,12 +593,14 @@ function main() {
 
   let generated = 0;
   let photosGenerated = 0;
+  let noImages = 0;
 
   listings.forEach((listing, i) => {
     // Generate listing page
     const filename = `listing-${listing.slug}.html`;
     const filepath = path.join(OUTPUT_DIR, filename);
-    const html = generatePage(listing, allListings);
+    const html = generatePage(listing, allListings, garbageSet);
+    if (getListingImages(listing, garbageSet).length === 0) noImages++;
     fs.writeFileSync(filepath, html);
     generated++;
 
@@ -563,6 +621,7 @@ function main() {
   console.log(`\n=== Summary ===`);
   console.log(`Listing pages: ${generated}`);
   console.log(`Photos pages:  ${photosGenerated}`);
+  console.log(`No images (placeholder): ${noImages}`);
 }
 
 main();

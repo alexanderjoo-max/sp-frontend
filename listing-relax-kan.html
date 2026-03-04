@@ -59,7 +59,7 @@
 <!-- GALLERY -->
 <div class="gallery">
   <img class="gallery-main" id="galleryMain" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3910/images.jpg" alt="Relax@Kan" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
-  <div class="gallery-count" id="galleryCount">1 / 13</div>
+  <div class="gallery-count" id="galleryCount">1 / 21</div>
   <div class="gallery-dots" id="galleryDots"></div>
 </div>
 <div class="gallery-thumbs" id="galleryThumbs"></div>
@@ -215,18 +215,26 @@
 
 const photos = [
   'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3910/images.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14615/Suwon.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14215/666-class.jpeg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12890/unnamed.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1555/348967037_258043010090980_3925690681634798947_n.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4987/s-20230506_194501.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3020/161000472_151746810135500_8115891874269079098_n.jpg'
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3910/images.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3891/92434%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%9B%E0%B8%B1%E0%B9%88%E0%B8%991.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3892/239770751_590584962288234_1929275970198887223_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3893/7a13f%E0%B8%A1%E0%B8%B4%E0%B8%A7%E0%B8%81%E0%B8%B5%E0%B9%891.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3894/765af%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%9B%E0%B8%B1%E0%B9%88%E0%B8%992.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3895/44ee1%E0%B8%A1%E0%B8%B4%E0%B8%84%E0%B8%81%E0%B8%B5%E0%B9%891.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3896/240090590_591826332164097_78658877975109572_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3897/240533393_594624595217604_108861631851762165_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3898/240661659_595882165091847_4252058640789052988_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3900/241253918_595857575094306_1158769642203592964_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3899/241208404_591870485493015_3836819928510564269_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3901/241383976_595857591760971_3610614094978513141_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3902/241550581_595881961758534_3469739740544745268_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3903/242279394_595882325091831_6035466122139428337_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3905/245977575_599856918027705_7931085662598162280_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3904/245936263_599856931361037_2158705815804084754_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3906/246168670_599857018027695_5330989988389871157_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3907/a3093%E0%B8%A1%E0%B8%B4%E0%B8%84%E0%B8%81%E0%B8%B5%E0%B9%89_%E0%B9%80%E0%B8%9B%E0%B8%B4%E0%B8%94.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3908/250247804_607348233945240_7114601109829964387_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3909/b9c6d%E0%B8%A1%E0%B8%B4%E0%B8%A7%E0%B8%81%E0%B8%B5%E0%B9%89.jpg'
 ];
 let current = 0;
 const mainImg = document.getElementById('galleryMain');

@@ -59,7 +59,7 @@
 <!-- GALLERY -->
 <div class="gallery">
   <img class="gallery-main" id="galleryMain" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/238/348300968_795134498832345_3014945234874312522_n.jpg" alt="Shark" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
-  <div class="gallery-count" id="galleryCount">1 / 11</div>
+  <div class="gallery-count" id="galleryCount">1 / 21</div>
   <div class="gallery-dots" id="galleryDots"></div>
 </div>
 <div class="gallery-thumbs" id="galleryThumbs"></div>
@@ -200,16 +200,26 @@
 
 const photos = [
   'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/238/348300968_795134498832345_3014945234874312522_n.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14615/Suwon.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14215/666-class.jpeg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5726/2018-02-24.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6028/2023-11-18_11.47.07.jpg'
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/226/343578368_2586842944788142_5385912453144487961_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/228/344184256_888235078933673_5673339166391762921_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/229/344495947_3422601404664795_5694189830454580053_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/230/343724830_184442464517250_7745345411922821512_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/227/344577008_1322680358315040_1709956980387128981_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/231/346486715_266317775911910_5185159171443602341_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/232/347071781_701436615120680_3377493410160418676_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/233/346658844_1956291748043566_3560326465419716808_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/235/347229353_3448993395369552_983833685270886931_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/234/347080653_3342204922757123_712835347023479906_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/236/348241580_935660347683709_5156361986359979634_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/238/348300968_795134498832345_3014945234874312522_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/237/347401347_1310027246527927_7424077282808385831_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/239/347602086_554936603520175_7243664286424644807_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/240/347447033_263381336240168_9137672014938082143_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/241/348488078_6105485069532956_1775719951151186218_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/242/349034992_1254281402129177_2557698955833559168_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/243/350520368_1213853489327199_4747137720163683999_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/244/349041995_1158304832238220_2204083513528914908_n.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/245/352442080_233582476082891_2949812490246682508_n.jpg'
 ];
 let current = 0;
 const mainImg = document.getElementById('galleryMain');

@@ -59,7 +59,7 @@
 <!-- GALLERY -->
 <div class="gallery">
   <img class="gallery-main" id="galleryMain" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7268/Ircs0b.jpg" alt="Sweet At Heart" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
-  <div class="gallery-count" id="galleryCount">1 / 11</div>
+  <div class="gallery-count" id="galleryCount">1 / 31</div>
   <div class="gallery-dots" id="galleryDots"></div>
 </div>
 <div class="gallery-thumbs" id="galleryThumbs"></div>
@@ -212,16 +212,36 @@
 
 const photos = [
   'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7268/Ircs0b.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14615/Suwon.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14215/666-class.jpeg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5726/2018-02-24.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6028/2023-11-18_11.47.07.jpg'
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7251/dd8llZ2.jpeg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7253/d0z06Mz.jpeg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7252/ddGjVi9.jpeg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7255/ddmvu9I.jpeg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7254/ddnKCOu.jpeg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7256/ddNklSt.jpeg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7257/ddpcP2N.jpeg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7259/dW6mVnb.jpeg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7258/ddROo59.jpeg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7260/dduqQAa.jpeg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7261/dWKr8sE.jpeg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7262/dWPw2GQ.jpeg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7263/dWyX8bV.jpeg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7264/F9sGh0.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7266/FJhLnk.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7265/FIifn2.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7268/Ircs0b.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7267/ID7wQ2.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7269/Ixk1Cf.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7270/MAPHh0.jpeg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7271/mILdRn.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7272/MnG8SN.jpeg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7273/MQ2Ale.jpeg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7274/MR8GJt.jpeg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7275/MpWbwa.jpeg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7276/yRMEYu.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7277/yUKCMJ.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7279/mafDda.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7280/mxrMT0.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/7278/mJMzYa.jpg'
 ];
 let current = 0;
 const mainImg = document.getElementById('galleryMain');

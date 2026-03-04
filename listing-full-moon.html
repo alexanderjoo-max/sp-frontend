@@ -59,7 +59,7 @@
 <!-- GALLERY -->
 <div class="gallery">
   <img class="gallery-main" id="galleryMain" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8698/Screenshot_2023-12-16_at_12.23.00_PM.jpg" alt="Full Moon" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
-  <div class="gallery-count" id="galleryCount">1 / 12</div>
+  <div class="gallery-count" id="galleryCount">1 / 35</div>
   <div class="gallery-dots" id="galleryDots"></div>
 </div>
 <div class="gallery-thumbs" id="galleryThumbs"></div>
@@ -230,17 +230,40 @@
 
 const photos = [
   'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8698/Screenshot_2023-12-16_at_12.23.00_PM.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14615/Suwon.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14215/666-class.jpeg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/6280/d0YyUSk.jpeg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/55/Madame-Claude-BJ-Bar-Entrance.jpeg',
-  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2926/2023-04-08.jpg'
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8689/room02.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8692/room03.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8690/room01.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8691/map-english.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8694/room07.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8693/room06.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8695/room05.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8696/room08.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8697/room09.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8688/room04.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8665/ida1.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8667/may1.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8669/jessie1.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8670/janny1.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8668/lucky1.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8671/mei1.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8672/mei4.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8673/miki1.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8674/miso1.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8675/muay1.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8676/mymint1-1.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8679/nabe4.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8678/nabe1.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8681/nana1.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8682/neko1.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8680/nadia1.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8683/pinky1.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8684/sky1.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8685/suzy1.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8686/yosi1.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8687/yui1.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8663/ava1.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8664/candy1.jpg',
+  'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8666/kana1.jpg'
 ];
 let current = 0;
 const mainImg = document.getElementById('galleryMain');
