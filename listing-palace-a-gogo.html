@@ -58,8 +58,8 @@
 
 <!-- GALLERY -->
 <div class="gallery">
-  <img class="gallery-main" id="galleryMain" src="" alt="Palace A Gogo" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
-  <div class="gallery-count" id="galleryCount">1 / 0</div>
+  <img class="gallery-main" id="galleryMain" src="https://swanpass.com/wp-content/uploads/2023/03/334985241_140339495629893_9015561923417035948_n-640x427.jpg" alt="Palace A Gogo" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+  <div class="gallery-count" id="galleryCount">1 / 1</div>
   <div class="gallery-dots" id="galleryDots"></div>
 </div>
 <div class="gallery-thumbs" id="galleryThumbs"></div>
@@ -203,6 +203,38 @@
 
 
 <script>
+
+const photos = [
+  'https://swanpass.com/wp-content/uploads/2023/03/334985241_140339495629893_9015561923417035948_n-640x427.jpg'
+];
+let current = 0;
+const mainImg = document.getElementById('galleryMain');
+const thumbsEl = document.getElementById('galleryThumbs');
+const countEl = document.getElementById('galleryCount');
+const dotsEl = document.getElementById('galleryDots');
+
+function setPhoto(i) {
+  current = i;
+  mainImg.src = photos[i];
+  countEl.textContent = (i+1) + ' / ' + photos.length;
+  document.querySelectorAll('.gallery-thumb').forEach((t,j) => t.classList.toggle('active', j===i));
+  document.querySelectorAll('.gallery-dot').forEach((d,j) => d.classList.toggle('active', j===i));
+}
+
+photos.forEach((p,i) => {
+  const t = document.createElement('img');
+  t.className = 'gallery-thumb' + (i===0?' active':'');
+  t.src = p; t.onclick = () => setPhoto(i);
+  t.onerror = function() { this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)'; this.removeAttribute('src'); };
+  thumbsEl.appendChild(t);
+  const d = document.createElement('div');
+  d.className = 'gallery-dot' + (i===0?' active':'');
+  d.onclick = () => setPhoto(i);
+  dotsEl.appendChild(d);
+});
+
+mainImg.onclick = () => setPhoto((current+1) % photos.length);
+mainImg.onerror = function() { this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)'; this.removeAttribute('src'); };
 
 
 function switchTab(name) {

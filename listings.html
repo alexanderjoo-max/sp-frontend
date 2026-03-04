@@ -131,6 +131,16 @@ let SHOPS = [];
 fetch('data/listings.json')
   .then(r => r.json())
   .then(data => {
+    // Build garbage image set (URLs appearing in 20+ listings = sidebar filler)
+    const urlCounts = {};
+    data.forEach(l => {
+      const seen = new Set();
+      (l.image_urls || []).forEach(u => {
+        if (u && !seen.has(u)) { seen.add(u); urlCounts[u] = (urlCounts[u] || 0) + 1; }
+      });
+    });
+    const garbageSet = new Set(Object.entries(urlCounts).filter(([,c]) => c >= 20).map(([u]) => u));
+
     SHOPS = data.map(l => ({
       id: l.slug,
       name: l.name || l.slug,
@@ -141,14 +151,16 @@ fetch('data/listings.json')
       rating: l.rating || 0,
       reviews: l.review_count || 0,
       img: (() => {
-        // Prefer photos with valid IDs (categorized data), sorted: featured > shop > talent
+        // Prefer photos with valid IDs, sorted: featured > shop > talent
         const validPhotos = (l.photos || []).filter(p => p.id !== null && p.url);
         if (validPhotos.length > 0) {
           const order = { featured: 0, shop: 1, talent: 2 };
           validPhotos.sort((a, b) => (order[a.category] ?? 1) - (order[b.category] ?? 1) || (a.sort_order || 0) - (b.sort_order || 0));
           return validPhotos[0].url;
         }
-        return '';
+        // Fallback: first non-garbage image_url (including wp-content)
+        const fallback = (l.image_urls || []).filter(u => u && !garbageSet.has(u));
+        return fallback[0] || '';
       })(),
       page: 'listing-' + l.slug + '.html',
     }));

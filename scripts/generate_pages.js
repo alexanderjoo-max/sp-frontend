@@ -65,22 +65,18 @@ function starsHtml(rating) {
   return '★'.repeat(r) + '☆'.repeat(Math.max(0, 5 - r));
 }
 
-function filterImages(urls) {
-  // Remove broken wp-content URLs, keep only working CDN images
-  return (urls || []).filter(u => u && !u.includes('swanpass.com/wp-content/'));
-}
-
 /**
  * Build a set of "garbage" image URLs that appear across many listings.
  * These are sidebar/sponsored thumbnails that got scraped into every listing's
  * image_urls — they don't belong to the listing itself.
+ * Includes both CDN and wp-content URLs.
  */
 function buildGarbageImageSet(allListings) {
   const urlCounts = {};
   allListings.forEach(l => {
     const seen = new Set(); // count each URL once per listing
     (l.image_urls || []).forEach(u => {
-      if (u && !u.includes('swanpass.com/wp-content/') && !seen.has(u)) {
+      if (u && !seen.has(u)) {
         seen.add(u);
         urlCounts[u] = (urlCounts[u] || 0) + 1;
       }
@@ -98,7 +94,7 @@ function buildGarbageImageSet(allListings) {
  * Get the correct images for a listing, preferring the categorized photos array
  * over the unreliable image_urls (which often contain sidebar/related-listing images).
  *
- * Priority: photos with valid IDs > image_urls (filtered + de-garbage'd) > empty
+ * Priority: photos with valid IDs > image_urls (de-garbage'd) > empty
  * Order: featured first, then shop, then talent
  */
 function getListingImages(listing, garbageSet) {
@@ -118,8 +114,9 @@ function getListingImages(listing, garbageSet) {
     return sorted.map(p => p.url);
   }
 
-  // Fallback: use image_urls, filtering out both wp-content AND known garbage sidebar images
-  const filtered = filterImages(listing.image_urls).filter(u => !garbageSet.has(u));
+  // Fallback: use image_urls, filtering out only known garbage sidebar images
+  // wp-content URLs are kept — they serve as valid cover images
+  const filtered = (listing.image_urls || []).filter(u => u && !garbageSet.has(u));
   return filtered;
 }
 
