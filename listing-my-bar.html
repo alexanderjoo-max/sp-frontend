@@ -224,17 +224,31 @@ function setPhoto(i) {
 photos.forEach((p,i) => {
   const t = document.createElement('img');
   t.className = 'gallery-thumb' + (i===0?' active':'');
-  t.src = p; t.onclick = () => setPhoto(i);
+  t.src = p; t.onclick = () => { setPhoto(i); resetAutoScroll(); };
   t.onerror = function() { this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)'; this.removeAttribute('src'); };
   thumbsEl.appendChild(t);
   const d = document.createElement('div');
   d.className = 'gallery-dot' + (i===0?' active':'');
-  d.onclick = () => setPhoto(i);
+  d.onclick = () => { setPhoto(i); resetAutoScroll(); };
   dotsEl.appendChild(d);
 });
 
-mainImg.onclick = () => setPhoto((current+1) % photos.length);
+mainImg.onclick = () => { setPhoto((current+1) % photos.length); resetAutoScroll(); };
 mainImg.onerror = function() { this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)'; this.removeAttribute('src'); };
+
+// Auto-scroll hero gallery every 4s, pause on interaction
+let autoTimer = null;
+function startAutoScroll() {
+  if (photos.length <= 1) return;
+  autoTimer = setInterval(() => {
+    setPhoto((current + 1) % photos.length);
+  }, 4000);
+}
+function resetAutoScroll() {
+  clearInterval(autoTimer);
+  startAutoScroll();
+}
+startAutoScroll();
 
 
 function switchTab(name) {
