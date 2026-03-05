@@ -47,7 +47,7 @@ body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif
 .cimg{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--black3);}
 .cbadges{position:absolute;top:6px;left:6px;display:flex;flex-direction:column;gap:3px;}
 .badge{display:inline-flex;padding:2px 6px;border-radius:4px;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;backdrop-filter:blur(4px);}
-.bsp{background:rgba(212,168,71,.9);color:#000;}.bft{background:rgba(232,20,42,.9);color:#fff;}.bdl{background:rgba(34,197,94,.9);color:#000;}.bnw{background:rgba(99,102,241,.9);color:#fff;}
+.bft{background:linear-gradient(135deg,#d4a847,#f5d784,#d4a847);color:#1a1000;text-shadow:0 1px 0 rgba(255,255,255,.25);box-shadow:0 1px 4px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.3);}.bdl{background:rgba(34,197,94,.9);color:#000;}.bnw{background:rgba(99,102,241,.9);color:#fff;}
 .cbody{padding:8px 10px 10px;}
 .ccat{font-size:10px;color:var(--white40);margin-bottom:2px;}
 .cname{font-size:13px;font-weight:600;line-height:1.2;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
@@ -164,7 +164,6 @@ body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif
     <div class="side-section">
       <div class="side-title">Status</div>
       <label class="side-opt"><input type="checkbox" onchange="doSearch()"> ⭐ Featured only</label>
-      <label class="side-opt"><input type="checkbox" onchange="doSearch()"> 📣 Sponsored only</label>
       <label class="side-opt"><input type="checkbox" onchange="doSearch()"> 🏷️ Has deal</label>
       <label class="side-opt"><input type="checkbox" onchange="doSearch()"> 🆕 New listings</label>
     </div>
@@ -201,28 +200,57 @@ body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif
   <a href="admin.html" class="bi"><span class="bic">⚙️</span><span class="bil">Admin</span></a>
 </nav>
 <script>
-const ALL=[
-  {name:'Chairman Nuru Massage',cat:'massage',city:'Bangkok',rating:4.9,visits:'9K+',tags:['sponsored','featured'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg',page:'listing-chairman-nuru-massage-bangkok.html',deal:null},
-  {name:'G2G Massage',cat:'massage',city:'Bangkok',rating:4.9,visits:'8K+',tags:['featured'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg',page:'listing-g2g-massage-bangkok.html',deal:'฿800 Deal'},
-  {name:'JSpot Massage',cat:'soapy',city:'Bangkok',rating:4.7,visits:'5K+',tags:['sponsored','deal'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg',page:'listing-jspot-bangkok.html',deal:'20% OFF'},
-  {name:'AMOR888',cat:'soapy',city:'Bangkok',rating:4.8,visits:'2K+',tags:['sponsored'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg',page:'listing-amor888.html',deal:null},
-  {name:'The333',cat:'soapy',city:'Bangkok',rating:4.8,visits:'2K+',tags:['featured','deal'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg',page:'listing-the333-bangkok.html',deal:'Weekend Deal'},
-  {name:'666 Class',cat:'massage',city:'Bangkok',rating:4.8,visits:'3K+',tags:['sponsored'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14215/666-class.jpeg',page:'listing-666-class.html',deal:null},
-  {name:'Don Quixote',cat:'massage',city:'Bangkok',rating:4.7,visits:'7K+',tags:['featured'],img:'',page:'listing-don-quixote.html',deal:null},
-  {name:'Suwon Man\'s Spa',cat:'massage',city:'Bangkok',rating:4.3,visits:'7K+',tags:['sponsored'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14615/Suwon.jpg',page:'listing-suwon-man-s-spa-bangkok.html',deal:null},
-  {name:'DRAKE Luxury Lounge',cat:'club',city:'Bangkok',rating:4.2,visits:'<100',tags:['sponsored','new'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp',page:'listing-drake-luxury-lounge-bangkok.html',deal:null},
-  {name:'Club Cozmo',cat:'club',city:'Bangkok',rating:4.5,visits:'4K+',tags:['featured'],img:'',page:'listing-club-cozmo.html',deal:'Free Entry'},
-  {name:'Taki',cat:'club',city:'Bangkok',rating:4.4,visits:'3K+',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8884/01.jpg',page:'listing-taki.html',deal:null},
-  {name:'Exotic Massage BKK',cat:'massage',city:'Bangkok',rating:4.8,visits:'9K+',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12049/2024-08-16-1.jpg',page:'listing-exotic-massage-bangkok-bangkok.html',deal:null},
-  {name:'Lunar Nuru',cat:'soapy',city:'Bangkok',rating:4.9,visits:'100+',tags:['new','deal'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15233/store01.jpg',page:'listing-lunar-nuru-bangkok.html',deal:'-40% Opening'},
-  {name:'Dragon Lady BKK',cat:'massage',city:'Bangkok',rating:3.8,visits:'100+',tags:['new'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15189/Screenshot_2026-01-23_at_5.39.54_PM.jpg',page:'listing-dragon-lady-bkk-bangkok.html',deal:null},
-  {name:'Riviere 77',cat:'massage',city:'Bangkok',rating:4.9,visits:'100+',tags:['new'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15179/store01.jpg',page:'listing-riviere-77-bangkok.html',deal:null},
-  {name:'Galaxy Walking Street',cat:'gogo',city:'Pattaya',rating:4.5,visits:'3K+',tags:['featured'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/813/314591480_681428673470423_3006201469555310398_n.jpg',page:'listing-galaxy.html',deal:null},
-  {name:'Flame Spa Seminyak',cat:'massage',city:'Bali',rating:4.8,visits:'2K+',tags:['featured','deal'],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12090/seminyak.jpg2.jpg',page:'listing-flamespa.html',deal:'28% OFF'},
-  {name:'Ibiza Spa',cat:'soapy',city:'Bali',rating:4.6,visits:'1K+',tags:[],img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12102/Screenshot_2024-08-30_at_6.23.00_PM.jpg',page:'listing-ibizaspa.html',deal:null},
-];
-const EMOJIS={massage:'👄',soapy:'🛁',club:'💃',gogo:'👯',freelancer:'❤️‍🔥',redlight:'📍'};
-const LABELS={massage:'Massage',soapy:'Soapy',club:"Gentlemen's Club",gogo:'Go-Go',freelancer:'Freelancers',redlight:'Red Light'};
+let ALL=[];
+const EMOJIS={massage:'👄',soapy:'🛁',club:'💃',gogo:'👯',freelancer:'❤️‍🔥',redlight:'📍',"gentlemen's clubs":'💃'};
+const LABELS={massage:'Massage',soapy:'Soapy',club:"Gentlemen's Club",gogo:'Go-Go',freelancer:'Freelancers',redlight:'Red Light',"gentlemen's clubs":"Gentlemen's Club"};
+
+// Garbage images to filter (appear in 20+ listings)
+const GARBAGE_THRESHOLD = 20;
+
+// Load all listings from JSON
+fetch('data/listings.json').then(r=>r.json()).then(data=>{
+  // Build garbage set
+  const urlCounts={};
+  data.forEach(l=>{const seen=new Set();(l.image_urls||[]).forEach(u=>{if(u&&!seen.has(u)){seen.add(u);urlCounts[u]=(urlCounts[u]||0)+1;}});});
+  const garbage=new Set(Object.entries(urlCounts).filter(([,c])=>c>=GARBAGE_THRESHOLD).map(([u])=>u));
+
+  ALL=data.map(l=>{
+    // Get best image
+    const validPhotos=(l.photos||[]).filter(p=>p.id!==null&&p.url);
+    let img='';
+    if(validPhotos.length>0){
+      const order={featured:0,shop:1,talent:2};
+      validPhotos.sort((a,b)=>(order[a.category]??1)-(order[b.category]??1)||(a.sort_order||0)-(b.sort_order||0));
+      img=validPhotos[0].url;
+    } else {
+      const filtered=(l.image_urls||[]).filter(u=>u&&!garbage.has(u));
+      img=filtered[0]||'';
+    }
+    // Detect category
+    const cats=(l.categories||[]).map(c=>c.toLowerCase());
+    let cat='massage';
+    if(cats.some(c=>c.includes('soapy')))cat='soapy';
+    else if(cats.some(c=>c.includes('club')||c.includes('gentleman')))cat='club';
+    else if(cats.some(c=>c.includes('go-go')||c.includes('gogo')))cat='gogo';
+    else if(cats.some(c=>c.includes('freelancer')))cat='freelancer';
+    // Tags
+    const tags=l.tags||[];
+    return{
+      name:l.name,cat,city:l.city||'Unknown',
+      rating:l.rating||0,visits:(l.review_count||0)+' reviews',
+      tags,img,page:'listing-'+l.slug+'.html',deal:null
+    };
+  });
+  // Pre-fill query from URL params
+  const params=new URLSearchParams(location.search);
+  const qp=params.get('q');
+  if(qp)document.getElementById('q').value=qp;
+  const cp=params.get('city');
+  if(cp)document.getElementById('cityQ').value=cp;
+  doSearch();
+}).catch(()=>{
+  document.getElementById('results').innerHTML='<div class="empty"><div class="empty-title">Error loading listings</div></div>';
+});
 
 let activeCat='',dealsOnly=false;
 
@@ -230,8 +258,7 @@ function cardHtml(s){
   return`<a href="${s.page}" class="card">
     <img class="cimg" src="${s.img}" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="${s.name}">
     <div class="cbadges">
-      ${s.tags.includes('sponsored')?'<span class="badge bsp">★ Spons</span>':''}
-      ${s.tags.includes('featured')?'<span class="badge bft">⭐ Feat</span>':''}
+      ${s.tags.includes('featured')?'<span class="badge bft">★ Featured</span>':''}
       ${s.tags.includes('new')?'<span class="badge bnw">🆕 New</span>':''}
     </div>
     <div class="cbody">
