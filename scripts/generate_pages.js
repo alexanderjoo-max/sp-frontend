@@ -237,6 +237,9 @@ function generateContactsHtml(contacts) {
   if (contacts.facebook) {
     items.push(`<div class="contact-item"><div class="contact-icon web">📘</div><a href="${escapeHtml(contacts.facebook)}" target="_blank">Facebook</a></div>`);
   }
+  if (contacts.email) {
+    items.push(`<div class="contact-item"><div class="contact-icon web">✉️</div><a href="mailto:${escapeHtml(contacts.email)}">${escapeHtml(contacts.email)}</a></div>`);
+  }
   if (contacts.website) {
     const display = contacts.website.replace(/^https?:\/\//, '').replace(/\/+$/, '');
     items.push(`<div class="contact-item"><div class="contact-icon web">🌐</div><a href="${escapeHtml(contacts.website)}" target="_blank">${escapeHtml(display)}</a></div>`);
