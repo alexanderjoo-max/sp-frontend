@@ -8,7 +8,7 @@
 <meta name="description" content="Kasalong, located in Bangkok, Thailand, has gained considerable popularity as a renowned establishment known for its specialized services. The proprietor, Oil, ">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=2">
+<link rel="stylesheet" href="css/site.css?v=3">
 </head>
 <body>
 
@@ -69,6 +69,15 @@
     <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/940/Kasalong-Girl-and-Sink.webp" alt="Kasalong BJ Bar" loading="lazy" onerror="this.style.display='none'">
   </div>
   <div class="gallery-count" id="galleryCount">1 / 7</div>
+</div>
+<div class="gallery-thumbs" id="galleryThumbs">
+  <div class="gallery-thumb active" data-idx="0"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/937/Kasalong-Shop-678x381.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="1"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/936/Kasalong-Sofa-and-Cushion.webp" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="2"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/937/Kasalong-Shop-678x381.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="3"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/938/Kasalong-Shop-2.webp" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="4"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/915/Fg77afRaAAUSV9A.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="5"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/939/download.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="6"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/940/Kasalong-Girl-and-Sink.webp" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
 </div>
 <a href="photos-kasalong-bj-bar.html" class="gallery-view-all">📷 View all 7 photos →</a>
 
@@ -221,7 +230,14 @@
 const strip = document.getElementById('galleryStrip');
 const countEl = document.getElementById('galleryCount');
 const allPhotos = [...strip.querySelectorAll('.gallery-photo')];
+const thumbsEl = document.getElementById('galleryThumbs');
+const thumbs = thumbsEl ? [...thumbsEl.querySelectorAll('.gallery-thumb')] : [];
 let currentIdx = 0;
+
+function updateThumbs(i) {
+  thumbs.forEach((t, idx) => t.classList.toggle('active', idx === i));
+  if (thumbs[i]) thumbs[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+}
 
 function scrollToPhoto(i) {
   if (allPhotos.length === 0) return;
@@ -230,9 +246,21 @@ function scrollToPhoto(i) {
   currentIdx = i;
   allPhotos[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
   countEl.textContent = (i+1) + ' / ' + allPhotos.length;
+  updateThumbs(i);
 }
 
-// Track scroll to update counter
+// Thumbnail clicks
+if (thumbsEl) {
+  thumbsEl.addEventListener('click', function(e) {
+    const thumb = e.target.closest('.gallery-thumb');
+    if (!thumb) return;
+    const idx = parseInt(thumb.dataset.idx, 10);
+    scrollToPhoto(idx);
+    resetAutoScroll();
+  });
+}
+
+// Track scroll to update counter + thumbnails
 let scrollRaf = 0;
 strip.addEventListener('scroll', () => {
   cancelAnimationFrame(scrollRaf);
@@ -247,6 +275,7 @@ strip.addEventListener('scroll', () => {
     if (closest !== currentIdx) {
       currentIdx = closest;
       countEl.textContent = (closest+1) + ' / ' + allPhotos.length;
+      updateThumbs(closest);
     }
   });
 });

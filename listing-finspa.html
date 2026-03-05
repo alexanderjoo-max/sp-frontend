@@ -8,7 +8,7 @@
 <meta name="description" content="Update fairies, goddesses, beautiful girls!! Strong promotion. Overtake the curve with a rare angel model.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=2">
+<link rel="stylesheet" href="css/site.css?v=3">
 </head>
 <body>
 
@@ -76,6 +76,22 @@
     <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3009/c9a042651.jpg" alt="Finspa" loading="lazy" onerror="this.style.display='none'">
   </div>
   <div class="gallery-count" id="galleryCount">1 / 14</div>
+</div>
+<div class="gallery-thumbs" id="galleryThumbs">
+  <div class="gallery-thumb active" data-idx="0"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3013/1681724069320.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="1"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3010/images.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="2"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3011/333628979_563364872427362_6705565195951277208_n.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="3"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3012/IMG_7156.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="4"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3013/1681724069320.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="5"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3001/329019321_1420363698774120_4768618937596971794_n.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="6"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3002/82dee2928.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="7"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3003/000162958.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="8"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3004/8330f%E0%B8%A1%E0%B8%B4%E0%B9%80%E0%B8%8A%E0%B8%A5123.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="9"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3005/6b368%E0%B8%A1%E0%B8%B4%E0%B9%80%E0%B8%8A%E0%B8%A5.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="10"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3006/330604700_765469274689258_8931738076556567329_n.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="11"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3007/d68a22385.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="12"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3008/330552180_896909051358117_2649951037600057151_n.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="13"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3009/c9a042651.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
 </div>
 <a href="photos-finspa.html" class="gallery-view-all">📷 View all 14 photos →</a>
 
@@ -225,7 +241,14 @@
 const strip = document.getElementById('galleryStrip');
 const countEl = document.getElementById('galleryCount');
 const allPhotos = [...strip.querySelectorAll('.gallery-photo')];
+const thumbsEl = document.getElementById('galleryThumbs');
+const thumbs = thumbsEl ? [...thumbsEl.querySelectorAll('.gallery-thumb')] : [];
 let currentIdx = 0;
+
+function updateThumbs(i) {
+  thumbs.forEach((t, idx) => t.classList.toggle('active', idx === i));
+  if (thumbs[i]) thumbs[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+}
 
 function scrollToPhoto(i) {
   if (allPhotos.length === 0) return;
@@ -234,9 +257,21 @@ function scrollToPhoto(i) {
   currentIdx = i;
   allPhotos[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
   countEl.textContent = (i+1) + ' / ' + allPhotos.length;
+  updateThumbs(i);
 }
 
-// Track scroll to update counter
+// Thumbnail clicks
+if (thumbsEl) {
+  thumbsEl.addEventListener('click', function(e) {
+    const thumb = e.target.closest('.gallery-thumb');
+    if (!thumb) return;
+    const idx = parseInt(thumb.dataset.idx, 10);
+    scrollToPhoto(idx);
+    resetAutoScroll();
+  });
+}
+
+// Track scroll to update counter + thumbnails
 let scrollRaf = 0;
 strip.addEventListener('scroll', () => {
   cancelAnimationFrame(scrollRaf);
@@ -251,6 +286,7 @@ strip.addEventListener('scroll', () => {
     if (closest !== currentIdx) {
       currentIdx = closest;
       countEl.textContent = (closest+1) + ' / ' + allPhotos.length;
+      updateThumbs(closest);
     }
   });
 });

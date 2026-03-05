@@ -8,7 +8,7 @@
 <meta name="description" content="We aim to provide relaxation services in an elegant, refined setting to local and foreign patrons.We offer a numerous selection of theme suite rooms to choose f">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=2">
+<link rel="stylesheet" href="css/site.css?v=3">
 </head>
 <body>
 
@@ -68,6 +68,14 @@
     <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/9030/355699293_753706346760669_215095477789078405_n.jpg" alt="Poseidon Entertainment Complex" loading="lazy" onerror="this.style.display='none'">
   </div>
   <div class="gallery-count" id="galleryCount">1 / 6</div>
+</div>
+<div class="gallery-thumbs" id="galleryThumbs">
+  <div class="gallery-thumb active" data-idx="0"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/9025/325404036_575684187265234_844462493860217878_n.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="1"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/9026/Screenshot_2024-05-22_at_9.13.17_PM.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="2"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/9027/Screenshot_2024-05-22_at_9.13.26_PM.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="3"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/9028/335249627_534723235469486_6523093503271103535_n.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="4"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/9029/354576543_748611957270108_7323159189304017293_n.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="5"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/9030/355699293_753706346760669_215095477789078405_n.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
 </div>
 <a href="photos-poseidon-entertainment-complex.html" class="gallery-view-all">📷 View all 6 photos →</a>
 
@@ -234,7 +242,14 @@
 const strip = document.getElementById('galleryStrip');
 const countEl = document.getElementById('galleryCount');
 const allPhotos = [...strip.querySelectorAll('.gallery-photo')];
+const thumbsEl = document.getElementById('galleryThumbs');
+const thumbs = thumbsEl ? [...thumbsEl.querySelectorAll('.gallery-thumb')] : [];
 let currentIdx = 0;
+
+function updateThumbs(i) {
+  thumbs.forEach((t, idx) => t.classList.toggle('active', idx === i));
+  if (thumbs[i]) thumbs[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+}
 
 function scrollToPhoto(i) {
   if (allPhotos.length === 0) return;
@@ -243,9 +258,21 @@ function scrollToPhoto(i) {
   currentIdx = i;
   allPhotos[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
   countEl.textContent = (i+1) + ' / ' + allPhotos.length;
+  updateThumbs(i);
 }
 
-// Track scroll to update counter
+// Thumbnail clicks
+if (thumbsEl) {
+  thumbsEl.addEventListener('click', function(e) {
+    const thumb = e.target.closest('.gallery-thumb');
+    if (!thumb) return;
+    const idx = parseInt(thumb.dataset.idx, 10);
+    scrollToPhoto(idx);
+    resetAutoScroll();
+  });
+}
+
+// Track scroll to update counter + thumbnails
 let scrollRaf = 0;
 strip.addEventListener('scroll', () => {
   cancelAnimationFrame(scrollRaf);
@@ -260,6 +287,7 @@ strip.addEventListener('scroll', () => {
     if (closest !== currentIdx) {
       currentIdx = closest;
       countEl.textContent = (closest+1) + ' / ' + allPhotos.length;
+      updateThumbs(closest);
     }
   });
 });

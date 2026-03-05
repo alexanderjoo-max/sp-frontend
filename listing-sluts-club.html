@@ -8,7 +8,7 @@
 <meta name="description" content="Welcome to SLUTZ! Some places name themselves!Slutz A gogo club is an independent bar in Soi LK Metro. Our motto is come in as a guest and leave as a friend. Gr">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=2">
+<link rel="stylesheet" href="css/site.css?v=3">
 </head>
 <body>
 
@@ -76,6 +76,22 @@
     <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/318/352467392_242865525046999_7851024465363750363_n.jpg" alt="Slutz Club" loading="lazy" onerror="this.style.display='none'">
   </div>
   <div class="gallery-count" id="galleryCount">1 / 14</div>
+</div>
+<div class="gallery-thumbs" id="galleryThumbs">
+  <div class="gallery-thumb active" data-idx="0"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/325/340349193_1179402186108171_1442511585248824106_n_1_.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="1"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/323/352057214_269293978954001_1595335053213976671_n.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="2"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/325/340349193_1179402186108171_1442511585248824106_n_1_.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="3"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/322/351790294_1265231481034778_345778675510313_n.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="4"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/324/351797834_687005043233782_3584367568301988761_n.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="5"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/319/352494313_794558618935680_2137361557111861958_n.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="6"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/321/348271123_1472498956911272_7399393418352789956_n.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="7"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/312/352285821_802741924763427_3256119068357412960_n.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="8"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/313/352213400_254534273857455_5722253451052990936_n.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="9"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/314/352273318_646118213641812_5727930129387393753_n.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="10"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/315/352403593_927368738318612_3169126881829545376_n.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="11"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/316/352407827_2545314445620969_7418215807010377392_n.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="12"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/317/352493846_561988559347684_9135236295177020612_n.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="13"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/318/352467392_242865525046999_7851024465363750363_n.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
 </div>
 <a href="photos-sluts-club.html" class="gallery-view-all">📷 View all 14 photos →</a>
 
@@ -216,7 +232,14 @@
 const strip = document.getElementById('galleryStrip');
 const countEl = document.getElementById('galleryCount');
 const allPhotos = [...strip.querySelectorAll('.gallery-photo')];
+const thumbsEl = document.getElementById('galleryThumbs');
+const thumbs = thumbsEl ? [...thumbsEl.querySelectorAll('.gallery-thumb')] : [];
 let currentIdx = 0;
+
+function updateThumbs(i) {
+  thumbs.forEach((t, idx) => t.classList.toggle('active', idx === i));
+  if (thumbs[i]) thumbs[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+}
 
 function scrollToPhoto(i) {
   if (allPhotos.length === 0) return;
@@ -225,9 +248,21 @@ function scrollToPhoto(i) {
   currentIdx = i;
   allPhotos[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
   countEl.textContent = (i+1) + ' / ' + allPhotos.length;
+  updateThumbs(i);
 }
 
-// Track scroll to update counter
+// Thumbnail clicks
+if (thumbsEl) {
+  thumbsEl.addEventListener('click', function(e) {
+    const thumb = e.target.closest('.gallery-thumb');
+    if (!thumb) return;
+    const idx = parseInt(thumb.dataset.idx, 10);
+    scrollToPhoto(idx);
+    resetAutoScroll();
+  });
+}
+
+// Track scroll to update counter + thumbnails
 let scrollRaf = 0;
 strip.addEventListener('scroll', () => {
   cancelAnimationFrame(scrollRaf);
@@ -242,6 +277,7 @@ strip.addEventListener('scroll', () => {
     if (closest !== currentIdx) {
       currentIdx = closest;
       countEl.textContent = (closest+1) + ' / ' + allPhotos.length;
+      updateThumbs(closest);
     }
   });
 });

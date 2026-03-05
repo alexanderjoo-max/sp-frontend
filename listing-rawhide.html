@@ -8,7 +8,7 @@
 <meta name="description" content="Raw Hide is not a new go go bar of course. It has been around for years. But now it has new ownership. You can tell that from the outside. The bar now has the s">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=2">
+<link rel="stylesheet" href="css/site.css?v=3">
 </head>
 <body>
 
@@ -68,6 +68,14 @@
     <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/225/63163cfbe60dace6a7c21671_thai_gogo_girls_waiting_for_clients_soi_cowboy_bangkok.jpg" alt="Rawhide" loading="lazy" onerror="this.style.display='none'">
   </div>
   <div class="gallery-count" id="galleryCount">1 / 6</div>
+</div>
+<div class="gallery-thumbs" id="galleryThumbs">
+  <div class="gallery-thumb active" data-idx="0"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/222/rawhide-soi-cowoy.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="1"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/221/download.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="2"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/222/rawhide-soi-cowoy.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="3"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/223/gogopink.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="4"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/224/SoiCowboy.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="5"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/225/63163cfbe60dace6a7c21671_thai_gogo_girls_waiting_for_clients_soi_cowboy_bangkok.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
 </div>
 <a href="photos-rawhide.html" class="gallery-view-all">📷 View all 6 photos →</a>
 
@@ -207,7 +215,14 @@
 const strip = document.getElementById('galleryStrip');
 const countEl = document.getElementById('galleryCount');
 const allPhotos = [...strip.querySelectorAll('.gallery-photo')];
+const thumbsEl = document.getElementById('galleryThumbs');
+const thumbs = thumbsEl ? [...thumbsEl.querySelectorAll('.gallery-thumb')] : [];
 let currentIdx = 0;
+
+function updateThumbs(i) {
+  thumbs.forEach((t, idx) => t.classList.toggle('active', idx === i));
+  if (thumbs[i]) thumbs[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+}
 
 function scrollToPhoto(i) {
   if (allPhotos.length === 0) return;
@@ -216,9 +231,21 @@ function scrollToPhoto(i) {
   currentIdx = i;
   allPhotos[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
   countEl.textContent = (i+1) + ' / ' + allPhotos.length;
+  updateThumbs(i);
 }
 
-// Track scroll to update counter
+// Thumbnail clicks
+if (thumbsEl) {
+  thumbsEl.addEventListener('click', function(e) {
+    const thumb = e.target.closest('.gallery-thumb');
+    if (!thumb) return;
+    const idx = parseInt(thumb.dataset.idx, 10);
+    scrollToPhoto(idx);
+    resetAutoScroll();
+  });
+}
+
+// Track scroll to update counter + thumbnails
 let scrollRaf = 0;
 strip.addEventListener('scroll', () => {
   cancelAnimationFrame(scrollRaf);
@@ -233,6 +260,7 @@ strip.addEventListener('scroll', () => {
     if (closest !== currentIdx) {
       currentIdx = closest;
       countEl.textContent = (closest+1) + ' / ' + allPhotos.length;
+      updateThumbs(closest);
     }
   });
 });

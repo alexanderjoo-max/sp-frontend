@@ -8,7 +8,7 @@
 <meta name="description" content="Walking Street (Thai: ถนนคนเดิน) is an entertainment and red-light district in the city of Pattaya, Thailand. The street is a tourist attraction which draws bot">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=2">
+<link rel="stylesheet" href="css/site.css?v=3">
 </head>
 <body>
 
@@ -78,6 +78,24 @@
     <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5008/t-02-Thais-and-expats-flocked-to-Walking-Street-in-South-Pattaya-6.jpg" alt="Walking Street" loading="lazy" onerror="this.style.display='none'">
   </div>
   <div class="gallery-count" id="galleryCount">1 / 16</div>
+</div>
+<div class="gallery-thumbs" id="galleryThumbs">
+  <div class="gallery-thumb active" data-idx="0"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5011/Screenshot_2023-11-09_at_8.58.35_AM.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="1"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5009/main-qimg-1fe4f14cc7c3832d291884c61eaf858e-lq.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="2"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5010/be460c3b-9814-4849-bc31-2f9c95493caf.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="3"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5011/Screenshot_2023-11-09_at_8.58.35_AM.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="4"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5012/Screenshot_2023-11-09_at_8.58.42_AM.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="5"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5013/Pattaya__Walking_Street_at_night__Thailand.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="6"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5001/13315361_1156618284382973_6874110400297955772_n.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="7"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4999/pattaya_bar_v2O_girls.webp" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="8"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5000/skyfall_agogo_pattaya_walking_street.webp" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="9"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5002/pattaya_walking_street_neon_signs.webp" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="10"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5003/reception-girls-pattaya-walking-street.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="11"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5004/t-02-Thais-and-expats-flocked-to-Walking-Street-in-South-Pattaya-4.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="12"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5005/t-02-Thais-and-expats-flocked-to-Walking-Street-in-South-Pattaya-1.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="13"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5006/t-02-Thais-and-expats-flocked-to-Walking-Street-in-South-Pattaya-7.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="14"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5007/t-02-Thais-and-expats-flocked-to-Walking-Street-in-South-Pattaya-8.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="15"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5008/t-02-Thais-and-expats-flocked-to-Walking-Street-in-South-Pattaya-6.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
 </div>
 <a href="photos-walking-street.html" class="gallery-view-all">📷 View all 16 photos →</a>
 
@@ -223,7 +241,14 @@
 const strip = document.getElementById('galleryStrip');
 const countEl = document.getElementById('galleryCount');
 const allPhotos = [...strip.querySelectorAll('.gallery-photo')];
+const thumbsEl = document.getElementById('galleryThumbs');
+const thumbs = thumbsEl ? [...thumbsEl.querySelectorAll('.gallery-thumb')] : [];
 let currentIdx = 0;
+
+function updateThumbs(i) {
+  thumbs.forEach((t, idx) => t.classList.toggle('active', idx === i));
+  if (thumbs[i]) thumbs[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+}
 
 function scrollToPhoto(i) {
   if (allPhotos.length === 0) return;
@@ -232,9 +257,21 @@ function scrollToPhoto(i) {
   currentIdx = i;
   allPhotos[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
   countEl.textContent = (i+1) + ' / ' + allPhotos.length;
+  updateThumbs(i);
 }
 
-// Track scroll to update counter
+// Thumbnail clicks
+if (thumbsEl) {
+  thumbsEl.addEventListener('click', function(e) {
+    const thumb = e.target.closest('.gallery-thumb');
+    if (!thumb) return;
+    const idx = parseInt(thumb.dataset.idx, 10);
+    scrollToPhoto(idx);
+    resetAutoScroll();
+  });
+}
+
+// Track scroll to update counter + thumbnails
 let scrollRaf = 0;
 strip.addEventListener('scroll', () => {
   cancelAnimationFrame(scrollRaf);
@@ -249,6 +286,7 @@ strip.addEventListener('scroll', () => {
     if (closest !== currentIdx) {
       currentIdx = closest;
       countEl.textContent = (closest+1) + ' / ' + allPhotos.length;
+      updateThumbs(closest);
     }
   });
 });

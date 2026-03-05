@@ -45,14 +45,15 @@ body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif
 .bnav-icon{font-size:20px;}.bnav-label{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
 .bottom-nav-spacer{height:70px;}
 
-/* REDEEM BANNER — distinct callout */
-.redeem-banner{background:var(--green);padding:20px 16px;text-align:center;}
-.redeem-inner{max-width:640px;margin:0 auto;}
-.redeem-title{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:1px;line-height:1;color:#000;margin-bottom:8px;}
+/* REDEEM POPUP — floating card */
+.redeem-wrap{padding:20px 16px;display:flex;justify-content:center;}
+.redeem-popup{max-width:460px;width:100%;background:linear-gradient(135deg,#1a1200 0%,#0d0d0d 50%,#1a0d00 100%);border:1px solid rgba(212,168,71,.35);border-radius:14px;padding:20px 24px;text-align:center;box-shadow:0 4px 24px rgba(212,168,71,.12),0 0 0 1px rgba(212,168,71,.1);position:relative;overflow:hidden;}
+.redeem-popup::before{content:'';position:absolute;top:-30px;left:50%;transform:translateX(-50%);width:300px;height:120px;background:radial-gradient(ellipse,rgba(212,168,71,.12) 0%,transparent 70%);pointer-events:none;}
+.redeem-title{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1.5px;line-height:1;color:var(--gold);margin-bottom:10px;}
 .redeem-steps{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;}
-.redeem-step{display:inline-flex;align-items:center;gap:6px;background:rgba(0,0,0,.15);border-radius:8px;padding:8px 14px;font-size:14px;font-weight:700;color:#000;}
-.redeem-or{font-size:12px;color:rgba(0,0,0,.5);font-weight:600;}
-.redeem-note{font-size:11px;color:rgba(0,0,0,.5);margin-top:8px;}
+.redeem-step{display:inline-flex;align-items:center;gap:6px;background:rgba(212,168,71,.12);border:1px solid rgba(212,168,71,.25);border-radius:8px;padding:8px 14px;font-size:13px;font-weight:700;color:var(--gold);}
+.redeem-or{font-size:11px;color:var(--white40);font-weight:600;}
+.redeem-note{font-size:11px;color:var(--white40);margin-top:10px;}
 
 /* MOBILE */
 @media(max-width:479px){
@@ -65,11 +66,12 @@ body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif
 @media(min-width:768px){
   .bottom-nav,.bottom-nav-spacer{display:none!important;}
   .deals-grid{grid-template-columns:repeat(4,1fr);gap:14px;padding:20px 24px;}
-  .redeem-banner{padding:22px 24px;}
-  .redeem-title{font-size:30px;}
+  .redeem-wrap{padding:24px;}
+  .redeem-popup{max-width:500px;padding:24px 32px;}
+  .redeem-title{font-size:26px;}
 }
 </style>
-<link rel="stylesheet" href="css/site.css?v=2">
+<link rel="stylesheet" href="css/site.css?v=3">
 </head>
 <body>
 <header>
@@ -127,9 +129,9 @@ body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif
 </div>
 
 <!-- HOW TO REDEEM -->
-<div class="redeem-banner">
-  <div class="redeem-inner">
-    <div class="redeem-title">HOW TO REDEEM</div>
+<div class="redeem-wrap">
+  <div class="redeem-popup">
+    <div class="redeem-title">✨ HOW TO REDEEM</div>
     <div class="redeem-steps">
       <span class="redeem-step">Say "SwanPass" at the shop</span>
       <span class="redeem-or">or</span>

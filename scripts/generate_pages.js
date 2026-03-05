@@ -127,7 +127,14 @@ function generateGalleryScript(listing, garbageSet) {
 const strip = document.getElementById('galleryStrip');
 const countEl = document.getElementById('galleryCount');
 const allPhotos = [...strip.querySelectorAll('.gallery-photo')];
+const thumbsEl = document.getElementById('galleryThumbs');
+const thumbs = thumbsEl ? [...thumbsEl.querySelectorAll('.gallery-thumb')] : [];
 let currentIdx = 0;
+
+function updateThumbs(i) {
+  thumbs.forEach((t, idx) => t.classList.toggle('active', idx === i));
+  if (thumbs[i]) thumbs[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+}
 
 function scrollToPhoto(i) {
   if (allPhotos.length === 0) return;
@@ -136,9 +143,21 @@ function scrollToPhoto(i) {
   currentIdx = i;
   allPhotos[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
   countEl.textContent = (i+1) + ' / ' + allPhotos.length;
+  updateThumbs(i);
 }
 
-// Track scroll to update counter
+// Thumbnail clicks
+if (thumbsEl) {
+  thumbsEl.addEventListener('click', function(e) {
+    const thumb = e.target.closest('.gallery-thumb');
+    if (!thumb) return;
+    const idx = parseInt(thumb.dataset.idx, 10);
+    scrollToPhoto(idx);
+    resetAutoScroll();
+  });
+}
+
+// Track scroll to update counter + thumbnails
 let scrollRaf = 0;
 strip.addEventListener('scroll', () => {
   cancelAnimationFrame(scrollRaf);
@@ -153,6 +172,7 @@ strip.addEventListener('scroll', () => {
     if (closest !== currentIdx) {
       currentIdx = closest;
       countEl.textContent = (closest+1) + ' / ' + allPhotos.length;
+      updateThumbs(closest);
     }
   });
 });
@@ -309,7 +329,7 @@ function generatePage(listing, allListings, garbageSet) {
 <meta name="description" content="${escapeHtml((listing.description || '').slice(0, 160))}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=2">
+<link rel="stylesheet" href="css/site.css?v=3">
 </head>
 <body>
 
@@ -322,6 +342,9 @@ ${HEADER_HTML}
   </div>
   <div class="gallery-count" id="galleryCount">1 / ${images.length}</div>
 </div>
+${images.length > 1 ? `<div class="gallery-thumbs" id="galleryThumbs">
+  ${images.map((img, i) => `<div class="gallery-thumb${i === 0 ? ' active' : ''}" data-idx="${i}"><img src="${img}" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>`).join('\n  ')}
+</div>` : ''}
 ${(listing.photos && listing.photos.length > 0) ? `<a href="photos-${listing.slug}.html" class="gallery-view-all">📷 View all ${listing.photos.length} photos →</a>` : ''}
 
 <!-- MAIN LAYOUT -->
@@ -462,7 +485,7 @@ function generatePhotosPage(listing) {
 <title>Photos — ${escapeHtml(listing.name)} — Swanpass</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=2">
+<link rel="stylesheet" href="css/site.css?v=3">
 </head>
 <body>
 
