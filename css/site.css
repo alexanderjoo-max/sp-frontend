@@ -55,13 +55,15 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
 .badge-new{background:#6366f1;color:#fff;}
 .badge-verified{background:var(--green);color:#000;}
 .badge-cat{background:var(--white10);color:var(--white70);border:1px solid var(--border);}
-.listing-name{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1px;margin-bottom:6px;}
+.listing-name-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:6px;}
+.listing-name{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1px;margin-bottom:0;flex:1;}
+.btn-save{background:none;border:none;font-size:22px;color:var(--white40);cursor:pointer;padding:2px 4px;line-height:1;flex-shrink:0;transition:color .2s;margin-top:4px;}
+.btn-save:hover,.btn-save.saved{color:var(--red);}
 .listing-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:var(--white40);font-size:12px;margin-bottom:10px;}
 .rating-row{display:flex;align-items:center;gap:6px;}
 .stars{color:var(--gold);font-size:14px;letter-spacing:-1px;}
 .rating-num{font-size:14px;font-weight:700;color:var(--white);}
 .review-count{color:var(--white40);font-size:12px;}
-.action-row{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0;}
 .btn{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border-radius:8px;font-size:13px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;border:none;text-decoration:none;transition:all .2s;}
 .btn-primary{background:var(--red);color:#fff;}
 .btn-primary:hover{background:var(--red-dark);}
@@ -79,10 +81,6 @@ header{background:var(--black);border-bottom:1px solid var(--border);position:st
 .tab-content{display:none;padding:16px 0;}
 .tab-content.active{display:block;}
 
-/* === ACTION ROW (smaller, neutral CTA buttons) === */
-.action-row .btn{padding:6px 12px;font-size:11px;border-radius:6px;}
-.action-row .btn-primary,.action-row .btn-green{background:var(--white10);color:var(--white70);border:1px solid var(--border);}
-.action-row .btn-primary:hover,.action-row .btn-green:hover{border-color:var(--white40);color:var(--white);background:rgba(255,255,255,.12);}
 
 /* === SECTIONS === */
 .section-title{font-size:14px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;}

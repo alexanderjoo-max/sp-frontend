@@ -381,15 +381,14 @@ ${(listing.photos && listing.photos.length > 0) ? `<a href="photos-${listing.slu
   <div class="listing-badges">
     ${categoryBadges}
   </div>
-  <h1 class="listing-name">${escapeHtml(listing.name)}</h1>
+  <div class="listing-name-row">
+    <h1 class="listing-name">${escapeHtml(listing.name)}</h1>
+    <button class="btn-save" onclick="this.classList.toggle('saved');this.textContent=this.classList.contains('saved')?'♥':'♡'">♡</button>
+  </div>
   <div class="listing-meta">
     <span>📍 ${escapeHtml(listing.address || listing.city || 'Location not specified')}</span>
     <span>·</span>
     <span class="rating-row"><span class="stars">${starsHtml(listing.rating)}</span> <span class="rating-num">${rating}</span> <span class="review-count">(${reviewCount} reviews)</span></span>
-  </div>
-  <div class="action-row">
-    ${actionButtons.join('\n    ')}
-    <button class="btn btn-outline" onclick="this.textContent=this.textContent==='♡ Save'?'♥ Saved':'♡ Save'">♡ Save</button>
   </div>
 
   <!-- TABS -->
