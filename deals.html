@@ -78,12 +78,11 @@ body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif
 <body>
 <header>
   <div class="header-inner">
+    <button class="btn-hamburger" aria-label="Menu" onclick="var n=document.querySelector('.nav-tabs');n.classList.toggle('open');this.textContent=n.classList.contains('open')?'\u2715':'\u2630'">☰</button>
     <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
-    <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
-      <span style="color:var(--white40)">🔍</span>
-      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" oninput="this.nextElementSibling.classList.toggle('visible',this.value.length>0)" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
-      <button class="search-clear" aria-label="Clear search" onclick="event.stopPropagation();var i=this.previousElementSibling;i.value='';i.focus();this.classList.remove('visible')">✕</button>
-    </div>
+    <div style="flex:1"></div>
+    <button class="btn-register" onclick="window.location='login.html?register=1'">Register</button>
+
     <button class="btn-login" onclick="window.location='login.html'">Login</button>
   </div>
 </header>
@@ -110,10 +109,18 @@ body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif
     if (page.indexOf('city-') === 0 && href === 'cities.html') {
       tabs[i].classList.add('active');
     }
-    if (page.indexOf('listing-') === 0 && href === 'listings.html') {
+    if (page.indexOf('listing-') === 0 && href === 'search.html') {
       tabs[i].classList.add('active');
     }
   }
+  var nav = document.querySelector('.nav-tabs');
+  var btn = document.querySelector('.btn-hamburger');
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      nav.classList.remove('open');
+      if(btn) btn.textContent = '\u2630';
+    });
+  });
 })();
 </script>
 

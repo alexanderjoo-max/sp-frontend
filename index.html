@@ -90,16 +90,6 @@ a { color: inherit; }
   background: radial-gradient(ellipse, rgba(232,20,42,.22) 0%, transparent 70%);
   pointer-events: none;
 }
-.hero-country {
-  display: flex; align-items: center; justify-content: center; gap: 8px;
-  margin-bottom: 6px;
-}
-.hero-flag { font-size: 20px; }
-.hero-tagline {
-  font-size: 11px; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 2px;
-  color: var(--red);
-}
 .hero-title {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 32px; letter-spacing: 2px;
@@ -107,35 +97,34 @@ a { color: inherit; }
 }
 .hero-title span { color: var(--red); }
 .search-box {
-  background: var(--white); border-radius: 12px;
-  overflow: hidden; max-width: 580px; margin: 0 auto;
+  background: #e8e8e8; border-radius: 12px;
+  overflow: hidden; max-width: 700px; margin: 0 auto;
+  display: flex; flex-wrap: wrap; align-items: stretch;
 }
-.search-row {
-  display: flex; align-items: center; gap: 10px;
-  padding: 10px 14px; border-bottom: 1px solid #e8e8e8;
+.search-field {
+  flex: 1 1 auto; min-width: 100px;
+  display: flex; align-items: center; gap: 6px;
+  padding: 0 14px; border-right: 1px solid #d0d0d0;
 }
-.search-row:last-child { border-bottom: none; }
-.search-row label {
-  font-size: 10px; font-weight: 700; color: #999;
-  text-transform: uppercase; letter-spacing: .5px;
-  width: 56px; flex-shrink: 0;
-}
-.search-row select {
-  flex: 1; border: none; outline: none;
-  background: none; font-family: 'DM Sans',sans-serif;
-  font-size: 14px; font-weight: 500; color: #111; cursor: pointer;
-}
-.search-bottom {
-  display: flex; align-items: center; padding: 10px 14px; gap: 10px;
-}
-.search-bottom select {
+.search-field:last-of-type { border-right: none; }
+.search-field select {
   flex: 1; border: none; outline: none; background: none;
   font-family: 'DM Sans',sans-serif; font-size: 14px; font-weight: 500;
-  color: #111; cursor: pointer;
+  color: #111; cursor: pointer; padding: 12px 0; min-width: 0;
+  -webkit-appearance: none; appearance: none;
 }
+.search-field-text {
+  min-width: 140px;
+}
+.search-field-text input {
+  flex: 1; border: none; outline: none; background: none;
+  font-family: 'DM Sans',sans-serif; font-size: 14px; font-weight: 500;
+  color: #111; padding: 12px 0; min-width: 0;
+}
+.search-field-text input::placeholder { color: #999; }
 .btn-search {
   background: var(--red); color: var(--white); border: none;
-  border-radius: 8px; padding: 10px 20px;
+  border-radius: 0 12px 12px 0; padding: 12px 24px;
   font-size: 14px; font-weight: 700; font-family: 'DM Sans',sans-serif;
   cursor: pointer; flex-shrink: 0;
 }
@@ -431,15 +420,9 @@ footer img { height: 30px; margin: 0 auto 14px; display: block; }
   .hero-title { font-size: 52px; }
   .hero-tagline { font-size: 12px; }
 
-  /* Search box: 3-column row on desktop */
-  .search-box {
-    flex-direction: row;
-    max-width: 720px;
-  }
-  .search-box .search-row {
-    flex: 1; border-bottom: none; border-right: 1px solid #e8e8e8;
-  }
-  .search-box .search-bottom { border-top: none; flex-shrink: 0; min-width: 180px; }
+  /* Search box: single-row on desktop */
+  .search-box { flex-wrap: nowrap; max-width: 720px; }
+  .search-field { min-width: 0; }
 
   /* Categories */
   .categories { padding: 14px 24px; gap: 10px; }
@@ -502,8 +485,8 @@ footer img { height: 30px; margin: 0 auto 14px; display: block; }
 
 @media (max-width: 479px) {
   .hero-title { font-size: 28px; }
-  .header-search { max-width: 130px; }
   .btn-login { padding: 6px 10px; font-size: 11px; }
+  .btn-register { padding: 6px 10px; font-size: 11px; }
 }
 </style>
 <link rel="stylesheet" href="css/site.css?v=3">
@@ -528,12 +511,10 @@ footer img { height: 30px; margin: 0 auto 14px; display: block; }
 
 <header>
   <div class="header-inner">
+    <button class="btn-hamburger" aria-label="Menu" onclick="var n=document.querySelector('.nav-tabs');n.classList.toggle('open');this.textContent=n.classList.contains('open')?'\u2715':'\u2630'">☰</button>
     <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
-    <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
-      <span style="color:var(--white40)">🔍</span>
-      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" oninput="this.nextElementSibling.classList.toggle('visible',this.value.length>0)" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
-      <button class="search-clear" aria-label="Clear search" onclick="event.stopPropagation();var i=this.previousElementSibling;i.value='';i.focus();this.classList.remove('visible')">✕</button>
-    </div>
+    <div style="flex:1"></div>
+    <button class="btn-register" onclick="window.location='login.html?register=1'">Register</button>
     <button class="btn-login" onclick="window.location='login.html'">Login</button>
   </div>
 </header>
@@ -557,59 +538,55 @@ footer img { height: 30px; margin: 0 auto 14px; display: block; }
     if (href === page || (page === '' && href === 'index.html')) {
       tabs[i].classList.add('active');
     }
-    // City pages → highlight Cities tab
     if (page.indexOf('city-') === 0 && href === 'cities.html') {
       tabs[i].classList.add('active');
     }
-    // Listing pages → highlight Search tab
     if (page.indexOf('listing-') === 0 && href === 'search.html') {
       tabs[i].classList.add('active');
     }
   }
+  var nav = document.querySelector('.nav-tabs');
+  var btn = document.querySelector('.btn-hamburger');
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      nav.classList.remove('open');
+      if(btn) btn.textContent = '\u2630';
+    });
+  });
 })();
 </script>
 
 
 <!-- ══ HERO ══════════════════════════════════════════════════ -->
 <div class="hero">
-  <div class="hero-country">
-    <span class="hero-flag">🇹🇭</span>
-    <span class="hero-tagline">Thailand's #1 Adult Entertainment Directory</span>
-  </div>
   <div class="hero-title">MORE <span>BANG</span> FOR YOUR BAHT</div>
   <div class="search-box">
-    <div class="search-row">
-      <label>City</label>
-      <select onchange="if(this.value)window.location=this.value">
-        <option value="">All Thailand</option>
-        <option value="city-bangkok.html">Bangkok</option>
-        <option value="city-pattaya.html">Pattaya</option>
-        <option value="city-chiangmai.html">Chiang Mai</option>
-        <option value="city-phuket.html">Phuket</option>
-        <option value="city-huahin.html">Hua Hin</option>
+    <div class="search-field">
+      <select id="heroCity">
+        <option value="">🏙️ All Cities</option>
+        <option value="Bangkok">Bangkok</option>
+        <option value="Pattaya">Pattaya</option>
+        <option value="Chiang Mai">Chiang Mai</option>
+        <option value="Phuket">Phuket</option>
+        <option value="Hua Hin">Hua Hin</option>
       </select>
     </div>
-    <div class="search-row">
-      <label>Type</label>
-      <select>
-        <option>All Categories</option>
-        <option>👄 Massage</option>
-        <option>🛁 Soapy</option>
-        <option>💃 Gentlemen's Club</option>
-        <option>👯 Go-Go Bar</option>
-        <option>❤️‍🔥 Freelancers</option>
-        <option>📍 Red Light</option>
+    <div class="search-field">
+      <select id="heroType">
+        <option value="">📂 All Types</option>
+        <option value="massage">👄 Massage</option>
+        <option value="soapy">🛁 Soapy</option>
+        <option value="club">💃 Gentlemen's Club</option>
+        <option value="gogo">👯 Go-Go Bar</option>
+        <option value="freelancer">❤️‍🔥 Freelancers</option>
+        <option value="redlight">📍 Red Light</option>
       </select>
     </div>
-    <div class="search-bottom">
-      <select>
-        <option>Top Rated</option>
-        <option>Most Visited</option>
-        <option>Newest</option>
-        <option>Has Deals</option>
-      </select>
-      <button class="btn-search" onclick="window.location='listings.html'">Search</button>
+    <div class="search-field search-field-text">
+      <span style="color:#999;font-size:14px">🔍</span>
+      <input type="text" id="heroQ" placeholder="Search shops..." onkeydown="if(event.key==='Enter')doHeroSearch()">
     </div>
+    <button class="btn-search" onclick="doHeroSearch()">Search</button>
   </div>
 </div>
 
@@ -905,6 +882,18 @@ const SHOPS = [
     page:'listing-tokimeki-thonglor-story.html', deal:null
   }
 ];
+
+/* ─── HERO SEARCH ────────────────────────────────────────────────────────── */
+function doHeroSearch() {
+  var city = document.getElementById('heroCity').value;
+  var cat  = document.getElementById('heroType').value;
+  var q    = document.getElementById('heroQ').value.trim();
+  var params = [];
+  if (q)    params.push('q=' + encodeURIComponent(q));
+  if (city) params.push('city=' + encodeURIComponent(city));
+  if (cat)  params.push('cat=' + encodeURIComponent(cat));
+  window.location = 'search.html' + (params.length ? '?' + params.join('&') : '');
+}
 
 /* ─── HELPERS ────────────────────────────────────────────────────────────── */
 function starsHTML(r) {
