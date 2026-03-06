@@ -15,6 +15,20 @@ const PARTIALS_DIR = path.join(__dirname, '..', 'partials');
 const limitIdx = process.argv.indexOf('--limit');
 const LIMIT = limitIdx !== -1 ? parseInt(process.argv[limitIdx + 1], 10) : Infinity;
 
+// The 10 currently verified shops (one-time list, not auto-coupled to featured)
+const VERIFIED_SLUGS = new Set([
+  'chairman-nuru-massage-bangkok',
+  'g2g-massage-bangkok',
+  'jspot-bangkok',
+  'amor888',
+  'the333-bangkok',
+  '666-class',
+  'suwon-man-s-spa-bangkok',
+  'drake-luxury-lounge-bangkok',
+  'exotic-massage-bangkok-bangkok',
+  'body-bliss',
+]);
+
 // Read shared partials once at build time (inlined into every page)
 const HEADER_HTML = fs.readFileSync(path.join(PARTIALS_DIR, 'header.html'), 'utf-8');
 const FOOTER_HTML = fs.readFileSync(path.join(PARTIALS_DIR, 'footer.html'), 'utf-8');
@@ -332,8 +346,7 @@ function generateReviewCardsHtml(listing, allReviews) {
     </div>`;
   }
   const sorted = [...reviews]
-    .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
-    .slice(0, 10);
+    .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
   let html = '';
   sorted.forEach(r => {
     const name = escapeHtml(r.title || r.display_name || 'Anonymous');
@@ -350,27 +363,62 @@ function generateReviewCardsHtml(listing, allReviews) {
       ${body ? `<div style="color:var(--white70);font-size:13px;line-height:1.5;">${body}</div>` : ''}
     </div>`;
   });
-  if (reviews.length > 10) {
-    html += `<div style="text-align:center;padding:8px 0;">
-      <a href="${escapeHtml(listing.source_url)}#reviews" target="_blank" class="btn btn-outline">View all ${reviews.length} reviews on SwanPass &rarr;</a>
-    </div>`;
-  }
   return html;
+}
+
+/**
+ * Haversine distance in km between two lat/lng points.
+ */
+function haversineKm(lat1, lng1, lat2, lng2) {
+  const R = 6371;
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLng = (lng2 - lng1) * Math.PI / 180;
+  const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+    Math.sin(dLng / 2) * Math.sin(dLng / 2);
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+/**
+ * Find the N nearest listings by geographic distance.
+ * Falls back to same-city if current listing has no coordinates.
+ */
+function findNearbyByDistance(listing, allListings, count) {
+  const hasGeo = listing.geo && listing.geo.lat && listing.geo.lng;
+  if (!hasGeo) {
+    // Fallback: same city, or same category
+    if (listing.city) {
+      return allListings.filter(l => l.slug !== listing.slug && l.city === listing.city).slice(0, count);
+    }
+    return allListings.filter(l => l.slug !== listing.slug && l.categories.some(c => listing.categories.includes(c))).slice(0, count);
+  }
+
+  const lat1 = listing.geo.lat;
+  const lng1 = listing.geo.lng;
+
+  const withDist = allListings
+    .filter(l => l.slug !== listing.slug && l.geo && l.geo.lat && l.geo.lng)
+    .map(l => ({
+      listing: l,
+      dist: haversineKm(lat1, lng1, l.geo.lat, l.geo.lng)
+    }))
+    .sort((a, b) => a.dist - b.dist);
+
+  return withDist.slice(0, count).map(d => d.listing);
 }
 
 function generatePage(listing, allListings, garbageSet, allReviews) {
   const images = getListingImages(listing, garbageSet);
   const mainImage = images[0] || '';
-  const categoryBadges = listing.categories.map(c => `<span class="badge badge-cat">${escapeHtml(c)}</span>`).join('\n    ');
+  const categoryBadges = listing.categories.map(c => `<span class="badge badge-cat">${escapeHtml(c)}</span>`).join('\n    ')
+    + (VERIFIED_SLUGS.has(listing.slug) ? '\n    <span class="badge badge-verified">✓ Verified</span>' : '');
   const rating = listing.rating ? listing.rating.toFixed(1) : 'N/A';
   const reviewCount = listing.review_count || 0;
   const actionButtons = generateCtaButtons(listing.contacts);
   const stickyButtons = actionButtons.slice(0, 3);
 
-  // Find nearby listings (same city, different listing — skip null cities)
-  const nearby = listing.city
-    ? allListings.filter(l => l.slug !== listing.slug && l.city === listing.city).slice(0, 4)
-    : allListings.filter(l => l.slug !== listing.slug && l.categories.some(c => listing.categories.includes(c))).slice(0, 4);
+  // Find nearby listings using Haversine distance (lat/lng)
+  const nearby = findNearbyByDistance(listing, allListings, 4);
 
   const nearbyHtml = nearby.map(n => {
     const nImgs = getListingImages(n, garbageSet);
