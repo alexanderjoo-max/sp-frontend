@@ -759,7 +759,7 @@ const SHOPS = [
     id:'chairman-nuru', name:'Chairman Nuru Massage',
     cat:'soapy', catLabel:'Massage · Soapy', city:'Bangkok', area:'Sukhumvit 33',
     rating:4.9, visits:'9K+',
-    tags:['sponsored','featured'],
+    tags:['featured'],
     img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg',
     page:'listing-chairman-nuru-massage-bangkok.html', deal:'FREE JACUZZI'
   },
@@ -767,7 +767,7 @@ const SHOPS = [
     id:'g2g', name:'G2G Massage',
     cat:'massage', catLabel:'Massage · Soapy', city:'Bangkok', area:'Sukhumvit 33',
     rating:4.9, visits:'8K+',
-    tags:['sponsored'],
+    tags:['featured'],
     img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg',
     page:'listing-g2g-massage-bangkok.html', deal:'FREE JACUZZI'
   },
@@ -775,7 +775,7 @@ const SHOPS = [
     id:'jspot', name:'JSpot Massage',
     cat:'soapy', catLabel:'Massage · Soapy', city:'Bangkok', area:'Sukhumvit 33',
     rating:4.7, visits:'5K+',
-    tags:['sponsored','deal'],
+    tags:['featured','deal'],
     img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg',
     page:'listing-jspot-bangkok.html', deal:'FREE JACUZZI'
   },
@@ -783,7 +783,7 @@ const SHOPS = [
     id:'amor888', name:'AMOR888',
     cat:'soapy', catLabel:'Massage · Soapy', city:'Bangkok', area:'Sukhumvit 18',
     rating:4.8, visits:'2K+',
-    tags:['sponsored'],
+    tags:['featured'],
     img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg',
     page:'listing-amor888.html', deal:'FREE JACUZZI'
   },
@@ -791,7 +791,7 @@ const SHOPS = [
     id:'the333', name:'The333',
     cat:'soapy', catLabel:'Massage · Soapy', city:'Bangkok', area:'Sukhumvit 33',
     rating:4.8, visits:'2K+',
-    tags:['sponsored','deal'],
+    tags:['featured','deal'],
     img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg',
     page:'listing-the333-bangkok.html', deal:'FREE JACUZZI'
   },
@@ -799,7 +799,7 @@ const SHOPS = [
     id:'donquixote', name:'Don Quixote',
     cat:'massage', catLabel:'Massage · Soapy', city:'Bangkok', area:'Sukhumvit 26',
     rating:4.7, visits:'7K+',
-    tags:['featured'],
+    tags:[],
     img:null,
     page:'listing-don-quixote.html', deal:null
   },
@@ -807,7 +807,7 @@ const SHOPS = [
     id:'666class', name:'666 Class',
     cat:'massage', catLabel:'Massage · Soapy', city:'Bangkok', area:'Sukhumvit',
     rating:4.6, visits:'3K+',
-    tags:['sponsored'],
+    tags:['featured'],
     img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14215/666-class.jpeg',
     page:'listing-666-class.html', deal:'FREE JACUZZI'
   },
@@ -815,7 +815,7 @@ const SHOPS = [
     id:'suwon', name:"Suwon Man's Spa",
     cat:'massage', catLabel:'Massage · Soapy', city:'Bangkok', area:'Sukhumvit 16',
     rating:4.3, visits:'7K+',
-    tags:['sponsored','featured'],
+    tags:['featured'],
     img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14615/Suwon.jpg',
     page:'listing-suwon-man-s-spa-bangkok.html', deal:'SAVE ฿500'
   },
@@ -823,7 +823,7 @@ const SHOPS = [
     id:'drake', name:'DRAKE Luxury Lounge',
     cat:'club', catLabel:"Gentlemen's Club", city:'Bangkok', area:'Sukhumvit 33',
     rating:4.2, visits:'<100',
-    tags:['sponsored','new'],
+    tags:['featured','new'],
     img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp',
     page:'listing-drake-luxury-lounge-bangkok.html', deal:null
   },
@@ -831,7 +831,7 @@ const SHOPS = [
     id:'clubcozmo', name:'Club Cozmo',
     cat:'club', catLabel:"Gentlemen's Club", city:'Bangkok', area:'Taniya',
     rating:4.0, visits:'4K+',
-    tags:['featured'],
+    tags:[],
     img:null,
     page:'listing-club-cozmo.html', deal:null
   },
@@ -881,7 +881,7 @@ const SHOPS = [
     id:'galaxy', name:'Galaxy Walking St',
     cat:'gogo', catLabel:'Go-Go · Freelancers', city:'Pattaya', area:'Walking Street',
     rating:2.7, visits:'3K+',
-    tags:['featured'],
+    tags:[],
     img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/813/314591480_681428673470423_3006201469555310398_n.jpg',
     page:'listing-galaxy.html', deal:null
   },
@@ -941,7 +941,7 @@ function imgErr() {
 /* ─── RENDER: FEATURED GRID ──────────────────────────────────────────────── */
 function renderSponsored() {
   const el = document.getElementById('sponsoredGrid');
-  const list = SHOPS.filter(s => s.tags.includes('sponsored') || s.tags.includes('featured'));
+  const list = SHOPS.filter(s => s.tags.includes('featured'));
   el.innerHTML = list.map(s => `
     <a href="${s.page}" class="sp-card">
       <img class="sp-img" src="${imgSrc(s)}" alt="${s.name}" ${imgErr()}>
