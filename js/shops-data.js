@@ -51,7 +51,8 @@ const SHOPS = [
     "visits": "100+",
     "tags": [
       "featured",
-      "verified"
+      "verified",
+      "new"
     ],
     "img": "https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15250/WhatsApp_Image_2026-02-23_at_16.12.33.webp",
     "page": "listing-drake-luxury-lounge-bangkok.html",
@@ -1776,7 +1777,9 @@ const SHOPS = [
     "area": "Soi Sukhumvit 30",
     "rating": 4.6,
     "visits": "100+",
-    "tags": [],
+    "tags": [
+      "new"
+    ],
     "img": "https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15233/store01.jpg",
     "page": "listing-lunar-nuru-bangkok.html",
     "deal": null,
@@ -2912,7 +2915,9 @@ const SHOPS = [
     "area": "Soi Sukhumvit 77/1",
     "rating": 4.2,
     "visits": "100+",
-    "tags": [],
+    "tags": [
+      "new"
+    ],
     "img": "https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15179/store01.jpg",
     "page": "listing-riviere-77-bangkok.html",
     "deal": null,
@@ -3665,7 +3670,7 @@ const SHOPS = [
     "rating": 4,
     "visits": "1K+",
     "tags": [],
-    "img": "https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg",
+    "img": "https://swanpass.com/wp-content/uploads/2023/02/20150408165629208.jpg",
     "page": "listing-cancam.html",
     "deal": null,
     "lat": 13.7293158,
@@ -6624,7 +6629,9 @@ const SHOPS = [
     "area": "14 Thanon Ekkamai",
     "rating": null,
     "visits": "500+",
-    "tags": [],
+    "tags": [
+      "new"
+    ],
     "img": "https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15189/Screenshot_2026-01-23_at_5.39.54_PM.jpg",
     "page": "listing-dragon-lady-bkk-bangkok.html",
     "deal": null,

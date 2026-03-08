@@ -38,6 +38,11 @@ function escapeHtml(str) {
   return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
+function vCheckHTML(slug) {
+  if (!VERIFIED_SLUGS.has(slug)) return '';
+  return '<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>';
+}
+
 function formatDescription(text) {
   if (!text) return '<p>No description available.</p>';
   // Split on double newlines, or long runs without breaks (300+ chars)
@@ -425,7 +430,7 @@ function generatePage(listing, allListings, garbageSet, allReviews) {
     const nImg = nImgs[0] || '';
     return `<a href="listing-${n.slug}.html" class="nearby-card">
         <img class="nearby-img" src="${nImg}" alt="${escapeHtml(n.name)}" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
-        <div class="nearby-body"><div class="nearby-name">${escapeHtml(n.name)}</div><div class="nearby-meta">${escapeHtml(n.categories.join(' · '))} · ★ ${n.rating ? n.rating.toFixed(1) : 'N/A'}</div></div>
+        <div class="nearby-body"><div class="nearby-name">${escapeHtml(n.name)}${vCheckHTML(n.slug)}</div><div class="nearby-meta">${escapeHtml(n.categories.join(' · '))} · ★ ${n.rating ? n.rating.toFixed(1) : 'N/A'}</div></div>
       </a>`;
   }).join('\n      ');
 
@@ -466,7 +471,7 @@ ${(listing.photos && listing.photos.length > 0) ? `<a href="photos-${listing.slu
     ${categoryBadges}
   </div>
   <div class="listing-name-row">
-    <h1 class="listing-name">${escapeHtml(listing.name)}</h1>
+    <h1 class="listing-name">${escapeHtml(listing.name)}${vCheckHTML(listing.slug)}</h1>
     <button class="btn-save" onclick="this.classList.toggle('saved');this.textContent=this.classList.contains('saved')?'♥':'♡'">♡</button>
   </div>
   <div class="listing-meta">
@@ -556,6 +561,7 @@ function toggleCollapsible(el) {
   el.classList.toggle('open');
 }
 </script>
+<script src="js/bottom-nav.js"></script>
 </body>
 </html>`;
 }

@@ -28,6 +28,14 @@ const VERIFIED_SLUGS = new Set([
 
 const FEATURED_SLUGS = new Set(VERIFIED_SLUGS);
 
+// Recently added listings (manually curated — update when new shops onboard)
+const NEW_SLUGS = new Set([
+  'lunar-nuru-bangkok',
+  'dragon-lady-bkk-bangkok',
+  'riviere-77-bangkok',
+  'drake-luxury-lounge-bangkok',
+]);
+
 // Deals for known shops (preserved from original SHOPS array)
 const DEALS = {
   'chairman-nuru-massage-bangkok': 'FREE JACUZZI',
@@ -125,6 +133,7 @@ function main() {
     if (FEATURED_SLUGS.has(l.slug)) tags.push('featured');
     if (DEALS[l.slug]) tags.push('deal');
     if (VERIFIED_SLUGS.has(l.slug)) tags.push('verified');
+    if (NEW_SLUGS.has(l.slug)) tags.push('new');
 
     // Get primary image
     let img = null;

@@ -109,13 +109,7 @@
 
 <div class="cards-grid" id="grid"></div>
 
-<div class="bn-spacer"></div>
-<nav class="bottom-nav">
-  <a href="index.html"    class="bnav-item"><span class="bi">🏠</span><span class="bl">Home</span></a>
-  <a href="map.html"      class="bnav-item"><span class="bi">🗺️</span><span class="bl">Map</span></a>
-  <a href="deals.html"    class="bnav-item"><span class="bi">🏷️</span><span class="bl">Deals</span></a>
-  <a href="search.html"   class="bnav-item"><span class="bi">🔎</span><span class="bl">Search</span></a>
-</nav>
+<script src="js/bottom-nav.js"></script>
 
 <footer class="site-footer">
   <div class="footer-inner">
@@ -195,6 +189,12 @@ function imgErr() {
   return 'onerror="this.style.background=\'linear-gradient(135deg,#2a1a1a,#1a0a0a)\';this.removeAttribute(\'src\')"';
 }
 
+function vCheck(id){
+  const V=new Set(['chairman-nuru-massage-bangkok','g2g-massage-bangkok','jspot-bangkok','amor888','the333-bangkok','666-class','suwon-man-s-spa-bangkok','drake-luxury-lounge-bangkok','exotic-massage-bangkok-bangkok','body-bliss']);
+  if(!V.has(id))return '';
+  return '<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>';
+}
+
 let activeCat = 'all';
 
 function filterShops() {
@@ -212,6 +212,9 @@ function filterShops() {
   if (sort === 'rating') list.sort((a, b) => b.rating - a.rating);
   else if (sort === 'reviews') list.sort((a, b) => b.reviews - a.reviews);
   else if (sort === 'name') list.sort((a, b) => a.name.localeCompare(b.name));
+  // Verified listings always at top
+  const VER=new Set(['chairman-nuru-massage-bangkok','g2g-massage-bangkok','jspot-bangkok','amor888','the333-bangkok','666-class','suwon-man-s-spa-bangkok','drake-luxury-lounge-bangkok','exotic-massage-bangkok-bangkok','body-bliss']);
+  list.sort((a,b)=>(VER.has(b.id)?1:0)-(VER.has(a.id)?1:0));
 
   document.getElementById('resultsCount').textContent = list.length + ' listings';
   document.getElementById('grid').innerHTML = list.map(s => `
@@ -219,7 +222,7 @@ function filterShops() {
       <img class="card-img" src="${s.img || ''}" alt="${s.name}" ${imgErr()}>
       <div class="card-body">
         <div class="card-cat">${s.categories.join(' · ')}</div>
-        <div class="card-name">${s.name}</div>
+        <div class="card-name">${s.name}${vCheck(s.id)}</div>
         <div class="card-loc">📍 ${s.city || 'Unknown'}</div>
         <div class="card-foot">
           <div class="rating"><span class="stars">${starsHTML(s.rating)}</span> ${s.rating ? s.rating.toFixed(1) : 'N/A'}</div>
