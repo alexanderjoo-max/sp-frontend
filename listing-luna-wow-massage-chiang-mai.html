@@ -75,11 +75,17 @@
 <!-- GALLERY -->
 <div class="gallery">
   <div class="gallery-strip" id="galleryStrip">
-    
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14662/Screenshot_2025-10-22_at_10.08.51_AM.png" alt="Luna WoW Massage"  onerror="this.style.display='none'">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14659/luna-wow-women-only-wellness-massage-spa-chiang-mai-flyer-eng-3.jpeg" alt="Luna WoW Massage"  onerror="this.style.display='none'">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14660/luna_4.jpg" alt="Luna WoW Massage"  onerror="this.style.display='none'">
   </div>
-  <div class="gallery-count" id="galleryCount">1 / 0</div>
+  <div class="gallery-count" id="galleryCount">1 / 3</div>
 </div>
-
+<div class="gallery-thumbs" id="galleryThumbs">
+  <div class="gallery-thumb active" data-idx="0"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14662/Screenshot_2025-10-22_at_10.08.51_AM.png" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="1"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14659/luna-wow-women-only-wellness-massage-spa-chiang-mai-flyer-eng-3.jpeg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="2"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14660/luna_4.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+</div>
 
 
 <!-- MAIN LAYOUT -->
@@ -413,19 +419,19 @@
     <div class="section-title">Nearby Shops</div>
     <div class="nearby-grid">
       <a href="listing-aa-massage-chiang-mai.html" class="nearby-card">
-        <img class="nearby-img" src="" alt="AA Massage &amp; Swedish" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12056/2.jpg" alt="AA Massage &amp; Swedish" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
         <div class="nearby-body"><div class="nearby-name">AA Massage &amp; Swedish</div><div class="nearby-meta">Massage · Soapy · ★ 4.6</div></div>
       </a>
       <a href="listing-lola-love-massage-chiang-mai.html" class="nearby-card">
-        <img class="nearby-img" src="" alt="Lola Love Massage" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14646/Screenshot_2025-10-20_at_12.07.39_PM.png" alt="Lola Love Massage" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
         <div class="nearby-body"><div class="nearby-name">Lola Love Massage</div><div class="nearby-meta">Massage · Soapy · Freelancers · ★ 4.9</div></div>
       </a>
       <a href="listing-lola-love-massage-chiang-mai-2f008171-4599-4231-99e5-f28bde66ced0.html" class="nearby-card">
-        <img class="nearby-img" src="" alt="Lola Love Massage" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14985/staff03.jpg" alt="Lola Love Massage" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
         <div class="nearby-body"><div class="nearby-name">Lola Love Massage</div><div class="nearby-meta">Massage · ★ N/A</div></div>
       </a>
       <a href="listing-all-about-touch.html" class="nearby-card">
-        <img class="nearby-img" src="" alt="All About Touch" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2124/273001665_137577405390909_134207069614328717_n.jpg" alt="All About Touch" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
         <div class="nearby-body"><div class="nearby-name">All About Touch</div><div class="nearby-meta">Massage · Soapy · ★ 4.6</div></div>
       </a>
     </div>
@@ -458,6 +464,78 @@
 
 
 <script>
+
+const strip = document.getElementById('galleryStrip');
+const countEl = document.getElementById('galleryCount');
+const allPhotos = [...strip.querySelectorAll('.gallery-photo')];
+const thumbsEl = document.getElementById('galleryThumbs');
+const thumbs = thumbsEl ? [...thumbsEl.querySelectorAll('.gallery-thumb')] : [];
+let currentIdx = 0;
+
+function updateThumbs(i) {
+  thumbs.forEach((t, idx) => t.classList.toggle('active', idx === i));
+  if (thumbs[i]) thumbs[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+}
+
+function scrollToPhoto(i) {
+  if (allPhotos.length === 0) return;
+  if (i >= allPhotos.length) i = 0;
+  if (i < 0) i = allPhotos.length - 1;
+  currentIdx = i;
+  allPhotos[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+  countEl.textContent = (i+1) + ' / ' + allPhotos.length;
+  updateThumbs(i);
+}
+
+// Thumbnail clicks
+if (thumbsEl) {
+  thumbsEl.addEventListener('click', function(e) {
+    const thumb = e.target.closest('.gallery-thumb');
+    if (!thumb) return;
+    const idx = parseInt(thumb.dataset.idx, 10);
+    scrollToPhoto(idx);
+    resetAutoScroll();
+  });
+}
+
+// Track scroll to update counter + thumbnails
+let scrollRaf = 0;
+strip.addEventListener('scroll', () => {
+  cancelAnimationFrame(scrollRaf);
+  scrollRaf = requestAnimationFrame(() => {
+    const cx = strip.scrollLeft + strip.offsetWidth / 2;
+    let closest = 0, minDist = Infinity;
+    allPhotos.forEach((p, i) => {
+      const mid = p.offsetLeft + p.offsetWidth / 2;
+      const d = Math.abs(mid - cx);
+      if (d < minDist) { minDist = d; closest = i; }
+    });
+    if (closest !== currentIdx) {
+      currentIdx = closest;
+      countEl.textContent = (closest+1) + ' / ' + allPhotos.length;
+      updateThumbs(closest);
+    }
+  });
+});
+
+// Tap to advance
+strip.addEventListener('click', () => { scrollToPhoto(currentIdx + 1); resetAutoScroll(); });
+
+// Auto-scroll every 4s
+let autoTimer = null;
+function startAutoScroll() {
+  if (allPhotos.length <= 1) return;
+  autoTimer = setInterval(() => scrollToPhoto(currentIdx + 1), 4000);
+}
+function resetAutoScroll() {
+  clearInterval(autoTimer);
+  startAutoScroll();
+}
+startAutoScroll();
+
+// Pause on touch drag
+strip.addEventListener('touchstart', () => clearInterval(autoTimer));
+strip.addEventListener('touchend', () => { setTimeout(resetAutoScroll, 2000); });
 
 
 function switchTab(name) {

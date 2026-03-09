@@ -77,9 +77,9 @@ Experience the ultimate in relaxation with Love Spa Bali, an experienced on-call
 <!-- GALLERY -->
 <div class="gallery">
   <div class="gallery-strip" id="galleryStrip">
-    
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14716/love-spa-massage-bali.webp" alt="LOVE SPA MASSAGE"  onerror="this.style.display='none'">
   </div>
-  <div class="gallery-count" id="galleryCount">1 / 0</div>
+  <div class="gallery-count" id="galleryCount">1 / 1</div>
 </div>
 
 
@@ -170,19 +170,19 @@ Experience the ultimate in relaxation with Love Spa Bali, an experienced on-call
     <div class="section-title">Nearby Shops</div>
     <div class="nearby-grid">
       <a href="listing-dearest-massage-bali.html" class="nearby-card">
-        <img class="nearby-img" src="" alt="Dearest Massage" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14715/exoticoutcallmassage-bali-hero.webp" alt="Dearest Massage" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
         <div class="nearby-body"><div class="nearby-name">Dearest Massage</div><div class="nearby-meta">Massage · ★ N/A</div></div>
       </a>
       <a href="listing-hamor-massage-home-spa-bali.html" class="nearby-card">
-        <img class="nearby-img" src="" alt="HAMOR MASSAGE HOME SPA" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14722/hamorhomespa-full-boduy.webp" alt="HAMOR MASSAGE HOME SPA" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
         <div class="nearby-body"><div class="nearby-name">HAMOR MASSAGE HOME SPA</div><div class="nearby-meta">Massage · ★ N/A</div></div>
       </a>
       <a href="listing-d2d-spa-denpasar-bali.html" class="nearby-card">
-        <img class="nearby-img" src="" alt="D2D Spa Denpasar" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12553/378336761_334432365610452_657023092663656866_n.jpg" alt="D2D Spa Denpasar" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
         <div class="nearby-body"><div class="nearby-name">D2D Spa Denpasar</div><div class="nearby-meta">Massage · ★ N/A</div></div>
       </a>
       <a href="listing-new-refrezz-bali.html" class="nearby-card">
-        <img class="nearby-img" src="" alt="New ReFrezz" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12594/Screenshot_2024-09-05_at_6.06.21_PM.jpg" alt="New ReFrezz" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
         <div class="nearby-body"><div class="nearby-name">New ReFrezz</div><div class="nearby-meta">Massage · ★ N/A</div></div>
       </a>
     </div>
@@ -215,6 +215,78 @@ Experience the ultimate in relaxation with Love Spa Bali, an experienced on-call
 
 
 <script>
+
+const strip = document.getElementById('galleryStrip');
+const countEl = document.getElementById('galleryCount');
+const allPhotos = [...strip.querySelectorAll('.gallery-photo')];
+const thumbsEl = document.getElementById('galleryThumbs');
+const thumbs = thumbsEl ? [...thumbsEl.querySelectorAll('.gallery-thumb')] : [];
+let currentIdx = 0;
+
+function updateThumbs(i) {
+  thumbs.forEach((t, idx) => t.classList.toggle('active', idx === i));
+  if (thumbs[i]) thumbs[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+}
+
+function scrollToPhoto(i) {
+  if (allPhotos.length === 0) return;
+  if (i >= allPhotos.length) i = 0;
+  if (i < 0) i = allPhotos.length - 1;
+  currentIdx = i;
+  allPhotos[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+  countEl.textContent = (i+1) + ' / ' + allPhotos.length;
+  updateThumbs(i);
+}
+
+// Thumbnail clicks
+if (thumbsEl) {
+  thumbsEl.addEventListener('click', function(e) {
+    const thumb = e.target.closest('.gallery-thumb');
+    if (!thumb) return;
+    const idx = parseInt(thumb.dataset.idx, 10);
+    scrollToPhoto(idx);
+    resetAutoScroll();
+  });
+}
+
+// Track scroll to update counter + thumbnails
+let scrollRaf = 0;
+strip.addEventListener('scroll', () => {
+  cancelAnimationFrame(scrollRaf);
+  scrollRaf = requestAnimationFrame(() => {
+    const cx = strip.scrollLeft + strip.offsetWidth / 2;
+    let closest = 0, minDist = Infinity;
+    allPhotos.forEach((p, i) => {
+      const mid = p.offsetLeft + p.offsetWidth / 2;
+      const d = Math.abs(mid - cx);
+      if (d < minDist) { minDist = d; closest = i; }
+    });
+    if (closest !== currentIdx) {
+      currentIdx = closest;
+      countEl.textContent = (closest+1) + ' / ' + allPhotos.length;
+      updateThumbs(closest);
+    }
+  });
+});
+
+// Tap to advance
+strip.addEventListener('click', () => { scrollToPhoto(currentIdx + 1); resetAutoScroll(); });
+
+// Auto-scroll every 4s
+let autoTimer = null;
+function startAutoScroll() {
+  if (allPhotos.length <= 1) return;
+  autoTimer = setInterval(() => scrollToPhoto(currentIdx + 1), 4000);
+}
+function resetAutoScroll() {
+  clearInterval(autoTimer);
+  startAutoScroll();
+}
+startAutoScroll();
+
+// Pause on touch drag
+strip.addEventListener('touchstart', () => clearInterval(autoTimer));
+strip.addEventListener('touchend', () => { setTimeout(resetAutoScroll, 2000); });
 
 
 function switchTab(name) {

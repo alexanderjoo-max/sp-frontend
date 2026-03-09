@@ -75,11 +75,19 @@
 <!-- GALLERY -->
 <div class="gallery">
   <div class="gallery-strip" id="galleryStrip">
-    
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5922/getlstd-property-photo.jpg" alt="Saigon Star"  onerror="this.style.display='none'">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5920/Saigon_Star_Room_2.jpg" alt="Saigon Star"  onerror="this.style.display='none'">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5919/Saigon_Star_Room_1.jpg" alt="Saigon Star"  onerror="this.style.display='none'">
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5921/Saigon_Star_Lobby.jpg" alt="Saigon Star"  onerror="this.style.display='none'">
   </div>
-  <div class="gallery-count" id="galleryCount">1 / 0</div>
+  <div class="gallery-count" id="galleryCount">1 / 4</div>
 </div>
-
+<div class="gallery-thumbs" id="galleryThumbs">
+  <div class="gallery-thumb active" data-idx="0"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5922/getlstd-property-photo.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="1"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5920/Saigon_Star_Room_2.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="2"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5919/Saigon_Star_Room_1.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="gallery-thumb" data-idx="3"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5921/Saigon_Star_Lobby.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+</div>
 
 
 <!-- MAIN LAYOUT -->
@@ -1946,19 +1954,19 @@
     <div class="section-title">Nearby Shops</div>
     <div class="nearby-grid">
       <a href="listing-massage-fyou-ho-chi-minh-city.html" class="nearby-card">
-        <img class="nearby-img" src="" alt="Massage FYou" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5814/700px-FYou-massage.jpg" alt="Massage FYou" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
         <div class="nearby-body"><div class="nearby-name">Massage FYou</div><div class="nearby-meta">Massage · Soapy · ★ N/A</div></div>
       </a>
       <a href="listing-massage-bach-kim-ho-chi-minh-city.html" class="nearby-card">
-        <img class="nearby-img" src="" alt="Massage Bach Kim" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/10728/z1045750876998_1f1613b019789766fac3a5ce14ca4872-1024x659.jpg" alt="Massage Bach Kim" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
         <div class="nearby-body"><div class="nearby-name">Massage Bach Kim</div><div class="nearby-meta">Massage · Soapy · ★ N/A</div></div>
       </a>
       <a href="listing-massage-bach-kim-ho-chi-minh-city-1f8ba9d5-5484-4d9f-9a97-1b37f8503bda.html" class="nearby-card">
-        <img class="nearby-img" src="" alt="Massage Bạch Kim" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/10535/z1045750876998_1f1613b019789766fac3a5ce14ca4872-1024x659.jpg" alt="Massage Bạch Kim" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
         <div class="nearby-body"><div class="nearby-name">Massage Bạch Kim</div><div class="nearby-meta">Massage · Soapy · ★ N/A</div></div>
       </a>
       <a href="listing-the-queen-ho-chi-minh-city.html" class="nearby-card">
-        <img class="nearby-img" src="" alt="The Queen" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/9819/z5524469965844_9e183ee9fc5448ee466e85253809b352.jpg" alt="The Queen" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
         <div class="nearby-body"><div class="nearby-name">The Queen</div><div class="nearby-meta">Massage · Soapy · ★ N/A</div></div>
       </a>
     </div>
@@ -1991,6 +1999,78 @@
 
 
 <script>
+
+const strip = document.getElementById('galleryStrip');
+const countEl = document.getElementById('galleryCount');
+const allPhotos = [...strip.querySelectorAll('.gallery-photo')];
+const thumbsEl = document.getElementById('galleryThumbs');
+const thumbs = thumbsEl ? [...thumbsEl.querySelectorAll('.gallery-thumb')] : [];
+let currentIdx = 0;
+
+function updateThumbs(i) {
+  thumbs.forEach((t, idx) => t.classList.toggle('active', idx === i));
+  if (thumbs[i]) thumbs[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+}
+
+function scrollToPhoto(i) {
+  if (allPhotos.length === 0) return;
+  if (i >= allPhotos.length) i = 0;
+  if (i < 0) i = allPhotos.length - 1;
+  currentIdx = i;
+  allPhotos[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+  countEl.textContent = (i+1) + ' / ' + allPhotos.length;
+  updateThumbs(i);
+}
+
+// Thumbnail clicks
+if (thumbsEl) {
+  thumbsEl.addEventListener('click', function(e) {
+    const thumb = e.target.closest('.gallery-thumb');
+    if (!thumb) return;
+    const idx = parseInt(thumb.dataset.idx, 10);
+    scrollToPhoto(idx);
+    resetAutoScroll();
+  });
+}
+
+// Track scroll to update counter + thumbnails
+let scrollRaf = 0;
+strip.addEventListener('scroll', () => {
+  cancelAnimationFrame(scrollRaf);
+  scrollRaf = requestAnimationFrame(() => {
+    const cx = strip.scrollLeft + strip.offsetWidth / 2;
+    let closest = 0, minDist = Infinity;
+    allPhotos.forEach((p, i) => {
+      const mid = p.offsetLeft + p.offsetWidth / 2;
+      const d = Math.abs(mid - cx);
+      if (d < minDist) { minDist = d; closest = i; }
+    });
+    if (closest !== currentIdx) {
+      currentIdx = closest;
+      countEl.textContent = (closest+1) + ' / ' + allPhotos.length;
+      updateThumbs(closest);
+    }
+  });
+});
+
+// Tap to advance
+strip.addEventListener('click', () => { scrollToPhoto(currentIdx + 1); resetAutoScroll(); });
+
+// Auto-scroll every 4s
+let autoTimer = null;
+function startAutoScroll() {
+  if (allPhotos.length <= 1) return;
+  autoTimer = setInterval(() => scrollToPhoto(currentIdx + 1), 4000);
+}
+function resetAutoScroll() {
+  clearInterval(autoTimer);
+  startAutoScroll();
+}
+startAutoScroll();
+
+// Pause on touch drag
+strip.addEventListener('touchstart', () => clearInterval(autoTimer));
+strip.addEventListener('touchend', () => { setTimeout(resetAutoScroll, 2000); });
 
 
 function switchTab(name) {

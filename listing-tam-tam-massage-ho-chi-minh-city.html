@@ -75,9 +75,9 @@
 <!-- GALLERY -->
 <div class="gallery">
   <div class="gallery-strip" id="galleryStrip">
-    
+    <img class="gallery-photo" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/9867/hero.jpg" alt="Tam Tam Massage"  onerror="this.style.display='none'">
   </div>
-  <div class="gallery-count" id="galleryCount">1 / 0</div>
+  <div class="gallery-count" id="galleryCount">1 / 1</div>
 </div>
 
 
@@ -316,19 +316,19 @@ With each room at Tam Tam Massage , you will have a different experience each ti
     <div class="section-title">Nearby Shops</div>
     <div class="nearby-grid">
       <a href="listing-massage-nu-hoang-chu-moi-ho-chi-minh-city.html" class="nearby-card">
-        <img class="nearby-img" src="" alt="Massage Nữ Hoàng (chủ mới)" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/10570/UTokNf3.jpg" alt="Massage Nữ Hoàng (chủ mới)" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
         <div class="nearby-body"><div class="nearby-name">Massage Nữ Hoàng (chủ mới)</div><div class="nearby-meta">Massage · Soapy · ★ N/A</div></div>
       </a>
       <a href="listing-ngoc-diep-massage-ho-chi-minh-city.html" class="nearby-card">
-        <img class="nearby-img" src="" alt="Ngoc Diep Massage" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/9865/310603173_177752311499281_7469634329573572216_n.jpg" alt="Ngoc Diep Massage" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
         <div class="nearby-body"><div class="nearby-name">Ngoc Diep Massage</div><div class="nearby-meta">Massage · ★ N/A</div></div>
       </a>
       <a href="listing-massage-dubai-tan-dinh-ho-chi-minh-city.html" class="nearby-card">
-        <img class="nearby-img" src="" alt="Massage Dubai Tan Dinh" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5800/2021-03-18.jpg" alt="Massage Dubai Tan Dinh" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
         <div class="nearby-body"><div class="nearby-name">Massage Dubai Tan Dinh</div><div class="nearby-meta">Massage · Soapy · ★ N/A</div></div>
       </a>
       <a href="listing-men-spa-massage-spa-cho-phai-manh-ho-chi-minh-city.html" class="nearby-card">
-        <img class="nearby-img" src="" alt="Men Spa &amp; Massage Spa cho phái mạnh" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/9459/344556784_191546187080382_39698958274309779_n.jpg" alt="Men Spa &amp; Massage Spa cho phái mạnh" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
         <div class="nearby-body"><div class="nearby-name">Men Spa &amp; Massage Spa cho phái mạnh</div><div class="nearby-meta">Massage · Soapy · ★ N/A</div></div>
       </a>
     </div>
@@ -361,6 +361,78 @@ With each room at Tam Tam Massage , you will have a different experience each ti
 
 
 <script>
+
+const strip = document.getElementById('galleryStrip');
+const countEl = document.getElementById('galleryCount');
+const allPhotos = [...strip.querySelectorAll('.gallery-photo')];
+const thumbsEl = document.getElementById('galleryThumbs');
+const thumbs = thumbsEl ? [...thumbsEl.querySelectorAll('.gallery-thumb')] : [];
+let currentIdx = 0;
+
+function updateThumbs(i) {
+  thumbs.forEach((t, idx) => t.classList.toggle('active', idx === i));
+  if (thumbs[i]) thumbs[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+}
+
+function scrollToPhoto(i) {
+  if (allPhotos.length === 0) return;
+  if (i >= allPhotos.length) i = 0;
+  if (i < 0) i = allPhotos.length - 1;
+  currentIdx = i;
+  allPhotos[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+  countEl.textContent = (i+1) + ' / ' + allPhotos.length;
+  updateThumbs(i);
+}
+
+// Thumbnail clicks
+if (thumbsEl) {
+  thumbsEl.addEventListener('click', function(e) {
+    const thumb = e.target.closest('.gallery-thumb');
+    if (!thumb) return;
+    const idx = parseInt(thumb.dataset.idx, 10);
+    scrollToPhoto(idx);
+    resetAutoScroll();
+  });
+}
+
+// Track scroll to update counter + thumbnails
+let scrollRaf = 0;
+strip.addEventListener('scroll', () => {
+  cancelAnimationFrame(scrollRaf);
+  scrollRaf = requestAnimationFrame(() => {
+    const cx = strip.scrollLeft + strip.offsetWidth / 2;
+    let closest = 0, minDist = Infinity;
+    allPhotos.forEach((p, i) => {
+      const mid = p.offsetLeft + p.offsetWidth / 2;
+      const d = Math.abs(mid - cx);
+      if (d < minDist) { minDist = d; closest = i; }
+    });
+    if (closest !== currentIdx) {
+      currentIdx = closest;
+      countEl.textContent = (closest+1) + ' / ' + allPhotos.length;
+      updateThumbs(closest);
+    }
+  });
+});
+
+// Tap to advance
+strip.addEventListener('click', () => { scrollToPhoto(currentIdx + 1); resetAutoScroll(); });
+
+// Auto-scroll every 4s
+let autoTimer = null;
+function startAutoScroll() {
+  if (allPhotos.length <= 1) return;
+  autoTimer = setInterval(() => scrollToPhoto(currentIdx + 1), 4000);
+}
+function resetAutoScroll() {
+  clearInterval(autoTimer);
+  startAutoScroll();
+}
+startAutoScroll();
+
+// Pause on touch drag
+strip.addEventListener('touchstart', () => clearInterval(autoTimer));
+strip.addEventListener('touchend', () => { setTimeout(resetAutoScroll, 2000); });
 
 
 function switchTab(name) {
