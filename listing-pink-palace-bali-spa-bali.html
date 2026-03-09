@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Pink Palace Bali SPA — Swanpass</title>
+<meta name="description" content="What Awaits You at the Pink Palace BaliAt the Pink Palace Bali, we offer an unparalleled relaxing experience. Our doors are open from 11am to 4am. Staffed by 36">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css?v=3">
+</head>
+<body>
+
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<header>
+  <div class="header-inner">
+    <button class="btn-hamburger" aria-label="Menu" onclick="var n=document.querySelector('.nav-tabs');n.classList.toggle('open');this.textContent=n.classList.contains('open')?'\u2715':'\u2630'">☰</button>
+    <div class="header-logo-wrap"><a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a></div>
+    <div class="header-nav">
+      <a href="map.html">🗺️ Map</a>
+      <a href="deals.html">🏷️ Deals</a>
+      <a href="best-places.html">🏆 Best Places</a>
+      <a href="cities.html">📍 Cities</a>
+      <a href="search.html">🔎 Search</a>
+      <a href="add-listing.html">➕ List Your Business</a>
+    </div>
+    <button class="btn-login" onclick="window.location='login.html'">Login</button>
+  </div>
+</header>
+<nav class="nav-tabs">
+  <div class="nav-tabs-inner">
+    <a href="map.html" class="nav-tab">🗺️ Map</a>
+    <a href="deals.html" class="nav-tab">🏷️ Deals</a>
+    <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
+    <a href="cities.html" class="nav-tab">📍 Cities</a>
+    <a href="search.html" class="nav-tab">🔎 Search</a>
+    <a href="add-listing.html" class="nav-tab">➕ List Your Business</a>
+    <a href="admin.html" class="nav-tab">⚙️ Admin</a>
+  </div>
+</nav>
+<script>
+(function(){
+  var page = location.pathname.split('/').pop() || 'index.html';
+  // Highlight active nav-tab (mobile drawer)
+  var tabs = document.querySelectorAll('.nav-tab');
+  for (var i = 0; i < tabs.length; i++) {
+    var href = tabs[i].getAttribute('href');
+    if (href === page || (page === '' && href === 'index.html')) tabs[i].classList.add('active');
+    if (page.indexOf('city-') === 0 && href === 'cities.html') tabs[i].classList.add('active');
+    if (page.indexOf('listing-') === 0 && href === 'search.html') tabs[i].classList.add('active');
+  }
+  // Highlight active header-nav link (desktop)
+  var hLinks = document.querySelectorAll('.header-nav a');
+  for (var j = 0; j < hLinks.length; j++) {
+    var h = hLinks[j].getAttribute('href');
+    if (h === page || (page === '' && h === 'index.html')) hLinks[j].classList.add('active');
+    if (page.indexOf('city-') === 0 && h === 'cities.html') hLinks[j].classList.add('active');
+    if (page.indexOf('listing-') === 0 && h === 'search.html') hLinks[j].classList.add('active');
+  }
+  // Close mobile nav when a link is clicked
+  var nav = document.querySelector('.nav-tabs');
+  var btn = document.querySelector('.btn-hamburger');
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      nav.classList.remove('open');
+      if(btn) btn.textContent = '\u2630';
+    });
+  });
+})();
+</script>
+
+
+<!-- GALLERY -->
+<div class="gallery">
+  <div class="gallery-strip" id="galleryStrip">
+    
+  </div>
+  <div class="gallery-count" id="galleryCount">1 / 0</div>
+</div>
+
+
+
+<!-- MAIN LAYOUT -->
+<div id="mainLayout">
+
+<!-- LISTING INFO -->
+<div class="listing-info">
+  <div class="listing-badges">
+    <span class="badge badge-cat">Massage</span>
+  </div>
+  <div class="listing-name-row">
+    <h1 class="listing-name">Pink Palace Bali SPA</h1>
+    <button class="btn-save" onclick="this.classList.toggle('saved');this.textContent=this.classList.contains('saved')?'♥':'♡'">♡</button>
+  </div>
+  <div class="listing-meta">
+    <span>📍 Jl. Mertasari, Kerobokan Kelod, Kec. Kuta Utara, Kabupaten Badung, Bali 80361, Indonesia</span>
+    <span>·</span>
+    <span class="rating-row"><span class="stars">☆☆☆☆☆</span> <span class="rating-num">N/A</span> <span class="review-count">(28 reviews)</span></span>
+  </div>
+  
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
+    <button class="tab-btn" onclick="switchTab('prices')">Prices</button>
+    <button class="tab-btn" onclick="switchTab('reviews')">Reviews (28)</button>
+    <button class="tab-btn" onclick="switchTab('contact')">Contact & Hours</button>
+    <button class="tab-btn" onclick="switchTab('location')">Location</button>
+  </div>
+
+  <!-- OVERVIEW TAB -->
+  <div class="tab-content active" id="tab-overview">
+    <div class="section-title">About Pink Palace Bali SPA</div>
+    <div class="description">
+      <p>What Awaits You at the Pink Palace BaliAt the Pink Palace Bali, we offer an unparalleled relaxing experience. Our doors are open from 11am to 4am. Staffed by 36 highly trained and beautiful therapists, the Pink Palace boasts 15 luxurious rooms spread across 3 levels.
+PLS MAKE YOUR BOOKING NOW TO AVOID DISAPPOINTMENT
+ALL SERVICES AVAILABLE FROM 11AM – 4AM DAILY
+We have many services ranging from half an hour to 2 hours.
+We fully cater for men, woman and couples.
+If you you would like to discuss our services with all we have on offer with us pls just whatsapp us anytime on +62 821-2970-5671 and we can be more specific to ensure your requests are answered in detail.
+We look very much to meeting you very soon on our fantastic new facility.</p>
+      <p>OUTCALL SERVICEOUTCALL SERVICE TO YOUR HOTEL OR VILLA - 11AM - 4AM DAILY
+If you can’t visit us at THE PINK PALACE we can come to your villa or hotel – once again pls just whatsapp us to find out more on +62 821-2970-5671</p>
+    </div>
+  </div>
+
+  <!-- PRICES TAB -->
+  <div class="tab-content" id="tab-prices">
+    <div class="section-title">Price List</div>
+    <p style="color:var(--white40);font-size:13px;">Contact the shop for pricing information.</p>
+  </div>
+
+  <!-- REVIEWS TAB -->
+  <div class="tab-content" id="tab-reviews">
+    <div class="review-summary">
+      <div>
+        <div class="review-big-num">N/A</div>
+        <div class="review-stars-big">☆☆☆☆☆</div>
+        <div style="font-size:12px;color:var(--white40);margin-top:4px;">28 Reviews</div>
+      </div>
+    </div>
+    
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Tino Widjaja</div>
+        <div style="font-size:12px;color:var(--white40);">Sep 13, 2024</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★☆☆☆</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Fuzzy Rusz</div>
+        <div style="font-size:12px;color:var(--white40);">Aug 25, 2024</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Reviews are mixed, so my expectations were low. Price is high, has gone up to 1.8m. Therapist Imel was outstanding and I highly recommend.<br><br>They could do a few things better, for the price.<br><br>If management is reading this, I’m happy to give some tips!</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Rohan Gazzard</div>
+        <div style="font-size:12px;color:var(--white40);">Aug 4, 2024</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Huge spacious rooms and extremely clean. Highly recommend</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">I Made Agus Arimbawa</div>
+        <div style="font-size:12px;color:var(--white40);">Aug 3, 2024</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">We love pink palace 😻</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Ardita Kmg</div>
+        <div style="font-size:12px;color:var(--white40);">Aug 2, 2024</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Gabriel Andrew</div>
+        <div style="font-size:12px;color:var(--white40);">Aug 2, 2024</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Good service</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">I KETUT Mertayasa</div>
+        <div style="font-size:12px;color:var(--white40);">Aug 2, 2024</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Good service</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Agus Nariawan</div>
+        <div style="font-size:12px;color:var(--white40);">Aug 2, 2024</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Tempat yg bagus untuk menghilangkan stres dan lelah.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Gung Gus</div>
+        <div style="font-size:12px;color:var(--white40);">Aug 1, 2024</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Good place for relax</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Michael Hill</div>
+        <div style="font-size:12px;color:var(--white40);">Aug 1, 2024</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Awesome place 😎</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Satria Darmawan</div>
+        <div style="font-size:12px;color:var(--white40);">Aug 1, 2024</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Bagi yang butuh relaksasi ini tempat yang tepat. Staff yang terlatih</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">I Made Satria Darmawan</div>
+        <div style="font-size:12px;color:var(--white40);">Aug 1, 2024</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Tempat yg bagus untuk relaksasi, stress jadi hilang. Pasti akan kembali lagi</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Shazwan Mchaggis</div>
+        <div style="font-size:12px;color:var(--white40);">Jul 31, 2024</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">At first thought the place was sketchy as it was located in a small back alley. And when we approached the doorman, he provided some vouchers for a 1m ruppiah discount. But i just decided to give a try.<br><br>Was placed inside the waiting room and a line of massesseu came out. I chose and escorted to a room. Room was amazing and clean with mirrors at the ceiling.<br><br>Service was tiptop and definitely a happy person leaving the place. 👍🏾👍🏾💪🏽</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Daniel Marcellino</div>
+        <div style="font-size:12px;color:var(--white40);">Jul 27, 2024</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Diann Fuspitasari</div>
+        <div style="font-size:12px;color:var(--white40);">Jul 20, 2024</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Iis Karmila</div>
+        <div style="font-size:12px;color:var(--white40);">Jul 20, 2024</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Sangat good treatment female to famale👍</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Citra Ayu palar</div>
+        <div style="font-size:12px;color:var(--white40);">Jul 20, 2024</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Malibu Malibu</div>
+        <div style="font-size:12px;color:var(--white40);">Jul 10, 2024</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Man called efil said voucher can’t be used to me and friend we gave the vouchers to another person and they used fine think it was because we was Moroccan he didn’t let us RACIST horrible man  should not have a job.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">JayJax DJ</div>
+        <div style="font-size:12px;color:var(--white40);">Jul 7, 2024</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Wayan Suarsana89</div>
+        <div style="font-size:12px;color:var(--white40);">Jul 5, 2024</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Conor Noone</div>
+        <div style="font-size:12px;color:var(--white40);">Jul 5, 2024</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Place was falling apart and there was no hot water in the jacuzzi. Looks like they just did a half and the reception staff didn't seem to care about it. But nice girls</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Mitch Hill</div>
+        <div style="font-size:12px;color:var(--white40);">Jun 26, 2024</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Rini Testayarn</div>
+        <div style="font-size:12px;color:var(--white40);">Jun 1, 2024</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Tempat esek2 berkedok spa, bikin jelek nama Bali saja.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">erlisa lie</div>
+        <div style="font-size:12px;color:var(--white40);">May 30, 2024</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Desak Putu Deni Putri Adnyani</div>
+        <div style="font-size:12px;color:var(--white40);">May 30, 2024</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">adhi surya</div>
+        <div style="font-size:12px;color:var(--white40);">May 30, 2024</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Laras Lee</div>
+        <div style="font-size:12px;color:var(--white40);">May 30, 2024</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Matt DV</div>
+        <div style="font-size:12px;color:var(--white40);">May 28, 2024</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Puts flame to shame</div>
+    </div>
+  </div>
+
+  <!-- CONTACT TAB -->
+  <div class="tab-content" id="tab-contact">
+    <div class="section-title">Contact Details</div>
+    <div class="contact-list"><div class="contact-item"><div class="contact-icon phone"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.01 1.17 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.12 7.84a16 16 0 006.04 6.04l1.2-1.2a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div><a href="tel:+62 821-2970-5671">+62 821-2970-5671</a></div>
+<div class="contact-item"><div class="contact-icon ig"><svg viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div><a href="https://instagram.com/thepinkpalacespabali" target="_blank" rel="noopener">Instagram</a></div></div>
+    <div style="height:20px"></div>
+    <div class="section-title">Business Hours</div>
+    <div class="hours-grid"><div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time">11:00 AM - 4:00 AM</span></div><div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-time">11:00 AM - 4:00 AM</span></div><div class="hours-row"><span class="hours-day">Wednesday</span><span class="hours-time">11:00 AM - 4:00 AM</span></div><div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">11:00 AM - 4:00 AM</span></div><div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">11:00 AM - 4:00 AM</span></div><div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">11:00 AM - 4:00 AM</span></div><div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">11:00 AM - 4:00 AM</span></div></div>
+  </div>
+
+  <!-- LOCATION TAB -->
+  <div class="tab-content" id="tab-location">
+    <div class="section-title">Location</div>
+    
+    <iframe class="map-embed"
+      src="https://maps.google.com/maps?q=-8.6834478,115.1597259&z=16&output=embed"
+      allowfullscreen loading="lazy"></iframe>
+    <p class="address-text">📍 Jl. Mertasari, Kerobokan Kelod, Kec. Kuta Utara, Kabupaten Badung, Bali 80361, Indonesia</p>
+    <div style="margin-top:12px">
+      <a href="https://maps.google.com/?q=-8.6834478,115.1597259" target="_blank" class="btn btn-outline">🗺️ Open in Google Maps</a>
+    </div>
+  </div>
+
+  <!-- NEARBY SHOPS -->
+  
+  <div style="margin-top:24px;padding-top:24px;border-top:1px solid var(--border);">
+    <div class="section-title">Nearby Shops</div>
+    <div class="nearby-grid">
+      <a href="listing-lv-spa-bali-bali.html" class="nearby-card">
+        <img class="nearby-img" src="" alt="LV SPA Bali" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">LV SPA Bali</div><div class="nearby-meta">Massage · ★ N/A</div></div>
+      </a>
+      <a href="listing-sway-bali-spa-bali.html" class="nearby-card">
+        <img class="nearby-img" src="" alt="Sway Bali Spa" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">Sway Bali Spa</div><div class="nearby-meta">Massage · Soapy · ★ N/A</div></div>
+      </a>
+      <a href="listing-flame-spa-seminyak-bali.html" class="nearby-card">
+        <img class="nearby-img" src="" alt="Flame Spa Seminyak" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">Flame Spa Seminyak</div><div class="nearby-meta">Massage · Soapy · ★ N/A</div></div>
+      </a>
+      <a href="listing-riverview-spa-bali.html" class="nearby-card">
+        <img class="nearby-img" src="" alt="Riverview Spa" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">Riverview Spa</div><div class="nearby-meta">Massage · Soapy · ★ N/A</div></div>
+      </a>
+    </div>
+  </div>
+
+</div><!-- /listing-info -->
+</div><!-- /mainLayout -->
+
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="./swanpass_logo_rev.png" alt="Swanpass" class="footer-logo">
+      <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
+    </div>
+    <div class="footer-links">
+      <a href="city-bangkok.html">Bangkok</a>
+      <a href="city-pattaya.html">Pattaya</a>
+      <a href="deals.html">Deals</a>
+      <a href="map.html">Map</a>
+      <a href="search.html">Search</a>
+      <a href="add-listing.html">List Your Business</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+    </div>
+    <div class="footer-disc">Content is provided by listed businesses and is not verified by Swanpass.com. This site contains adult content — must be 18+ to access.</div>
+    <div class="footer-copy">&copy; 2026 Swanpass. All rights reserved.</div>
+  </div>
+</footer>
+
+
+<script>
+
+
+function switchTab(name) {
+  document.querySelectorAll('.tab-btn').forEach((b,i) => {
+    const tabs = ['overview','prices','reviews','contact','location'];
+    b.classList.toggle('active', tabs[i] === name);
+  });
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+}
+
+function toggleCollapsible(el) {
+  el.classList.toggle('open');
+}
+</script>
+<script src="js/bottom-nav.js"></script>
+</body>
+</html>

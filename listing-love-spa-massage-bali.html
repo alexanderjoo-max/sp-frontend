@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>LOVE SPA MASSAGE — Swanpass</title>
+<meta name="description" content="Rejuvenate with Love Spa Bali’s Mobile Massage 
+
+Experience the ultimate in relaxation with Love Spa Bali, an experienced on-call spa service bringing professio">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css?v=3">
+</head>
+<body>
+
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<header>
+  <div class="header-inner">
+    <button class="btn-hamburger" aria-label="Menu" onclick="var n=document.querySelector('.nav-tabs');n.classList.toggle('open');this.textContent=n.classList.contains('open')?'\u2715':'\u2630'">☰</button>
+    <div class="header-logo-wrap"><a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a></div>
+    <div class="header-nav">
+      <a href="map.html">🗺️ Map</a>
+      <a href="deals.html">🏷️ Deals</a>
+      <a href="best-places.html">🏆 Best Places</a>
+      <a href="cities.html">📍 Cities</a>
+      <a href="search.html">🔎 Search</a>
+      <a href="add-listing.html">➕ List Your Business</a>
+    </div>
+    <button class="btn-login" onclick="window.location='login.html'">Login</button>
+  </div>
+</header>
+<nav class="nav-tabs">
+  <div class="nav-tabs-inner">
+    <a href="map.html" class="nav-tab">🗺️ Map</a>
+    <a href="deals.html" class="nav-tab">🏷️ Deals</a>
+    <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
+    <a href="cities.html" class="nav-tab">📍 Cities</a>
+    <a href="search.html" class="nav-tab">🔎 Search</a>
+    <a href="add-listing.html" class="nav-tab">➕ List Your Business</a>
+    <a href="admin.html" class="nav-tab">⚙️ Admin</a>
+  </div>
+</nav>
+<script>
+(function(){
+  var page = location.pathname.split('/').pop() || 'index.html';
+  // Highlight active nav-tab (mobile drawer)
+  var tabs = document.querySelectorAll('.nav-tab');
+  for (var i = 0; i < tabs.length; i++) {
+    var href = tabs[i].getAttribute('href');
+    if (href === page || (page === '' && href === 'index.html')) tabs[i].classList.add('active');
+    if (page.indexOf('city-') === 0 && href === 'cities.html') tabs[i].classList.add('active');
+    if (page.indexOf('listing-') === 0 && href === 'search.html') tabs[i].classList.add('active');
+  }
+  // Highlight active header-nav link (desktop)
+  var hLinks = document.querySelectorAll('.header-nav a');
+  for (var j = 0; j < hLinks.length; j++) {
+    var h = hLinks[j].getAttribute('href');
+    if (h === page || (page === '' && h === 'index.html')) hLinks[j].classList.add('active');
+    if (page.indexOf('city-') === 0 && h === 'cities.html') hLinks[j].classList.add('active');
+    if (page.indexOf('listing-') === 0 && h === 'search.html') hLinks[j].classList.add('active');
+  }
+  // Close mobile nav when a link is clicked
+  var nav = document.querySelector('.nav-tabs');
+  var btn = document.querySelector('.btn-hamburger');
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      nav.classList.remove('open');
+      if(btn) btn.textContent = '\u2630';
+    });
+  });
+})();
+</script>
+
+
+<!-- GALLERY -->
+<div class="gallery">
+  <div class="gallery-strip" id="galleryStrip">
+    
+  </div>
+  <div class="gallery-count" id="galleryCount">1 / 0</div>
+</div>
+
+
+
+<!-- MAIN LAYOUT -->
+<div id="mainLayout">
+
+<!-- LISTING INFO -->
+<div class="listing-info">
+  <div class="listing-badges">
+    <span class="badge badge-cat">Massage</span>
+  </div>
+  <div class="listing-name-row">
+    <h1 class="listing-name">LOVE SPA MASSAGE</h1>
+    <button class="btn-save" onclick="this.classList.toggle('saved');this.textContent=this.classList.contains('saved')?'♥':'♡'">♡</button>
+  </div>
+  <div class="listing-meta">
+    <span>📍 Jl. Raya Ubud, Ubud, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia</span>
+    <span>·</span>
+    <span class="rating-row"><span class="stars">☆☆☆☆☆</span> <span class="rating-num">N/A</span> <span class="review-count">(0 reviews)</span></span>
+  </div>
+  
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
+    <button class="tab-btn" onclick="switchTab('prices')">Prices</button>
+    <button class="tab-btn" onclick="switchTab('reviews')">Reviews (0)</button>
+    <button class="tab-btn" onclick="switchTab('contact')">Contact & Hours</button>
+    <button class="tab-btn" onclick="switchTab('location')">Location</button>
+  </div>
+
+  <!-- OVERVIEW TAB -->
+  <div class="tab-content active" id="tab-overview">
+    <div class="section-title">About LOVE SPA MASSAGE</div>
+    <div class="description">
+      <p>Rejuvenate with Love Spa Bali’s Mobile Massage</p>
+      <p>Experience the ultimate in relaxation with Love Spa Bali, an experienced on-call spa service bringing professional therapy to your doorstep. Designed to combat the fatigue of daily life, their treatments focus on improving circulation, relaxing muscles, and supporting mental wellness. With a strong focus on women's beauty and health, their skilled therapists ensure a revitalizing escape from stress. Book your private session today for a refreshing boost to your wellness routine.</p>
+    </div>
+  </div>
+
+  <!-- PRICES TAB -->
+  <div class="tab-content" id="tab-prices">
+    <div class="section-title">Price List</div>
+    <p style="color:var(--white40);font-size:13px;">Contact the shop for pricing information.</p>
+  </div>
+
+  <!-- REVIEWS TAB -->
+  <div class="tab-content" id="tab-reviews">
+    <div class="review-summary">
+      <div>
+        <div class="review-big-num">N/A</div>
+        <div class="review-stars-big">☆☆☆☆☆</div>
+        <div style="font-size:12px;color:var(--white40);margin-top:4px;">0 Reviews</div>
+      </div>
+    </div>
+    <div style="text-align:center;padding:16px 0;color:var(--white40);font-size:13px;">
+      <p>No reviews yet.</p>
+      <a href="#reviews" target="_blank" class="btn btn-outline" style="margin-top:8px;">Leave a review on SwanPass &rarr;</a>
+    </div>
+  </div>
+
+  <!-- CONTACT TAB -->
+  <div class="tab-content" id="tab-contact">
+    <div class="section-title">Contact Details</div>
+    <div class="contact-list"><div class="contact-item"><div class="contact-icon phone"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.01 1.17 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.12 7.84a16 16 0 006.04 6.04l1.2-1.2a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div><a href="tel:+6 82144027343">+6 82144027343</a></div></div>
+    <div style="height:20px"></div>
+    <div class="section-title">Business Hours</div>
+    <p style="color:var(--white40);font-size:13px;">Contact the shop for business hours.</p>
+  </div>
+
+  <!-- LOCATION TAB -->
+  <div class="tab-content" id="tab-location">
+    <div class="section-title">Location</div>
+    
+    <iframe class="map-embed"
+      src="https://maps.google.com/maps?q=-8.5043549,115.257834&z=16&output=embed"
+      allowfullscreen loading="lazy"></iframe>
+    <p class="address-text">📍 Jl. Raya Ubud, Ubud, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia</p>
+    <div style="margin-top:12px">
+      <a href="https://maps.google.com/?q=-8.5043549,115.257834" target="_blank" class="btn btn-outline">🗺️ Open in Google Maps</a>
+    </div>
+  </div>
+
+  <!-- NEARBY SHOPS -->
+  
+  <div style="margin-top:24px;padding-top:24px;border-top:1px solid var(--border);">
+    <div class="section-title">Nearby Shops</div>
+    <div class="nearby-grid">
+      <a href="listing-dearest-massage-bali.html" class="nearby-card">
+        <img class="nearby-img" src="" alt="Dearest Massage" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">Dearest Massage</div><div class="nearby-meta">Massage · ★ N/A</div></div>
+      </a>
+      <a href="listing-hamor-massage-home-spa-bali.html" class="nearby-card">
+        <img class="nearby-img" src="" alt="HAMOR MASSAGE HOME SPA" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">HAMOR MASSAGE HOME SPA</div><div class="nearby-meta">Massage · ★ N/A</div></div>
+      </a>
+      <a href="listing-d2d-spa-denpasar-bali.html" class="nearby-card">
+        <img class="nearby-img" src="" alt="D2D Spa Denpasar" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">D2D Spa Denpasar</div><div class="nearby-meta">Massage · ★ N/A</div></div>
+      </a>
+      <a href="listing-new-refrezz-bali.html" class="nearby-card">
+        <img class="nearby-img" src="" alt="New ReFrezz" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">New ReFrezz</div><div class="nearby-meta">Massage · ★ N/A</div></div>
+      </a>
+    </div>
+  </div>
+
+</div><!-- /listing-info -->
+</div><!-- /mainLayout -->
+
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="./swanpass_logo_rev.png" alt="Swanpass" class="footer-logo">
+      <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
+    </div>
+    <div class="footer-links">
+      <a href="city-bangkok.html">Bangkok</a>
+      <a href="city-pattaya.html">Pattaya</a>
+      <a href="deals.html">Deals</a>
+      <a href="map.html">Map</a>
+      <a href="search.html">Search</a>
+      <a href="add-listing.html">List Your Business</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+    </div>
+    <div class="footer-disc">Content is provided by listed businesses and is not verified by Swanpass.com. This site contains adult content — must be 18+ to access.</div>
+    <div class="footer-copy">&copy; 2026 Swanpass. All rights reserved.</div>
+  </div>
+</footer>
+
+
+<script>
+
+
+function switchTab(name) {
+  document.querySelectorAll('.tab-btn').forEach((b,i) => {
+    const tabs = ['overview','prices','reviews','contact','location'];
+    b.classList.toggle('active', tabs[i] === name);
+  });
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+}
+
+function toggleCollapsible(el) {
+  el.classList.toggle('open');
+}
+</script>
+<script src="js/bottom-nav.js"></script>
+</body>
+</html>

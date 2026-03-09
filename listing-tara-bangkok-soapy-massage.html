@@ -75,12 +75,12 @@
 <!-- GALLERY -->
 <div class="gallery">
   <div class="gallery-strip" id="galleryStrip">
-    <img class="gallery-photo" src="https://swanpass.com/wp-content/uploads/2023/02/TARA-Entertainment-Complex_the-new-Tarawadee-640x427.jpg" alt="Tara Bangkok Soapy Massage (Tarawadee)"  onerror="this.style.display='none'">
+    
   </div>
-  <div class="gallery-count" id="galleryCount">1 / 1</div>
+  <div class="gallery-count" id="galleryCount">1 / 0</div>
 </div>
 
-<a href="photos-tara-bangkok-soapy-massage.html" class="gallery-view-all">📷 View all 11 photos →</a>
+
 
 <!-- MAIN LAYOUT -->
 <div id="mainLayout">
@@ -196,19 +196,19 @@
     <div class="section-title">Nearby Shops</div>
     <div class="nearby-grid">
       <a href="listing-kram-spa-heaven69.html" class="nearby-card">
-        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/8504/pYWJcf.md.jpg" alt="Kram Spa (Heaven69)" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <img class="nearby-img" src="" alt="Kram Spa (Heaven69)" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
         <div class="nearby-body"><div class="nearby-name">Kram Spa (Heaven69)</div><div class="nearby-meta">Massage · ★ N/A</div></div>
       </a>
       <a href="listing-ramaix-spa-club.html" class="nearby-card">
-        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/3266/7db135CCF8F72-92F8-4A65-8397-AD07DF131D96.jpg" alt="RamaIX Spa Club" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <img class="nearby-img" src="" alt="RamaIX Spa Club" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
         <div class="nearby-body"><div class="nearby-name">RamaIX Spa Club</div><div class="nearby-meta">Soapy · ★ 5.0</div></div>
       </a>
       <a href="listing-the-loft-30.html" class="nearby-card">
-        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/4712/380994906_122100290252055376_2059585242036620129_n.jpg" alt="The Loft 30" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <img class="nearby-img" src="" alt="The Loft 30" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
         <div class="nearby-body"><div class="nearby-name">The Loft 30</div><div class="nearby-meta">Gentlemen’s Clubs · ★ 5.0</div></div>
       </a>
       <a href="listing-yoshi.html" class="nearby-card">
-        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5645/F7gImQZaQAAtKQz.jpeg" alt="Yoshi" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <img class="nearby-img" src="" alt="Yoshi" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
         <div class="nearby-body"><div class="nearby-name">Yoshi</div><div class="nearby-meta">Massage · ★ N/A</div></div>
       </a>
     </div>
@@ -241,78 +241,6 @@
 
 
 <script>
-
-const strip = document.getElementById('galleryStrip');
-const countEl = document.getElementById('galleryCount');
-const allPhotos = [...strip.querySelectorAll('.gallery-photo')];
-const thumbsEl = document.getElementById('galleryThumbs');
-const thumbs = thumbsEl ? [...thumbsEl.querySelectorAll('.gallery-thumb')] : [];
-let currentIdx = 0;
-
-function updateThumbs(i) {
-  thumbs.forEach((t, idx) => t.classList.toggle('active', idx === i));
-  if (thumbs[i]) thumbs[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
-}
-
-function scrollToPhoto(i) {
-  if (allPhotos.length === 0) return;
-  if (i >= allPhotos.length) i = 0;
-  if (i < 0) i = allPhotos.length - 1;
-  currentIdx = i;
-  allPhotos[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
-  countEl.textContent = (i+1) + ' / ' + allPhotos.length;
-  updateThumbs(i);
-}
-
-// Thumbnail clicks
-if (thumbsEl) {
-  thumbsEl.addEventListener('click', function(e) {
-    const thumb = e.target.closest('.gallery-thumb');
-    if (!thumb) return;
-    const idx = parseInt(thumb.dataset.idx, 10);
-    scrollToPhoto(idx);
-    resetAutoScroll();
-  });
-}
-
-// Track scroll to update counter + thumbnails
-let scrollRaf = 0;
-strip.addEventListener('scroll', () => {
-  cancelAnimationFrame(scrollRaf);
-  scrollRaf = requestAnimationFrame(() => {
-    const cx = strip.scrollLeft + strip.offsetWidth / 2;
-    let closest = 0, minDist = Infinity;
-    allPhotos.forEach((p, i) => {
-      const mid = p.offsetLeft + p.offsetWidth / 2;
-      const d = Math.abs(mid - cx);
-      if (d < minDist) { minDist = d; closest = i; }
-    });
-    if (closest !== currentIdx) {
-      currentIdx = closest;
-      countEl.textContent = (closest+1) + ' / ' + allPhotos.length;
-      updateThumbs(closest);
-    }
-  });
-});
-
-// Tap to advance
-strip.addEventListener('click', () => { scrollToPhoto(currentIdx + 1); resetAutoScroll(); });
-
-// Auto-scroll every 4s
-let autoTimer = null;
-function startAutoScroll() {
-  if (allPhotos.length <= 1) return;
-  autoTimer = setInterval(() => scrollToPhoto(currentIdx + 1), 4000);
-}
-function resetAutoScroll() {
-  clearInterval(autoTimer);
-  startAutoScroll();
-}
-startAutoScroll();
-
-// Pause on touch drag
-strip.addEventListener('touchstart', () => clearInterval(autoTimer));
-strip.addEventListener('touchend', () => { setTimeout(resetAutoScroll, 2000); });
 
 
 function switchTab(name) {

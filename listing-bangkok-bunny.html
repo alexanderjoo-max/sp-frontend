@@ -75,12 +75,12 @@
 <!-- GALLERY -->
 <div class="gallery">
   <div class="gallery-strip" id="galleryStrip">
-    <img class="gallery-photo" src="https://swanpass.com/wp-content/uploads/2023/01/kiss2_23234-640x427.jpg" alt="Bangkok Bunny"  onerror="this.style.display='none'">
+    
   </div>
-  <div class="gallery-count" id="galleryCount">1 / 1</div>
+  <div class="gallery-count" id="galleryCount">1 / 0</div>
 </div>
 
-<a href="photos-bangkok-bunny.html" class="gallery-view-all">📷 View all 10 photos →</a>
+
 
 <!-- MAIN LAYOUT -->
 <div id="mainLayout">
@@ -246,19 +246,19 @@
     <div class="section-title">Nearby Shops</div>
     <div class="nearby-grid">
       <a href="listing-classy-massage-bangkok.html" class="nearby-card">
-        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/15076/store01.jpg" alt="Classy Massage" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <img class="nearby-img" src="" alt="Classy Massage" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
         <div class="nearby-body"><div class="nearby-name">Classy Massage</div><div class="nearby-meta">Massage · Soapy · ★ 5.0</div></div>
       </a>
       <a href="listing-maxim-massage-bangkok.html" class="nearby-card">
-        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13588/staff01.jpg" alt="Maxim Massage" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <img class="nearby-img" src="" alt="Maxim Massage" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
         <div class="nearby-body"><div class="nearby-name">Maxim Massage</div><div class="nearby-meta">Massage · Soapy · ★ N/A</div></div>
       </a>
       <a href="listing-paradise.html" class="nearby-card">
-        <img class="nearby-img" src="https://swanpass.com/wp-content/uploads/2023/05/IMG_6918_edited-502x427.webp" alt="Paradise" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <img class="nearby-img" src="" alt="Paradise" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
         <div class="nearby-body"><div class="nearby-name">Paradise</div><div class="nearby-meta">Massage · ★ 4.3</div></div>
       </a>
       <a href="listing-thai-candy-2.html" class="nearby-card">
-        <img class="nearby-img" src="https://swanpass.com/wp-content/uploads/2023/02/Screenshot-2023-01-29-at-10.05.48-PM-640x427.jpg" alt="Thai Candy" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <img class="nearby-img" src="" alt="Thai Candy" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
         <div class="nearby-body"><div class="nearby-name">Thai Candy</div><div class="nearby-meta">Massage · Soapy · ★ 3.9</div></div>
       </a>
     </div>
@@ -291,78 +291,6 @@
 
 
 <script>
-
-const strip = document.getElementById('galleryStrip');
-const countEl = document.getElementById('galleryCount');
-const allPhotos = [...strip.querySelectorAll('.gallery-photo')];
-const thumbsEl = document.getElementById('galleryThumbs');
-const thumbs = thumbsEl ? [...thumbsEl.querySelectorAll('.gallery-thumb')] : [];
-let currentIdx = 0;
-
-function updateThumbs(i) {
-  thumbs.forEach((t, idx) => t.classList.toggle('active', idx === i));
-  if (thumbs[i]) thumbs[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
-}
-
-function scrollToPhoto(i) {
-  if (allPhotos.length === 0) return;
-  if (i >= allPhotos.length) i = 0;
-  if (i < 0) i = allPhotos.length - 1;
-  currentIdx = i;
-  allPhotos[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
-  countEl.textContent = (i+1) + ' / ' + allPhotos.length;
-  updateThumbs(i);
-}
-
-// Thumbnail clicks
-if (thumbsEl) {
-  thumbsEl.addEventListener('click', function(e) {
-    const thumb = e.target.closest('.gallery-thumb');
-    if (!thumb) return;
-    const idx = parseInt(thumb.dataset.idx, 10);
-    scrollToPhoto(idx);
-    resetAutoScroll();
-  });
-}
-
-// Track scroll to update counter + thumbnails
-let scrollRaf = 0;
-strip.addEventListener('scroll', () => {
-  cancelAnimationFrame(scrollRaf);
-  scrollRaf = requestAnimationFrame(() => {
-    const cx = strip.scrollLeft + strip.offsetWidth / 2;
-    let closest = 0, minDist = Infinity;
-    allPhotos.forEach((p, i) => {
-      const mid = p.offsetLeft + p.offsetWidth / 2;
-      const d = Math.abs(mid - cx);
-      if (d < minDist) { minDist = d; closest = i; }
-    });
-    if (closest !== currentIdx) {
-      currentIdx = closest;
-      countEl.textContent = (closest+1) + ' / ' + allPhotos.length;
-      updateThumbs(closest);
-    }
-  });
-});
-
-// Tap to advance
-strip.addEventListener('click', () => { scrollToPhoto(currentIdx + 1); resetAutoScroll(); });
-
-// Auto-scroll every 4s
-let autoTimer = null;
-function startAutoScroll() {
-  if (allPhotos.length <= 1) return;
-  autoTimer = setInterval(() => scrollToPhoto(currentIdx + 1), 4000);
-}
-function resetAutoScroll() {
-  clearInterval(autoTimer);
-  startAutoScroll();
-}
-startAutoScroll();
-
-// Pause on touch drag
-strip.addEventListener('touchstart', () => clearInterval(autoTimer));
-strip.addEventListener('touchend', () => { setTimeout(resetAutoScroll, 2000); });
 
 
 function switchTab(name) {

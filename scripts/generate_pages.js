@@ -321,7 +321,19 @@ function generateContactsHtml(contacts) {
 
 function generateHoursHtml(hours) {
   if (!hours) return '<p style="color:var(--white40);font-size:13px;">Contact the shop for business hours.</p>';
-  const lines = hours.split('\n').filter(Boolean);
+  // Handle hours as object {mon: "...", tue: "..."} or string
+  if (typeof hours === 'object' && !Array.isArray(hours)) {
+    const dayNames = {mon:'Monday',tue:'Tuesday',wed:'Wednesday',thu:'Thursday',fri:'Friday',sat:'Saturday',sun:'Sunday'};
+    const entries = Object.entries(hours).filter(([k,v]) => v && dayNames[k]);
+    if (entries.length === 0) return '<p style="color:var(--white40);font-size:13px;">Contact the shop for business hours.</p>';
+    let html = '<div class="hours-grid">';
+    entries.forEach(([k,v]) => {
+      html += `<div class="hours-row"><span class="hours-day">${dayNames[k] || k}</span><span class="hours-time">${escapeHtml(String(v))}</span></div>`;
+    });
+    html += '</div>';
+    return html;
+  }
+  const lines = String(hours).split('\n').filter(Boolean);
   let html = '<div class="hours-grid">';
   lines.forEach(line => {
     // Try to split into day and time

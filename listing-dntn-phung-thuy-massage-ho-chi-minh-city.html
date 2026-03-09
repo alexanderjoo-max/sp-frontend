@@ -5,29 +5,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <title>Dntn Phung Thuy Massage — Swanpass</title>
-<meta name="description" content="I hope your life will be full of surprise and joy in the new year that’s about to begin. May You be blessed with everything you want in life.We hope that you wi">
+<meta name="description" content="I hope your life will be full of surprise and joy in the new year that’s about to begin. May You be blessed with everything you want in life.
+We hope that you w">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/site.css?v=3">
 </head>
 <body>
 
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <header>
   <div class="header-inner">
-    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
-    <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
-      <span style="color:var(--white40)">🔍</span>
-      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
+    <button class="btn-hamburger" aria-label="Menu" onclick="var n=document.querySelector('.nav-tabs');n.classList.toggle('open');this.textContent=n.classList.contains('open')?'\u2715':'\u2630'">☰</button>
+    <div class="header-logo-wrap"><a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a></div>
+    <div class="header-nav">
+      <a href="map.html">🗺️ Map</a>
+      <a href="deals.html">🏷️ Deals</a>
+      <a href="best-places.html">🏆 Best Places</a>
+      <a href="cities.html">📍 Cities</a>
+      <a href="search.html">🔎 Search</a>
+      <a href="add-listing.html">➕ List Your Business</a>
     </div>
     <button class="btn-login" onclick="window.location='login.html'">Login</button>
   </div>
 </header>
 <nav class="nav-tabs">
   <div class="nav-tabs-inner">
-    <a href="index.html" class="nav-tab">🏠 Home</a>
     <a href="map.html" class="nav-tab">🗺️ Map</a>
     <a href="deals.html" class="nav-tab">🏷️ Deals</a>
-    <a href="listings.html" class="nav-tab">🔍 Browse</a>
     <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
     <a href="cities.html" class="nav-tab">📍 Cities</a>
     <a href="search.html" class="nav-tab">🔎 Search</a>
@@ -38,32 +44,44 @@
 <script>
 (function(){
   var page = location.pathname.split('/').pop() || 'index.html';
+  // Highlight active nav-tab (mobile drawer)
   var tabs = document.querySelectorAll('.nav-tab');
   for (var i = 0; i < tabs.length; i++) {
     var href = tabs[i].getAttribute('href');
-    if (href === page || (page === '' && href === 'index.html')) {
-      tabs[i].classList.add('active');
-    }
-    // City pages → highlight Cities tab
-    if (page.indexOf('city-') === 0 && href === 'cities.html') {
-      tabs[i].classList.add('active');
-    }
-    // Listing pages → highlight Browse tab
-    if (page.indexOf('listing-') === 0 && href === 'listings.html') {
-      tabs[i].classList.add('active');
-    }
+    if (href === page || (page === '' && href === 'index.html')) tabs[i].classList.add('active');
+    if (page.indexOf('city-') === 0 && href === 'cities.html') tabs[i].classList.add('active');
+    if (page.indexOf('listing-') === 0 && href === 'search.html') tabs[i].classList.add('active');
   }
+  // Highlight active header-nav link (desktop)
+  var hLinks = document.querySelectorAll('.header-nav a');
+  for (var j = 0; j < hLinks.length; j++) {
+    var h = hLinks[j].getAttribute('href');
+    if (h === page || (page === '' && h === 'index.html')) hLinks[j].classList.add('active');
+    if (page.indexOf('city-') === 0 && h === 'cities.html') hLinks[j].classList.add('active');
+    if (page.indexOf('listing-') === 0 && h === 'search.html') hLinks[j].classList.add('active');
+  }
+  // Close mobile nav when a link is clicked
+  var nav = document.querySelector('.nav-tabs');
+  var btn = document.querySelector('.btn-hamburger');
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      nav.classList.remove('open');
+      if(btn) btn.textContent = '\u2630';
+    });
+  });
 })();
 </script>
 
 
 <!-- GALLERY -->
 <div class="gallery">
-  <img class="gallery-main" id="galleryMain" src="images/listings/dntn-phung-thuy-massage-ho-chi-minh-city/01.jpg" alt="Dntn Phung Thuy Massage" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
-  <div class="gallery-count" id="galleryCount">1 / 14</div>
-  <div class="gallery-dots" id="galleryDots"></div>
+  <div class="gallery-strip" id="galleryStrip">
+    
+  </div>
+  <div class="gallery-count" id="galleryCount">1 / 0</div>
 </div>
-<div class="gallery-thumbs" id="galleryThumbs"></div>
+
+
 
 <!-- MAIN LAYOUT -->
 <div id="mainLayout">
@@ -73,16 +91,16 @@
   <div class="listing-badges">
     <span class="badge badge-cat">Massage</span>
   </div>
-  <h1 class="listing-name">Dntn Phung Thuy Massage</h1>
+  <div class="listing-name-row">
+    <h1 class="listing-name">Dntn Phung Thuy Massage</h1>
+    <button class="btn-save" onclick="this.classList.toggle('saved');this.textContent=this.classList.contains('saved')?'♥':'♡'">♡</button>
+  </div>
   <div class="listing-meta">
-    <span>📍 4 Đ. Số 2, Thủ Đức, Thành phố Hồ Chí Minh, VN</span>
+    <span>📍 4 Đ. Số 2, Hiệp Bình Chánh, Thủ Đức, Thành phố Hồ Chí Minh, Vietnam</span>
     <span>·</span>
-    <span class="rating-row"><span class="stars">★★★★☆</span> <span class="rating-num">3.7</span> <span class="review-count">(39 reviews)</span></span>
+    <span class="rating-row"><span class="stars">☆☆☆☆☆</span> <span class="rating-num">N/A</span> <span class="review-count">(39 reviews)</span></span>
   </div>
-  <div class="action-row">
-    <a href="tel: +84 93 346 60 60" class="btn btn-primary">📞 Call</a>
-    <button class="btn btn-outline" onclick="this.textContent=this.textContent==='♡ Save'?'♥ Saved':'♡ Save'">♡ Save</button>
-  </div>
+  
 
   <!-- TABS -->
   <div class="tabs">
@@ -97,44 +115,345 @@
   <div class="tab-content active" id="tab-overview">
     <div class="section-title">About Dntn Phung Thuy Massage</div>
     <div class="description">
-      <p>I hope your life will be full of surprise and joy in the new year that’s about to begin. May You be blessed with everything you want in life.We hope that you will encounter many joys and surprises in the coming new year. Wishing you good luck and achieving everything you want in life.</p>
+      <p>I hope your life will be full of surprise and joy in the new year that’s about to begin. May You be blessed with everything you want in life.</p>
+      <p>We hope that you will encounter many joys and surprises in the coming new year. Wishing you good luck and achieving everything you want in life.</p>
     </div>
   </div>
 
   <!-- PRICES TAB -->
   <div class="tab-content" id="tab-prices">
     <div class="section-title">Price List</div>
-    <div class="collapsible open" onclick="toggleCollapsible(this)">
-  <div class="collapsible-header">Services & Prices <span class="collapsible-arrow">▼</span></div>
-  <div class="collapsible-body">
-    <table class="price-table">
-      <tr><td>HJ/BJ Room Charge (60 minutes)</td><td>550000VND</td></tr>
-      <tr><td>Tip for Girl</td><td>550000VND</td></tr>
-    </table>
-  </div>
-</div>
+    <p style="color:var(--white40);font-size:13px;">Contact the shop for pricing information.</p>
   </div>
 
   <!-- REVIEWS TAB -->
   <div class="tab-content" id="tab-reviews">
     <div class="review-summary">
       <div>
-        <div class="review-big-num">3.7</div>
-        <div class="review-stars-big">★★★★☆</div>
+        <div class="review-big-num">N/A</div>
+        <div class="review-stars-big">☆☆☆☆☆</div>
         <div style="font-size:12px;color:var(--white40);margin-top:4px;">39 Reviews</div>
       </div>
     </div>
-    <div style="text-align:center;padding:16px 0;">
-      <a href="https://swanpass.com/listing/dntn-phung-thuy-massage-ho-chi-minh-city#reviews" target="_blank" class="btn btn-outline">View all reviews on SwanPass →</a>
+    
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Hải Lê</div>
+        <div style="font-size:12px;color:var(--white40);">Nov 16, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Quán massage rất lâu tại Sài Gòn. Khoảng gần 20 năm. Dịch vụ khỏi phải chê. Anh em muốn thư giãn thì nên ghé cho biết nha.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Naughty Y</div>
+        <div style="font-size:12px;color:var(--white40);">Aug 18, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">进去需要先付钱的，不可以选女孩子；可能不满意可以换吧，但是我反正没有换。床很小，所以只能躺一个人，我房间的床正对着门，有人走来走去，再加上是磨砂透明的，比较影响到气氛吧。同等价位的有些按摩店，应该有共浴的，也就是nuru，但是这个没有。不过说了这么多，给我服务的小姐姐真的不错，口技一流。</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Việt Nam New</div>
+        <div style="font-size:12px;color:var(--white40);">Jun 29, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Quay chở lại và dịch vụ vẫn tuyệt vời<br>Có mấy em mới nhỏ nhỏ mà ok<br>Nhân Viên vẫn nhiệt tình và lễ phép</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">178 D</div>
+        <div style="font-size:12px;color:var(--white40);">Jun 17, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">店頭からベトナムらしからぬ対応で、安心してサービスをうけられます。<br>希望をシッカリと伝えたほうがいいとおもいます。</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Hoàng Tiến</div>
+        <div style="font-size:12px;color:var(--white40);">May 19, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Dịch vụ chuyên nghiệp, nhân viên nhiệt tình vui vẻ, khách rất đông đúc nhất là chiều tối, hầu như khách chủ yếu là khách du lịch các nước như anh, pháp, nhật bản, hàn quốc, đài loan, trung quốc v.v.. Các khu vực bài trí chuyên nghiệp hài hòa nghệ thuật đẹp mắt. Giá cả dịch vụ tùy nhu cầu của khách theo các gói được tư vấn.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Trần Minh Ân</div>
+        <div style="font-size:12px;color:var(--white40);">May 12, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Tuyệt vời ! So Good<br>Nhân Viên Đẹp - Dịch Vụ Tốt<br>Đáng đồng tiền bát gạo</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Snowleopard</div>
+        <div style="font-size:12px;color:var(--white40);">Mar 7, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">온수 안나옴 서비스 안좋음 구지 여기까지 안가시길 바랍니다 내상 오래갑니다</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Bong Shim</div>
+        <div style="font-size:12px;color:var(--white40);">Jul 7, 2022</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">맛사지가 좋은곳.시설이좋고 훌륭한 서비스를 받기위해서는 남자직원에게 잘말하면 이뿐이의 선택이 주어진다</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">2014 Jet</div>
+        <div style="font-size:12px;color:var(--white40);">Feb 5, 2022</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Cơ sở vật chất tốt, nhân viên phục vụ tận tình, chăm sóc khách hàng nhiệt tình. Lần đầu tiên đến 1 chỗ dịch vụ mà quan tâm đến sức khỏe của khách hàng như thế này, tôi sẽ quay lại và giới thiệu thêm bạn bè cùng thưởng thức dịch vụ này.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Đức Lực Văn</div>
+        <div style="font-size:12px;color:var(--white40);">May 1, 2021</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Tôi rất thích dịch vụ ở đây<br>Nhưng tôi ko hài lòng về bảo vệ giữ xe xin tiền cafe mong giám đốc và quản lý triệt để tình trạng trên</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Lộc Tuyền</div>
+        <div style="font-size:12px;color:var(--white40);">Oct 15, 2020</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Dịch vụ tốt cho anh em đang stress</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">홀릭</div>
+        <div style="font-size:12px;color:var(--white40);">Dec 13, 2019</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">남자들만 서비스받으러 가는곳 입니다.<br>입구에서 50만동(2019.6월부터 인상됨)<br>아가씨에게 40만동<br>강남에 괜찮은 립카페보다 서비스좋음<br><br>#서비스 진행순서#<br>1인1실 개인사우나10분정도후&gt;<br>샤워 시켜줍니다&gt;<br>간단한 마시지 받습니다&gt;<br>본격 립서비스 받습니다&gt;<br>다시 샤워서비스 받습니다&gt;<br>끝(이때 아가씨에게 팁주시면됩니다)<br><br>대기실에서 음료주문하여 마시거나<br>안마의자 자유이용 가능했습니다.<br><br>서비스잘하는 아가씨번호는<br>14번,63번,40번,80번,29번<br>(2019.12.13 최신 수정함)</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">망치!</div>
+        <div style="font-size:12px;color:var(--white40);">Nov 21, 2019</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">서비스대비 가격이 왜이리 오르는지ㅠ</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Tài Duy (Chuyên phụ kiện công nghệ)</div>
+        <div style="font-size:12px;color:var(--white40);">Nov 6, 2019</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Quán nổi tiếng ở Bình Thạnh, nhiều em gái trẻ, dịch vụ thì tiền nào của đó, vé vip 5 xị</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Kaiser</div>
+        <div style="font-size:12px;color:var(--white40);">Oct 10, 2019</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">가볼만해요^♡^서비스좋구요<br>꼭 방문해보세요~쏠로들만ㅎㅎ</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">엠케이</div>
+        <div style="font-size:12px;color:var(--white40);">Aug 10, 2019</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">서비스가 확실합니다.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">미스터현</div>
+        <div style="font-size:12px;color:var(--white40);">Jul 9, 2019</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">가격오르고 서비스 떨어지구 스블</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">quốc phạm xuân</div>
+        <div style="font-size:12px;color:var(--white40);">Jun 26, 2019</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Good.dịch vụ ok.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">SH An</div>
+        <div style="font-size:12px;color:var(--white40);">Jun 24, 2019</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">점점 서비스가 개판임 예전의 그곳이 아님. 일주일에 1<br>~2번씩 갔었는데, 엉망임. 배가 불렀음. 가면 안됨.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Bum Ryu</div>
+        <div style="font-size:12px;color:var(--white40);">Jun 22, 2019</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">별 하나도 주기 아깝내요<br>랜덤으로 결정되는 아가씨들 마인드라 격차가 큰 건지?<br>영업이 방침이 이런건지?<br>입장시 입구의 가드랑 스텝들 마인드를 보면 기대가 되어지지만 입장료도 50만동이고 아가씨들의 서비스도 개판인건 저만 그런가요?<br>팁도 안주려다 집 갈때  차비나 하라고 20만동만 줬내요<br><br>오지마세요  ...절대로 ㅋㅋ</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Quốc Bảo Nguyễn</div>
+        <div style="font-size:12px;color:var(--white40);">Jun 10, 2019</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Dịch vụ tận tình, chu đáo. Tuy nhiên giá khá cao</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">김머중</div>
+        <div style="font-size:12px;color:var(--white40);">Jun 3, 2019</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">서비스끝나고 옷다입고 포옹해쥼</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">슈앙TV</div>
+        <div style="font-size:12px;color:var(--white40);">May 8, 2019</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">굿서비스 팁요구만안해도 별다섯개, 난 팁 20만동 줌</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">김종헌</div>
+        <div style="font-size:12px;color:var(--white40);">Apr 30, 2019</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">2년 반전에 35만동 + 30만동, 지금 입장료 50만동 팁은 40만동 이상으로 올랐음.<br>서비스는 아가씨에 따라 천차만별.<br><br>너무 별로면 팁을 30만동 이하로 주어도 괜찮으나(20만동 준적도 있음), 지정 번호가 있고 얼굴을 알고 있는 상태라면 50만동(혹은 좀더) 정도로 팁을 조금 후하게 주면 정말 잘 해줌. 온갖 스킬을 맛볼수 있음. 이러면 처음 볼때 부터 정말 반갑게 맞아주고 최선을 다함.<br>반대로 지정번호가 있는데도 팁이 짜면 얼굴을 알아도 반겨주질 않음.<br><br>결론, 아주 잘하는 번호 몇개를 지정해놓고 팁을 좀더 지불한다는 마음으로 가면 무조건 대만족임.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">W</div>
+        <div style="font-size:12px;color:var(--white40);">Apr 27, 2019</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">입장료도 50으로 오르고.. 서비스도 바뀌었네요. 예전의 풍투이는 사라진듯 합니다.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">김곰</div>
+        <div style="font-size:12px;color:var(--white40);">Apr 20, 2019</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">서비스는 훌륭하나 거리가 멀고 시간이 좀 짧은 느낌. 입장료 45만동 / 팁 30~50만동 내에서 개인 만족도에 따라 지급. 마사시간은 1시간.<br>팁은 서비스후 여직원에게 방에서 직접 전달하는 것으로 바뀜.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">KIM도옥끼</div>
+        <div style="font-size:12px;color:var(--white40);">Apr 15, 2019</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">우선 한국관광객들이 다 버려놓은곳. 서비스 최악 기계적. 뭐만하면 팁요구. 절대안감. 한국인줄 죄다 한국인.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">아이우에오</div>
+        <div style="font-size:12px;color:var(--white40);">Mar 22, 2019</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Vip룸 45만동 22,500원 외국인 한테 일반룸 잘안줌, 영업시간 오전10시 시작임, 써비스 그럭저럭 팁30만동 이상주면 호구임. 경험삼아 한번쯤 가볼것</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">김해</div>
+        <div style="font-size:12px;color:var(--white40);">Jan 18, 2019</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">입장료 45만<br>팁 30만이상 주세요<br>서비스 👍<br>가성비 👍<br>직원들 친절 👍</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">JIN</div>
+        <div style="font-size:12px;color:var(--white40);">Dec 19, 2018</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">좋은 서비스, 한번은 꼭 가보길 추천.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">최종국</div>
+        <div style="font-size:12px;color:var(--white40);">Dec 7, 2018</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">요즘은 병균의 서식지.서비스..돈돈.개판.돈아까움</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">줄앤짐(강상보)</div>
+        <div style="font-size:12px;color:var(--white40);">Oct 20, 2018</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">입장 40만동, 팁 40만동.<br>작년까지만해도 팁 30만동이였는데 한국남자들이 올려놓은 모양입니다. 그런데 5천원 차이라고 생각하면 부담갈 금액은 아니니...괜찮습니다.<br>4만원정도에 이런 서비스 한국에서는 불가능하다고 봅니다.<br>그냥 좀 씻겨주는거와, 형식적인 안마였지만..본게임 들어가면 혀로 온몸을 추르릅하네여.<br>거기에내가 좋아하는 ㄸㄲㅅ는 허우 대단하다고 밖에...형식적으로 지나가는 수준이 아닌 정말 심하다할 정도로 하네요.^^<br>아무튼 이것만으로 만족합니다.<br>기회되면 가세요</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">오올라잇</div>
+        <div style="font-size:12px;color:var(--white40);">Oct 8, 2018</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">밑에 글에 공감하면서.....<br><br>입장료40만동 요구<br>입장시 엄청 반겨줌<br>서비스 그럭저럭 디게 성의 없었음<br>팁을 요구하길래 안 줬더니<br>음료 먹이고 못 나가게함<br>영어로 아무도 설명해주지 않으면서<br>짜증내고 화내기시작함<br>매니저와서 팁 내야 한다길래<br>얼마나 물어보고 40만동 내고 나옴<br>문화이용에 대한 설명도 없고 서비스도 떨어짐<br>나올때 직원들이 모두 얼굴 구기고 있음<br>완전 비추입니다<br><br>저 말고 밑에 분의 글에 공감하면서<br>후기 남김니다 무사히 돌아갑니다</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Công Hải Trịnh</div>
+        <div style="font-size:12px;color:var(--white40);">Sep 9, 2018</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Dịch vụ tốt. Thoải mái 👍👌☝</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">ChengLing Tran</div>
+        <div style="font-size:12px;color:var(--white40);">May 3, 2018</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Không còn gì để khen thêm nữa . 1 dịch vụ quá hoàn hảo</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Junho Jang</div>
+        <div style="font-size:12px;color:var(--white40);">Apr 6, 2018</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">좋은 서비스 적당한 가격. 현자타임이 강하게 오니까 주의.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">노석현</div>
+        <div style="font-size:12px;color:var(--white40);">Mar 31, 2018</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">서비스!마인드!와꾸!근데비싸고멀어요</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">liem thanh</div>
+        <div style="font-size:12px;color:var(--white40);">Jan 28, 2018</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Dịch vụ message dành cho khách du lịch đến việt nam</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">김희종</div>
+        <div style="font-size:12px;color:var(--white40);">Jun 18, 2016</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">점점 서비스가 개판</div>
     </div>
   </div>
 
   <!-- CONTACT TAB -->
   <div class="tab-content" id="tab-contact">
     <div class="section-title">Contact Details</div>
-    <div class="contact-list"><div class="contact-item"><div class="contact-icon phone">📞</div><a href="tel: +84 93 346 60 60"> +84 93 346 60 60</a></div>
-<div class="contact-item"><div class="contact-icon web">📘</div><a href="https://www.facebook.com/massagephungthuy.net/" target="_blank">Facebook</a></div>
-<div class="contact-item"><div class="contact-icon web">🌐</div><a href="https://www.facebook.com/massagephungthuy.net/" target="_blank">www.facebook.com/massagephungthuy.net</a></div></div>
+    <div class="contact-list"><div class="contact-item"><div class="contact-icon phone"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.01 1.17 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.12 7.84a16 16 0 006.04 6.04l1.2-1.2a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div><a href="tel: +84 93 346 60 60"> +84 93 346 60 60</a></div></div>
     <div style="height:20px"></div>
     <div class="section-title">Business Hours</div>
     <div class="hours-grid"><div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time">9:00 AM - 2:00 AM</span></div><div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-time">9:00 AM - 9:00 AM</span></div><div class="hours-row"><span class="hours-day">Wednesday</span><span class="hours-time">9:00 AM - 9:00 AM</span></div><div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">9:00 AM - 9:00 AM</span></div><div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">9:00 AM - 2:00 AM</span></div><div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">9:00 AM - 2:00 AM</span></div><div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">9:00 AM - 2:00 AM</span></div></div>
@@ -147,7 +466,7 @@
     <iframe class="map-embed"
       src="https://maps.google.com/maps?q=10.8247272,106.7143488&z=16&output=embed"
       allowfullscreen loading="lazy"></iframe>
-    <p class="address-text">📍 4 Đ. Số 2, Thủ Đức, Thành phố Hồ Chí Minh, VN</p>
+    <p class="address-text">📍 4 Đ. Số 2, Hiệp Bình Chánh, Thủ Đức, Thành phố Hồ Chí Minh, Vietnam</p>
     <div style="margin-top:12px">
       <a href="https://maps.google.com/?q=10.8247272,106.7143488" target="_blank" class="btn btn-outline">🗺️ Open in Google Maps</a>
     </div>
@@ -155,16 +474,31 @@
 
   <!-- NEARBY SHOPS -->
   
+  <div style="margin-top:24px;padding-top:24px;border-top:1px solid var(--border);">
+    <div class="section-title">Nearby Shops</div>
+    <div class="nearby-grid">
+      <a href="listing-ngoc-diep-massage-ho-chi-minh-city.html" class="nearby-card">
+        <img class="nearby-img" src="" alt="Ngoc Diep Massage" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">Ngoc Diep Massage</div><div class="nearby-meta">Massage · ★ N/A</div></div>
+      </a>
+      <a href="listing-massage-nu-hoang-chu-moi-ho-chi-minh-city.html" class="nearby-card">
+        <img class="nearby-img" src="" alt="Massage Nữ Hoàng (chủ mới)" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">Massage Nữ Hoàng (chủ mới)</div><div class="nearby-meta">Massage · Soapy · ★ N/A</div></div>
+      </a>
+      <a href="listing-king-room-ho-chi-minh-city.html" class="nearby-card">
+        <img class="nearby-img" src="" alt="King Room" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">King Room</div><div class="nearby-meta">Massage · Soapy · ★ N/A</div></div>
+      </a>
+      <a href="listing-massage-sala-river-side-ho-chi-minh-city.html" class="nearby-card">
+        <img class="nearby-img" src="" alt="Massage Sala River Side " onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">Massage Sala River Side </div><div class="nearby-meta">Massage · Soapy · ★ N/A</div></div>
+      </a>
+    </div>
+  </div>
 
 </div><!-- /listing-info -->
 </div><!-- /mainLayout -->
 
-<!-- STICKY MOBILE CTA -->
-
-<div class="sticky-cta">
-  <a href="tel: +84 93 346 60 60" class="btn btn-primary">📞 Call</a>
-</div>
-<div style="height:80px"></div>
 
 <footer class="site-footer">
   <div class="footer-inner">
@@ -173,66 +507,22 @@
       <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
     </div>
     <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="listings.html">Browse</a>
-      <a href="cities.html">Cities</a>
+      <a href="city-bangkok.html">Bangkok</a>
+      <a href="city-pattaya.html">Pattaya</a>
       <a href="deals.html">Deals</a>
       <a href="map.html">Map</a>
+      <a href="search.html">Search</a>
       <a href="add-listing.html">List Your Business</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
     </div>
-    <div class="footer-copy">
-      &copy; 2026 Swanpass. All rights reserved. Information is provided by listed businesses and is not verified or endorsed by Swanpass.
-    </div>
+    <div class="footer-disc">Content is provided by listed businesses and is not verified by Swanpass.com. This site contains adult content — must be 18+ to access.</div>
+    <div class="footer-copy">&copy; 2026 Swanpass. All rights reserved.</div>
   </div>
 </footer>
 
 
 <script>
-
-const photos = [
-  'images/listings/dntn-phung-thuy-massage-ho-chi-minh-city/01.jpg',
-  'images/listings/dntn-phung-thuy-massage-ho-chi-minh-city/02.jpeg',
-  'images/listings/dntn-phung-thuy-massage-ho-chi-minh-city/03.jpg',
-  'images/listings/dntn-phung-thuy-massage-ho-chi-minh-city/04.jpeg',
-  'images/listings/dntn-phung-thuy-massage-ho-chi-minh-city/05.webp',
-  'images/listings/dntn-phung-thuy-massage-ho-chi-minh-city/06.jpeg',
-  'images/listings/dntn-phung-thuy-massage-ho-chi-minh-city/09.jpeg',
-  'images/listings/dntn-phung-thuy-massage-ho-chi-minh-city/07.jpeg',
-  'images/listings/dntn-phung-thuy-massage-ho-chi-minh-city/08.jpg',
-  'images/listings/dntn-phung-thuy-massage-ho-chi-minh-city/10.jpg',
-  'images/listings/dntn-phung-thuy-massage-ho-chi-minh-city/12.jpg',
-  'images/listings/dntn-phung-thuy-massage-ho-chi-minh-city/11.jpg',
-  'images/listings/dntn-phung-thuy-massage-ho-chi-minh-city/14.jpg',
-  'images/listings/dntn-phung-thuy-massage-ho-chi-minh-city/13.jpg'
-];
-let current = 0;
-const mainImg = document.getElementById('galleryMain');
-const thumbsEl = document.getElementById('galleryThumbs');
-const countEl = document.getElementById('galleryCount');
-const dotsEl = document.getElementById('galleryDots');
-
-function setPhoto(i) {
-  current = i;
-  mainImg.src = photos[i];
-  countEl.textContent = (i+1) + ' / ' + photos.length;
-  document.querySelectorAll('.gallery-thumb').forEach((t,j) => t.classList.toggle('active', j===i));
-  document.querySelectorAll('.gallery-dot').forEach((d,j) => d.classList.toggle('active', j===i));
-}
-
-photos.forEach((p,i) => {
-  const t = document.createElement('img');
-  t.className = 'gallery-thumb' + (i===0?' active':'');
-  t.src = p; t.onclick = () => setPhoto(i);
-  t.onerror = function() { this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)'; this.removeAttribute('src'); };
-  thumbsEl.appendChild(t);
-  const d = document.createElement('div');
-  d.className = 'gallery-dot' + (i===0?' active':'');
-  d.onclick = () => setPhoto(i);
-  dotsEl.appendChild(d);
-});
-
-mainImg.onclick = () => setPhoto((current+1) % photos.length);
-mainImg.onerror = function() { this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)'; this.removeAttribute('src'); };
 
 
 function switchTab(name) {
@@ -248,5 +538,6 @@ function toggleCollapsible(el) {
   el.classList.toggle('open');
 }
 </script>
+<script src="js/bottom-nav.js"></script>
 </body>
 </html>

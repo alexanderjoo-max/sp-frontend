@@ -75,12 +75,12 @@
 <!-- GALLERY -->
 <div class="gallery">
   <div class="gallery-strip" id="galleryStrip">
-    <img class="gallery-photo" src="https://swanpass.com/wp-content/uploads/2023/03/334985241_140339495629893_9015561923417035948_n-640x427.jpg" alt="Palace A Gogo"  onerror="this.style.display='none'">
+    
   </div>
-  <div class="gallery-count" id="galleryCount">1 / 1</div>
+  <div class="gallery-count" id="galleryCount">1 / 0</div>
 </div>
 
-<a href="photos-palace-a-gogo.html" class="gallery-view-all">📷 View all 13 photos →</a>
+
 
 <!-- MAIN LAYOUT -->
 <div id="mainLayout">
@@ -1936,11 +1936,11 @@
     <div class="section-title">Nearby Shops</div>
     <div class="nearby-grid">
       <a href="listing-walking-street.html" class="nearby-card">
-        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5011/Screenshot_2023-11-09_at_8.58.35_AM.jpg" alt="Walking Street" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <img class="nearby-img" src="" alt="Walking Street" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
         <div class="nearby-body"><div class="nearby-name">Walking Street</div><div class="nearby-meta">Red Light Districts · Freelancers · ★ N/A</div></div>
       </a>
       <a href="listing-pin-up-a-go-go.html" class="nearby-card">
-        <img class="nearby-img" src="https://swanpass.com/wp-content/uploads/2023/03/profile1608448511.jpg" alt="Pin-Up A GO GO" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <img class="nearby-img" src="" alt="Pin-Up A GO GO" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
         <div class="nearby-body"><div class="nearby-name">Pin-Up A GO GO</div><div class="nearby-meta">Go-Go &amp; Strip · Freelancers · ★ 3.0</div></div>
       </a>
       <a href="listing-farenheit.html" class="nearby-card">
@@ -1948,7 +1948,7 @@
         <div class="nearby-body"><div class="nearby-name">Farenheit</div><div class="nearby-meta">Go-Go &amp; Strip · Freelancers · ★ 3.7</div></div>
       </a>
       <a href="listing-moulin-rouge.html" class="nearby-card">
-        <img class="nearby-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1840/59498382_2269044723147142_5799634329952845824_n.jpg" alt="Moulin Rouge" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <img class="nearby-img" src="" alt="Moulin Rouge" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
         <div class="nearby-body"><div class="nearby-name">Moulin Rouge</div><div class="nearby-meta">Freelancers · Go-Go &amp; Strip · ★ 4.0</div></div>
       </a>
     </div>
@@ -1981,78 +1981,6 @@
 
 
 <script>
-
-const strip = document.getElementById('galleryStrip');
-const countEl = document.getElementById('galleryCount');
-const allPhotos = [...strip.querySelectorAll('.gallery-photo')];
-const thumbsEl = document.getElementById('galleryThumbs');
-const thumbs = thumbsEl ? [...thumbsEl.querySelectorAll('.gallery-thumb')] : [];
-let currentIdx = 0;
-
-function updateThumbs(i) {
-  thumbs.forEach((t, idx) => t.classList.toggle('active', idx === i));
-  if (thumbs[i]) thumbs[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
-}
-
-function scrollToPhoto(i) {
-  if (allPhotos.length === 0) return;
-  if (i >= allPhotos.length) i = 0;
-  if (i < 0) i = allPhotos.length - 1;
-  currentIdx = i;
-  allPhotos[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
-  countEl.textContent = (i+1) + ' / ' + allPhotos.length;
-  updateThumbs(i);
-}
-
-// Thumbnail clicks
-if (thumbsEl) {
-  thumbsEl.addEventListener('click', function(e) {
-    const thumb = e.target.closest('.gallery-thumb');
-    if (!thumb) return;
-    const idx = parseInt(thumb.dataset.idx, 10);
-    scrollToPhoto(idx);
-    resetAutoScroll();
-  });
-}
-
-// Track scroll to update counter + thumbnails
-let scrollRaf = 0;
-strip.addEventListener('scroll', () => {
-  cancelAnimationFrame(scrollRaf);
-  scrollRaf = requestAnimationFrame(() => {
-    const cx = strip.scrollLeft + strip.offsetWidth / 2;
-    let closest = 0, minDist = Infinity;
-    allPhotos.forEach((p, i) => {
-      const mid = p.offsetLeft + p.offsetWidth / 2;
-      const d = Math.abs(mid - cx);
-      if (d < minDist) { minDist = d; closest = i; }
-    });
-    if (closest !== currentIdx) {
-      currentIdx = closest;
-      countEl.textContent = (closest+1) + ' / ' + allPhotos.length;
-      updateThumbs(closest);
-    }
-  });
-});
-
-// Tap to advance
-strip.addEventListener('click', () => { scrollToPhoto(currentIdx + 1); resetAutoScroll(); });
-
-// Auto-scroll every 4s
-let autoTimer = null;
-function startAutoScroll() {
-  if (allPhotos.length <= 1) return;
-  autoTimer = setInterval(() => scrollToPhoto(currentIdx + 1), 4000);
-}
-function resetAutoScroll() {
-  clearInterval(autoTimer);
-  startAutoScroll();
-}
-startAutoScroll();
-
-// Pause on touch drag
-strip.addEventListener('touchstart', () => clearInterval(autoTimer));
-strip.addEventListener('touchend', () => { setTimeout(resetAutoScroll, 2000); });
 
 
 function switchTab(name) {

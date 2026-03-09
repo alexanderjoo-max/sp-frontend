@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Genesis Sauna Spa — Swanpass</title>
+<meta name="description" content="How to get to Genesis Spa
+
+It's about 5 minutes from Bugibbitang station.
+
+Bugibintang Station
+
+Looking at the road along the railway line from Bugi Bintang Sta">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css?v=3">
+</head>
+<body>
+
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<header>
+  <div class="header-inner">
+    <button class="btn-hamburger" aria-label="Menu" onclick="var n=document.querySelector('.nav-tabs');n.classList.toggle('open');this.textContent=n.classList.contains('open')?'\u2715':'\u2630'">☰</button>
+    <div class="header-logo-wrap"><a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a></div>
+    <div class="header-nav">
+      <a href="map.html">🗺️ Map</a>
+      <a href="deals.html">🏷️ Deals</a>
+      <a href="best-places.html">🏆 Best Places</a>
+      <a href="cities.html">📍 Cities</a>
+      <a href="search.html">🔎 Search</a>
+      <a href="add-listing.html">➕ List Your Business</a>
+    </div>
+    <button class="btn-login" onclick="window.location='login.html'">Login</button>
+  </div>
+</header>
+<nav class="nav-tabs">
+  <div class="nav-tabs-inner">
+    <a href="map.html" class="nav-tab">🗺️ Map</a>
+    <a href="deals.html" class="nav-tab">🏷️ Deals</a>
+    <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
+    <a href="cities.html" class="nav-tab">📍 Cities</a>
+    <a href="search.html" class="nav-tab">🔎 Search</a>
+    <a href="add-listing.html" class="nav-tab">➕ List Your Business</a>
+    <a href="admin.html" class="nav-tab">⚙️ Admin</a>
+  </div>
+</nav>
+<script>
+(function(){
+  var page = location.pathname.split('/').pop() || 'index.html';
+  // Highlight active nav-tab (mobile drawer)
+  var tabs = document.querySelectorAll('.nav-tab');
+  for (var i = 0; i < tabs.length; i++) {
+    var href = tabs[i].getAttribute('href');
+    if (href === page || (page === '' && href === 'index.html')) tabs[i].classList.add('active');
+    if (page.indexOf('city-') === 0 && href === 'cities.html') tabs[i].classList.add('active');
+    if (page.indexOf('listing-') === 0 && href === 'search.html') tabs[i].classList.add('active');
+  }
+  // Highlight active header-nav link (desktop)
+  var hLinks = document.querySelectorAll('.header-nav a');
+  for (var j = 0; j < hLinks.length; j++) {
+    var h = hLinks[j].getAttribute('href');
+    if (h === page || (page === '' && h === 'index.html')) hLinks[j].classList.add('active');
+    if (page.indexOf('city-') === 0 && h === 'cities.html') hLinks[j].classList.add('active');
+    if (page.indexOf('listing-') === 0 && h === 'search.html') hLinks[j].classList.add('active');
+  }
+  // Close mobile nav when a link is clicked
+  var nav = document.querySelector('.nav-tabs');
+  var btn = document.querySelector('.btn-hamburger');
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      nav.classList.remove('open');
+      if(btn) btn.textContent = '\u2630';
+    });
+  });
+})();
+</script>
+
+
+<!-- GALLERY -->
+<div class="gallery">
+  <div class="gallery-strip" id="galleryStrip">
+    
+  </div>
+  <div class="gallery-count" id="galleryCount">1 / 0</div>
+</div>
+
+
+
+<!-- MAIN LAYOUT -->
+<div id="mainLayout">
+
+<!-- LISTING INFO -->
+<div class="listing-info">
+  <div class="listing-badges">
+    <span class="badge badge-cat">Massage</span>
+    <span class="badge badge-cat">Soapy</span>
+  </div>
+  <div class="listing-name-row">
+    <h1 class="listing-name">Genesis Sauna Spa</h1>
+    <button class="btn-save" onclick="this.classList.toggle('saved');this.textContent=this.classList.contains('saved')?'♥':'♡'">♡</button>
+  </div>
+  <div class="listing-meta">
+    <span>📍 Level 10, Menara Genesis, No.33, Jalan Sultan Ismail, Kuala Lumpur, 50250, Kuala Lumpur, WP Kuala Lumpur, Bukit Bintang, 50200 Kuala Lumpur, Federal Territory of Kuala Lumpur, Malaysia</span>
+    <span>·</span>
+    <span class="rating-row"><span class="stars">☆☆☆☆☆</span> <span class="rating-num">N/A</span> <span class="review-count">(10 reviews)</span></span>
+  </div>
+  
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
+    <button class="tab-btn" onclick="switchTab('prices')">Prices</button>
+    <button class="tab-btn" onclick="switchTab('reviews')">Reviews (10)</button>
+    <button class="tab-btn" onclick="switchTab('contact')">Contact & Hours</button>
+    <button class="tab-btn" onclick="switchTab('location')">Location</button>
+  </div>
+
+  <!-- OVERVIEW TAB -->
+  <div class="tab-content active" id="tab-overview">
+    <div class="section-title">About Genesis Sauna Spa</div>
+    <div class="description">
+      <p>How to get to Genesis Spa</p>
+      <p>It's about 5 minutes from Bugibbitang station.</p>
+      <div class="desc-rest" style="display:none">
+      <p>Bugibintang Station</p>
+      <p>Looking at the road along the railway line from Bugi Bintang Station (towards Raja Chulan Station),</p>
+      <p>HSBC Building with Genesis</p>
+      <p>You will see this HSBC building. It's on the 10th floor of this building. Super easy.</p>
+      <p>There is a modern ATM on the first floor of the HSBC building, so if you run out of cash you can get some there.</p>
+      <p>Entered Genesis Sauna Spa</p>
+      <p>It was easy to find as the entrance was right in front of me when I got off the elevator on the 10th floor.</p>
+      <p>I walked straight in and there was a reception desk, but there was nothing special there and I was just guided to the back of the store.</p>
+      <p>The back of the store is spacious and has a tropical resort feel to it.</p>
+      <p>There are tables lined up in the dimly lit restaurant, and there are many customers.</p>
+      <p>It's after 3 o'clock on a Saturday, and there are about 40 people there.</p>
+      <p>There was also a girl who looked like her sitting at the edge.</p>
+      <p>As soon as I was shown to my seat, an old man came and sat next to me. He seemed to be the person in charge of the place.</p>
+      <p>Old man: Girl?</p>
+      <p>First I said I wanted to go to the spa, but he went off somewhere.</p>
+      <p>Genesis Sauna Spa</p>
+      <p>The area with the shower and sink was noticeably old, but the rock-style jacuzzi was quite nice.</p>
+      <p>There were a lot of customers, but the spa didn't seem to be used much and no one was there.</p>
+      <p>After refreshing in the jacuzzi, I returned to my seat to choose a girl.</p>
+      <p>Girls at Genesis Sauna Spa</p>
+      <p>As soon as I was guided to my seat by the waiter, the old man reappeared.</p>
+      <p>Old Man: Girl?
+Scotch: Yes!</p>
+      <p>The man called the girls over the walkie-talkie, and three girls immediately came and lined up in front of the table.</p>
+      <p>The guy explained that he was Malaysian and the service was good, but even if I considered it positively, it seemed a bit far-fetched.</p>
+      <p>When I said &quot;No...&quot; he left very quickly. I'm sorry.</p>
+      <p>Next up, three Chinese gals and three Vietnamese gals appear.</p>
+      <p>Just when I thought the first Chinese gal was a good choice because she had a sexy look, a Vietnamese gal came out last with a lolita-like fox face and a good figure.</p>
+      <p>It was a perfect hit.</p>
+      <p>Scotch: Hey, the kid on the far left.
+Old man: Vietnam?
+Scotch: Yes yes.</p>
+      <p>The girls all left at once.</p>
+      <p>Genesis Sauna Spa Playroom</p>
+      <p>At the man's signal, we head to the playroom.</p>
+      <p>I was told it was on the lower floor, so I went to the stairs, and the fox-like Vietnamese girl I had selected was waiting for me on the landing.</p>
+      <p>Scotch: Hello</p>
+      <p>After exchanging a few words we headed to the playroom.</p>
+      <p>The playroom was on the floor below. It was about 20 tatami mats in size and had a shower room. It was clean and acceptable.</p>
+      <p>First, we took a shower together. The tanuki-like gal washed my body.</p>
+      <p>She has big round eyes and a cute lolita-like face. She is about 150cm tall and slim, but her breasts and buttocks are plump. I think her breasts are about E cup.</p>
+      <p>When I heard my name I couldn't hear it clearly, but it sounded like &quot;Myun myun.&quot;</p>
+      <p>Scotch: Mmm mmm?</p>
+      <p>When I asked him again, he must have been offended by something, as he splashed the shower on my face.</p>
+      <p>Myun-chan is a tsundere. She said she is 26 years old.</p>
+      <p>Play at Genesis Sauna Spa</p>
+      <p>They lie down together in bed, get cozy and start playing by licking each other's nipples.</p>
+      <p>While she was licking my nipples, I stroked her shoulders, back, and buttocks, and her skin felt smooth.</p>
+      <p>Her breasts are very elastic. I thought they were fake, but I didn't feel anything strange when I rubbed them. They're probably natural. I thought Vietnamese women tend to have big breasts, but I didn't realize they were this firm.</p>
+      <p>Because I was massaging her breasts so thoroughly, he must have thought I liked them, and he pressed his breasts against my face.
+E</p>
+      <p>While almost choking, I sucked and gently bit, and caressed the other nipple with my fingers,</p>
+      <p>Myun-chan: Hmm, hmm...</p>
+      <p>Myun-chan starts letting out her voice. She's a cute little devil.</p>
+      <p>After getting him hard with a raw blowjob, we put on a condom and went from cowgirl position to lovey-dovey sitting position to missionary position.</p>
+      <p>He gets excited by the way her huge breasts move up and down while holding them together in the missionary position, and then finishes in the doggy style position.</p>
+      <p>It was great.</p>
+      <p>Overall</p>
+      <p>There were a lot of customers, the building was old, and there weren't many girls, so I wasn't sure what to expect, but in the end I'm glad I came.</p>
+      <p>My prior online research had revealed that the place had a reputation for a lot of casual play, but I was very satisfied with the passionate and excellent girl who greeted me.</p>
+      <p>Yesterday in Naha, this trip was full of beautiful big breasts. It's the best (^^)</p>
+      <p>Once again, refresh yourself in the sauna.</p>
+      <p>Have dinner at a Chinese food stall village,</p>
+      <p>Red soup with thin noodles and boiled pork</p>
+      <p>I went back to the hotel and slept soundly.</p>
+      </div>
+      <button class="btn-readmore" onclick="const r=this.previousElementSibling;r.style.display=r.style.display==='none'?'block':'none';this.textContent=r.style.display==='none'?'Read more ▾':'Show less ▴'">Read more ▾</button>
+    </div>
+  </div>
+
+  <!-- PRICES TAB -->
+  <div class="tab-content" id="tab-prices">
+    <div class="section-title">Price List</div>
+    <p style="color:var(--white40);font-size:13px;">Contact the shop for pricing information.</p>
+  </div>
+
+  <!-- REVIEWS TAB -->
+  <div class="tab-content" id="tab-reviews">
+    <div class="review-summary">
+      <div>
+        <div class="review-big-num">N/A</div>
+        <div class="review-stars-big">☆☆☆☆☆</div>
+        <div style="font-size:12px;color:var(--white40);margin-top:4px;">10 Reviews</div>
+      </div>
+    </div>
+    
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">kim loong</div>
+        <div style="font-size:12px;color:var(--white40);">Oct 26, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">When entering have captain aka Host will ask us whether to have spa, massage or just exercise.<br>The spa price is ok. Have a hot pool, sauna and steam room. Then have plenty of food to choose which already included in spa package.<br>After that can choose whether massage or exercise. But their room is dirty and damp with moldy smell.<br>Choice of exercise from China, vietnamese, Thai, Indonesian and maybe some local style.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Zak</div>
+        <div style="font-size:12px;color:var(--white40);">Apr 6, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">The room is disgustingly dirty. You won't want to touch anything in the room. The owner also owns Deluxe/Friend spa in the Federal Hotel in Bukit Bintang. The service in both places is terrible.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">amoas 74</div>
+        <div style="font-size:12px;color:var(--white40);">Mar 1, 2023</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★☆☆</div>
+      
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Noel Then</div>
+        <div style="font-size:12px;color:var(--white40);">Sep 1, 2019</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">The spa is relocated to 8th floor and reopened just recently. For now only local girls available. Hopefully by another few months their business will be stable again with more girl options and more service will be added like last time (complimentary meal plus entertainment system).</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Alexander Firsov</div>
+        <div style="font-size:12px;color:var(--white40);">Apr 20, 2019</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">If you are tourist they will try to cheat you as much as possible. After they take your money they don't interest in you at all. Don't spend a single dollar there. Worst travel experience in last 5 years.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Frank Norway</div>
+        <div style="font-size:12px;color:var(--white40);">Mar 18, 2019</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Scam, stay away. Beutiful girls, but operate with fake price, and girl with bad service. Avoid fat scamartist outside. Much better options in the city</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Mr. Safayet</div>
+        <div style="font-size:12px;color:var(--white40);">Dec 29, 2018</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★★★</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Full body (erotic massage) prices start from 250 MYR (Malaysian Ringgit) which is about 63 USD. But of course prices vary depending on the masseuse and type of extra services. Apparently at this location you can have services performed by massage girls from Malaysia, Indonesia, Vietnam, China and even Korea. Of course Korean masseuse will be more expensive since they are rare and in high demand.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Christopher Chong</div>
+        <div style="font-size:12px;color:var(--white40);">Oct 9, 2018</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Interesting spa complete with saunas and showers. The girls are beautiful. But the massage mediocre.<br>Check it out when you are free.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">Ghaith Hussein</div>
+        <div style="font-size:12px;color:var(--white40);">Jan 14, 2018</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★★★☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">سبا جميل للاستجمام والاسترخاء.<br><br>المكان: الطابق العاشر، داخل عمار بنك ال أتش أس بي سي، بوكيت بنتانغ (شارع العرب).<br><br>I like the jacuzzi in there.<br><br>Located in Level 10th the same building of HSBC. Bukit Bintang.<br><br>Not the best spa, but okay la, quite old, free food and drinks.<br><br>They offer massage but have to pay for it.</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-weight:600;color:var(--white);font-size:14px;">good boy</div>
+        <div style="font-size:12px;color:var(--white40);">Dec 11, 2017</div>
+      </div>
+      <div class="stars" style="color:var(--gold);font-size:14px;margin-bottom:8px;">★☆☆☆☆</div>
+      <div style="color:var(--white70);font-size:13px;line-height:1.5;">Seems they already closed and Someone else  took over service. Very bad service as they don’t care customer satisfaction. Lost some 80$ (~300 MYR(during last visit)</div>
+    </div>
+  </div>
+
+  <!-- CONTACT TAB -->
+  <div class="tab-content" id="tab-contact">
+    <div class="section-title">Contact Details</div>
+    <div class="contact-list"><div class="contact-item"><div class="contact-icon phone"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.01 1.17 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.12 7.84a16 16 0 006.04 6.04l1.2-1.2a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div><a href="tel:+60 3-2713 1941">+60 3-2713 1941</a></div></div>
+    <div style="height:20px"></div>
+    <div class="section-title">Business Hours</div>
+    <div class="hours-grid"><div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time">10:00 AM - 5:00 AM</span></div><div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-time">10:00 AM - 5:00 AM</span></div><div class="hours-row"><span class="hours-day">Wednesday</span><span class="hours-time">10:00 AM - 5:00 AM</span></div><div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">10:00 AM - 5:00 AM</span></div><div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">10:00 AM - 5:00 AM</span></div><div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">10:00 AM - 5:00 AM</span></div><div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">10:00 AM - 5:00 AM</span></div></div>
+  </div>
+
+  <!-- LOCATION TAB -->
+  <div class="tab-content" id="tab-location">
+    <div class="section-title">Location</div>
+    
+    <iframe class="map-embed"
+      src="https://maps.google.com/maps?q=3.1483001,101.7106547&z=16&output=embed"
+      allowfullscreen loading="lazy"></iframe>
+    <p class="address-text">📍 Level 10, Menara Genesis, No.33, Jalan Sultan Ismail, Kuala Lumpur, 50250, Kuala Lumpur, WP Kuala Lumpur, Bukit Bintang, 50200 Kuala Lumpur, Federal Territory of Kuala Lumpur, Malaysia</p>
+    <div style="margin-top:12px">
+      <a href="https://maps.google.com/?q=3.1483001,101.7106547" target="_blank" class="btn btn-outline">🗺️ Open in Google Maps</a>
+    </div>
+  </div>
+
+  <!-- NEARBY SHOPS -->
+  
+  <div style="margin-top:24px;padding-top:24px;border-top:1px solid var(--border);">
+    <div class="section-title">Nearby Shops</div>
+    <div class="nearby-grid">
+      <a href="listing-bukit-bintang-kuala-lumpur.html" class="nearby-card">
+        <img class="nearby-img" src="" alt="Bukit Bintang" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">Bukit Bintang</div><div class="nearby-meta">Red Light Districts · Freelancers · ★ N/A</div></div>
+      </a>
+      <a href="listing-hokkaido-massage-spa-kuala-lumpur.html" class="nearby-card">
+        <img class="nearby-img" src="" alt="Hokkaido Massage Spa" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">Hokkaido Massage Spa</div><div class="nearby-meta">Massage · ★ N/A</div></div>
+      </a>
+      <a href="listing-b2b-cheras-2020-kuala-lumpur.html" class="nearby-card">
+        <img class="nearby-img" src="" alt="Golden B2B Massage - Cheras" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">Golden B2B Massage - Cheras</div><div class="nearby-meta">Massage · ★ N/A</div></div>
+      </a>
+      <a href="listing-ihotel-taman-shamelin-perkasa-kuala-lumpur.html" class="nearby-card">
+        <img class="nearby-img" src="" alt="iHotel Taman Shamelin Perkasa" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">iHotel Taman Shamelin Perkasa</div><div class="nearby-meta">Massage · ★ N/A</div></div>
+      </a>
+    </div>
+  </div>
+
+</div><!-- /listing-info -->
+</div><!-- /mainLayout -->
+
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="./swanpass_logo_rev.png" alt="Swanpass" class="footer-logo">
+      <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
+    </div>
+    <div class="footer-links">
+      <a href="city-bangkok.html">Bangkok</a>
+      <a href="city-pattaya.html">Pattaya</a>
+      <a href="deals.html">Deals</a>
+      <a href="map.html">Map</a>
+      <a href="search.html">Search</a>
+      <a href="add-listing.html">List Your Business</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+    </div>
+    <div class="footer-disc">Content is provided by listed businesses and is not verified by Swanpass.com. This site contains adult content — must be 18+ to access.</div>
+    <div class="footer-copy">&copy; 2026 Swanpass. All rights reserved.</div>
+  </div>
+</footer>
+
+
+<script>
+
+
+function switchTab(name) {
+  document.querySelectorAll('.tab-btn').forEach((b,i) => {
+    const tabs = ['overview','prices','reviews','contact','location'];
+    b.classList.toggle('active', tabs[i] === name);
+  });
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+}
+
+function toggleCollapsible(el) {
+  el.classList.toggle('open');
+}
+</script>
+<script src="js/bottom-nav.js"></script>
+</body>
+</html>

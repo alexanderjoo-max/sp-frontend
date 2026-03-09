@@ -5,29 +5,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <title>One 3 Six — Swanpass</title>
-<meta name="description" content="A Casual Take on One 3 SixOne 3 Six: A Phnom Penh StapleOne 3 Six, or 136 Bar, is a classic Phnom Penh hostess bar that's been around for ages. It's not your ty">
+<meta name="description" content="A Casual Take on One 3 SixOne 3 Six: A Phnom Penh Staple
+One 3 Six, or 136 Bar, is a classic Phnom Penh hostess bar that's been around for ages. It's not your t">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/site.css?v=3">
 </head>
 <body>
 
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <header>
   <div class="header-inner">
-    <a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a>
-    <div class="header-search" onclick="window.location='search.html?q='+encodeURIComponent(this.querySelector('input').value)" style="cursor:pointer">
-      <span style="color:var(--white40)">🔍</span>
-      <input type="text" placeholder="Search shops, cities..." onclick="event.stopPropagation()" onkeydown="if(event.key==='Enter')window.location='search.html?q='+encodeURIComponent(this.value)">
+    <button class="btn-hamburger" aria-label="Menu" onclick="var n=document.querySelector('.nav-tabs');n.classList.toggle('open');this.textContent=n.classList.contains('open')?'\u2715':'\u2630'">☰</button>
+    <div class="header-logo-wrap"><a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a></div>
+    <div class="header-nav">
+      <a href="map.html">🗺️ Map</a>
+      <a href="deals.html">🏷️ Deals</a>
+      <a href="best-places.html">🏆 Best Places</a>
+      <a href="cities.html">📍 Cities</a>
+      <a href="search.html">🔎 Search</a>
+      <a href="add-listing.html">➕ List Your Business</a>
     </div>
     <button class="btn-login" onclick="window.location='login.html'">Login</button>
   </div>
 </header>
 <nav class="nav-tabs">
   <div class="nav-tabs-inner">
-    <a href="index.html" class="nav-tab">🏠 Home</a>
     <a href="map.html" class="nav-tab">🗺️ Map</a>
     <a href="deals.html" class="nav-tab">🏷️ Deals</a>
-    <a href="listings.html" class="nav-tab">🔍 Browse</a>
     <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
     <a href="cities.html" class="nav-tab">📍 Cities</a>
     <a href="search.html" class="nav-tab">🔎 Search</a>
@@ -38,32 +44,44 @@
 <script>
 (function(){
   var page = location.pathname.split('/').pop() || 'index.html';
+  // Highlight active nav-tab (mobile drawer)
   var tabs = document.querySelectorAll('.nav-tab');
   for (var i = 0; i < tabs.length; i++) {
     var href = tabs[i].getAttribute('href');
-    if (href === page || (page === '' && href === 'index.html')) {
-      tabs[i].classList.add('active');
-    }
-    // City pages → highlight Cities tab
-    if (page.indexOf('city-') === 0 && href === 'cities.html') {
-      tabs[i].classList.add('active');
-    }
-    // Listing pages → highlight Browse tab
-    if (page.indexOf('listing-') === 0 && href === 'listings.html') {
-      tabs[i].classList.add('active');
-    }
+    if (href === page || (page === '' && href === 'index.html')) tabs[i].classList.add('active');
+    if (page.indexOf('city-') === 0 && href === 'cities.html') tabs[i].classList.add('active');
+    if (page.indexOf('listing-') === 0 && href === 'search.html') tabs[i].classList.add('active');
   }
+  // Highlight active header-nav link (desktop)
+  var hLinks = document.querySelectorAll('.header-nav a');
+  for (var j = 0; j < hLinks.length; j++) {
+    var h = hLinks[j].getAttribute('href');
+    if (h === page || (page === '' && h === 'index.html')) hLinks[j].classList.add('active');
+    if (page.indexOf('city-') === 0 && h === 'cities.html') hLinks[j].classList.add('active');
+    if (page.indexOf('listing-') === 0 && h === 'search.html') hLinks[j].classList.add('active');
+  }
+  // Close mobile nav when a link is clicked
+  var nav = document.querySelector('.nav-tabs');
+  var btn = document.querySelector('.btn-hamburger');
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      nav.classList.remove('open');
+      if(btn) btn.textContent = '\u2630';
+    });
+  });
 })();
 </script>
 
 
 <!-- GALLERY -->
 <div class="gallery">
-  <img class="gallery-main" id="galleryMain" src="images/listings/one-3-six-phnom-penh/01.jpg" alt="One 3 Six" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
-  <div class="gallery-count" id="galleryCount">1 / 14</div>
-  <div class="gallery-dots" id="galleryDots"></div>
+  <div class="gallery-strip" id="galleryStrip">
+    
+  </div>
+  <div class="gallery-count" id="galleryCount">1 / 0</div>
 </div>
-<div class="gallery-thumbs" id="galleryThumbs"></div>
+
+
 
 <!-- MAIN LAYOUT -->
 <div id="mainLayout">
@@ -74,16 +92,16 @@
     <span class="badge badge-cat">Freelancers</span>
     <span class="badge badge-cat">Go-Go</span>
   </div>
-  <h1 class="listing-name">One 3 Six</h1>
+  <div class="listing-name-row">
+    <h1 class="listing-name">One 3 Six</h1>
+    <button class="btn-save" onclick="this.classList.toggle('saved');this.textContent=this.classList.contains('saved')?'♥':'♡'">♡</button>
+  </div>
   <div class="listing-meta">
-    <span>📍 St 130, Phnom Penh, Phnom Penh, KH</span>
+    <span>📍 St 130, Phnom Penh, Cambodia</span>
     <span>·</span>
     <span class="rating-row"><span class="stars">☆☆☆☆☆</span> <span class="rating-num">N/A</span> <span class="review-count">(0 reviews)</span></span>
   </div>
-  <div class="action-row">
-    
-    <button class="btn btn-outline" onclick="this.textContent=this.textContent==='♡ Save'?'♥ Saved':'♡ Save'">♡ Save</button>
-  </div>
+  
 
   <!-- TABS -->
   <div class="tabs">
@@ -98,23 +116,25 @@
   <div class="tab-content active" id="tab-overview">
     <div class="section-title">About One 3 Six</div>
     <div class="description">
-      <p>A Casual Take on One 3 SixOne 3 Six: A Phnom Penh StapleOne 3 Six, or 136 Bar, is a classic Phnom Penh hostess bar that's been around for ages. It's not your typical old-school dive, but it's got that timeless charm. Think of it as the neighborhood bar you always come back to.What Sets It Apart?Live Music: Catch a live show three nights a week.Good Drinks: The bartenders know their stuff.Friendly Staff: The mamasan and the ladies are always welcoming.Great Location: It's right in the heart of the action.Why You Should Check It OutIf you're looking for a place to grab a drink, meet some locals, and enjoy a bit of entertainment, One 3 Six is a solid choice. It's not the flashiest bar in town, but it's got a laid-back vibe that's hard to beat.</p>
+      <p>A Casual Take on One 3 SixOne 3 Six: A Phnom Penh Staple</p>
+      <p>One 3 Six, or 136 Bar, is a classic Phnom Penh hostess bar that's been around for ages. It's not your typical old-school dive, but it's got that timeless charm. Think of it as the neighborhood bar you always come back to.</p>
+      <div class="desc-rest" style="display:none">
+      <p>What Sets It Apart?</p>
+      <p>Live Music: Catch a live show three nights a week.</p>
+      <p>Good Drinks: The bartenders know their stuff.</p>
+      <p>Friendly Staff: The mamasan and the ladies are always welcoming.</p>
+      <p>Great Location: It's right in the heart of the action.</p>
+      <p>Why You Should Check It Out</p>
+      <p>If you're looking for a place to grab a drink, meet some locals, and enjoy a bit of entertainment, One 3 Six is a solid choice. It's not the flashiest bar in town, but it's got a laid-back vibe that's hard to beat.</p>
+      </div>
+      <button class="btn-readmore" onclick="const r=this.previousElementSibling;r.style.display=r.style.display==='none'?'block':'none';this.textContent=r.style.display==='none'?'Read more ▾':'Show less ▴'">Read more ▾</button>
     </div>
   </div>
 
   <!-- PRICES TAB -->
   <div class="tab-content" id="tab-prices">
     <div class="section-title">Price List</div>
-    <div class="collapsible open" onclick="toggleCollapsible(this)">
-  <div class="collapsible-header">Services & Prices <span class="collapsible-arrow">▼</span></div>
-  <div class="collapsible-body">
-    <table class="price-table">
-      <tr><td>Full Service</td><td>50USD</td></tr>
-      <tr><td>Bar Fine</td><td>10USD</td></tr>
-      <tr><td>Lady Drink</td><td>3.75THB</td></tr>
-    </table>
-  </div>
-</div>
+    <p style="color:var(--white40);font-size:13px;">Contact the shop for pricing information.</p>
   </div>
 
   <!-- REVIEWS TAB -->
@@ -126,8 +146,9 @@
         <div style="font-size:12px;color:var(--white40);margin-top:4px;">0 Reviews</div>
       </div>
     </div>
-    <div style="text-align:center;padding:16px 0;">
-      <a href="https://swanpass.com/listing/one-3-six-phnom-penh#reviews" target="_blank" class="btn btn-outline">View all reviews on SwanPass →</a>
+    <div style="text-align:center;padding:16px 0;color:var(--white40);font-size:13px;">
+      <p>No reviews yet.</p>
+      <a href="#reviews" target="_blank" class="btn btn-outline" style="margin-top:8px;">Leave a review on SwanPass &rarr;</a>
     </div>
   </div>
 
@@ -147,7 +168,7 @@
     <iframe class="map-embed"
       src="https://maps.google.com/maps?q=11.5717516,104.9284114&z=16&output=embed"
       allowfullscreen loading="lazy"></iframe>
-    <p class="address-text">📍 St 130, Phnom Penh, Phnom Penh, KH</p>
+    <p class="address-text">📍 St 130, Phnom Penh, Cambodia</p>
     <div style="margin-top:12px">
       <a href="https://maps.google.com/?q=11.5717516,104.9284114" target="_blank" class="btn btn-outline">🗺️ Open in Google Maps</a>
     </div>
@@ -155,11 +176,30 @@
 
   <!-- NEARBY SHOPS -->
   
+  <div style="margin-top:24px;padding-top:24px;border-top:1px solid var(--border);">
+    <div class="section-title">Nearby Shops</div>
+    <div class="nearby-grid">
+      <a href="listing-pour-hub-phnom-penh.html" class="nearby-card">
+        <img class="nearby-img" src="" alt="Pour Hub" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">Pour Hub</div><div class="nearby-meta">Go-Go · Freelancers · ★ N/A</div></div>
+      </a>
+      <a href="listing-angry-birds-bar-phnom-penh.html" class="nearby-card">
+        <img class="nearby-img" src="" alt="Angry Birds Bar" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">Angry Birds Bar</div><div class="nearby-meta">Freelancers · Go-Go · ★ N/A</div></div>
+      </a>
+      <a href="listing-new-barbados-island-club-phnom-penh.html" class="nearby-card">
+        <img class="nearby-img" src="" alt="New Barbados Island Club" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">New Barbados Island Club</div><div class="nearby-meta">Go-Go · Freelancers · ★ N/A</div></div>
+      </a>
+      <a href="listing-ponytails-bar-phnom-penh.html" class="nearby-card">
+        <img class="nearby-img" src="" alt="Ponytails Bar" onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')">
+        <div class="nearby-body"><div class="nearby-name">Ponytails Bar</div><div class="nearby-meta">Go-Go · Freelancers · ★ N/A</div></div>
+      </a>
+    </div>
+  </div>
 
 </div><!-- /listing-info -->
 </div><!-- /mainLayout -->
-
-<!-- STICKY MOBILE CTA -->
 
 
 <footer class="site-footer">
@@ -169,66 +209,22 @@
       <p class="footer-tagline">Your trusted guide to nightlife in Asia.</p>
     </div>
     <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="listings.html">Browse</a>
-      <a href="cities.html">Cities</a>
+      <a href="city-bangkok.html">Bangkok</a>
+      <a href="city-pattaya.html">Pattaya</a>
       <a href="deals.html">Deals</a>
       <a href="map.html">Map</a>
+      <a href="search.html">Search</a>
       <a href="add-listing.html">List Your Business</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
     </div>
-    <div class="footer-copy">
-      &copy; 2026 Swanpass. All rights reserved. Information is provided by listed businesses and is not verified or endorsed by Swanpass.
-    </div>
+    <div class="footer-disc">Content is provided by listed businesses and is not verified by Swanpass.com. This site contains adult content — must be 18+ to access.</div>
+    <div class="footer-copy">&copy; 2026 Swanpass. All rights reserved.</div>
   </div>
 </footer>
 
 
 <script>
-
-const photos = [
-  'images/listings/one-3-six-phnom-penh/01.jpg',
-  'images/listings/one-3-six-phnom-penh/02.jpeg',
-  'images/listings/one-3-six-phnom-penh/03.jpg',
-  'images/listings/one-3-six-phnom-penh/04.jpeg',
-  'images/listings/one-3-six-phnom-penh/05.webp',
-  'images/listings/one-3-six-phnom-penh/06.jpeg',
-  'images/listings/one-3-six-phnom-penh/09.jpeg',
-  'images/listings/one-3-six-phnom-penh/07.jpeg',
-  'images/listings/one-3-six-phnom-penh/08.jpg',
-  'images/listings/one-3-six-phnom-penh/12.jpeg',
-  'images/listings/one-3-six-phnom-penh/10.jpg',
-  'images/listings/one-3-six-phnom-penh/11.jpg',
-  'images/listings/one-3-six-phnom-penh/13.webp',
-  'images/listings/one-3-six-phnom-penh/14.jpg'
-];
-let current = 0;
-const mainImg = document.getElementById('galleryMain');
-const thumbsEl = document.getElementById('galleryThumbs');
-const countEl = document.getElementById('galleryCount');
-const dotsEl = document.getElementById('galleryDots');
-
-function setPhoto(i) {
-  current = i;
-  mainImg.src = photos[i];
-  countEl.textContent = (i+1) + ' / ' + photos.length;
-  document.querySelectorAll('.gallery-thumb').forEach((t,j) => t.classList.toggle('active', j===i));
-  document.querySelectorAll('.gallery-dot').forEach((d,j) => d.classList.toggle('active', j===i));
-}
-
-photos.forEach((p,i) => {
-  const t = document.createElement('img');
-  t.className = 'gallery-thumb' + (i===0?' active':'');
-  t.src = p; t.onclick = () => setPhoto(i);
-  t.onerror = function() { this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)'; this.removeAttribute('src'); };
-  thumbsEl.appendChild(t);
-  const d = document.createElement('div');
-  d.className = 'gallery-dot' + (i===0?' active':'');
-  d.onclick = () => setPhoto(i);
-  dotsEl.appendChild(d);
-});
-
-mainImg.onclick = () => setPhoto((current+1) % photos.length);
-mainImg.onerror = function() { this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)'; this.removeAttribute('src'); };
 
 
 function switchTab(name) {
@@ -244,5 +240,6 @@ function toggleCollapsible(el) {
   el.classList.toggle('open');
 }
 </script>
+<script src="js/bottom-nav.js"></script>
 </body>
 </html>
