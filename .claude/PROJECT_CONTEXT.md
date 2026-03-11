@@ -5,9 +5,16 @@ This repository contains the static frontend for Swanpass, a directory of massag
 TOP PRIORITY
 
 Preserve the full working site and the full dataset.
-Do not reduce listing count.
-Do not replace the dataset with an older or partial version.
-Do not perform destructive refactors.
+
+The site currently contains:
+
+737 listings
+
+This number must NEVER change unless explicitly instructed by the user.
+
+If any operation would reduce or increase listing count, STOP and report the issue before continuing.
+
+------------------------------------------------
 
 IMPORTANT RULES FOR ALL FUTURE CHANGES
 
@@ -17,37 +24,61 @@ IMPORTANT RULES FOR ALL FUTURE CHANGES
 4. Do NOT change visual components, filters, badges, or listing card layouts.
 5. Do NOT rename existing CSS classes unless required for functionality.
 6. Preserve the current visual appearance of the site.
-7. Do NOT rebuild the entire site from scratch unless explicitly instructed.
-8. Do NOT switch to a different data source unless explicitly instructed.
-9. Do NOT delete listing pages, city pages, country pages, or data files unless explicitly instructed.
-10. Do NOT replace full data with sample data, partial data, fallback data, old data, or Thailand-only data.
-11. Do NOT change routing or repo structure in a major way unless explicitly instructed.
-12. If a task risks reducing listings, breaking links, or changing many pages at once, stop and report first.
+7. Do NOT modify UI/UX anywhere on the site unless the user explicitly asks for it.
 
-The project is already visually finalized. Changes should focus only on functionality, data integrity, and fixing broken references.
+The design and layout of the website are considered FINAL.
+
+All changes must focus only on functionality, routing, data integrity, or fixing broken links.
+
+------------------------------------------------
+
+CURRENT DEVELOPMENT FOCUS
+
+Current development work will focus on:
+
+City pages  
+Country pages  
+
+Do NOT modify homepage layout or listing page UI unless explicitly instructed.
+
+------------------------------------------------
 
 SITE ARCHITECTURE
 
-The site uses a static HTML architecture with shared CSS, JS, images, data, and partial templates.
+The site uses a static HTML architecture with shared CSS, JS, and partial templates.
 
 Primary folders:
 
-/css
-/js
-/images
-/data
-/partials
+/css  
+/js  
+/images  
+/data  
+/partials  
 
 Pages are static HTML pages generated or edited from templates.
 
+------------------------------------------------
+
+DATA STRUCTURE
+
+Listings are generated from structured data in the /data folder.
+
+Each listing includes fields such as:
+
+name  
+city  
+country  
+rating  
+reviews  
+images  
+services  
+contact information  
+
+When modifying listing pages or generating new pages, always use this dataset.
+
+------------------------------------------------
+
 DATASET PROTECTION
-
-The working dataset contains:
-
-- 737 total listings
-- 6 countries
-
-This dataset must be preserved.
 
 Before making structural or data-related changes, Claude must:
 
@@ -55,102 +86,97 @@ Before making structural or data-related changes, Claude must:
 2. Report the count before making changes
 3. Make the requested change
 4. Count the total again after changes
-5. Confirm the count matches
+5. Confirm the count remains exactly 737
 
-If the before/after count does not match, stop and report the mismatch instead of continuing.
+If the count changes, STOP and report the mismatch.
 
-DATA STRUCTURE
-
-Listings are generated from structured data in the /data folder.
-
-Each listing may include:
-
-name
-city
-country
-rating
-reviews
-images
-services
-contact information
-
-When modifying listing pages, search behavior, or data references, always preserve the existing full dataset.
+------------------------------------------------
 
 IMAGE HANDLING
 
 Images are stored locally in the /images folder when possible.
 
 Rules:
-- Do not remove image paths unless necessary to fix a broken reference
-- Do not rename image files unless necessary
-- If images appear broken, fix paths first before changing anything else
+
+Do not remove image paths unless necessary  
+Do not rename image files unless required  
+Fix broken paths instead of replacing images  
+
+------------------------------------------------
 
 REVIEW DATA
 
 Reviews must match the original Swanpass source data.
-Do not truncate, drop, overwrite, or partially regenerate reviews.
+
+Do NOT truncate or drop reviews.
+
+------------------------------------------------
 
 PERFORMANCE
 
 Do not add heavy frameworks or dependencies.
+
 The site must remain a fast static site suitable for GitHub Pages hosting.
+
+------------------------------------------------
 
 PERMITTED CHANGES
 
 Claude may:
 
-- fix broken links
-- fix broken asset paths
-- fix search functionality
-- fix data references
-- repair scraping errors
-- improve data accuracy
-- repair templates
-- repair shared partials
-- repair non-destructive generation logic
+• fix broken links  
+• fix broken asset paths  
+• update routing logic  
+• repair data references  
+• improve data accuracy  
+• build city pages  
+• build country pages  
 
-Claude may also reorganize file structure only if explicitly instructed and only after reporting risk.
+------------------------------------------------
+
+DISALLOWED CHANGES
 
 Claude must NOT:
 
-- redesign pages
-- change layout
-- add frameworks
-- restructure CSS
-- change UI components
-- delete data
-- reduce listing count
-- regenerate the site from incomplete data
-- replace current pages with an older build
-- make broad repo-wide structural changes without explicit instruction
+• redesign pages  
+• change layout or styling  
+• add frameworks  
+• restructure CSS  
+• modify UI components  
+• delete listings  
+• change the dataset structure  
+• rebuild the site from scratch  
+
+------------------------------------------------
 
 SAFE WORKING METHOD
 
-For any non-trivial task, Claude should:
+For any non-trivial task:
 
-1. Audit the current repo state first
-2. Identify exactly which files are affected
-3. Explain the planned changes
-4. Prefer the smallest possible fix
+1. Audit the repo first
+2. Identify exactly which files will change
+3. Explain the plan
+4. Make the smallest change possible
 5. Avoid touching unrelated files
-6. Preserve current dataset and page coverage
-7. Re-check listing count after changes
+6. Verify listing count remains 737
+
+------------------------------------------------
 
 OUTPUT EXPECTATION
 
-Before making large or risky changes, Claude should print a plan explaining:
+Before making large structural changes, Claude should print a plan explaining:
 
 1. Files affected
 2. Scripts affected
-3. Whether data files will be touched
-4. Whether listing counts could be affected
-5. How it will verify nothing was lost
+3. Routing changes
+4. Data changes
 
 Then proceed carefully without altering the UI.
 
+------------------------------------------------
+
 CORE PRINCIPLE
 
-If uncertain, preserve the current behavior, current data, and current UI.
-
-Fix the smallest thing necessary.
-Do not perform broad cleanup or refactors unless explicitly requested.
+Preserve the dataset.  
+Preserve the UI.  
+Make minimal targeted fixes.
