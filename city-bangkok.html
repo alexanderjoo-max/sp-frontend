@@ -25,13 +25,10 @@
 .city-stat strong { color: #fff; }
 
 /* Stats bar */
-.stats-bar { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-.stats-item { background: var(--black2, #111); padding: 12px 16px; text-align: center; }
-.stats-val { font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 1px; margin-bottom: 2px; }
-.stats-lbl { font-size: 10px; color: rgba(255,255,255,.4); text-transform: uppercase; letter-spacing: .5px; }
-
-/* Featured grid: 1-col stacked cards on mobile */
-.cp-featured-grid { grid-template-columns: 1fr !important; }
+.stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.stats-item { background: var(--black2, #111); padding: 8px 4px; text-align: center; }
+.stats-val { font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 1px; margin-bottom: 2px; }
+.stats-lbl { font-size: 9px; color: rgba(255,255,255,.4); text-transform: uppercase; letter-spacing: .5px; }
 
 /* Small card grids: 2-col on mobile */
 .cp-grid { grid-template-columns: repeat(2, 1fr) !important; }
@@ -50,9 +47,9 @@
 @media (min-width: 768px) {
   .city-hero { height: 300px; }
   .city-big { font-size: 58px; }
-  .stats-bar { grid-template-columns: repeat(4, 1fr); }
-  .stats-val { font-size: 32px; }
-  .cp-featured-grid { grid-template-columns: 1fr 1fr !important; }
+  .stats-val { font-size: 28px; }
+  .stats-item { padding: 12px 16px; }
+  .stats-lbl { font-size: 10px; }
   .cp-grid { grid-template-columns: repeat(4, 1fr) !important; }
 }
 

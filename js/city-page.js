@@ -116,9 +116,7 @@
   ]);
 
   /* ─── CITY HERO IMAGES ─────────────────────────────────────────── */
-  var CITY_HERO_IMG = {
-    'bangkok': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Bangkok_Montage_2017.png/800px-Bangkok_Montage_2017.png'
-  };
+  var CITY_HERO_IMG = {};
 
   /* ─── SEO COPY ─────────────────────────────────────────────────── */
   var CITY_SEO = {
@@ -340,12 +338,17 @@
               '</div>' +
             '</div>' +
           '</div>' +
-          '<div class="stats-bar">' +
-            '<div class="stats-item"><div class="stats-val" style="color:var(--gold,#d4a847);">' + avgRating + '</div><div class="stats-lbl">Avg Rating</div></div>' +
-            '<div class="stats-item"><div class="stats-val">' + cityShops.length + '</div><div class="stats-lbl">Listings</div></div>' +
-            '<div class="stats-item"><div class="stats-val" style="color:var(--red,#e8142a);">' + dealCount + '</div><div class="stats-lbl">Active Deals</div></div>' +
-            '<div class="stats-item"><div class="stats-val" style="color:var(--green,#22c55e);">' + verifiedCount + '</div><div class="stats-lbl">Verified</div></div>' +
-          '</div>';
+          '<div class="stats-bar" style="grid-template-columns:repeat(4,1fr);">' +
+            '<div class="stats-item" style="padding:8px 4px;"><div class="stats-val" style="font-size:18px;color:var(--gold,#d4a847);">' + avgRating + '</div><div class="stats-lbl">Avg Rating</div></div>' +
+            '<div class="stats-item" style="padding:8px 4px;"><div class="stats-val" style="font-size:18px;">' + cityShops.length + '</div><div class="stats-lbl">Listings</div></div>' +
+            '<div class="stats-item" style="padding:8px 4px;"><div class="stats-val" style="font-size:18px;color:var(--red,#e8142a);">' + dealCount + '</div><div class="stats-lbl">Deals</div></div>' +
+            '<div class="stats-item" style="padding:8px 4px;"><div class="stats-val" style="font-size:18px;color:var(--green,#22c55e);">' + verifiedCount + '</div><div class="stats-lbl">Verified</div></div>' +
+          '</div>' +
+          '<a href="' + basePath + 'map.html" style="display:flex;align-items:center;justify-content:center;gap:8px;background:var(--card-bg,#161616);border:1px solid var(--border);padding:12px 16px;text-decoration:none;color:#fff;font-size:13px;font-weight:500;transition:border-color .2s;" onmouseover="this.style.borderColor=\'rgba(232,20,42,.5)\'" onmouseout="this.style.borderColor=\'var(--border)\'">' +
+            '<span style="font-size:18px;">\uD83D\uDDFA\uFE0F</span>' +
+            '<span>Search on the Map \u2014 find venues near you</span>' +
+            '<span style="color:var(--red,#e8142a);font-size:16px;">\u203A</span>' +
+          '</a>';
       }
 
       // Update page title
@@ -360,8 +363,8 @@
       var featured = cityShops.filter(function (s) { return VER_SET.has(s.id) || s.featured || s.sponsor; });
       if (featured.length > 0) {
         featured.sort(function (a, b) { return (VER_SET.has(b.id) ? 1 : 0) - (VER_SET.has(a.id) ? 1 : 0); });
-        var featHTML = '<div style="display:grid;grid-template-columns:1fr;gap:10px;" class="cp-featured-grid">' +
-          featured.map(featuredCard).join('') + '</div>';
+        var featHTML = '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;" class="cp-grid">' +
+          featured.map(gridCard).join('') + '</div>';
         html += buildSection('\u2B50 Featured in ' + cityName, 'cpFeatured', featHTML);
       }
 
