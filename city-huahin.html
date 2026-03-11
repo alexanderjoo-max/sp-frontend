@@ -6,58 +6,84 @@
 <meta name="referrer" content="no-referrer">
 <title>Hua Hin — Swanpass Thailand</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--black:#0a0a0a;--black2:#111111;--red:#e8142a;--white:#fff;--w70:rgba(255,255,255,.7);--w40:rgba(255,255,255,.4);--w10:rgba(255,255,255,.08);--gold:#d4a847;--border:rgba(255,255,255,.08);--r:10px;}
-*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
-body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;overflow-x:hidden;}
-a{color:inherit;text-decoration:none;}
-.city-hero{position:relative;height:220px;overflow:hidden;background:linear-gradient(135deg,#0a1a2a,#1a2a3a);}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.85) 0%,transparent 60%);}
-.hero-content{position:absolute;bottom:0;left:0;right:0;padding:20px 16px;}
-.city-big{font-family:'Bebas Neue',sans-serif;font-size:42px;letter-spacing:3px;line-height:1;margin-bottom:6px;}
-.coming-soon{text-align:center;padding:60px 20px;}
-.cs-icon{font-size:52px;margin-bottom:16px;}
-.cs-title{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:2px;margin-bottom:10px;}
-.cs-text{font-size:14px;color:var(--w70);line-height:1.6;margin-bottom:28px;max-width:380px;margin-left:auto;margin-right:auto;}
-.btn-back{display:inline-block;background:var(--red);color:var(--white);border-radius:8px;padding:12px 28px;font-size:14px;font-weight:700;}
-.bottom-nav{position:fixed;bottom:0;left:0;right:0;z-index:90;background:var(--black2);border-top:1px solid var(--border);display:flex;padding:8px 0 calc(8px + env(safe-area-inset-bottom));}
-.bnav-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;color:var(--w40);text-decoration:none;}
-.bnav-item.active{color:var(--red);}
-.bi{font-size:20px;}.bl{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
-.bn-spacer{height:70px;}
-@media(min-width:768px){.bottom-nav,.bn-spacer{display:none!important;}.city-hero{height:300px;}.city-big{font-size:58px;}}
-</style>
 <link rel="stylesheet" href="css/site.css?v=3">
 <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   CITY PAGE STYLES — Mobile-first base
+═══════════════════════════════════════════════════════════════ */
+
+/* Hero */
+.city-hero { position: relative; height: 220px; overflow: hidden; }
+.city-hero-img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.45); }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,.85) 0%, transparent 60%); }
+.hero-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px 16px; max-width: 1200px; margin: 0 auto; }
+.city-big { font-family: 'Bebas Neue', sans-serif; font-size: 42px; letter-spacing: 3px; line-height: 1; margin-bottom: 6px; }
+.city-stats-row { display: flex; gap: 14px; flex-wrap: wrap; }
+.city-stat { font-size: 12px; color: rgba(255,255,255,.7); display: flex; align-items: center; gap: 4px; }
+.city-stat strong { color: #fff; }
+
+/* Stats bar */
+.stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.stats-item { background: var(--black2, #111); padding: 8px 4px; text-align: center; }
+.stats-val { font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 1px; margin-bottom: 2px; }
+.stats-lbl { font-size: 9px; color: rgba(255,255,255,.4); text-transform: uppercase; letter-spacing: .5px; }
+
+/* Small card grids: 2-col on mobile */
+.cp-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+/* Shop card hover */
+.shop-card:hover { transform: translateY(-2px); border-color: rgba(232,20,42,.4) !important; }
+
+/* Hide scrollbar on filters and deal scroll */
+#cpCatFilter::-webkit-scrollbar { display: none; }
+#cpCatFilter { scrollbar-width: none; }
+.cp-deals-scroll::-webkit-scrollbar { display: none; }
+
+/* ═══════════════════════════════════════════════════════════════
+   DESKTOP LAYOUT — ≥ 768px
+═══════════════════════════════════════════════════════════════ */
+@media (min-width: 768px) {
+  .city-hero { height: 300px; }
+  .city-big { font-size: 58px; }
+  .stats-val { font-size: 28px; }
+  .stats-item { padding: 12px 16px; }
+  .stats-lbl { font-size: 10px; }
+  .cp-grid { grid-template-columns: repeat(4, 1fr) !important; }
+}
+
+@media (min-width: 1024px) {
+  .cp-grid { grid-template-columns: repeat(5, 1fr) !important; }
+}
+</style>
 </head>
 <body>
+
 <header>
   <div class="header-inner">
-    <button class="btn-hamburger" aria-label="Menu" onclick="var n=document.querySelector('.nav-tabs');n.classList.toggle('open');this.textContent=n.classList.contains('open')?'\u2715':'\u2630'">☰</button>
+    <button class="btn-hamburger" aria-label="Menu" onclick="var n=document.querySelector('.nav-tabs');n.classList.toggle('open');this.textContent=n.classList.contains('open')?'\u2715':'\u2630'">&#9776;</button>
     <div class="header-logo-wrap"><a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a></div>
     <div class="header-nav">
-      <a href="map.html">🗺️ Map</a>
-      <a href="deals.html">🏷️ Deals</a>
-      <a href="best-places.html">🏆 Best Places</a>
-      <a href="cities.html">📍 Cities</a>
-      <a href="search.html">🔎 Search</a>
-      <a href="add-listing.html">➕ List Your Business</a>
+      <a href="map.html">&#x1F5FA;&#xFE0F; Map</a>
+      <a href="deals.html">&#x1F3F7;&#xFE0F; Deals</a>
+      <a href="best-places.html">&#x1F3C6; Best Places</a>
+      <a href="cities.html">&#x1F4CD; Cities</a>
+      <a href="search.html">&#x1F50E; Search</a>
+      <a href="add-listing.html">&#x2795; List Your Business</a>
     </div>
-
-
     <button class="btn-login" onclick="window.location='login.html'">Login</button>
   </div>
 </header>
 <nav class="nav-tabs">
   <div class="nav-tabs-inner">
-    <a href="map.html" class="nav-tab">🗺️ Map</a>
-    <a href="deals.html" class="nav-tab">🏷️ Deals</a>
-    <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
-    <a href="cities.html" class="nav-tab">📍 Cities</a>
-    <a href="search.html" class="nav-tab">🔎 Search</a>
-    <a href="add-listing.html" class="nav-tab">➕ List Your Business</a>
-    <a href="admin.html" class="nav-tab">⚙️ Admin</a>
+    <a href="map.html" class="nav-tab">&#x1F5FA;&#xFE0F; Map</a>
+    <a href="deals.html" class="nav-tab">&#x1F3F7;&#xFE0F; Deals</a>
+    <a href="best-places.html" class="nav-tab">&#x1F3C6; Best Places</a>
+    <a href="cities.html" class="nav-tab active">&#x1F4CD; Cities</a>
+    <a href="search.html" class="nav-tab">&#x1F50E; Search</a>
+    <a href="add-listing.html" class="nav-tab">&#x2795; List Your Business</a>
+    <a href="admin.html" class="nav-tab">&#x2699;&#xFE0F; Admin</a>
   </div>
 </nav>
 <script>
@@ -88,20 +114,10 @@ a{color:inherit;text-decoration:none;}
 })();
 </script>
 
-<div class="city-hero">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div style="font-size:26px;margin-bottom:4px">🌊</div>
-    <div class="city-big">HUA HIN</div>
-  </div>
-</div>
-<div class="coming-soon">
-  <div class="cs-icon">🌊</div>
-  <div class="cs-title">HUA HIN Coming Soon</div>
-  <div class="cs-text">We're building out our Hua Hin directory. Be the first to list your business or get notified when we launch in this city.</div>
-  <a href="index.html" class="btn-back">← Back to Thailand</a>
-</div>
-<script src="js/bottom-nav.js"></script>
+<!-- ══ CITY PAGE CONTENT (rendered by city-page.js) ══════════════ -->
+<div id="cityHero"></div>
+<div id="cityContent" style="max-width:1200px;margin:0 auto;padding:16px;"></div>
+
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
@@ -118,10 +134,13 @@ a{color:inherit;text-decoration:none;}
       <a href="#">Privacy Policy</a>
       <a href="#">Terms</a>
     </div>
-    <div class="footer-disc">Content is provided by listed businesses and is not verified by Swanpass.com. This site contains adult content — must be 18+ to access.</div>
+    <div class="footer-disc">Content is provided by listed businesses and is not verified by Swanpass.com. This site contains adult content &mdash; must be 18+ to access.</div>
     <div class="footer-copy">&copy; 2026 Swanpass. All rights reserved.</div>
   </div>
 </footer>
 
+<script>window.CITY_PAGE_CONFIG = { country: 'thailand', city: 'hua-hin', flatUrls: true };</script>
+<script src="js/city-page.js"></script>
+<script src="js/bottom-nav.js"></script>
 </body>
 </html>

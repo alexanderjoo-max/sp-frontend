@@ -1,107 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
-<title>Bali — Swanpass</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{--black:#0a0a0a;--black2:#111111;--black3:#1a1a1a;--card-bg:#161616;--red:#e8142a;--white:#fff;--white70:rgba(255,255,255,.7);--white40:rgba(255,255,255,.4);--white10:rgba(255,255,255,.08);--gold:#d4a847;--green:#22c55e;--border:rgba(255,255,255,.08);--radius:10px;--radius-sm:6px;}
-*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
-body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;}
-.city-hero{position:relative;height:250px;overflow:hidden;}
-.chi{width:100%;height:100%;object-fit:cover;filter:brightness(.4);}
-.cho{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.85) 0%,transparent 60%);}
-.chc{position:absolute;bottom:0;left:0;right:0;padding:20px;max-width:1200px;margin:0 auto;}
-.cf{font-size:32px;margin-bottom:4px;}
-.cn{font-family:'Bebas Neue',sans-serif;font-size:52px;letter-spacing:3px;line-height:1;margin-bottom:6px;}
-.csr{display:flex;gap:16px;flex-wrap:wrap;}
-.cs{font-size:12px;color:var(--white70);}
-.cs strong{color:var(--white);}
-.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-bottom:1px solid var(--border);}
-.sbi{background:var(--black2);padding:14px;text-align:center;}
-.sbv{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1px;margin-bottom:2px;}
-.sbl{font-size:10px;color:var(--white40);text-transform:uppercase;letter-spacing:.5px;}
-.filter-tabs{background:var(--black2);border-bottom:1px solid var(--border);display:flex;overflow-x:auto;scrollbar-width:none;padding:0 16px;}
-.filter-tabs::-webkit-scrollbar{display:none;}
-.ft{padding:11px 14px;font-size:12px;font-weight:500;color:var(--white70);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:all .2s;flex-shrink:0;}
-.ft:hover{color:var(--white);}.ft.active{color:var(--red);border-bottom-color:var(--red);}
-.area-bar{display:flex;gap:8px;overflow-x:auto;padding:10px 16px;scrollbar-width:none;background:var(--black2);border-bottom:1px solid var(--border);}
-.area-bar::-webkit-scrollbar{display:none;}
-.ap{background:var(--white10);border:1px solid var(--border);border-radius:16px;padding:4px 12px;font-size:11px;font-weight:500;white-space:nowrap;cursor:pointer;color:var(--white70);transition:all .2s;flex-shrink:0;}
-.ap:hover,.ap.active{background:var(--red);border-color:var(--red);color:var(--white);}
-.pw{max-width:1200px;margin:0 auto;}
-.section{padding:20px 16px;}
-.sh{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
-.st{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;display:flex;align-items:center;gap:8px;}
-.st .dot{width:6px;height:6px;border-radius:50%;background:var(--red);flex-shrink:0;}
-.sa{font-size:12px;color:var(--red);text-decoration:none;font-weight:600;}
-.sd{height:1px;background:var(--border);margin:0 16px;}
-.cg{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.sc{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:transform .2s,border-color .2s;position:relative;text-decoration:none;color:inherit;display:block;}
-.sc:hover{transform:translateY(-2px);border-color:rgba(232,20,42,.4);}
-.ci{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--black3);}
-.cb{position:absolute;top:6px;left:6px;display:flex;flex-direction:column;gap:3px;}
-.badge{display:inline-flex;padding:2px 6px;border-radius:4px;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;backdrop-filter:blur(4px);}
-.bsp{background:rgba(212,168,71,.9);color:#000;}.bft{background:rgba(232,20,42,.9);color:#fff;}.bdl{background:rgba(34,197,94,.9);color:#000;}.bnw{background:rgba(99,102,241,.9);color:#fff;}
-.cbd{padding:8px 10px 10px;}
-.cc{font-size:10px;color:var(--white40);margin-bottom:2px;}
-.cna{font-size:13px;font-weight:600;line-height:1.2;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.cl{font-size:11px;color:var(--white40);margin-bottom:6px;}
-.cf2{display:flex;align-items:center;justify-content:space-between;}
-.cr{display:flex;align-items:center;gap:3px;font-size:11px;font-weight:600;}
-.stars{color:var(--gold);font-size:10px;}
-.cv{font-size:10px;color:var(--white40);background:var(--white10);padding:2px 6px;border-radius:10px;}
-.cds{background:linear-gradient(90deg,var(--red),#ff4d6d);padding:4px 10px;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:space-between;}
-.dpc{font-family:'Bebas Neue',sans-serif;font-size:14px;}
-.hs{display:flex;gap:10px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none;}
-.hs::-webkit-scrollbar{display:none;}
-.hc{flex-shrink:0;width:150px;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;cursor:pointer;text-decoration:none;color:inherit;display:block;transition:border-color .2s;}
-.hc:hover{border-color:var(--red);}
-.hci{width:100%;height:100px;object-fit:cover;background:var(--black3);}
-.hcb{padding:8px;}
-.hcn{font-size:11px;font-weight:600;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.hcm{font-size:10px;color:var(--white40);}
-.bot{position:fixed;bottom:0;left:0;right:0;z-index:90;background:var(--black2);border-top:1px solid var(--border);display:flex;padding:8px 0 calc(8px + env(safe-area-inset-bottom));}
-.bi{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;color:var(--white40);text-decoration:none;transition:color .2s;}
-.bi.active{color:var(--red);}
-.bic{font-size:20px;}.bil{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
-.bsp2{height:70px;}
-@media(min-width:768px){.bot,.bsp2{display:none;}.cg{grid-template-columns:repeat(4,1fr);}}
-@media(min-width:1024px){.cg{grid-template-columns:repeat(5,1fr);}}
-.logo-img{height:28px;display:block;}
-</style>
+<title>Bali — Swanpass Indonesia</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/site.css?v=3">
 <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   CITY PAGE STYLES — Mobile-first base
+═══════════════════════════════════════════════════════════════ */
+
+/* Hero */
+.city-hero { position: relative; height: 220px; overflow: hidden; }
+.city-hero-img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.45); }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,.85) 0%, transparent 60%); }
+.hero-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px 16px; max-width: 1200px; margin: 0 auto; }
+.city-big { font-family: 'Bebas Neue', sans-serif; font-size: 42px; letter-spacing: 3px; line-height: 1; margin-bottom: 6px; }
+.city-stats-row { display: flex; gap: 14px; flex-wrap: wrap; }
+.city-stat { font-size: 12px; color: rgba(255,255,255,.7); display: flex; align-items: center; gap: 4px; }
+.city-stat strong { color: #fff; }
+
+/* Stats bar */
+.stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.stats-item { background: var(--black2, #111); padding: 8px 4px; text-align: center; }
+.stats-val { font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 1px; margin-bottom: 2px; }
+.stats-lbl { font-size: 9px; color: rgba(255,255,255,.4); text-transform: uppercase; letter-spacing: .5px; }
+
+/* Small card grids: 2-col on mobile */
+.cp-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+/* Shop card hover */
+.shop-card:hover { transform: translateY(-2px); border-color: rgba(232,20,42,.4) !important; }
+
+/* Hide scrollbar on filters and deal scroll */
+#cpCatFilter::-webkit-scrollbar { display: none; }
+#cpCatFilter { scrollbar-width: none; }
+.cp-deals-scroll::-webkit-scrollbar { display: none; }
+
+/* ═══════════════════════════════════════════════════════════════
+   DESKTOP LAYOUT — ≥ 768px
+═══════════════════════════════════════════════════════════════ */
+@media (min-width: 768px) {
+  .city-hero { height: 300px; }
+  .city-big { font-size: 58px; }
+  .stats-val { font-size: 28px; }
+  .stats-item { padding: 12px 16px; }
+  .stats-lbl { font-size: 10px; }
+  .cp-grid { grid-template-columns: repeat(4, 1fr) !important; }
+}
+
+@media (min-width: 1024px) {
+  .cp-grid { grid-template-columns: repeat(5, 1fr) !important; }
+}
+</style>
 </head>
 <body>
+
 <header>
   <div class="header-inner">
-    <button class="btn-hamburger" aria-label="Menu" onclick="var n=document.querySelector('.nav-tabs');n.classList.toggle('open');this.textContent=n.classList.contains('open')?'\u2715':'\u2630'">☰</button>
+    <button class="btn-hamburger" aria-label="Menu" onclick="var n=document.querySelector('.nav-tabs');n.classList.toggle('open');this.textContent=n.classList.contains('open')?'\u2715':'\u2630'">&#9776;</button>
     <div class="header-logo-wrap"><a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a></div>
     <div class="header-nav">
-      <a href="map.html">🗺️ Map</a>
-      <a href="deals.html">🏷️ Deals</a>
-      <a href="best-places.html">🏆 Best Places</a>
-      <a href="cities.html">📍 Cities</a>
-      <a href="search.html">🔎 Search</a>
-      <a href="add-listing.html">➕ List Your Business</a>
+      <a href="map.html">&#x1F5FA;&#xFE0F; Map</a>
+      <a href="deals.html">&#x1F3F7;&#xFE0F; Deals</a>
+      <a href="best-places.html">&#x1F3C6; Best Places</a>
+      <a href="cities.html">&#x1F4CD; Cities</a>
+      <a href="search.html">&#x1F50E; Search</a>
+      <a href="add-listing.html">&#x2795; List Your Business</a>
     </div>
-
-
     <button class="btn-login" onclick="window.location='login.html'">Login</button>
   </div>
 </header>
 <nav class="nav-tabs">
   <div class="nav-tabs-inner">
-    <a href="map.html" class="nav-tab">🗺️ Map</a>
-    <a href="deals.html" class="nav-tab">🏷️ Deals</a>
-    <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
-    <a href="cities.html" class="nav-tab">📍 Cities</a>
-    <a href="search.html" class="nav-tab">🔎 Search</a>
-    <a href="add-listing.html" class="nav-tab">➕ List Your Business</a>
-    <a href="admin.html" class="nav-tab">⚙️ Admin</a>
+    <a href="map.html" class="nav-tab">&#x1F5FA;&#xFE0F; Map</a>
+    <a href="deals.html" class="nav-tab">&#x1F3F7;&#xFE0F; Deals</a>
+    <a href="best-places.html" class="nav-tab">&#x1F3C6; Best Places</a>
+    <a href="cities.html" class="nav-tab active">&#x1F4CD; Cities</a>
+    <a href="search.html" class="nav-tab">&#x1F50E; Search</a>
+    <a href="add-listing.html" class="nav-tab">&#x2795; List Your Business</a>
+    <a href="admin.html" class="nav-tab">&#x2699;&#xFE0F; Admin</a>
   </div>
 </nav>
 <script>
@@ -132,84 +114,10 @@ body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif
 })();
 </script>
 
-<div class="city-hero">
-  <img class="chi" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Seminyak_Beach_Bali_Indonesia.jpg/800px-Seminyak_Beach_Bali_Indonesia.jpg" onerror="this.style.background='linear-gradient(135deg,#1a0305,#4a000f)';this.removeAttribute('src')" alt="Bali">
-  <div class="cho"></div>
-  <div class="chc">
-    <div class="cf">🇮🇩</div>
-    <div class="cn">Bali</div>
-    <div class="csr">
-      <div class="cs"><strong>28</strong> listings</div>
-      <div class="cs"><strong>5</strong> active deals</div>
-      <div class="cs">🇹🇭 Indonesia</div>
-    </div>
-  </div>
-</div>
-<div class="stats-bar">
-  <div class="sbi"><div class="sbv" style="color:var(--gold)">4.6</div><div class="sbl">Avg Rating</div></div>
-  <div class="sbi"><div class="sbv">28</div><div class="sbl">Listings</div></div>
-  <div class="sbi"><div class="sbv" style="color:var(--red)">5</div><div class="sbl">Active Deals</div></div>
-  <div class="sbi"><div class="sbv" style="color:var(--green)">✓</div><div class="sbl">Verified</div></div>
-</div>
-<div class="filter-tabs">
-  <div class="ft active" onclick="setT(this)">🔥 All</div>
-  <div class="ft" onclick="setT(this)">👄 Massage</div>
-  <div class="ft" onclick="setT(this)">🛁 Soapy</div>
-  <div class="ft" onclick="setT(this)">💃 Clubs</div>
-  <div class="ft" onclick="setT(this)">👯 Go-Go</div>
-  <div class="ft" onclick="setT(this)">❤️‍🔥 Freelancers</div>
-  <div class="ft" onclick="setT(this)">📍 Red Light</div>
-</div>
-<div class="area-bar">
-  <div class="ap active">All Areas</div>
-  <div class="ap">Seminyak <span style="color:var(--white40);font-size:10px">12</span></div>
-  <div class="ap">Kuta <span style="color:var(--white40);font-size:10px">8</span></div>
-  <div class="ap">Legian <span style="color:var(--white40);font-size:10px">5</span></div>
-  <div class="ap">Canggu <span style="color:var(--white40);font-size:10px">4</span></div>
-  <div class="ap">Sanur <span style="color:var(--white40);font-size:10px">3</span></div>
-  <div class="ap">Ubud <span style="color:var(--white40);font-size:10px">2</span></div>
-</div>
-<div class="pw">
-<div class="section">
-  <div class="sh"><div class="st"><span class="dot"></span>📣 Sponsored</div><a href="listings.html" class="sa">See all →</a></div>
-  <div class="hs">
-    <a href="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12090/seminyak.jpg2.jpg" class="hc"><img class="hci" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12090/seminyak.jpg2.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt=""><div class="hcb"><div class="hcn">Top Sponsor</div><div class="hcm">👄 ★ 4.9 · 5K+</div></div></a>
-    <a href="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12102/Screenshot_2024-08-30_at_6.23.00_PM.jpg" class="hc"><img class="hci" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12102/Screenshot_2024-08-30_at_6.23.00_PM.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt=""><div class="hcb"><div class="hcn">Featured Venue</div><div class="hcm">🛁 ★ 4.8 · 3K+</div></div></a>
-    <a href="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg" class="hc"><img class="hci" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt=""><div class="hcb"><div class="hcn">Deals Available</div><div class="hcm">💃 ★ 4.5 · 2K+</div></div></a>
-  </div>
-</div>
-<div class="sd"></div>
-<div class="section">
-  <div class="sh"><div class="st"><span class="dot"></span>⭐ Top Rated in Bali</div><a href="listings.html" class="sa">See all →</a></div>
-  <div class="cg" id="grid"></div>
-</div>
-<div class="sd"></div>
-<div class="section">
-  <div class="sh"><div class="st"><span class="dot"></span>📍 Browse Bali Areas</div></div>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
-    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;cursor:pointer;"><div style="font-size:24px;margin-bottom:4px">🏖️</div><div style="font-size:12px;font-weight:600">Seminyak</div><div style="font-size:10px;color:var(--white40)">12 listings</div></div>
-    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;cursor:pointer;"><div style="font-size:24px;margin-bottom:4px">🌴</div><div style="font-size:12px;font-weight:600">Kuta</div><div style="font-size:10px;color:var(--white40)">8 listings</div></div>
-    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;cursor:pointer;"><div style="font-size:24px;margin-bottom:4px">🌙</div><div style="font-size:12px;font-weight:600">Legian</div><div style="font-size:10px;color:var(--white40)">5 listings</div></div>
-    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;cursor:pointer;"><div style="font-size:24px;margin-bottom:4px">🎶</div><div style="font-size:12px;font-weight:600">Canggu</div><div style="font-size:10px;color:var(--white40)">4 listings</div></div>
-    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;cursor:pointer;"><div style="font-size:24px;margin-bottom:4px">🏙️</div><div style="font-size:12px;font-weight:600">Sanur</div><div style="font-size:10px;color:var(--white40)">3 listings</div></div>
-    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;cursor:pointer;"><div style="font-size:24px;margin-bottom:4px">🗺️</div><div style="font-size:12px;font-weight:600">Ubud</div><div style="font-size:10px;color:var(--white40)">2+ listings</div></div>
-  </div>
-</div>
-</div>
-<script src="js/bottom-nav.js"></script>
-<script>
-const imgs=["https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12090/seminyak.jpg2.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12102/Screenshot_2024-08-30_at_6.23.00_PM.jpg","https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg","https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Seminyak_Beach_Bali_Indonesia.jpg/800px-Seminyak_Beach_Bali_Indonesia.jpg"];
-const names=["Top Rated Venue","Popular Spot","Fan Favourite","Highly Reviewed"];
-const metas=["👄 Massage · ★ 4.9","🛁 Soapy · ★ 4.8","💃 Club · ★ 4.6","👄 Massage · ★ 4.7"];
-const g=document.getElementById('grid');
-for(let i=0;i<8;i++){
-  const a=document.createElement('a');a.href='listings.html';a.className='sc';
-  a.innerHTML='<img class="ci" src="'+imgs[i%imgs.length]+'" onerror="this.style.background=\'#2a1a1a\';this.removeAttribute(\'src\')" alt=""><div class="cbd"><div class="cc">'+metas[i%metas.length]+'</div><div class="cna">'+names[i%names.length]+' '+(i+1)+'</div><div class="cl">📍 Bali</div><div class="cf2"><div class="cr"><span class="stars">★★★★★</span> '+(4.5+Math.random()*.4).toFixed(1)+'</div><div class="cv">'+(Math.floor(Math.random()*8+1))+'K+</div></div></div>';
-  g.appendChild(a);
-}
-function setT(el){document.querySelectorAll('.ft').forEach(t=>t.classList.remove('active'));el.classList.add('active');}
-document.querySelectorAll('.ap').forEach(p=>{p.addEventListener('click',()=>{document.querySelectorAll('.ap').forEach(x=>x.classList.remove('active'));p.classList.add('active');});});
-</script>
+<!-- ══ CITY PAGE CONTENT (rendered by city-page.js) ══════════════ -->
+<div id="cityHero"></div>
+<div id="cityContent" style="max-width:1200px;margin:0 auto;padding:16px;"></div>
+
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
@@ -226,10 +134,13 @@ document.querySelectorAll('.ap').forEach(p=>{p.addEventListener('click',()=>{doc
       <a href="#">Privacy Policy</a>
       <a href="#">Terms</a>
     </div>
-    <div class="footer-disc">Content is provided by listed businesses and is not verified by Swanpass.com. This site contains adult content — must be 18+ to access.</div>
+    <div class="footer-disc">Content is provided by listed businesses and is not verified by Swanpass.com. This site contains adult content &mdash; must be 18+ to access.</div>
     <div class="footer-copy">&copy; 2026 Swanpass. All rights reserved.</div>
   </div>
 </footer>
 
+<script>window.CITY_PAGE_CONFIG = { country: 'indonesia', city: 'bali', flatUrls: true };</script>
+<script src="js/city-page.js"></script>
+<script src="js/bottom-nav.js"></script>
 </body>
 </html>

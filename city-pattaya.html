@@ -6,98 +6,84 @@
 <meta name="referrer" content="no-referrer">
 <title>Pattaya — Swanpass Thailand</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--black:#0a0a0a;--black2:#111111;--black3:#1a1a1a;--card-bg:#161616;--red:#e8142a;--red-dk:#b80f20;--white:#fff;--w70:rgba(255,255,255,.7);--w40:rgba(255,255,255,.4);--w10:rgba(255,255,255,.08);--gold:#d4a847;--green:#22c55e;--border:rgba(255,255,255,.08);--r:10px;--r-sm:6px;}
-*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
-body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.4;overflow-x:hidden;}
-a{color:inherit;text-decoration:none;}
-/* MOBILE */
-.city-hero{position:relative;height:220px;overflow:hidden;background:linear-gradient(135deg,#0a1a2a,#1a3a5c);}
-.city-hero img{width:100%;height:100%;object-fit:cover;filter:brightness(.4);}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.85) 0%,transparent 60%);}
-.hero-content{position:absolute;bottom:0;left:0;right:0;padding:20px 16px;}
-.city-big{font-family:'Bebas Neue',sans-serif;font-size:42px;letter-spacing:3px;line-height:1;margin-bottom:6px;}
-.city-stats-row{display:flex;gap:14px;flex-wrap:wrap;}
-.city-stat{font-size:12px;color:var(--w70);}
-.city-stat strong{color:var(--white);}
-.stats-bar{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
-.stats-item{background:var(--black2);padding:12px 16px;text-align:center;}
-.stats-val{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:1px;margin-bottom:2px;}
-.stats-lbl{font-size:10px;color:var(--w40);text-transform:uppercase;letter-spacing:.5px;}
-.page-wrap{max-width:1200px;margin:0 auto;}
-.section{padding:18px 14px;}
-.section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
-.section-title{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:1px;display:flex;align-items:center;gap:8px;}
-.section-title .dot{width:6px;height:6px;border-radius:50%;background:var(--red);flex-shrink:0;}
-.see-all{font-size:12px;color:var(--red);font-weight:600;}
-.divider{height:1px;background:var(--border);margin:0 14px;}
-.cards-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.shop-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;cursor:pointer;transition:transform .2s,border-color .2s;position:relative;display:block;color:inherit;}
-.shop-card:hover{transform:translateY(-2px);border-color:rgba(232,20,42,.4);}
-.card-img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:linear-gradient(135deg,#2a1a1a,#1a0a0a);}
-.card-badges{position:absolute;top:6px;left:6px;display:flex;flex-direction:column;gap:3px;}
-.badge{display:inline-flex;padding:1px 5px;border-radius:3px;font-size:6px;font-weight:900;text-transform:uppercase;letter-spacing:.5px;backdrop-filter:blur(4px);}
-.b-sp{background:rgba(212,168,71,.92);color:#000;}.b-ft{background:rgba(232,20,42,.92);color:#fff;}.b-nw{background:rgba(99,102,241,.92);color:#fff;}
-.card-body{padding:8px 10px 10px;}
-.card-cat{font-size:10px;color:var(--w40);margin-bottom:2px;}
-.card-name{font-size:12px;font-weight:700;line-height:1.2;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.card-loc{font-size:10px;color:var(--w40);margin-bottom:6px;}
-.card-foot{display:flex;align-items:center;justify-content:space-between;}
-.rating{display:flex;align-items:center;gap:3px;font-size:11px;font-weight:600;}
-.stars{color:var(--gold);font-size:10px;}
-.visits{font-size:10px;color:var(--w40);background:var(--w10);padding:2px 6px;border-radius:10px;}
-.coming-soon{text-align:center;padding:48px 20px;}
-.cs-icon{font-size:48px;margin-bottom:16px;}
-.cs-title{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:2px;margin-bottom:8px;}
-.cs-text{font-size:14px;color:var(--w70);line-height:1.6;margin-bottom:24px;}
-.btn-notify{display:inline-block;background:var(--red);color:var(--white);border:none;border-radius:8px;padding:12px 24px;font-size:13px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;text-decoration:none;}
-.bottom-nav{position:fixed;bottom:0;left:0;right:0;z-index:90;background:var(--black2);border-top:1px solid var(--border);display:flex;padding:8px 0 calc(8px + env(safe-area-inset-bottom));}
-.bnav-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;color:var(--w40);text-decoration:none;transition:color .2s;}
-.bnav-item.active{color:var(--red);}
-.bi{font-size:20px;}.bl{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
-.bn-spacer{height:70px;}
-/* DESKTOP */
-@media(min-width:768px){
-  .bottom-nav,.bn-spacer{display:none!important;}
-  .city-hero{height:300px;}
-  .city-big{font-size:58px;}
-  .stats-bar{grid-template-columns:repeat(4,1fr);}
-  .cards-grid{grid-template-columns:repeat(4,1fr);gap:12px;}
-  .section{padding:24px 24px;}
-  .divider{margin:0 24px;}
-}
-</style>
 <link rel="stylesheet" href="css/site.css?v=3">
 <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   CITY PAGE STYLES — Mobile-first base
+═══════════════════════════════════════════════════════════════ */
+
+/* Hero */
+.city-hero { position: relative; height: 220px; overflow: hidden; }
+.city-hero-img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.45); }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,.85) 0%, transparent 60%); }
+.hero-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px 16px; max-width: 1200px; margin: 0 auto; }
+.city-big { font-family: 'Bebas Neue', sans-serif; font-size: 42px; letter-spacing: 3px; line-height: 1; margin-bottom: 6px; }
+.city-stats-row { display: flex; gap: 14px; flex-wrap: wrap; }
+.city-stat { font-size: 12px; color: rgba(255,255,255,.7); display: flex; align-items: center; gap: 4px; }
+.city-stat strong { color: #fff; }
+
+/* Stats bar */
+.stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.stats-item { background: var(--black2, #111); padding: 8px 4px; text-align: center; }
+.stats-val { font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 1px; margin-bottom: 2px; }
+.stats-lbl { font-size: 9px; color: rgba(255,255,255,.4); text-transform: uppercase; letter-spacing: .5px; }
+
+/* Small card grids: 2-col on mobile */
+.cp-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+/* Shop card hover */
+.shop-card:hover { transform: translateY(-2px); border-color: rgba(232,20,42,.4) !important; }
+
+/* Hide scrollbar on filters and deal scroll */
+#cpCatFilter::-webkit-scrollbar { display: none; }
+#cpCatFilter { scrollbar-width: none; }
+.cp-deals-scroll::-webkit-scrollbar { display: none; }
+
+/* ═══════════════════════════════════════════════════════════════
+   DESKTOP LAYOUT — ≥ 768px
+═══════════════════════════════════════════════════════════════ */
+@media (min-width: 768px) {
+  .city-hero { height: 300px; }
+  .city-big { font-size: 58px; }
+  .stats-val { font-size: 28px; }
+  .stats-item { padding: 12px 16px; }
+  .stats-lbl { font-size: 10px; }
+  .cp-grid { grid-template-columns: repeat(4, 1fr) !important; }
+}
+
+@media (min-width: 1024px) {
+  .cp-grid { grid-template-columns: repeat(5, 1fr) !important; }
+}
+</style>
 </head>
 <body>
+
 <header>
   <div class="header-inner">
-    <button class="btn-hamburger" aria-label="Menu" onclick="var n=document.querySelector('.nav-tabs');n.classList.toggle('open');this.textContent=n.classList.contains('open')?'\u2715':'\u2630'">☰</button>
+    <button class="btn-hamburger" aria-label="Menu" onclick="var n=document.querySelector('.nav-tabs');n.classList.toggle('open');this.textContent=n.classList.contains('open')?'\u2715':'\u2630'">&#9776;</button>
     <div class="header-logo-wrap"><a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a></div>
     <div class="header-nav">
-      <a href="map.html">🗺️ Map</a>
-      <a href="deals.html">🏷️ Deals</a>
-      <a href="best-places.html">🏆 Best Places</a>
-      <a href="cities.html">📍 Cities</a>
-      <a href="search.html">🔎 Search</a>
-      <a href="add-listing.html">➕ List Your Business</a>
+      <a href="map.html">&#x1F5FA;&#xFE0F; Map</a>
+      <a href="deals.html">&#x1F3F7;&#xFE0F; Deals</a>
+      <a href="best-places.html">&#x1F3C6; Best Places</a>
+      <a href="cities.html">&#x1F4CD; Cities</a>
+      <a href="search.html">&#x1F50E; Search</a>
+      <a href="add-listing.html">&#x2795; List Your Business</a>
     </div>
-
-
     <button class="btn-login" onclick="window.location='login.html'">Login</button>
   </div>
 </header>
 <nav class="nav-tabs">
   <div class="nav-tabs-inner">
-    <a href="map.html" class="nav-tab">🗺️ Map</a>
-    <a href="deals.html" class="nav-tab">🏷️ Deals</a>
-    <a href="best-places.html" class="nav-tab">🏆 Best Places</a>
-    <a href="cities.html" class="nav-tab">📍 Cities</a>
-    <a href="search.html" class="nav-tab">🔎 Search</a>
-    <a href="add-listing.html" class="nav-tab">➕ List Your Business</a>
-    <a href="admin.html" class="nav-tab">⚙️ Admin</a>
+    <a href="map.html" class="nav-tab">&#x1F5FA;&#xFE0F; Map</a>
+    <a href="deals.html" class="nav-tab">&#x1F3F7;&#xFE0F; Deals</a>
+    <a href="best-places.html" class="nav-tab">&#x1F3C6; Best Places</a>
+    <a href="cities.html" class="nav-tab active">&#x1F4CD; Cities</a>
+    <a href="search.html" class="nav-tab">&#x1F50E; Search</a>
+    <a href="add-listing.html" class="nav-tab">&#x2795; List Your Business</a>
+    <a href="admin.html" class="nav-tab">&#x2699;&#xFE0F; Admin</a>
   </div>
 </nav>
 <script>
@@ -128,63 +114,10 @@ a{color:inherit;text-decoration:none;}
 })();
 </script>
 
+<!-- ══ CITY PAGE CONTENT (rendered by city-page.js) ══════════════ -->
+<div id="cityHero"></div>
+<div id="cityContent" style="max-width:1200px;margin:0 auto;padding:16px;"></div>
 
-<div class="city-hero">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Pattaya_Beach_2017.jpg/1280px-Pattaya_Beach_2017.jpg"
-    onerror="this.style.display='none'" alt="Pattaya">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div style="font-size:26px;margin-bottom:4px">🇹🇭</div>
-    <div class="city-big">PATTAYA</div>
-    <div class="city-stats-row">
-      <div class="city-stat"><strong>3+</strong> listings</div>
-      <div class="city-stat"><strong>3</strong> categories</div>
-      <div class="city-stat">🏖️ Beach city</div>
-    </div>
-  </div>
-</div>
-
-<div class="stats-bar">
-  <div class="stats-item"><div class="stats-val" style="color:var(--gold)">4.5</div><div class="stats-lbl">Avg Rating</div></div>
-  <div class="stats-item"><div class="stats-val">3+</div><div class="stats-lbl">Listings</div></div>
-  <div class="stats-item"><div class="stats-val" style="color:var(--red)">1</div><div class="stats-lbl">Active Deals</div></div>
-  <div class="stats-item"><div class="stats-val" style="color:var(--green)">1</div><div class="stats-lbl">Featured</div></div>
-</div>
-
-<div class="page-wrap">
-
-<div class="section">
-  <div class="section-header">
-    <div class="section-title"><span class="dot"></span>🔥 All Pattaya Listings</div>
-  </div>
-  <div class="cards-grid">
-    <a href="listing-galaxy.html" class="shop-card">
-      <img class="card-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/813/314591480_681428673470423_3006201469555310398_n.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="card-badges"><span class="badge b-ft">⭐ Featured</span></div>
-      <div class="card-body">
-        <div class="card-cat">👯 Go-Go · Freelancers</div>
-        <div class="card-name">Galaxy Walking St</div>
-        <div class="card-loc">📍 Walking Street</div>
-        <div class="card-foot"><div class="rating"><span class="stars">★★★★★</span> 4.5</div><div class="visits">3K+</div></div>
-      </div>
-    </a>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<div class="section">
-  <div class="coming-soon">
-    <div class="cs-icon">🌴</div>
-    <div class="cs-title">More Pattaya Listings Coming Soon</div>
-    <div class="cs-text">We're actively adding more Pattaya venues to our directory. Check back soon or get notified when new listings go live.</div>
-    <a href="index.html" class="btn-notify">← Back to Thailand</a>
-  </div>
-</div>
-
-</div>
-
-<script src="js/bottom-nav.js"></script>
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
@@ -201,10 +134,13 @@ a{color:inherit;text-decoration:none;}
       <a href="#">Privacy Policy</a>
       <a href="#">Terms</a>
     </div>
-    <div class="footer-disc">Content is provided by listed businesses and is not verified by Swanpass.com. This site contains adult content — must be 18+ to access.</div>
+    <div class="footer-disc">Content is provided by listed businesses and is not verified by Swanpass.com. This site contains adult content &mdash; must be 18+ to access.</div>
     <div class="footer-copy">&copy; 2026 Swanpass. All rights reserved.</div>
   </div>
 </footer>
 
+<script>window.CITY_PAGE_CONFIG = { country: 'thailand', city: 'pattaya', flatUrls: true };</script>
+<script src="js/city-page.js"></script>
+<script src="js/bottom-nav.js"></script>
 </body>
 </html>
