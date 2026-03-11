@@ -338,7 +338,7 @@
               '</div>' +
             '</div>' +
           '</div>' +
-          '<a href="' + basePath + 'map.html" style="display:flex;align-items:center;justify-content:center;gap:8px;background:var(--card-bg,#161616);border:1px solid var(--border);padding:12px 16px;text-decoration:none;color:#fff;font-size:13px;font-weight:500;transition:border-color .2s;" onmouseover="this.style.borderColor=\'rgba(232,20,42,.5)\'" onmouseout="this.style.borderColor=\'var(--border)\'">' +
+          '<a href="' + basePath + 'map.html?city=' + encodeURIComponent(cityName) + '" style="display:flex;align-items:center;justify-content:center;gap:8px;background:var(--card-bg,#161616);border:1px solid var(--border);padding:12px 16px;text-decoration:none;color:#fff;font-size:13px;font-weight:500;transition:border-color .2s;" onmouseover="this.style.borderColor=\'rgba(232,20,42,.5)\'" onmouseout="this.style.borderColor=\'var(--border)\'">' +
             '<span style="font-size:18px;">\uD83D\uDDFA\uFE0F</span>' +
             '<span>Search on the Map \u2014 find venues near you</span>' +
             '<span style="color:var(--red,#e8142a);font-size:16px;">\u203A</span>' +
@@ -419,7 +419,7 @@
           '<div style="font-size:14px;font-weight:600;">Best Places</div>' +
           '<div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:4px;">Top-rated venues in ' + cityName + '</div>' +
         '</a>' +
-        '<a href="' + basePath + 'map.html" style="background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:20px;text-align:center;display:block;color:inherit;text-decoration:none;transition:border-color .2s;" onmouseover="this.style.borderColor=\'rgba(232,20,42,.4)\'" onmouseout="this.style.borderColor=\'var(--border)\'">' +
+        '<a href="' + basePath + 'map.html?city=' + encodeURIComponent(cityName) + '" style="background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:20px;text-align:center;display:block;color:inherit;text-decoration:none;transition:border-color .2s;" onmouseover="this.style.borderColor=\'rgba(232,20,42,.4)\'" onmouseout="this.style.borderColor=\'var(--border)\'">' +
           '<div style="font-size:28px;margin-bottom:8px;">\uD83D\uDDFA\uFE0F</div>' +
           '<div style="font-size:14px;font-weight:600;">Explore Map</div>' +
           '<div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:4px;">Find venues near you</div>' +
