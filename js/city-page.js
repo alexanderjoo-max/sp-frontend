@@ -89,31 +89,7 @@
   var countryName = COUNTRY_NAMES[countrySlug] || countrySlug.replace(/\b\w/g, function (c) { return c.toUpperCase(); });
   var flag = COUNTRY_FLAGS[countrySlug] || '\uD83D\uDCCD';
 
-  /* ─── VERIFIED / DEALS / NEW DATA ───────────────────────────────── */
-  var VER_SET = new Set([
-    'chairman-nuru-massage-bangkok', 'g2g-massage-bangkok', 'jspot-bangkok',
-    'amor888', 'the333-bangkok', '666-class', 'suwon-man-s-spa-bangkok',
-    'drake-luxury-lounge-bangkok', 'exotic-massage-bangkok-bangkok', 'body-bliss'
-  ]);
-
-  var DEALS_MAP = {
-    'chairman-nuru-massage-bangkok': 'FREE JACUZZI',
-    'g2g-massage-bangkok': 'FREE JACUZZI',
-    'jspot-bangkok': 'FREE JACUZZI',
-    'amor888': 'FREE JACUZZI',
-    'the333-bangkok': 'FREE JACUZZI',
-    '666-class': 'FREE JACUZZI',
-    'suwon-man-s-spa-bangkok': 'SAVE \u0E3F500',
-    'exotic-massage-bangkok-bangkok': 'SAVE \u0E3F200',
-    'body-bliss': 'SAVE \u0E3F200'
-  };
-
-  var NEW_SET = new Set([
-    'drake-luxury-lounge-bangkok',
-    'lunar-nuru-bangkok',
-    'dragon-lady-bkk-bangkok',
-    'riviere-77-bangkok'
-  ]);
+  /* ─── VERIFIED / DEALS / NEW DATA ── (from card-helpers.js) ─────── */
 
   /* ─── CITY HERO IMAGES ─────────────────────────────────────────── */
   var CITY_HERO_IMG = {};
@@ -123,97 +99,36 @@
     'bangkok': 'Bangkok is Thailand\u2019s vibrant capital and the top destination for massage, spa, and nightlife experiences in Southeast Asia. From traditional Thai massage parlors to luxury soapy venues along Sukhumvit, the city offers an unmatched variety of services across neighborhoods like Thonglor, Ekkamai, Nana, and Silom. Swanpass helps you discover the best-rated, verified venues in Bangkok \u2014 with real reviews, exclusive deals, and up-to-date listings.'
   };
 
-  /* ─── HELPERS ───────────────────────────────────────────────────── */
+  /* ─── HELPERS ── (starsHTML, imgErr, vCheck, badgeHTML, bestImage from card-helpers.js) */
   function slugifyCity(c) {
     if (!c) return 'other';
     return c.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
   }
 
-  function starsHTML(r) {
-    var f = Math.round(r || 0);
-    return '\u2605'.repeat(f) + '\u2606'.repeat(Math.max(0, 5 - f));
+  /* ─── CARD RENDERER (uses spCardHTML from card-helpers.js) ──────── */
+  function buildTags(s) {
+    var tags = [];
+    if (SP_VERIFIED.has(s.id)) tags.push('verified');
+    if (SP_CURATED[s.id] || s.featured) tags.push('featured');
+    if (SP_NEW.has(s.id)) tags.push('new');
+    if (s.deal) tags.push('deal');
+    return tags;
   }
 
-  function imgErr() {
-    return 'onerror="this.style.background=\'linear-gradient(135deg,#2a1a1a,#1a0a0a)\';this.removeAttribute(\'src\')"';
-  }
-
-  function vCheck(id) {
-    if (!VER_SET.has(id)) return '';
-    return '<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>';
-  }
-
-  function cardBadges(shop) {
-    var h = '';
-    if (VER_SET.has(shop.id)) h += '<span class="badge" style="font-size:7px;font-weight:900;padding:2px 7px;border-radius:14px;text-transform:uppercase;letter-spacing:.5px;background:rgba(59,130,246,.92);color:#fff;">\u2713 Verified</span>';
-    if (shop.featured) h += '<span class="badge" style="font-size:7px;font-weight:900;padding:2px 7px;border-radius:14px;text-transform:uppercase;letter-spacing:.5px;background:linear-gradient(135deg,#d4a847,#f5d784,#d4a847);color:#1a1000;">\u2605 Featured</span>';
-    if (NEW_SET.has(shop.id)) h += '<span class="badge" style="font-size:7px;font-weight:900;padding:2px 7px;border-radius:14px;text-transform:uppercase;letter-spacing:.5px;background:rgba(99,102,241,.92);color:#fff;">\uD83C\uDD95 New</span>';
-    return h ? '<div style="position:absolute;top:6px;left:6px;display:flex;flex-direction:column;gap:3px;">' + h + '</div>' : '';
-  }
-
-  function bestImage(l, garbageSet) {
-    var validPhotos = (l.photos || []).filter(function (p) { return p.id !== null && p.url; });
-    if (validPhotos.length > 0) {
-      var order = { featured: 0, shop: 1, talent: 2 };
-      validPhotos.sort(function (a, b) {
-        return ((order[a.category] != null ? order[a.category] : 1) - (order[b.category] != null ? order[b.category] : 1)) || ((a.sort_order || 0) - (b.sort_order || 0));
-      });
-      return validPhotos[0].url;
-    }
-    var fallback = (l.image_urls || []).filter(function (u) { return u && !garbageSet.has(u); });
-    return fallback[0] || '';
-  }
-
-  /* ─── CARD RENDERERS ────────────────────────────────────────────── */
-
-  /** Small grid card (top rated, newest, full grid) */
   function gridCard(s) {
-    return '<a href="' + s.page + '" class="shop-card" style="background:var(--card-bg);border:1px solid var(--border);border-radius:10px;overflow:hidden;cursor:pointer;position:relative;text-decoration:none;color:inherit;display:block;transition:transform .2s,border-color .2s;">' +
-      '<img style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:linear-gradient(135deg,#2a1a1a,#1a0f0f);" src="' + s.img + '" alt="' + s.name + '" ' + imgErr() + '>' +
-      cardBadges(s) +
-      '<div style="padding:8px 10px 10px;">' +
-        '<div style="font-size:10px;color:var(--white40,rgba(255,255,255,.4));margin-bottom:2px;">' + s.categories.join(' \u00B7 ') + '</div>' +
-        '<div style="font-size:12px;font-weight:700;line-height:1.2;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + s.name + vCheck(s.id) + '</div>' +
-        '<div style="font-size:10px;color:var(--white40,rgba(255,255,255,.4));margin-bottom:6px;">\uD83D\uDCCD ' + (s.area || s.city) + '</div>' +
-        '<div style="display:flex;align-items:center;justify-content:space-between;">' +
-          '<div style="display:flex;align-items:center;gap:4px;"><span style="color:var(--gold,#d4a847);font-size:11px;">' + starsHTML(s.rating) + '</span> <span style="font-size:11px;font-weight:600;">' + (s.rating ? s.rating.toFixed(1) : 'N/A') + '</span></div>' +
-          '<span style="font-size:10px;color:var(--white40,rgba(255,255,255,.4));">' + s.reviews + ' reviews</span>' +
-        '</div>' +
-        (s.deal ? '<div style="margin-top:4px;font-size:10px;color:var(--green,#22c55e);font-weight:600;">\uD83C\uDFF7\uFE0F ' + s.deal + '</div>' : '') +
-      '</div></a>';
-  }
-
-  /** Wide featured card (featured section) */
-  function featuredCard(s) {
-    return '<a href="' + s.page + '" style="display:flex;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;overflow:hidden;text-decoration:none;color:inherit;transition:border-color .2s;position:relative;" onmouseover="this.style.borderColor=\'rgba(232,20,42,.4)\'" onmouseout="this.style.borderColor=\'var(--border)\'">' +
-      '<img src="' + s.img + '" alt="' + s.name + '" style="width:110px;height:110px;flex-shrink:0;object-fit:cover;background:linear-gradient(135deg,#2a1a1a,#1a0f0f);" ' + imgErr() + '>' +
-      '<div style="flex:1;padding:10px 12px;min-width:0;">' +
-        '<div style="font-size:13px;font-weight:700;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + s.name + vCheck(s.id) + '</div>' +
-        '<div style="font-size:11px;color:var(--white40,rgba(255,255,255,.4));margin-bottom:6px;">' + s.categories.join(' \u00B7 ') + ' \u00B7 \uD83D\uDCCD ' + (s.area || s.city) + '</div>' +
-        '<div style="display:flex;align-items:center;gap:8px;">' +
-          '<span style="color:var(--gold,#d4a847);font-size:12px;">' + starsHTML(s.rating) + '</span>' +
-          '<span style="font-size:12px;font-weight:600;">' + (s.rating ? s.rating.toFixed(1) : 'N/A') + '</span>' +
-          '<span style="font-size:10px;color:var(--white40,rgba(255,255,255,.4));">' + s.reviews + ' reviews</span>' +
-        '</div>' +
-        (s.deal ? '<div style="margin-top:4px;font-size:10px;color:var(--green,#22c55e);font-weight:600;">\uD83C\uDFF7\uFE0F ' + s.deal + '</div>' : '') +
-      '</div></a>';
-  }
-
-  /** Horizontal scroll deal card (deals section) */
-  function dealCard(s) {
-    return '<a href="' + s.page + '" style="flex-shrink:0;width:160px;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;overflow:hidden;display:block;color:inherit;text-decoration:none;transition:border-color .2s;position:relative;" onmouseover="this.style.borderColor=\'rgba(232,20,42,.4)\'" onmouseout="this.style.borderColor=\'var(--border)\'">' +
-      '<img src="' + s.img + '" alt="' + s.name + '" style="width:100%;height:100px;object-fit:cover;display:block;background:linear-gradient(135deg,#2a1a1a,#1a0f0f);" ' + imgErr() + '>' +
-      '<div style="position:absolute;top:6px;left:6px;">' +
-        (VER_SET.has(s.id) ? '<span class="badge" style="font-size:7px;font-weight:900;padding:2px 7px;border-radius:14px;text-transform:uppercase;letter-spacing:.5px;background:rgba(59,130,246,.92);color:#fff;">\u2713 Verified</span>' : '') +
-      '</div>' +
-      '<div style="padding:8px 10px;">' +
-        '<div style="font-size:11px;font-weight:600;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + s.name + vCheck(s.id) + '</div>' +
-        '<div style="font-size:10px;color:var(--white40,rgba(255,255,255,.4));">\uD83D\uDCCD ' + (s.area || s.city) + '</div>' +
-      '</div>' +
-      '<div style="background:linear-gradient(90deg,var(--red,#e8142a),#ff4d6d);padding:4px 10px;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:space-between;">' +
-        '<span>\uD83C\uDFF7\uFE0F ' + s.deal + '</span>' +
-      '</div>' +
-    '</a>';
+    var cur = SP_CURATED[s.id];
+    return spCardHTML({
+      name: s.name,
+      page: s.page,
+      img: (cur && cur.img) || s.img,
+      tags: buildTags(s),
+      catLabel: s.categories.join(' \u00B7 '),
+      city: s.city,
+      rating: s.rating,
+      visits: s.reviews + ' reviews',
+      pageViews: (cur && cur.visits) || null,
+      deal: s.deal
+    });
   }
 
   /* ─── SECTION BUILDER ───────────────────────────────────────────── */
@@ -279,7 +194,7 @@
           page: config.flatUrls
             ? basePath + 'listing-' + l.slug + '.html'
             : '/' + (l.country || 'Thailand').toLowerCase() + '/' + slugifyCity(l.city || 'other') + '/' + l.slug + '/',
-          deal: DEALS_MAP[l.slug] || null,
+          deal: SP_DEALS[l.slug] || null,
           slug: l.slug,
           created: l.created_at || l.updated_at || ''
         };
@@ -298,7 +213,7 @@
         : 'N/A';
       var dealShops = cityShops.filter(function (s) { return s.deal; });
       var dealCount = dealShops.length;
-      var verifiedCount = cityShops.filter(function (s) { return VER_SET.has(s.id); }).length;
+      var verifiedCount = cityShops.filter(function (s) { return SP_VERIFIED.has(s.id); }).length;
 
       /* ── Category counts ── */
       var categories = {};
@@ -360,7 +275,7 @@
       var html = '';
 
       /* ── SECTION 1: RECENTLY ADDED ──────────────────────────────────── */
-      var newListings = cityShops.filter(function (s) { return NEW_SET.has(s.id); });
+      var newListings = cityShops.filter(function (s) { return SP_NEW.has(s.id); });
       var newTitle = '\uD83C\uDD95 Newly Added';
       // Fallback for cities without tagged new shops: show last 6
       if (newListings.length === 0) {
@@ -368,16 +283,16 @@
         newTitle = '\uD83C\uDD95 Recently Added';
       }
       if (newListings.length > 0) {
-        var nHTML = '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;" class="cp-grid">' +
+        var nHTML = '<div class="sp-grid cp-grid">' +
           newListings.map(gridCard).join('') + '</div>';
         html += buildSection(newTitle, 'cpNewest', nHTML);
       }
 
       /* ── SECTION 2: FEATURED ──────────────────────────────────────── */
-      var featured = cityShops.filter(function (s) { return VER_SET.has(s.id) || s.featured || s.sponsor; });
+      var featured = cityShops.filter(function (s) { return SP_VERIFIED.has(s.id) || s.featured || s.sponsor; });
       if (featured.length > 0) {
-        featured.sort(function (a, b) { return (VER_SET.has(b.id) ? 1 : 0) - (VER_SET.has(a.id) ? 1 : 0); });
-        var featHTML = '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;" class="cp-grid">' +
+        featured.sort(function (a, b) { return (SP_VERIFIED.has(b.id) ? 1 : 0) - (SP_VERIFIED.has(a.id) ? 1 : 0); });
+        var featHTML = '<div class="sp-grid cp-grid">' +
           featured.map(gridCard).join('') + '</div>';
         html += buildSection('\u2B50 Featured in ' + cityName, 'cpFeatured', featHTML);
       }
@@ -387,7 +302,7 @@
         .sort(function (a, b) { return b.rating - a.rating || b.reviews - a.reviews; })
         .slice(0, 8);
       if (topRated.length > 0) {
-        var trHTML = '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;" class="cp-grid">' +
+        var trHTML = '<div class="sp-grid cp-grid">' +
           topRated.map(gridCard).join('') + '</div>';
         html += buildSection('\uD83C\uDFC6 Top Rated', 'cpTopRated', trHTML);
       }
@@ -402,11 +317,11 @@
 
       // Sort: verified first, then by rating
       var sortedAll = cityShops.slice().sort(function (a, b) {
-        return (VER_SET.has(b.id) ? 1 : 0) - (VER_SET.has(a.id) ? 1 : 0) || b.rating - a.rating;
+        return (SP_VERIFIED.has(b.id) ? 1 : 0) - (SP_VERIFIED.has(a.id) ? 1 : 0) || b.rating - a.rating;
       });
 
       var allGridHTML = filterHTML +
-        '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;" id="cpAllGrid" class="cp-grid">' +
+        '<div id="cpAllGrid" class="sp-grid cp-grid">' +
         sortedAll.map(gridCard).join('') + '</div>';
 
       html += buildSection('All ' + cityName + ' Listings', 'cpAll', allGridHTML);

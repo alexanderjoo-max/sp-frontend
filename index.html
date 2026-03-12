@@ -181,58 +181,7 @@ a { color: inherit; }
   padding-bottom: 4px; scrollbar-width: none;
 }
 .sponsored-scroll::-webkit-scrollbar { display: none; }
-.sp-card {
-  flex-shrink: 0; width: 200px;
-  background: var(--card-bg); border: 1px solid var(--border);
-  border-radius: var(--r); overflow: hidden; cursor: pointer;
-  transition: transform .2s, border-color .2s;
-  text-decoration: none; color: inherit; display: block;
-  position: relative;
-}
-.sp-card:hover { transform: translateY(-2px); border-color: rgba(232,20,42,.4); }
-.sp-img {
-  width: 100%; height: 130px;
-  object-fit: cover; display: block;
-  background: linear-gradient(135deg,#2a1a1a,#1a0f0f);
-}
-.sp-badges {
-  position: absolute; top: 6px; left: 6px;
-  display: flex; flex-direction: column; gap: 3px;
-}
-.sp-body { padding: 9px 10px 10px; }
-.sp-name {
-  font-size: 13px; font-weight: 700;
-  line-height: 1.2; margin-bottom: 3px;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
-.sp-meta { font-size: 11px; color: var(--w40); margin-bottom: 6px; }
-.sp-foot {
-  display: flex; align-items: center;
-  justify-content: space-between;
-}
-
-/* --- Badges --- */
-.badge {
-  display: inline-flex; align-items: center;
-  padding: 1px 5px; border-radius: 3px;
-  font-size: 6px; font-weight: 900;
-  text-transform: uppercase; letter-spacing: .5px;
-  backdrop-filter: blur(4px); line-height: 1.4;
-}
-.b-sp  { background: linear-gradient(135deg, #d4a847, #f5d784, #d4a847); color: #1a1000; text-shadow: 0 1px 0 rgba(255,255,255,.25); box-shadow: 0 1px 4px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.3); }
-.b-nw  { background: rgba(99,102,241,.92); color: #fff; }
-.b-vr  { background: rgba(59,130,246,.92); color: #fff; }
-
-/* --- Rating / visits --- */
-.rating {
-  display: flex; align-items: center; gap: 3px;
-  font-size: 11px; font-weight: 600;
-}
-.stars { color: var(--gold); font-size: 10px; }
-.visits {
-  font-size: 10px; color: var(--w40);
-  background: var(--w10); padding: 2px 6px; border-radius: 10px;
-}
+.sponsored-scroll .sp-card { flex-shrink: 0; width: 200px; }
 
 /* --- Banner ad slider --- */
 .ad-wrap { padding: 0 14px 4px; max-width: 1200px; margin: 0 auto; }
@@ -282,64 +231,14 @@ a { color: inherit; }
 }
 .ad-dot.active { background: var(--white); width: 14px; border-radius: 3px; }
 
-/* --- Listings cards: MOBILE = 2-col grid --- */
-.cards-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
-}
-.shop-card {
-  background: var(--card-bg); border: 1px solid var(--border);
-  border-radius: var(--r); overflow: hidden; cursor: pointer;
-  transition: transform .2s, border-color .2s;
-  position: relative; text-decoration: none; color: inherit; display: block;
-}
-.shop-card:hover { transform: translateY(-2px); border-color: rgba(232,20,42,.4); }
-.card-img {
-  width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;
-  background: linear-gradient(135deg,#2a1a1a,#1a0f0f);
-}
-.card-badges {
-  position: absolute; top: 6px; left: 6px;
-  display: flex; flex-direction: column; gap: 3px;
-}
-.card-body { padding: 8px 10px 10px; }
-.card-cat  { font-size: 10px; color: var(--w40); margin-bottom: 2px; }
-.card-name {
-  font-size: 12px; font-weight: 700; line-height: 1.2; margin-bottom: 3px;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
-.card-loc  { font-size: 10px; color: var(--w40); margin-bottom: 6px; }
-.card-foot { display: flex; align-items: center; justify-content: space-between; }
-.deal-strip {
-  background: linear-gradient(90deg,var(--red),#ff4d6d);
-  padding: 4px 10px; font-size: 10px; font-weight: 700;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.deal-pct { font-family: 'Bebas Neue',sans-serif; font-size: 14px; }
-
 /* --- Deals horizontal scroll --- */
 .deals-scroll {
   display: flex; gap: 10px; overflow-x: auto;
   padding-bottom: 4px; scrollbar-width: none;
 }
 .deals-scroll::-webkit-scrollbar { display: none; }
-.deal-card {
-  flex-shrink: 0; width: 148px;
-  background: var(--card-bg); border: 1px solid var(--border);
-  border-radius: var(--r); overflow: hidden; cursor: pointer;
-  transition: border-color .2s; text-decoration: none; color: inherit; display: block;
-}
-.deal-card:hover { border-color: var(--red); }
-.deal-img  { height: 88px; object-fit: cover; width: 100%; display: block; background: #2a1a1a; }
-.deal-body { padding: 8px 10px; }
-.deal-tag  {
-  display: inline-block; background: var(--red); color: var(--white);
-  font-size: 8px; font-weight: 800; text-transform: uppercase;
-  letter-spacing: .5px; padding: 2px 5px; border-radius: 3px; margin-bottom: 4px;
-}
-.deal-name { font-size: 12px; font-weight: 600; line-height: 1.2; margin-bottom: 4px; }
-.deal-price { display: flex; align-items: baseline; gap: 4px; }
-.price-new  { font-size: 13px; font-weight: 700; color: var(--green); }
-.price-old  { font-size: 10px; color: var(--w40); text-decoration: line-through; }
+.deals-scroll .sp-card { flex-shrink: 0; width: 148px; }
+.deals-scroll .sp-img { height: 88px; }
 
 /* --- Country / City browse chips --- */
 .country-group { margin-bottom: 16px; }
@@ -452,18 +351,8 @@ footer img { height: 30px; margin: 0 auto 14px; display: block; }
     gap: 12px;
     overflow: visible;
   }
-  .sp-card {
-    width: auto;
-  }
-  .sp-img {
-    width: 100%; height: 160px;
-    object-fit: cover;
-  }
+  .sponsored-scroll .sp-card { width: auto; }
   .sp-body { padding: 10px 12px; }
-  .sp-name { font-size: 13px; }
-  .sp-meta { font-size: 11px; }
-
-  .card-name { font-size: 13px; }
 
   /* All-listings grid: DESKTOP = 5 cols */
   .all-grid {
@@ -479,8 +368,8 @@ footer img { height: 30px; margin: 0 auto 14px; display: block; }
   .ad-title { font-size: 22px; }
 
   /* Deals scroll: wider cards on desktop */
-  .deal-card { width: 180px; }
-  .deal-img  { height: 110px; }
+  .deals-scroll .sp-card { width: 180px; }
+  .deals-scroll .sp-img  { height: 110px; }
 
   /* Footer */
   footer { padding: 32px 24px; }
@@ -813,6 +702,7 @@ footer img { height: 30px; margin: 0 auto 14px; display: block; }
 </footer>
 
 <script src="js/shops-data.js"></script>
+<script src="js/card-helpers.js"></script>
 <script src="js/bottom-nav.js"></script>
 <script>
 
@@ -828,92 +718,30 @@ function doHeroSearch() {
   window.location = 'search.html' + (params.length ? '?' + params.join('&') : '');
 }
 
-/* ─── HELPERS ────────────────────────────────────────────────────────────── */
-function starsHTML(r) {
-  if (!r) return '☆☆☆☆☆';
-  const full = Math.round(r);
-  return '★'.repeat(full) + '☆'.repeat(Math.max(0, 5 - full));
-}
-
-function badgeHTML(tags) {
-  const map = {
-    featured:  '<span class="badge b-sp">★ Featured</span>',
-    new:       '<span class="badge b-nw">🆕 New</span>',
-    verified:  '<span class="badge b-vr">✓ Verified</span>',
-  };
-  return tags.filter(t => map[t]).map(t => map[t]).join('');
-}
-
-function imgSrc(shop) {
-  return shop.img || '';
-}
-
-function imgErr() {
-  return `onerror="this.style.background='linear-gradient(135deg,#2a1a1a,#1a0a0a)';this.removeAttribute('src')"`;
-}
-
-function vCheck(tags) {
-  if (!tags || !tags.includes('verified')) return '';
-  return '<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>';
-}
-
 /* ─── RENDER: FEATURED GRID ──────────────────────────────────────────────── */
 function renderSponsored() {
-  const el = document.getElementById('sponsoredGrid');
-  const list = SHOPS.filter(s => s.tags.includes('featured'));
-  el.innerHTML = list.map(s => `
-    <a href="${s.page}" class="sp-card">
-      <img class="sp-img" src="${imgSrc(s)}" alt="${s.name}" ${imgErr()}>
-      <div class="sp-badges">${badgeHTML(s.tags)}</div>
-      <div class="sp-body">
-        <div class="sp-name">${s.name}${vCheck(s.tags)}</div>
-        <div class="sp-meta">${s.catLabel} · 📍 ${s.city}</div>
-        <div class="sp-foot">
-          <div class="rating"><span class="stars">${starsHTML(s.rating)}</span> ${s.rating || 'N/A'}</div>
-          <span class="visits">${s.visits}</span>
-        </div>
-        ${s.deal ? `<div style="margin-top:6px;font-size:11px;color:var(--green);font-weight:600">🏷️ ${s.deal}</div>` : ''}
-      </div>
-    </a>`).join('');
+  var el = document.getElementById('sponsoredGrid');
+  if (!el) return;
+  var list = SHOPS.filter(function(s) { return s.tags.indexOf('featured') !== -1; });
+  el.innerHTML = list.map(spCardHTML).join('');
 }
 
 /* ─── RENDER: DEALS ROW ──────────────────────────────────────────────────── */
 function renderDeals() {
-  const el = document.getElementById('dealsRow');
-  const list = SHOPS.filter(s => s.tags.includes('deal') || s.deal)
-    .sort((a,b) => (b.tags.includes('verified')?1:0) - (a.tags.includes('verified')?1:0));
-  el.innerHTML = list.map(s => `
-    <a href="${s.page}" class="deal-card">
-      <img class="deal-img" src="${imgSrc(s)}" alt="${s.name}" ${imgErr()}>
-      <div class="deal-body">
-        <span class="deal-tag">🔥 ${s.deal || 'Deal'}</span>
-        <div class="deal-name">${s.name}${vCheck(s.tags)}</div>
-        <div class="deal-price">
-          <span class="price-new">📍 ${s.city}</span>
-        </div>
-      </div>
-    </a>`).join('');
+  var el = document.getElementById('dealsRow');
+  if (!el) return;
+  var list = SHOPS.filter(function(s) { return s.tags.indexOf('deal') !== -1 || s.deal; })
+    .sort(function(a,b) { return (b.tags.indexOf('verified')!==-1?1:0) - (a.tags.indexOf('verified')!==-1?1:0); });
+  el.innerHTML = list.map(spCardHTML).join('');
 }
-
 
 /* ─── RENDER: RECENTLY ADDED ─────────────────────────────────────────────── */
 function renderRecentlyAdded() {
-  const el = document.getElementById('recentGrid');
-  const list = SHOPS.filter(s => s.tags.includes('new'));
+  var el = document.getElementById('recentGrid');
+  if (!el) return;
+  var list = SHOPS.filter(function(s) { return s.tags.indexOf('new') !== -1; });
   if (list.length === 0) { document.getElementById('recentlyAdded').style.display = 'none'; return; }
-  el.innerHTML = list.map(s => `
-    <a href="${s.page}" class="sp-card">
-      <img class="sp-img" src="${imgSrc(s)}" alt="${s.name}" ${imgErr()}>
-      <div class="sp-badges">${badgeHTML(s.tags)}</div>
-      <div class="sp-body">
-        <div class="sp-name">${s.name}${vCheck(s.tags)}</div>
-        <div class="sp-meta">${s.catLabel} · 📍 ${s.city}</div>
-        <div class="sp-foot">
-          <div class="rating"><span class="stars">${starsHTML(s.rating)}</span> ${s.rating || 'N/A'}</div>
-          <span class="visits">${s.visits}</span>
-        </div>
-      </div>
-    </a>`).join('');
+  el.innerHTML = list.map(spCardHTML).join('');
 }
 
 /* ─── AGE GATE ───────────────────────────────────────────────────────────── */

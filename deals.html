@@ -25,18 +25,9 @@ body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif
 /* CONTENT */
 .content{max-width:1200px;margin:0 auto;}
 
-/* DEAL CARDS — uniform grid */
+/* DEALS GRID — uses .sp-card from site.css */
 .deals-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:16px;}
-.deal-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;cursor:pointer;text-decoration:none;color:inherit;display:block;position:relative;transition:transform .2s,border-color .2s;}
-.deal-card:hover{transform:translateY(-2px);border-color:var(--red);}
-.deal-img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--black3);}
-.deal-badge{position:absolute;top:8px;left:8px;z-index:2;display:inline-block;border-radius:4px;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:3px 8px;}
-.badge-jacuzzi{background:var(--red);color:var(--white);}
-.badge-save{background:rgba(34,197,94,.85);color:#fff;}
-.deal-body{padding:10px 12px;}
-.deal-name{font-size:14px;font-weight:700;margin-bottom:3px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.deal-meta{font-size:11px;color:var(--white40);margin-bottom:8px;}
-.deal-value{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--green);letter-spacing:.5px;line-height:1;}
+.deals-grid .sp-deal{font-size:13px;font-weight:700;}
 
 /* BOTTOM NAV */
 .bottom-nav{position:fixed;bottom:0;left:0;right:0;z-index:90;background:var(--black2);border-top:1px solid var(--border);display:flex;padding:8px 0 calc(8px + env(safe-area-inset-bottom));}
@@ -153,271 +144,44 @@ body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif
 </div>
 
 <div class="content">
-  <div class="deals-grid">
-
-    <a href="listing-chairman-nuru-massage-bangkok.html" class="deal-card">
-      <span class="deal-badge badge-jacuzzi">FREE JACUZZI</span>
-      <img class="deal-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="deal-body">
-        <div class="deal-name">Chairman Nuru Massage<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span></div>
-        <div class="deal-meta">Massage, Soapy · Bangkok</div>
-        <div class="deal-value">FREE JACUZZI</div>
-      </div>
-    </a>
-
-    <a href="listing-jspot-bangkok.html" class="deal-card">
-      <span class="deal-badge badge-jacuzzi">FREE JACUZZI</span>
-      <img class="deal-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="deal-body">
-        <div class="deal-name">JSpot<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span></div>
-        <div class="deal-meta">Massage, Soapy · Bangkok</div>
-        <div class="deal-value">FREE JACUZZI</div>
-      </div>
-    </a>
-
-    <a href="listing-the333-bangkok.html" class="deal-card">
-      <span class="deal-badge badge-jacuzzi">FREE JACUZZI</span>
-      <img class="deal-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="deal-body">
-        <div class="deal-name">The333<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span></div>
-        <div class="deal-meta">Massage, Soapy · Bangkok</div>
-        <div class="deal-value">FREE JACUZZI</div>
-      </div>
-    </a>
-
-    <a href="listing-amor888.html" class="deal-card">
-      <span class="deal-badge badge-jacuzzi">FREE JACUZZI</span>
-      <img class="deal-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="deal-body">
-        <div class="deal-name">AMOR888<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span></div>
-        <div class="deal-meta">Massage, Soapy · Bangkok</div>
-        <div class="deal-value">FREE JACUZZI</div>
-      </div>
-    </a>
-
-    <a href="listing-666-class.html" class="deal-card">
-      <span class="deal-badge badge-jacuzzi">FREE JACUZZI</span>
-      <img class="deal-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14215/666-class.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="deal-body">
-        <div class="deal-name">666 Class<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span></div>
-        <div class="deal-meta">Massage, Soapy · Bangkok</div>
-        <div class="deal-value">FREE JACUZZI</div>
-      </div>
-    </a>
-
-    <a href="listing-g2g-massage-bangkok.html" class="deal-card">
-      <span class="deal-badge badge-jacuzzi">FREE JACUZZI</span>
-      <img class="deal-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="deal-body">
-        <div class="deal-name">G2G Massage<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span></div>
-        <div class="deal-meta">Massage, Soapy · Bangkok</div>
-        <div class="deal-value">FREE JACUZZI</div>
-      </div>
-    </a>
-
-    <a href="listing-awesome999-bangkok.html" class="deal-card">
-      <span class="deal-badge badge-jacuzzi">FREE JACUZZI</span>
-      <img class="deal-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14213/awesome999.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="deal-body">
-        <div class="deal-name">Awesome999</div>
-        <div class="deal-meta">Soapy, Massage · Bangkok</div>
-        <div class="deal-value">FREE JACUZZI</div>
-      </div>
-    </a>
-
-    <a href="listing-stella-nuru-massage-bangkok.html" class="deal-card">
-      <span class="deal-badge badge-save">SAVE ฿800</span>
-      <img class="deal-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14139/GdXbYEOa4AAZbTB.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="deal-body">
-        <div class="deal-name">Stella Nuru Massage</div>
-        <div class="deal-meta">Massage, Soapy · Bangkok</div>
-        <div class="deal-value">SAVE ฿800</div>
-      </div>
-    </a>
-
-    <a href="listing-geisha.html" class="deal-card">
-      <span class="deal-badge badge-save">SAVE ฿700</span>
-      <img class="deal-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14381/geishsquare.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="deal-body">
-        <div class="deal-name">Geisha</div>
-        <div class="deal-meta">Massage · Bangkok</div>
-        <div class="deal-value">SAVE ฿700</div>
-      </div>
-    </a>
-
-    <a href="listing-ola-ola.html" class="deal-card">
-      <span class="deal-badge badge-save">SAVE UP TO ฿500</span>
-      <img class="deal-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14326/IMG_0192.JPG" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="deal-body">
-        <div class="deal-name">Ola Ola</div>
-        <div class="deal-meta">Massage, Soapy · Bangkok</div>
-        <div class="deal-value">200B OFF NURU · 500B OFF JACUZZI</div>
-      </div>
-    </a>
-
-    <a href="listing-suwon-man-s-spa-bangkok.html" class="deal-card">
-      <span class="deal-badge badge-save">SAVE ฿500</span>
-      <img class="deal-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14615/Suwon.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="deal-body">
-        <div class="deal-name">Suwon Man's Spa<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span></div>
-        <div class="deal-meta">Massage, Soapy · Bangkok</div>
-        <div class="deal-value">SAVE ฿500</div>
-      </div>
-    </a>
-
-    <a href="listing-daisy-dream.html" class="deal-card">
-      <span class="deal-badge badge-save">SAVE ฿500</span>
-      <img class="deal-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1000/signature-suite.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="deal-body">
-        <div class="deal-name">Daisy Dream</div>
-        <div class="deal-meta">Massage, Soapy · Bangkok</div>
-        <div class="deal-value">SAVE ฿500</div>
-      </div>
-    </a>
-
-    <a href="listing-romance8083-bangkok.html" class="deal-card">
-      <span class="deal-badge badge-save">SAVE ฿300</span>
-      <img class="deal-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14467/room04.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="deal-body">
-        <div class="deal-name">Romance8083</div>
-        <div class="deal-meta">Massage, Soapy · Bangkok</div>
-        <div class="deal-value">SAVE ฿300</div>
-      </div>
-    </a>
-
-    <a href="listing-venus-nuru-massage-bangkok.html" class="deal-card">
-      <span class="deal-badge badge-save">SAVE ฿300</span>
-      <img class="deal-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14566/15DE8A46-ABB7-44ED-BBE9-9D89ED87B0DE-1.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="deal-body">
-        <div class="deal-name">Venus Nuru Massage</div>
-        <div class="deal-meta">Massage, Soapy · Bangkok</div>
-        <div class="deal-value">SAVE ฿300</div>
-      </div>
-    </a>
-
-    <a href="listing-momo.html" class="deal-card">
-      <span class="deal-badge badge-save">SAVE ฿200-500</span>
-      <img class="deal-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14385/0-momo-9.webp" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="deal-body">
-        <div class="deal-name">Momo</div>
-        <div class="deal-meta">Massage · Bangkok</div>
-        <div class="deal-value">SAVE ฿200-500</div>
-      </div>
-    </a>
-
-    <a href="listing-sento-bangkok-bangkok.html" class="deal-card">
-      <span class="deal-badge badge-save">SAVE ฿200</span>
-      <img class="deal-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14655/Logo.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="deal-body">
-        <div class="deal-name">Sento Bangkok</div>
-        <div class="deal-meta">Massage, Soapy · Bangkok</div>
-        <div class="deal-value">200B OFF ALL SERVICES</div>
-      </div>
-    </a>
-
-    <a href="listing-body-bliss.html" class="deal-card">
-      <span class="deal-badge badge-save">SAVE ฿200</span>
-      <img class="deal-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="deal-body">
-        <div class="deal-name">Body Bliss (Outcall Only)<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span></div>
-        <div class="deal-meta">Massage, Soapy · Bangkok</div>
-        <div class="deal-value">SAVE ฿200</div>
-      </div>
-    </a>
-
-    <a href="listing-barbie-18-bangkok.html" class="deal-card">
-      <span class="deal-badge badge-save">SAVE ฿200</span>
-      <img class="deal-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14026/room01.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="deal-body">
-        <div class="deal-name">Barbie 18</div>
-        <div class="deal-meta">Massage, Soapy · Bangkok</div>
-        <div class="deal-value">SAVE ฿200</div>
-      </div>
-    </a>
-
-    <a href="listing-aimi-bangkok-bangkok.html" class="deal-card">
-      <span class="deal-badge badge-save">SAVE ฿200</span>
-      <img class="deal-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11783/store04.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="deal-body">
-        <div class="deal-name">Aimi Bangkok</div>
-        <div class="deal-meta">Massage, Soapy · Bangkok</div>
-        <div class="deal-value">SAVE ฿200</div>
-      </div>
-    </a>
-
-    <a href="listing-a-beautiful-day-bangkok.html" class="deal-card">
-      <span class="deal-badge badge-save">SAVE ฿200</span>
-      <img class="deal-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11801/2024-07-01.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="deal-body">
-        <div class="deal-name">A Beautiful Day</div>
-        <div class="deal-meta">Massage, Soapy · Bangkok</div>
-        <div class="deal-value">SAVE ฿200</div>
-      </div>
-    </a>
-
-    <a href="listing-exotic-massage-bangkok-bangkok.html" class="deal-card">
-      <span class="deal-badge badge-save">SAVE ฿200</span>
-      <img class="deal-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12049/2024-08-16-1.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="deal-body">
-        <div class="deal-name">Exotic Massage Bangkok<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span></div>
-        <div class="deal-meta">Massage, Soapy · Bangkok</div>
-        <div class="deal-value">SAVE ฿200</div>
-      </div>
-    </a>
-
-    <a href="listing-aurora33.html" class="deal-card">
-      <span class="deal-badge badge-save">SAVE ฿100</span>
-      <img class="deal-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="deal-body">
-        <div class="deal-name">Aurora 33</div>
-        <div class="deal-meta">Massage, Soapy · Bangkok</div>
-        <div class="deal-value">SAVE ฿100</div>
-      </div>
-    </a>
-
-    <a href="listing-cherry-massage.html" class="deal-card">
-      <span class="deal-badge badge-save">SAVE ฿100</span>
-      <img class="deal-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11804/IMG_6620.JPG" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="deal-body">
-        <div class="deal-name">Cherry Massage</div>
-        <div class="deal-meta">Massage, Soapy · Bangkok</div>
-        <div class="deal-value">SAVE ฿100</div>
-      </div>
-    </a>
-
-    <a href="listing-bkk-vice.html" class="deal-card">
-      <span class="deal-badge badge-save">SAVE ฿100</span>
-      <img class="deal-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5040/bkkvice-soapy-massage-suite-second-floor-1024x576.jpg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="deal-body">
-        <div class="deal-name">BKK Vice</div>
-        <div class="deal-meta">Massage, Soapy · Bangkok</div>
-        <div class="deal-value">SAVE ฿100</div>
-      </div>
-    </a>
-
-    <a href="listing-peach-massage-bangkok-20-bangkok.html" class="deal-card">
-      <span class="deal-badge badge-save">SAVE ฿100</span>
-      <img class="deal-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13894/IMG_4315.JPG" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="deal-body">
-        <div class="deal-name">Peach Massage Bangkok 20</div>
-        <div class="deal-meta">Massage, Soapy · Bangkok</div>
-        <div class="deal-value">SAVE ฿100</div>
-      </div>
-    </a>
-
-    <a href="listing-kawaii-nuru-massage.html" class="deal-card">
-      <span class="deal-badge badge-save">SAVE ฿100</span>
-      <img class="deal-img" src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2814/photo_2566-07-18-16.02.34.jpeg" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="">
-      <div class="deal-body">
-        <div class="deal-name">Kawaii Nuru Massage</div>
-        <div class="deal-meta">Massage, Soapy · Bangkok</div>
-        <div class="deal-value">SAVE ฿100</div>
-      </div>
-    </a>
-
-  </div>
+  <div class="deals-grid" id="dealsGrid"></div>
 </div><!-- /content -->
 
+<script src="js/card-helpers.js"></script>
+<script>
+(function(){
+  var DEAL_SHOPS = [
+    {name:'Chairman Nuru Massage',page:'listing-chairman-nuru-massage-bangkok.html',img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg',tags:['verified','featured','deal'],catLabel:'Massage \u00B7 Soapy',city:'Bangkok',rating:4.8,visits:'7K+',deal:'FREE JACUZZI'},
+    {name:'JSpot',page:'listing-jspot-bangkok.html',img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14639/S__6889528.jpg',tags:['verified','featured','deal'],catLabel:'Massage \u00B7 Soapy',city:'Bangkok',rating:4.7,visits:'5K+',deal:'FREE JACUZZI'},
+    {name:'The333',page:'listing-the333-bangkok.html',img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg',tags:['verified','featured','deal'],catLabel:'Massage \u00B7 Soapy',city:'Bangkok',rating:4.6,visits:'4K+',deal:'FREE JACUZZI'},
+    {name:'AMOR888',page:'listing-amor888.html',img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14212/amor888.jpeg',tags:['verified','featured','deal'],catLabel:'Massage \u00B7 Soapy',city:'Bangkok',rating:4.5,visits:'3K+',deal:'FREE JACUZZI'},
+    {name:'666 Class',page:'listing-666-class.html',img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14215/666-class.jpeg',tags:['verified','featured','deal'],catLabel:'Massage \u00B7 Soapy',city:'Bangkok',rating:4.5,visits:'3K+',deal:'FREE JACUZZI'},
+    {name:'G2G Massage',page:'listing-g2g-massage-bangkok.html',img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14216/g2g-massage.jpeg',tags:['verified','featured','deal'],catLabel:'Massage \u00B7 Soapy',city:'Bangkok',rating:4.7,visits:'6K+',deal:'FREE JACUZZI'},
+    {name:'Awesome999',page:'listing-awesome999-bangkok.html',img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14213/awesome999.jpeg',tags:['deal'],catLabel:'Soapy \u00B7 Massage',city:'Bangkok',rating:0,visits:'N/A',deal:'FREE JACUZZI'},
+    {name:'Stella Nuru Massage',page:'listing-stella-nuru-massage-bangkok.html',img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14139/GdXbYEOa4AAZbTB.jpg',tags:['deal'],catLabel:'Massage \u00B7 Soapy',city:'Bangkok',rating:0,visits:'N/A',deal:'SAVE \u0E3F800'},
+    {name:'Geisha',page:'listing-geisha.html',img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14381/geishsquare.jpg',tags:['deal'],catLabel:'Massage',city:'Bangkok',rating:0,visits:'N/A',deal:'SAVE \u0E3F700'},
+    {name:'Ola Ola',page:'listing-ola-ola.html',img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14326/IMG_0192.JPG',tags:['deal'],catLabel:'Massage \u00B7 Soapy',city:'Bangkok',rating:0,visits:'N/A',deal:'200B OFF NURU \u00B7 500B OFF JACUZZI'},
+    {name:'Suwon Man\'s Spa',page:'listing-suwon-man-s-spa-bangkok.html',img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14615/Suwon.jpg',tags:['verified','featured','deal'],catLabel:'Massage \u00B7 Soapy',city:'Bangkok',rating:4.6,visits:'4K+',deal:'SAVE \u0E3F500'},
+    {name:'Daisy Dream',page:'listing-daisy-dream.html',img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/1000/signature-suite.jpg',tags:['deal'],catLabel:'Massage \u00B7 Soapy',city:'Bangkok',rating:0,visits:'N/A',deal:'SAVE \u0E3F500'},
+    {name:'Romance8083',page:'listing-romance8083-bangkok.html',img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14467/room04.jpg',tags:['deal'],catLabel:'Massage \u00B7 Soapy',city:'Bangkok',rating:0,visits:'N/A',deal:'SAVE \u0E3F300'},
+    {name:'Venus Nuru Massage',page:'listing-venus-nuru-massage-bangkok.html',img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14566/15DE8A46-ABB7-44ED-BBE9-9D89ED87B0DE-1.jpg',tags:['deal'],catLabel:'Massage \u00B7 Soapy',city:'Bangkok',rating:0,visits:'N/A',deal:'SAVE \u0E3F300'},
+    {name:'Momo',page:'listing-momo.html',img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14385/0-momo-9.webp',tags:['deal'],catLabel:'Massage',city:'Bangkok',rating:0,visits:'N/A',deal:'SAVE \u0E3F200-500'},
+    {name:'Sento Bangkok',page:'listing-sento-bangkok-bangkok.html',img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14655/Logo.jpg',tags:['deal'],catLabel:'Massage \u00B7 Soapy',city:'Bangkok',rating:0,visits:'N/A',deal:'200B OFF ALL SERVICES'},
+    {name:'Body Bliss',page:'listing-body-bliss.html',img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg',tags:['verified','featured','deal'],catLabel:'Massage \u00B7 Soapy',city:'Bangkok',rating:4.5,visits:'2K+',deal:'SAVE \u0E3F200'},
+    {name:'Barbie 18',page:'listing-barbie-18-bangkok.html',img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14026/room01.jpg',tags:['deal'],catLabel:'Massage \u00B7 Soapy',city:'Bangkok',rating:0,visits:'N/A',deal:'SAVE \u0E3F200'},
+    {name:'Aimi Bangkok',page:'listing-aimi-bangkok-bangkok.html',img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11783/store04.jpg',tags:['deal'],catLabel:'Massage \u00B7 Soapy',city:'Bangkok',rating:0,visits:'N/A',deal:'SAVE \u0E3F200'},
+    {name:'A Beautiful Day',page:'listing-a-beautiful-day-bangkok.html',img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11801/2024-07-01.jpg',tags:['deal'],catLabel:'Massage \u00B7 Soapy',city:'Bangkok',rating:0,visits:'N/A',deal:'SAVE \u0E3F200'},
+    {name:'Exotic Massage Bangkok',page:'listing-exotic-massage-bangkok-bangkok.html',img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/12049/2024-08-16-1.jpg',tags:['verified','featured','deal'],catLabel:'Massage \u00B7 Soapy',city:'Bangkok',rating:4.5,visits:'3K+',deal:'SAVE \u0E3F200'},
+    {name:'Aurora 33',page:'listing-aurora33.html',img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14217/the333.jpeg',tags:['deal'],catLabel:'Massage \u00B7 Soapy',city:'Bangkok',rating:0,visits:'N/A',deal:'SAVE \u0E3F100'},
+    {name:'Cherry Massage',page:'listing-cherry-massage.html',img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/11804/IMG_6620.JPG',tags:['deal'],catLabel:'Massage \u00B7 Soapy',city:'Bangkok',rating:0,visits:'N/A',deal:'SAVE \u0E3F100'},
+    {name:'BKK Vice',page:'listing-bkk-vice.html',img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/5040/bkkvice-soapy-massage-suite-second-floor-1024x576.jpg',tags:['deal'],catLabel:'Massage \u00B7 Soapy',city:'Bangkok',rating:0,visits:'N/A',deal:'SAVE \u0E3F100'},
+    {name:'Peach Massage Bangkok 20',page:'listing-peach-massage-bangkok-20-bangkok.html',img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/13894/IMG_4315.JPG',tags:['deal'],catLabel:'Massage \u00B7 Soapy',city:'Bangkok',rating:0,visits:'N/A',deal:'SAVE \u0E3F100'},
+    {name:'Kawaii Nuru Massage',page:'listing-kawaii-nuru-massage.html',img:'https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/2814/photo_2566-07-18-16.02.34.jpeg',tags:['deal'],catLabel:'Massage \u00B7 Soapy',city:'Bangkok',rating:0,visits:'N/A',deal:'SAVE \u0E3F100'}
+  ];
+  var el = document.getElementById('dealsGrid');
+  if (el) el.innerHTML = DEAL_SHOPS.map(spCardHTML).join('');
+})();
+</script>
 <script src="js/bottom-nav.js"></script>
 
 <footer class="site-footer">

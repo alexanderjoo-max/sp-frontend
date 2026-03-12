@@ -39,24 +39,9 @@ body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif
 .side-opt input{accent-color:var(--red);width:14px;height:14px;cursor:pointer;}
 .side-opt:hover{color:var(--white);}
 .side-ct{margin-left:auto;font-size:11px;color:var(--white40);}
-/* CARDS */
+/* CARDS — uses .sp-card from site.css */
 .main{flex:1;padding:16px;min-width:0;}
 .cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:transform .2s,border-color .2s;position:relative;text-decoration:none;color:inherit;display:block;}
-.card:hover{transform:translateY(-2px);border-color:rgba(232,20,42,.4);}
-.cimg{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--black3);}
-.cbadges{position:absolute;top:6px;left:6px;display:flex;flex-direction:column;gap:3px;}
-.badge{display:inline-flex;padding:2px 6px;border-radius:4px;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;backdrop-filter:blur(4px);}
-.bft{background:linear-gradient(135deg,#d4a847,#f5d784,#d4a847);color:#1a1000;text-shadow:0 1px 0 rgba(255,255,255,.25);box-shadow:0 1px 4px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.3);}.bdl{background:rgba(34,197,94,.9);color:#000;}.bnw{background:rgba(99,102,241,.9);color:#fff;}.bvr{background:rgba(59,130,246,.92);color:#fff;}
-.cbody{padding:8px 10px 10px;}
-.ccat{font-size:10px;color:var(--white40);margin-bottom:2px;}
-.cname{font-size:13px;font-weight:600;line-height:1.2;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.cloc{font-size:11px;color:var(--white40);margin-bottom:6px;}
-.cfooter{display:flex;align-items:center;justify-content:space-between;}
-.crating{display:flex;align-items:center;gap:3px;font-size:11px;font-weight:600;}
-.stars{color:var(--gold);font-size:10px;}
-.cvisits{font-size:10px;color:var(--white40);background:var(--white10);padding:2px 6px;border-radius:10px;}
-.cdeal{background:linear-gradient(90deg,var(--red),#ff4d6d);padding:4px 10px;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:space-between;}
 /* PAGINATION */
 .pagination{display:flex;align-items:center;justify-content:center;gap:4px;padding:20px 0;}
 .pbn{background:var(--white10);border:1px solid var(--border);border-radius:6px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;color:var(--white70);cursor:pointer;font-size:13px;transition:all .2s;}
@@ -245,140 +230,84 @@ body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif
     </div>
   </div>
 </div>
+<script src="js/card-helpers.js"></script>
 <script src="js/bottom-nav.js"></script>
 <script>
-let ALL=[];
-const EMOJIS={massage:'👄',soapy:'🛁',club:'💃',gogo:'👯',freelancer:'❤️‍🔥',redlight:'📍',"gentlemen's clubs":'💃'};
-const LABELS={massage:'Massage',soapy:'Soapy',club:"Gentlemen's Club",gogo:'Go-Go',freelancer:'Freelancers',redlight:'Red Light',"gentlemen's clubs":"Gentlemen's Club"};
-const VERIFIED_SLUGS=new Set(['chairman-nuru-massage-bangkok','g2g-massage-bangkok','jspot-bangkok','amor888','the333-bangkok','666-class','suwon-man-s-spa-bangkok','drake-luxury-lounge-bangkok','exotic-massage-bangkok-bangkok','body-bliss']);
+var ALL=[];
+var EMOJIS={massage:'\uD83D\uDC44',soapy:'\uD83D\uDEC1',club:'\uD83D\uDC83',gogo:'\uD83D\uDC6F',freelancer:'\u2764\uFE0F\u200D\uD83D\uDD25',redlight:'\uD83D\uDCCD',"gentlemen's clubs":'\uD83D\uDC83'};
+var LABELS={massage:'Massage',soapy:'Soapy',club:"Gentlemen's Club",gogo:'Go-Go',freelancer:'Freelancers',redlight:'Red Light',"gentlemen's clubs":"Gentlemen's Club"};
 
-// Garbage images to filter (appear in 20+ listings)
-const GARBAGE_THRESHOLD = 20;
-
-// Load all listings from JSON
-fetch('data/listings.json').then(r=>r.json()).then(data=>{
-  // Build garbage set
-  const urlCounts={};
-  data.forEach(l=>{const seen=new Set();(l.image_urls||[]).forEach(u=>{if(u&&!seen.has(u)){seen.add(u);urlCounts[u]=(urlCounts[u]||0)+1;}});});
-  const garbage=new Set(Object.entries(urlCounts).filter(([,c])=>c>=GARBAGE_THRESHOLD).map(([u])=>u));
-
-  ALL=data.map(l=>{
-    // Get best image
-    const validPhotos=(l.photos||[]).filter(p=>p.id!==null&&p.url);
-    let img='';
-    if(validPhotos.length>0){
-      const order={featured:0,shop:1,talent:2};
-      validPhotos.sort((a,b)=>(order[a.category]??1)-(order[b.category]??1)||(a.sort_order||0)-(b.sort_order||0));
-      img=validPhotos[0].url;
-    } else {
-      const filtered=(l.image_urls||[]).filter(u=>u&&!garbage.has(u));
-      img=filtered[0]||'';
-    }
-    // Detect category
-    const cats=(l.categories||[]).map(c=>c.toLowerCase());
-    let cat='massage';
-    if(cats.some(c=>c.includes('soapy')))cat='soapy';
-    else if(cats.some(c=>c.includes('club')||c.includes('gentleman')))cat='club';
-    else if(cats.some(c=>c.includes('go-go')||c.includes('gogo')))cat='gogo';
-    else if(cats.some(c=>c.includes('freelancer')))cat='freelancer';
-    // Tags
-    const tags=[...(l.tags||[])];
-    if(VERIFIED_SLUGS.has(l.slug)&&!tags.includes('verified'))tags.push('verified');
-    return{
-      name:l.name,cat,city:l.city||'Unknown',country:l.country||'Unknown',
-      rating:l.rating||0,visits:(l.review_count||0)+' reviews',
-      tags,img,page:'listing-'+l.slug+'.html',deal:null,slug:l.slug
-    };
+fetch('data/listings.json').then(function(r){return r.json();}).then(function(data){
+  var garbageSet = buildGarbageSet(data);
+  ALL=data.map(function(l){
+    var s = normalizeShop(l, garbageSet, { flatUrls: true });
+    // Detect primary category for filter pills
+    var cats=(l.categories||[]).map(function(c){return c.toLowerCase();});
+    var cat='massage';
+    if(cats.some(function(c){return c.indexOf('soapy')!==-1;}))cat='soapy';
+    else if(cats.some(function(c){return c.indexOf('club')!==-1||c.indexOf('gentleman')!==-1;}))cat='club';
+    else if(cats.some(function(c){return c.indexOf('go-go')!==-1||c.indexOf('gogo')!==-1;}))cat='gogo';
+    else if(cats.some(function(c){return c.indexOf('freelancer')!==-1;}))cat='freelancer';
+    s.cat = cat;
+    s.country = l.country || 'Unknown';
+    // Override catLabel to show emoji + label
+    s.catLabel = (EMOJIS[cat]||'\uD83C\uDFF7\uFE0F') + ' ' + (LABELS[cat]||cat);
+    return s;
   });
-  // Pre-fill query from URL params
-  const params=new URLSearchParams(location.search);
-  const qp=params.get('q');
+  var params=new URLSearchParams(location.search);
+  var qp=params.get('q');
   if(qp)document.getElementById('q').value=qp;
-  const cp=params.get('city');
+  var cp=params.get('city');
   if(cp)document.getElementById('cityQ').value=cp;
   doSearch();
-}).catch(()=>{
+}).catch(function(){
   document.getElementById('results').innerHTML='<div class="empty"><div class="empty-title">Error loading listings</div></div>';
 });
 
-let activeCat='',dealsOnly=false;
-
-function vCheck(tags){
-  if(!tags||!tags.includes('verified'))return '';
-  return '<span class="v-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>';
-}
-
-function cardHtml(s){
-  return`<a href="${s.page}" class="card">
-    <img class="cimg" src="${s.img}" onerror="this.style.background='#2a1a1a';this.removeAttribute('src')" alt="${s.name}">
-    <div class="cbadges">
-      ${s.tags.includes('featured')?'<span class="badge bft">★ Featured</span>':''}
-      ${s.tags.includes('verified')?'<span class="badge bvr">✓ Verified</span>':''}
-      ${s.tags.includes('new')?'<span class="badge bnw">🆕 New</span>':''}
-    </div>
-    <div class="cbody">
-      <div class="ccat">${EMOJIS[s.cat]||'🏷️'} ${LABELS[s.cat]||s.cat}</div>
-      <div class="cname">${s.name}${vCheck(s.tags)}</div>
-      <div class="cloc">📍 ${s.city}</div>
-      <div class="cfooter">
-        <div class="crating"><span class="stars">★★★★★</span> ${s.rating}</div>
-        <div class="cvisits">${s.visits}</div>
-      </div>
-    </div>
-    ${s.deal?`<div class="cdeal"><span>${s.deal}</span><span style="font-family:'Bebas Neue',sans-serif;font-size:14px">DEAL</span></div>`:''}
-  </a>`;
-}
+var activeCat='',dealsOnly=false;
 
 function doSearch(){
-  const q=document.getElementById('q').value.toLowerCase();
-  const city=document.getElementById('cityQ').value;
-  // Read sidebar country checkboxes
-  const countryChecks=document.querySelectorAll('[data-country]');
-  const allowedCountries=new Set();
+  var q=document.getElementById('q').value.toLowerCase();
+  var city=document.getElementById('cityQ').value;
+  var countryChecks=document.querySelectorAll('[data-country]');
+  var allowedCountries=new Set();
   countryChecks.forEach(function(cb){if(cb.checked)allowedCountries.add(cb.dataset.country.toLowerCase());});
-  // Read sidebar status checkboxes
-  const featuredOnly=document.querySelector('[data-status="featured"]');
-  const dealCheck=document.querySelector('[data-status="deal"]');
-  const newCheck=document.querySelector('[data-status="new"]');
-  const wantFeatured=featuredOnly&&featuredOnly.checked;
-  const wantDeal=dealCheck&&dealCheck.checked;
-  const wantNew=newCheck&&newCheck.checked;
-  // Read rating radio
-  const ratingRadio=document.querySelector('input[name="rating"]:checked');
-  const minRating=ratingRadio?parseFloat(ratingRadio.value):0;
-  let filtered=ALL.filter(s=>{
+  var featuredOnly=document.querySelector('[data-status="featured"]');
+  var dealCheck=document.querySelector('[data-status="deal"]');
+  var newCheck=document.querySelector('[data-status="new"]');
+  var wantFeatured=featuredOnly&&featuredOnly.checked;
+  var wantDeal=dealCheck&&dealCheck.checked;
+  var wantNew=newCheck&&newCheck.checked;
+  var ratingRadio=document.querySelector('input[name="rating"]:checked');
+  var minRating=ratingRadio?parseFloat(ratingRadio.value):0;
+  var filtered=ALL.filter(function(s){
     if(activeCat&&s.cat!==activeCat)return false;
-    if(dealsOnly&&!s.tags.includes('deal')&&!s.deal)return false;
+    if(dealsOnly&&s.tags.indexOf('deal')===-1&&!s.deal)return false;
     if(city&&s.city!==city)return false;
-    if(q&&!s.name.toLowerCase().includes(q)&&!s.city.toLowerCase().includes(q))return false;
-    // Sidebar country filter
+    if(q&&s.name.toLowerCase().indexOf(q)===-1&&s.city.toLowerCase().indexOf(q)===-1)return false;
     if(countryChecks.length>0&&!allowedCountries.has((s.country||'').toLowerCase()))return false;
-    // Sidebar status filters
-    if(wantFeatured&&!s.tags.includes('featured'))return false;
-    if(wantDeal&&!s.tags.includes('deal')&&!s.deal)return false;
-    if(wantNew&&!s.tags.includes('new'))return false;
-    // Sidebar rating filter
+    if(wantFeatured&&s.tags.indexOf('featured')===-1)return false;
+    if(wantDeal&&s.tags.indexOf('deal')===-1&&!s.deal)return false;
+    if(wantNew&&s.tags.indexOf('new')===-1)return false;
     if(minRating>0&&(s.rating||0)<minRating)return false;
     return true;
   });
-  // Sort — verified always first, then by selected sort
-  const sort=document.querySelector('.rsort').value;
-  if(sort==='rating') filtered.sort((a,b)=>(b.rating||0)-(a.rating||0));
-  else if(sort==='visits') filtered.sort((a,b)=>(parseInt(b.visits)||0)-(parseInt(a.visits)||0));
-  else if(sort==='new') filtered.sort((a,b)=>(b.tags.includes('new')?1:0)-(a.tags.includes('new')?1:0)||(b.rating||0)-(a.rating||0));
-  // Verified listings always at top
-  filtered.sort((a,b)=>(b.tags.includes('verified')?1:0)-(a.tags.includes('verified')?1:0));
+  var sort=document.querySelector('.rsort').value;
+  if(sort==='rating') filtered.sort(function(a,b){return (b.rating||0)-(a.rating||0);});
+  else if(sort==='visits') filtered.sort(function(a,b){return (parseInt(b.visits)||0)-(parseInt(a.visits)||0);});
+  else if(sort==='new') filtered.sort(function(a,b){return (b.tags.indexOf('new')!==-1?1:0)-(a.tags.indexOf('new')!==-1?1:0)||(b.rating||0)-(a.rating||0);});
+  filtered.sort(function(a,b){return (b.tags.indexOf('verified')!==-1?1:0)-(a.tags.indexOf('verified')!==-1?1:0);});
 
   document.getElementById('rcount').textContent=filtered.length;
-  const sub=q?`for "${q}"`:city?`in ${city}`:'';
+  var sub=q?'for "'+q+'"':city?'in '+city:'';
   document.getElementById('rsub').textContent=sub;
-  const c=document.getElementById('results');
+  var c=document.getElementById('results');
   if(filtered.length===0){
     c.innerHTML='';c.style.display='none';
     document.getElementById('empty').style.display='block';
     document.getElementById('pagination').style.display='none';
   } else {
-    c.innerHTML=filtered.map(cardHtml).join('');
+    c.innerHTML=filtered.map(spCardHTML).join('');
     c.style.display='';
     document.getElementById('empty').style.display='none';
     document.getElementById('pagination').style.display='flex';
@@ -386,7 +315,7 @@ function doSearch(){
 }
 
 function setCat(el,cat){
-  document.querySelectorAll('.fp').forEach(p=>{if(p.id!=='pdeal')p.classList.remove('active');});
+  document.querySelectorAll('.fp').forEach(function(p){if(p.id!=='pdeal')p.classList.remove('active');});
   el.classList.add('active');activeCat=cat;doSearch();
 }
 function toggleDeals(){
@@ -397,9 +326,9 @@ function clearSearch(){
   document.getElementById('q').value='';
   document.getElementById('cityQ').value='';
   activeCat='';dealsOnly=false;
-  document.querySelectorAll('.fp').forEach((p,i)=>{p.classList.toggle('active',i===0);});
+  var fps=document.querySelectorAll('.fp');
+  for(var i=0;i<fps.length;i++){fps[i].classList.toggle('active',i===0);}
   document.getElementById('pdeal').classList.remove('active');
-  // Reset sidebar filters
   document.querySelectorAll('[data-country]').forEach(function(cb){cb.checked=true;});
   document.querySelectorAll('[data-status]').forEach(function(cb){cb.checked=false;});
   var anyRating=document.querySelector('input[name="rating"][value="0"]');
@@ -407,11 +336,10 @@ function clearSearch(){
   doSearch();
 }
 
-// Read URL params on load
-const params=new URLSearchParams(location.search);
+var params=new URLSearchParams(location.search);
 if(params.get('q'))document.getElementById('q').value=params.get('q');
 if(params.get('city'))document.getElementById('cityQ').value=params.get('city');
-if(params.get('cat')){activeCat=params.get('cat');document.querySelectorAll('.fp').forEach(p=>p.classList.remove('active'));}
+if(params.get('cat')){activeCat=params.get('cat');document.querySelectorAll('.fp').forEach(function(p){p.classList.remove('active');});}
 doSearch();
 </script>
 <footer class="site-footer">
