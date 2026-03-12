@@ -341,22 +341,30 @@ a { color: inherit; }
 .price-new  { font-size: 13px; font-weight: 700; color: var(--green); }
 .price-old  { font-size: 10px; color: var(--w40); text-decoration: line-through; }
 
-/* --- City grid: MOBILE = 3 cols --- */
-.city-grid {
-  display: grid; grid-template-columns: repeat(3,1fr); gap: 8px;
+/* --- Country / City browse chips --- */
+.country-group { margin-bottom: 16px; }
+.country-header {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 8px;
 }
-.city-card {
-  border-radius: var(--r-sm); overflow: hidden;
-  cursor: pointer; position: relative; aspect-ratio: 1;
-  background: linear-gradient(135deg,#1a1a1a,#2a1a1a);
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  border: 1px solid var(--border); transition: border-color .2s;
-  text-decoration: none; color: inherit;
+.country-flag { font-size: 20px; }
+.country-label {
+  font-family: 'Bebas Neue', sans-serif; font-size: 22px;
+  letter-spacing: 1px;
 }
-.city-card:hover { border-color: var(--red); }
-.city-emoji { font-size: 26px; margin-bottom: 4px; }
-.city-name  { font-size: 11px; font-weight: 700; text-align: center; }
-.city-count { font-size: 10px; color: var(--w40); }
+.country-count { font-size: 12px; color: var(--w40); margin-left: 4px; }
+.city-chips {
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+.city-chip {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: var(--w10); border: 1px solid var(--border);
+  border-radius: 20px; padding: 6px 14px;
+  font-size: 12px; font-weight: 500; color: var(--w70);
+  text-decoration: none; cursor: pointer; transition: all .2s;
+}
+.city-chip:hover { background: var(--red); border-color: var(--red); color: var(--white); }
+.city-chip .chip-count { font-size: 10px; color: var(--w40); }
+.city-chip:hover .chip-count { color: rgba(255,255,255,.7); }
 
 /* --- All listings grid (filterable, MOBILE = 2 col) --- */
 .listings-filter {
@@ -437,25 +445,23 @@ footer img { height: 30px; margin: 0 auto 14px; display: block; }
   .divider { margin: 0 24px; }
   .section-title { font-size: 38px; }
 
-  /* Featured shops: DESKTOP = 2-col wide cards grid */
+  /* Featured shops: DESKTOP = 4-col square vertical cards */
   .sponsored-scroll {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: 12px;
     overflow: visible;
   }
   .sp-card {
     width: auto;
-    display: flex;
-    flex-direction: row;
   }
   .sp-img {
-    width: 110px; height: 110px;
-    flex-shrink: 0; object-fit: cover;
+    width: 100%; height: 160px;
+    object-fit: cover;
   }
-  .sp-body { flex: 1; padding: 12px 14px; }
-  .sp-name { font-size: 14px; white-space: normal; }
-  .sp-meta { font-size: 12px; }
+  .sp-body { padding: 10px 12px; }
+  .sp-name { font-size: 13px; }
+  .sp-meta { font-size: 11px; }
 
   .card-name { font-size: 13px; }
 
@@ -464,10 +470,9 @@ footer img { height: 30px; margin: 0 auto 14px; display: block; }
     grid-template-columns: repeat(5, 1fr) !important;
   }
 
-  /* City grid: DESKTOP = 5 cols */
-  .city-grid { grid-template-columns: repeat(5,1fr); gap: 10px; }
-  .city-emoji { font-size: 32px; }
-  .city-name  { font-size: 13px; }
+  /* Country browse: DESKTOP */
+  .country-label { font-size: 26px; }
+  .city-chip { font-size: 13px; padding: 7px 16px; }
 
   /* Ad slider */
   .ad-slider { height: 148px; }
@@ -574,11 +579,44 @@ footer img { height: 30px; margin: 0 auto 14px; display: block; }
     <div class="search-field">
       <select id="heroCity">
         <option value="">🏙️ All Cities</option>
-        <option value="Bangkok">Bangkok</option>
-        <option value="Pattaya">Pattaya</option>
-        <option value="Chiang Mai">Chiang Mai</option>
-        <option value="Phuket">Phuket</option>
-        <option value="Hua Hin">Hua Hin</option>
+        <optgroup label="🇹🇭 Thailand">
+          <option value="Bangkok">Bangkok (301)</option>
+          <option value="Pattaya">Pattaya (42)</option>
+          <option value="Chiang Mai">Chiang Mai (38)</option>
+          <option value="Phuket">Phuket (21)</option>
+          <option value="Khon Kaen">Khon Kaen (10)</option>
+          <option value="Ko Samui">Ko Samui (8)</option>
+          <option value="Hua Hin">Hua Hin (8)</option>
+          <option value="Nakhon Ratchasima">Nakhon Ratchasima (7)</option>
+          <option value="Udon Thani">Udon Thani (5)</option>
+          <option value="Phitsanulok">Phitsanulok (3)</option>
+          <option value="Krabi">Krabi (3)</option>
+          <option value="Ubon Ratchathani">Ubon Ratchathani (3)</option>
+          <option value="Sri Racha">Sri Racha (1)</option>
+          <option value="Rayong">Rayong (1)</option>
+          <option value="Ratchaburi">Ratchaburi (1)</option>
+          <option value="Nakhon Sawan">Nakhon Sawan (1)</option>
+          <option value="Kanchanaburi">Kanchanaburi (1)</option>
+        </optgroup>
+        <optgroup label="🇻🇳 Vietnam">
+          <option value="Ho Chi Minh City">Ho Chi Minh City (125)</option>
+          <option value="Hanoi">Hanoi (34)</option>
+        </optgroup>
+        <optgroup label="🇮🇩 Indonesia">
+          <option value="Bali">Bali (28)</option>
+          <option value="Jakarta">Jakarta (28)</option>
+          <option value="Surabaya">Surabaya (6)</option>
+          <option value="Batam">Batam (5)</option>
+        </optgroup>
+        <optgroup label="🇰🇭 Cambodia">
+          <option value="Phnom Penh">Phnom Penh (25)</option>
+        </optgroup>
+        <optgroup label="🇸🇬 Singapore">
+          <option value="Singapore">Singapore (20)</option>
+        </optgroup>
+        <optgroup label="🇲🇾 Malaysia">
+          <option value="Kuala Lumpur">Kuala Lumpur (12)</option>
+        </optgroup>
       </select>
     </div>
     <div class="search-field">
@@ -669,18 +707,73 @@ footer img { height: 30px; margin: 0 auto 14px; display: block; }
 
 <div class="divider"></div>
 
-<!-- ══ BROWSE BY CITY ════════════════════════════════════════ -->
+<!-- ══ BROWSE BY COUNTRY ═════════════════════════════════════ -->
 <div class="section">
   <div class="section-header">
-    <div class="section-title"><span class="dot"></span>📍 Browse by City</div>
+    <div class="section-title"><span class="dot"></span>🌏 Browse by Country</div>
     <a href="cities.html" class="see-all">All cities →</a>
   </div>
-  <div class="city-grid" id="cityGrid">
-    <a href="city-bangkok.html"  class="city-card"><div class="city-emoji">🏙️</div><div class="city-name">Bangkok</div><div class="city-count" id="cc-Bangkok">—</div></a>
-    <a href="city-pattaya.html"  class="city-card"><div class="city-emoji">🌴</div><div class="city-name">Pattaya</div><div class="city-count" id="cc-Pattaya">—</div></a>
-    <a href="city-chiangmai.html"class="city-card"><div class="city-emoji">⛩️</div><div class="city-name">Chiang Mai</div><div class="city-count" id="cc-Chiang Mai">—</div></a>
-    <a href="city-phuket.html"   class="city-card"><div class="city-emoji">🏖️</div><div class="city-name">Phuket</div><div class="city-count" id="cc-Phuket">—</div></a>
-    <a href="city-huahin.html"   class="city-card"><div class="city-emoji">🌊</div><div class="city-name">Hua Hin</div><div class="city-count" id="cc-Hua Hin">—</div></a>
+
+  <div class="country-group">
+    <div class="country-header"><span class="country-flag">🇹🇭</span><span class="country-label">Thailand</span><span class="country-count">473 listings</span></div>
+    <div class="city-chips">
+      <a href="city-bangkok.html" class="city-chip">Bangkok <span class="chip-count">301</span></a>
+      <a href="city-pattaya.html" class="city-chip">Pattaya <span class="chip-count">42</span></a>
+      <a href="city-chiangmai.html" class="city-chip">Chiang Mai <span class="chip-count">38</span></a>
+      <a href="city-phuket.html" class="city-chip">Phuket <span class="chip-count">21</span></a>
+      <a href="city-khon-kaen.html" class="city-chip">Khon Kaen <span class="chip-count">10</span></a>
+      <a href="city-ko-samui.html" class="city-chip">Ko Samui <span class="chip-count">8</span></a>
+      <a href="city-huahin.html" class="city-chip">Hua Hin <span class="chip-count">8</span></a>
+      <a href="city-nakhon-ratchasima.html" class="city-chip">Nakhon Ratchasima <span class="chip-count">7</span></a>
+      <a href="city-udon-thani.html" class="city-chip">Udon Thani <span class="chip-count">5</span></a>
+      <a href="city-phitsanulok.html" class="city-chip">Phitsanulok <span class="chip-count">3</span></a>
+      <a href="city-krabi.html" class="city-chip">Krabi <span class="chip-count">3</span></a>
+      <a href="city-ubon-ratchathani.html" class="city-chip">Ubon Ratchathani <span class="chip-count">3</span></a>
+      <a href="city-sri-racha.html" class="city-chip">Sri Racha <span class="chip-count">1</span></a>
+      <a href="city-rayong.html" class="city-chip">Rayong <span class="chip-count">1</span></a>
+      <a href="city-ratchaburi.html" class="city-chip">Ratchaburi <span class="chip-count">1</span></a>
+      <a href="city-nakhon-sawan.html" class="city-chip">Nakhon Sawan <span class="chip-count">1</span></a>
+      <a href="city-kanchanaburi.html" class="city-chip">Kanchanaburi <span class="chip-count">1</span></a>
+    </div>
+  </div>
+
+  <div class="country-group">
+    <div class="country-header"><span class="country-flag">🇻🇳</span><span class="country-label">Vietnam</span><span class="country-count">159 listings</span></div>
+    <div class="city-chips">
+      <a href="city-hcmc.html" class="city-chip">Ho Chi Minh City <span class="chip-count">125</span></a>
+      <a href="city-hanoi.html" class="city-chip">Hanoi <span class="chip-count">34</span></a>
+    </div>
+  </div>
+
+  <div class="country-group">
+    <div class="country-header"><span class="country-flag">🇮🇩</span><span class="country-label">Indonesia</span><span class="country-count">67 listings</span></div>
+    <div class="city-chips">
+      <a href="city-bali.html" class="city-chip">Bali <span class="chip-count">28</span></a>
+      <a href="city-jakarta.html" class="city-chip">Jakarta <span class="chip-count">28</span></a>
+      <a href="city-surabaya.html" class="city-chip">Surabaya <span class="chip-count">6</span></a>
+      <a href="city-batam.html" class="city-chip">Batam <span class="chip-count">5</span></a>
+    </div>
+  </div>
+
+  <div class="country-group">
+    <div class="country-header"><span class="country-flag">🇰🇭</span><span class="country-label">Cambodia</span><span class="country-count">25 listings</span></div>
+    <div class="city-chips">
+      <a href="city-phnom-penh.html" class="city-chip">Phnom Penh <span class="chip-count">25</span></a>
+    </div>
+  </div>
+
+  <div class="country-group">
+    <div class="country-header"><span class="country-flag">🇸🇬</span><span class="country-label">Singapore</span><span class="country-count">20 listings</span></div>
+    <div class="city-chips">
+      <a href="city-singapore.html" class="city-chip">Singapore <span class="chip-count">20</span></a>
+    </div>
+  </div>
+
+  <div class="country-group">
+    <div class="country-header"><span class="country-flag">🇲🇾</span><span class="country-label">Malaysia</span><span class="country-count">12 listings</span></div>
+    <div class="city-chips">
+      <a href="city-kuala-lumpur.html" class="city-chip">Kuala Lumpur <span class="chip-count">12</span></a>
+    </div>
   </div>
 </div>
 
@@ -840,20 +933,9 @@ function goSlide(n) {
 }
 setInterval(() => goSlide((cur + 1) % slides.length), 4000);
 
-/* ─── CITY COUNTS ────────────────────────────────────────────────────────── */
-function updateCityCounts() {
-  const counts = {};
-  SHOPS.forEach(s => { counts[s.city] = (counts[s.city] || 0) + 1; });
-  ['Bangkok', 'Pattaya', 'Chiang Mai', 'Phuket', 'Hua Hin'].forEach(city => {
-    const el = document.getElementById('cc-' + city);
-    if (el) el.textContent = (counts[city] || 0) + ' listings';
-  });
-}
-
 /* ─── INIT ───────────────────────────────────────────────────────────────── */
 renderSponsored();
 renderDeals();
-updateCityCounts();
 renderRecentlyAdded();
 </script>
 
