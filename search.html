@@ -145,10 +145,45 @@ body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif
   <div class="search-bar">
     <div class="si2"><span style="color:var(--white40)">🔍</span><input type="text" id="q" placeholder="Search shops..." oninput="doSearch();this.nextElementSibling.classList.toggle('visible',this.value.length>0)"><button class="search-clear" aria-label="Clear search" onclick="event.stopPropagation();var i=this.previousElementSibling;i.value='';i.focus();this.classList.remove('visible');doSearch()">✕</button></div>
     <select class="ss" id="cityQ" onchange="doSearch()">
-      <option value="">All Cities</option>
-      <option>Bangkok</option><option>Pattaya</option><option>Chiang Mai</option>
-      <option>Phuket</option><option>Ho Chi Minh City</option><option>Hanoi</option>
-      <option>Bali</option><option>Jakarta</option><option>Singapore</option>
+      <option value="">🏙️ All Cities</option>
+      <optgroup label="🇹🇭 Thailand">
+        <option value="Bangkok">Bangkok (301)</option>
+        <option value="Pattaya">Pattaya (42)</option>
+        <option value="Chiang Mai">Chiang Mai (38)</option>
+        <option value="Phuket">Phuket (21)</option>
+        <option value="Khon Kaen">Khon Kaen (10)</option>
+        <option value="Ko Samui">Ko Samui (8)</option>
+        <option value="Hua Hin">Hua Hin (8)</option>
+        <option value="Nakhon Ratchasima">Nakhon Ratchasima (7)</option>
+        <option value="Udon Thani">Udon Thani (5)</option>
+        <option value="Phitsanulok">Phitsanulok (3)</option>
+        <option value="Krabi">Krabi (3)</option>
+        <option value="Ubon Ratchathani">Ubon Ratchathani (3)</option>
+        <option value="Sri Racha">Sri Racha (1)</option>
+        <option value="Rayong">Rayong (1)</option>
+        <option value="Ratchaburi">Ratchaburi (1)</option>
+        <option value="Nakhon Sawan">Nakhon Sawan (1)</option>
+        <option value="Kanchanaburi">Kanchanaburi (1)</option>
+      </optgroup>
+      <optgroup label="🇻🇳 Vietnam">
+        <option value="Ho Chi Minh City">Ho Chi Minh City (125)</option>
+        <option value="Hanoi">Hanoi (34)</option>
+      </optgroup>
+      <optgroup label="🇮🇩 Indonesia">
+        <option value="Bali">Bali (28)</option>
+        <option value="Jakarta">Jakarta (28)</option>
+        <option value="Surabaya">Surabaya (6)</option>
+        <option value="Batam">Batam (5)</option>
+      </optgroup>
+      <optgroup label="🇰🇭 Cambodia">
+        <option value="Phnom Penh">Phnom Penh (25)</option>
+      </optgroup>
+      <optgroup label="🇸🇬 Singapore">
+        <option value="Singapore">Singapore (20)</option>
+      </optgroup>
+      <optgroup label="🇲🇾 Malaysia">
+        <option value="Kuala Lumpur">Kuala Lumpur (12)</option>
+      </optgroup>
     </select>
     <button class="btn-go" onclick="doSearch()">Search</button>
   </div>
