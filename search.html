@@ -172,23 +172,24 @@ body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif
   <div class="side">
     <div class="side-section">
       <div class="side-title">Country</div>
-      <label class="side-opt"><input type="checkbox" checked onchange="doSearch()"> 🇹🇭 Thailand <span class="side-ct">473</span></label>
-      <label class="side-opt"><input type="checkbox" checked onchange="doSearch()"> 🇻🇳 Vietnam <span class="side-ct">158</span></label>
-      <label class="side-opt"><input type="checkbox" checked onchange="doSearch()"> 🇮🇩 Indonesia <span class="side-ct">58</span></label>
-      <label class="side-opt"><input type="checkbox" checked onchange="doSearch()"> 🇰🇭 Cambodia <span class="side-ct">25</span></label>
-      <label class="side-opt"><input type="checkbox" checked onchange="doSearch()"> 🇸🇬 Singapore <span class="side-ct">20</span></label>
+      <label class="side-opt"><input type="checkbox" data-country="Thailand" checked onchange="doSearch()"> 🇹🇭 Thailand <span class="side-ct">473</span></label>
+      <label class="side-opt"><input type="checkbox" data-country="Vietnam" checked onchange="doSearch()"> 🇻🇳 Vietnam <span class="side-ct">159</span></label>
+      <label class="side-opt"><input type="checkbox" data-country="Indonesia" checked onchange="doSearch()"> 🇮🇩 Indonesia <span class="side-ct">67</span></label>
+      <label class="side-opt"><input type="checkbox" data-country="Cambodia" checked onchange="doSearch()"> 🇰🇭 Cambodia <span class="side-ct">25</span></label>
+      <label class="side-opt"><input type="checkbox" data-country="Singapore" checked onchange="doSearch()"> 🇸🇬 Singapore <span class="side-ct">20</span></label>
+      <label class="side-opt"><input type="checkbox" data-country="Malaysia" checked onchange="doSearch()"> 🇲🇾 Malaysia <span class="side-ct">12</span></label>
     </div>
     <div class="side-section">
       <div class="side-title">Status</div>
-      <label class="side-opt"><input type="checkbox" onchange="doSearch()"> ⭐ Featured only</label>
-      <label class="side-opt"><input type="checkbox" onchange="doSearch()"> 🏷️ Has deal</label>
-      <label class="side-opt"><input type="checkbox" onchange="doSearch()"> 🆕 New listings</label>
+      <label class="side-opt"><input type="checkbox" data-status="featured" onchange="doSearch()"> ⭐ Featured only</label>
+      <label class="side-opt"><input type="checkbox" data-status="deal" onchange="doSearch()"> 🏷️ Has deal</label>
+      <label class="side-opt"><input type="checkbox" data-status="new" onchange="doSearch()"> 🆕 New listings</label>
     </div>
     <div class="side-section">
       <div class="side-title">Rating</div>
-      <label class="side-opt"><input type="radio" name="rating" onchange="doSearch()"> ★ 4.5+ only</label>
-      <label class="side-opt"><input type="radio" name="rating" onchange="doSearch()"> ★ 4.0+</label>
-      <label class="side-opt"><input type="radio" name="rating" checked onchange="doSearch()"> Any rating</label>
+      <label class="side-opt"><input type="radio" name="rating" value="4.5" onchange="doSearch()"> ★ 4.5+ only</label>
+      <label class="side-opt"><input type="radio" name="rating" value="4.0" onchange="doSearch()"> ★ 4.0+</label>
+      <label class="side-opt"><input type="radio" name="rating" value="0" checked onchange="doSearch()"> Any rating</label>
     </div>
   </div>
   <div class="main">
@@ -248,7 +249,7 @@ fetch('data/listings.json').then(r=>r.json()).then(data=>{
     const tags=[...(l.tags||[])];
     if(VERIFIED_SLUGS.has(l.slug)&&!tags.includes('verified'))tags.push('verified');
     return{
-      name:l.name,cat,city:l.city||'Unknown',
+      name:l.name,cat,city:l.city||'Unknown',country:l.country||'Unknown',
       rating:l.rating||0,visits:(l.review_count||0)+' reviews',
       tags,img,page:'listing-'+l.slug+'.html',deal:null,slug:l.slug
     };
@@ -295,11 +296,33 @@ function cardHtml(s){
 function doSearch(){
   const q=document.getElementById('q').value.toLowerCase();
   const city=document.getElementById('cityQ').value;
+  // Read sidebar country checkboxes
+  const countryChecks=document.querySelectorAll('[data-country]');
+  const allowedCountries=new Set();
+  countryChecks.forEach(function(cb){if(cb.checked)allowedCountries.add(cb.dataset.country.toLowerCase());});
+  // Read sidebar status checkboxes
+  const featuredOnly=document.querySelector('[data-status="featured"]');
+  const dealCheck=document.querySelector('[data-status="deal"]');
+  const newCheck=document.querySelector('[data-status="new"]');
+  const wantFeatured=featuredOnly&&featuredOnly.checked;
+  const wantDeal=dealCheck&&dealCheck.checked;
+  const wantNew=newCheck&&newCheck.checked;
+  // Read rating radio
+  const ratingRadio=document.querySelector('input[name="rating"]:checked');
+  const minRating=ratingRadio?parseFloat(ratingRadio.value):0;
   let filtered=ALL.filter(s=>{
     if(activeCat&&s.cat!==activeCat)return false;
     if(dealsOnly&&!s.tags.includes('deal')&&!s.deal)return false;
     if(city&&s.city!==city)return false;
     if(q&&!s.name.toLowerCase().includes(q)&&!s.city.toLowerCase().includes(q))return false;
+    // Sidebar country filter
+    if(countryChecks.length>0&&!allowedCountries.has((s.country||'').toLowerCase()))return false;
+    // Sidebar status filters
+    if(wantFeatured&&!s.tags.includes('featured'))return false;
+    if(wantDeal&&!s.tags.includes('deal')&&!s.deal)return false;
+    if(wantNew&&!s.tags.includes('new'))return false;
+    // Sidebar rating filter
+    if(minRating>0&&(s.rating||0)<minRating)return false;
     return true;
   });
   // Sort — verified always first, then by selected sort
@@ -340,6 +363,11 @@ function clearSearch(){
   activeCat='';dealsOnly=false;
   document.querySelectorAll('.fp').forEach((p,i)=>{p.classList.toggle('active',i===0);});
   document.getElementById('pdeal').classList.remove('active');
+  // Reset sidebar filters
+  document.querySelectorAll('[data-country]').forEach(function(cb){cb.checked=true;});
+  document.querySelectorAll('[data-status]').forEach(function(cb){cb.checked=false;});
+  var anyRating=document.querySelector('input[name="rating"][value="0"]');
+  if(anyRating)anyRating.checked=true;
   doSearch();
 }
 
