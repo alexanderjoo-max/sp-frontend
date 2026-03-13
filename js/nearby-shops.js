@@ -32,7 +32,7 @@
     for (var k = 0; k < slugs.length; k++) {
       var l = slugMap[slugs[k]];
       if (!l) continue;
-      html += spCardHTML(normalizeShop(l, garbageSet));
+      html += spCardHTML(normalizeShop(l, garbageSet, { flatUrls: true }));
     }
 
     if (html) {
