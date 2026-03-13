@@ -157,7 +157,7 @@
         '<div class="hero-overlay"></div>' +
         '<div class="hero-content">' +
           '<div style="font-size:26px;margin-bottom:4px;">' + flag + '</div>' +
-          '<h1 class="city-big">' + cityName.toUpperCase() + '</h1>' +
+          '<h1 class="city-big">' + cityName + '</h1>' +
           '<p style="font-size:14px;color:rgba(255,255,255,.5);margin-top:4px;">Loading\u2026</p>' +
         '</div>' +
       '</div>';
@@ -239,7 +239,7 @@
                 '<a href="' + (basePath || '/') + countrySlug + '/" style="color:inherit;text-decoration:none;">' + countryName + '</a>' +
               '</p>' +
               '<div style="font-size:26px;margin-bottom:4px;">' + flag + '</div>' +
-              '<h1 class="city-big">' + cityName.toUpperCase() + '</h1>' +
+              '<h1 class="city-big">' + cityName + '</h1>' +
               '<div class="city-stats-row">' +
                 '<div class="city-stat"><strong>' + cityShops.length + '</strong> listings</div>' +
                 '<div class="city-stat"><strong>' + catKeys.length + '</strong> categories</div>' +
