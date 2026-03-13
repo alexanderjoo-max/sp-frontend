@@ -94,8 +94,12 @@ function bestImage(l, garbageSet) {
  */
 function spCardHTML(s) {
   var pv = s.pageViews || (s.id && SP_VIEWS[s.id]) || null;
+  var src = imgSrc(s);
+  var imgTag = src
+    ? '<img class="sp-img" src="' + src + '" alt="' + s.name + '" ' + imgErr() + '>'
+    : '<div class="sp-img" style="background:linear-gradient(135deg,#2a1a1a,#1a0a0a);"></div>';
   return '<a href="' + s.page + '" class="sp-card">' +
-    '<img class="sp-img" src="' + imgSrc(s) + '" alt="' + s.name + '" ' + imgErr() + '>' +
+    imgTag +
     '<div class="sp-badges">' + badgeHTML(s.tags) + '</div>' +
     '<div class="sp-body">' +
       '<div class="sp-name">' + s.name + vCheck(s.tags) + '</div>' +
