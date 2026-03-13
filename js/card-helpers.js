@@ -93,6 +93,7 @@ function bestImage(l, garbageSet) {
  * @param {Object} s — normalized shop: { name, page, img, tags[], catLabel, city, rating, visits, deal }
  */
 function spCardHTML(s) {
+  var pv = s.pageViews || (s.id && SP_VIEWS[s.id]) || null;
   return '<a href="' + s.page + '" class="sp-card">' +
     '<img class="sp-img" src="' + imgSrc(s) + '" alt="' + s.name + '" ' + imgErr() + '>' +
     '<div class="sp-badges">' + badgeHTML(s.tags) + '</div>' +
@@ -103,7 +104,7 @@ function spCardHTML(s) {
         '<div class="rating"><span class="stars">' + starsHTML(s.rating) + '</span> ' + (s.rating || 'N/A') + '</div>' +
         '<span class="visits">' + s.visits + '</span>' +
       '</div>' +
-      (s.pageViews ? '<div class="sp-views">\uD83D\uDC41 Viewed ' + s.pageViews + ' times</div>' : '') +
+      (pv ? '<div class="sp-views">\uD83D\uDC41 Viewed ' + pv + ' times</div>' : '') +
       (s.deal ? '<div class="sp-deal">\uD83C\uDFF7\uFE0F ' + s.deal + '</div>' : '') +
     '</div></a>';
 }

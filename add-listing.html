@@ -3,91 +3,67 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
-<title>Add Your Listing — Swanpass</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>List Your Business — Swanpass</title>
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--black:#0a0a0a;--black2:#111111;--black3:#1a1a1a;--card-bg:#161616;--red:#e8142a;--red-dark:#b80f20;--white:#fff;--white70:rgba(255,255,255,.7);--white40:rgba(255,255,255,.4);--white10:rgba(255,255,255,.08);--gold:#d4a847;--green:#22c55e;--border:rgba(255,255,255,.08);--radius:10px;}
 *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
-body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;}
+body{background:var(--black);color:var(--white);font-family:'Inter',sans-serif;font-size:14px;}
 /* HERO */
-.page-hero{background:linear-gradient(135deg,#1a0008,#0a0a0a);padding:32px 16px;text-align:center;border-bottom:1px solid var(--border);}
-.hero-title{font-family:'Bebas Neue',sans-serif;font-size:40px;letter-spacing:2px;margin-bottom:8px;}
+.page-hero{background:linear-gradient(135deg,#1a0008,#0a0a0a);padding:40px 16px 32px;text-align:center;border-bottom:1px solid var(--border);}
+.hero-title{font-family:'Antonio',sans-serif;font-size:40px;letter-spacing:2px;margin-bottom:8px;}
 .hero-title span{color:var(--red);}
-.hero-sub{font-size:14px;color:var(--white70);margin-bottom:20px;max-width:480px;margin-left:auto;margin-right:auto;}
+.hero-sub{font-size:14px;color:var(--white70);margin-bottom:20px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.6;}
 .perks{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;}
 .perk{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--white70);}
 .perk-icon{font-size:16px;}
-/* STEP INDICATOR */
-.steps{display:flex;align-items:center;padding:20px 16px;max-width:700px;margin:0 auto;}
-.step{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;}
-.step-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;transition:all .2s;}
-.step.done .step-num{background:var(--green);color:#000;}
-.step.active .step-num{background:var(--red);color:var(--white);}
-.step.pending .step-num{background:var(--white10);color:var(--white40);}
-.step-label{font-size:10px;color:var(--white40);text-align:center;white-space:nowrap;}
-.step.active .step-label{color:var(--white);}
-.step-line{flex:1;height:2px;background:var(--border);margin:0 4px;margin-bottom:18px;}
-.step-line.done{background:var(--green);}
-/* FORM */
-.form-wrap{max-width:700px;margin:0 auto;padding:20px 16px 40px;}
-.form-section{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px;}
-.form-section-title{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1px;margin-bottom:16px;display:flex;align-items:center;gap:8px;padding-bottom:12px;border-bottom:1px solid var(--border);}
-.form-group{margin-bottom:16px;}
-.form-label{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--white40);margin-bottom:6px;}
-.form-label .req{color:var(--red);}
-.form-input,.form-select,.form-textarea{width:100%;background:var(--white10);border:1px solid var(--border);border-radius:8px;padding:11px 14px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;transition:border-color .2s;}
-.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--red);}
-.form-input::placeholder,.form-textarea::placeholder{color:var(--white40);}
-.form-select option{background:#1a1a1a;}
-.form-textarea{resize:vertical;min-height:100px;line-height:1.5;}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.form-hint{font-size:11px;color:var(--white40);margin-top:4px;}
-/* CATEGORY CHECKBOXES */
-.cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
-.cat-option{display:flex;align-items:center;gap:8px;background:var(--white10);border:1px solid var(--border);border-radius:8px;padding:10px 12px;cursor:pointer;transition:all .2s;font-size:13px;}
-.cat-option.selected{background:rgba(232,20,42,.15);border-color:var(--red);color:var(--white);}
-.cat-option input{accent-color:var(--red);width:14px;height:14px;}
-/* PHOTO UPLOAD */
-.photo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
-.photo-slot{aspect-ratio:1;border:2px dashed var(--border);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:border-color .2s;font-size:24px;background:var(--white10);gap:4px;}
-.photo-slot:hover{border-color:var(--red);}
-.photo-slot .ph-label{font-size:10px;color:var(--white40);}
-.photo-slot.filled{border-style:solid;border-color:var(--green);position:relative;overflow:hidden;}
-.photo-slot.filled img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
-/* PRICING TABLE */
-.pricing-rows{}
-.pricing-row{display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center;margin-bottom:8px;}
-.pricing-row .form-input{margin:0;}
-.pricing-dur{background:var(--white10);border:1px solid var(--border);border-radius:8px;padding:11px 10px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:13px;outline:none;width:90px;}
-.btn-add-row{background:none;border:1px dashed var(--border);border-radius:8px;padding:8px;color:var(--white40);cursor:pointer;width:100%;font-size:12px;margin-top:4px;transition:all .2s;}
-.btn-add-row:hover{border-color:var(--red);color:var(--white);}
+/* CONTENT */
+.content-wrap{max-width:700px;margin:0 auto;padding:20px 16px 40px;}
+.section-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px;}
+.section-title{font-family:'Antonio',sans-serif;font-size:20px;letter-spacing:1px;margin-bottom:14px;display:flex;align-items:center;gap:8px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+.section-text{font-size:13px;color:var(--white70);line-height:1.7;}
+.section-text + .section-text{margin-top:10px;}
+/* STATS GRID */
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px;}
+.stat-box{background:var(--white10);border:1px solid var(--border);border-radius:8px;padding:14px 10px;text-align:center;}
+.stat-val{font-family:'Antonio',sans-serif;font-size:24px;letter-spacing:1px;color:var(--gold);margin-bottom:2px;}
+.stat-lbl{font-size:10px;color:var(--white40);text-transform:uppercase;letter-spacing:.5px;}
 /* PACKAGES */
 .pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
-.pkg{border:1px solid var(--border);border-radius:var(--radius);padding:16px;cursor:pointer;transition:all .2s;text-align:center;}
-.pkg:hover,.pkg.active{border-color:var(--red);background:rgba(232,20,42,.08);}
+.pkg{border:1px solid var(--border);border-radius:var(--radius);padding:16px;cursor:default;transition:all .2s;text-align:center;}
+.pkg:hover{border-color:rgba(232,20,42,.4);background:rgba(232,20,42,.04);}
+.pkg.pop{border-color:var(--red);background:rgba(232,20,42,.08);}
 .pkg-icon{font-size:28px;margin-bottom:8px;}
-.pkg-name{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1px;margin-bottom:4px;}
+.pkg-name{font-family:'Antonio',sans-serif;font-size:18px;letter-spacing:1px;margin-bottom:4px;}
+.pkg.pop .pkg-name{color:var(--red);}
 .pkg-price{font-size:22px;font-weight:700;color:var(--gold);margin-bottom:4px;}
 .pkg-period{font-size:11px;color:var(--white40);margin-bottom:10px;}
 .pkg-features{list-style:none;text-align:left;}
 .pkg-features li{font-size:11px;color:var(--white70);padding:3px 0;display:flex;align-items:center;gap:5px;}
 .pkg-features li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;}
-.pkg.active .pkg-name{color:var(--red);}
-/* SUBMIT */
-.submit-section{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center;}
-.submit-section h3{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1px;margin-bottom:8px;}
-.submit-section p{font-size:13px;color:var(--white70);margin-bottom:20px;}
-.btn-submit{background:var(--red);color:var(--white);border:none;border-radius:8px;padding:14px 32px;font-size:15px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;transition:background .2s;}
-.btn-submit:hover{background:var(--red-dark);}
-.terms-note{font-size:11px;color:var(--white40);margin-top:12px;}
-.terms-note a{color:var(--red);text-decoration:none;}
+.pkg-pop-label{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--red);margin-bottom:6px;}
+/* CLAIM BOX */
+.claim-box{background:linear-gradient(135deg,rgba(59,130,246,.08),rgba(59,130,246,.02));border:1px solid rgba(59,130,246,.25);border-radius:var(--radius);padding:20px;margin-bottom:16px;}
+.claim-box .section-title{border-bottom-color:rgba(59,130,246,.15);}
+/* CTA */
+.cta-section{background:linear-gradient(135deg,rgba(232,20,42,.1),rgba(232,20,42,.03));border:1px solid rgba(232,20,42,.3);border-radius:var(--radius);padding:24px 20px;text-align:center;margin-bottom:16px;}
+.cta-section h3{font-family:'Antonio',sans-serif;font-size:24px;letter-spacing:1px;margin-bottom:8px;}
+.cta-section p{font-size:13px;color:var(--white70);margin-bottom:16px;line-height:1.6;}
+.cta-email{display:inline-block;background:var(--red);color:var(--white);border-radius:8px;padding:14px 32px;font-size:15px;font-weight:700;font-family:'Inter',sans-serif;text-decoration:none;transition:background .2s;}
+.cta-email:hover{background:var(--red-dark);}
+.cta-note{font-size:12px;color:var(--white40);margin-top:12px;line-height:1.5;}
+/* BENEFITS LIST */
+.benefits-list{list-style:none;margin-top:12px;}
+.benefits-list li{font-size:13px;color:var(--white70);padding:6px 0;display:flex;align-items:flex-start;gap:8px;line-height:1.5;}
+.benefits-list li span{flex-shrink:0;font-size:16px;}
 /* BOTTOM NAV */
 .bot{position:fixed;bottom:0;left:0;right:0;z-index:90;background:var(--black2);border-top:1px solid var(--border);display:flex;padding:8px 0 calc(8px + env(safe-area-inset-bottom));}
 .bi{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;color:var(--white40);text-decoration:none;}
 .bi.active{color:var(--red);}
 .bic{font-size:20px;}.bil{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
 .bsp{height:70px;}
-@media(min-width:768px){.bot,.bsp{display:none;}.form-row{grid-template-columns:1fr 1fr;}.cat-grid{grid-template-columns:repeat(3,1fr);}}
+@media(min-width:768px){.bot,.bsp{display:none;}.stats-grid{grid-template-columns:repeat(3,1fr);}.pkg-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:480px){.stats-grid{grid-template-columns:repeat(2,1fr);}.pkg-grid{grid-template-columns:1fr;}}
 .logo-img{height:28px;display:block;}
 </style>
 <link rel="stylesheet" href="css/site.css?v=3">
@@ -97,25 +73,23 @@ body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif
 <body>
 <header>
   <div class="header-inner">
-    <button class="btn-hamburger" aria-label="Menu" onclick="var n=document.querySelector('.nav-tabs');n.classList.toggle('open');this.textContent=n.classList.contains('open')?'\u2715':'\u2630'">☰</button>
+    <button class="btn-hamburger" aria-label="Menu" onclick="var n=document.querySelector('.nav-tabs');n.classList.toggle('open');this.textContent=n.classList.contains('open')?'\u2715':'\u2630'">&#9776;</button>
     <div class="header-logo-wrap"><a href="index.html"><img src="./swanpass_logo_rev.png" alt="Swanpass" class="logo-img"></a></div>
     <div class="header-nav">
-      <a href="map.html">🗺️ Map</a>      <a href="deals.html">🏷️ Deals</a>      <a href="cities.html">📍 Cities</a>      <a href="talent.html">👩 Girls</a>
-      <a href="search.html">🔎 Search</a>
-      <a href="add-listing.html">➕ List Your Business</a>
+      <a href="map.html">&#x1F5FA;&#xFE0F; Map</a>      <a href="deals.html">&#x1F3F7;&#xFE0F; Deals</a>      <a href="cities.html">&#x1F4CD; Cities</a>      <a href="talent.html">&#x1F469; Girls</a>
+      <a href="search.html">&#x1F50E; Search</a>
+      <a href="add-listing.html">&#x2795; List Your Business</a>
     </div>
-
-
     <button class="btn-login" onclick="window.location='login.html'">Login</button>
   </div>
 </header>
 <nav class="nav-tabs">
   <div class="nav-tabs-inner">
-    <a href="map.html" class="nav-tab">🗺️ Map</a>    <a href="deals.html" class="nav-tab">🏷️ Deals</a>    <a href="cities.html" class="nav-tab">📍 Cities</a>
-    <a href="talent.html" class="nav-tab">👩 Girls</a>
-    <a href="search.html" class="nav-tab">🔎 Search</a>
-    <a href="add-listing.html" class="nav-tab">➕ List Your Business</a>
-    <a href="admin.html" class="nav-tab">⚙️ Admin</a>
+    <a href="map.html" class="nav-tab">&#x1F5FA;&#xFE0F; Map</a>    <a href="deals.html" class="nav-tab">&#x1F3F7;&#xFE0F; Deals</a>    <a href="cities.html" class="nav-tab">&#x1F4CD; Cities</a>
+    <a href="talent.html" class="nav-tab">&#x1F469; Girls</a>
+    <a href="search.html" class="nav-tab">&#x1F50E; Search</a>
+    <a href="add-listing.html" class="nav-tab">&#x2795; List Your Business</a>
+    <a href="admin.html" class="nav-tab">&#x2699;&#xFE0F; Admin</a>
   </div>
 </nav>
 <script>
@@ -146,217 +120,156 @@ body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif
 })();
 </script>
 
-
+<!-- HERO -->
 <div class="page-hero">
   <div class="hero-title">List Your <span>Business</span></div>
-  <div class="hero-sub">Reach thousands of visitors across Southeast Asia every month. Get verified and start attracting customers today.</div>
+  <div class="hero-sub">Put your venue in front of thousands of real visitors actively searching for places like yours across Southeast Asia.</div>
   <div class="perks">
-    <div class="perk"><span class="perk-icon">👁️</span> 500K+ monthly users</div>
-    <div class="perk"><span class="perk-icon">🌏</span> 11 cities covered</div>
-    <div class="perk"><span class="perk-icon">⚡</span> Live within 24 hours</div>
-    <div class="perk"><span class="perk-icon">📣</span> Promo tools included</div>
+    <div class="perk"><span class="perk-icon">&#x1F4C8;</span> 60K+ monthly visits</div>
+    <div class="perk"><span class="perk-icon">&#x1F30F;</span> 11 cities covered</div>
+    <div class="perk"><span class="perk-icon">&#x2705;</span> Verified credibility</div>
+    <div class="perk"><span class="perk-icon">&#x2B50;</span> Featured placement</div>
   </div>
 </div>
 
-<!-- STEP INDICATOR -->
-<div class="steps">
-  <div class="step active"><div class="step-num">1</div><div class="step-label">Basic Info</div></div>
-  <div class="step-line"></div>
-  <div class="step pending"><div class="step-num">2</div><div class="step-label">Details</div></div>
-  <div class="step-line"></div>
-  <div class="step pending"><div class="step-num">3</div><div class="step-label">Photos</div></div>
-  <div class="step-line"></div>
-  <div class="step pending"><div class="step-num">4</div><div class="step-label">Package</div></div>
-</div>
+<div class="content-wrap">
 
-<div class="form-wrap">
+  <!-- WHY SWANPASS -->
+  <div class="section-card">
+    <div class="section-title">&#x1F4CA; Why Swanpass Works for Your Business</div>
+    <p class="section-text">Swanpass is the top directory for massage, spa, and nightlife venues in Southeast Asia. Our audience is highly engaged and actively looking for places to visit. Here are the numbers:</p>
 
-  <!-- STEP 1: BASIC INFO -->
-  <div class="form-section">
-    <div class="form-section-title">📋 Basic Information</div>
-    <div class="form-group">
-      <label class="form-label">Business Name <span class="req">*</span></label>
-      <input class="form-input" type="text" placeholder="e.g. Chairman Nuru Massage">
-    </div>
-    <div class="form-row">
-      <div class="form-group">
-        <label class="form-label">Country <span class="req">*</span></label>
-        <select class="form-select">
-          <option>Thailand</option><option>Vietnam</option><option>Indonesia</option>
-          <option>Cambodia</option><option>Malaysia</option><option>Singapore</option>
-        </select>
+    <div class="stats-grid" style="margin-top:14px;">
+      <div class="stat-box">
+        <div class="stat-val">60,669</div>
+        <div class="stat-lbl">Monthly Visits</div>
       </div>
-      <div class="form-group">
-        <label class="form-label">City <span class="req">*</span></label>
-        <select class="form-select">
-          <option>Bangkok</option><option>Pattaya</option><option>Chiang Mai</option>
-          <option>Phuket</option><option>Ho Chi Minh City</option><option>Hanoi</option>
-          <option>Bali</option><option>Jakarta</option><option>Singapore</option><option>Kuala Lumpur</option>
-        </select>
+      <div class="stat-box">
+        <div class="stat-val">423,485</div>
+        <div class="stat-lbl">Page Views / Mo</div>
       </div>
-    </div>
-    <div class="form-group">
-      <label class="form-label">Address <span class="req">*</span></label>
-      <input class="form-input" type="text" placeholder="Full street address">
-    </div>
-    <div class="form-row">
-      <div class="form-group">
-        <label class="form-label">Phone Number</label>
-        <input class="form-input" type="tel" placeholder="+66 XX XXX XXXX">
+      <div class="stat-box">
+        <div class="stat-val">6.98</div>
+        <div class="stat-lbl">Pages / Visit</div>
       </div>
-      <div class="form-group">
-        <label class="form-label">Website (optional)</label>
-        <input class="form-input" type="url" placeholder="https://...">
+      <div class="stat-box">
+        <div class="stat-val">2:32</div>
+        <div class="stat-lbl">Avg Visit Duration</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val">28%</div>
+        <div class="stat-lbl">Bounce Rate</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val">86.8%</div>
+        <div class="stat-lbl">Mobile Traffic</div>
       </div>
     </div>
+
+    <p class="section-text">Visitors browse nearly 7 pages per session and spend over 2 minutes on site &mdash; meaning they're not just passing through, they're deciding where to go. A low 28% bounce rate confirms real intent. And with 86.8% mobile traffic, users are often searching on the go, ready to visit.</p>
   </div>
 
-  <!-- CATEGORIES -->
-  <div class="form-section">
-    <div class="form-section-title">🏷️ Categories <span style="font-size:12px;font-weight:400;color:var(--white40)">(select all that apply)</span></div>
-    <div class="cat-grid">
-      <label class="cat-option" onclick="this.classList.toggle('selected')"><input type="checkbox"> 👄 Massage</label>
-      <label class="cat-option" onclick="this.classList.toggle('selected')"><input type="checkbox"> 🛁 Soapy</label>
-      <label class="cat-option" onclick="this.classList.toggle('selected')"><input type="checkbox"> 💃 Gentlemen's Club</label>
-      <label class="cat-option" onclick="this.classList.toggle('selected')"><input type="checkbox"> 👯 Go-Go Bars</label>
-      <label class="cat-option" onclick="this.classList.toggle('selected')"><input type="checkbox"> ❤️‍🔥 Freelancers</label>
-      <label class="cat-option" onclick="this.classList.toggle('selected')"><input type="checkbox"> 📍 Red Light</label>
-    </div>
-  </div>
-
-  <!-- HOURS -->
-  <div class="form-section">
-    <div class="form-section-title">🕐 Operating Hours</div>
-    <div class="form-row">
-      <div class="form-group">
-        <label class="form-label">Opens</label>
-        <select class="form-select">
-          <option>12:00 PM</option><option>1:00 PM</option><option>2:00 PM</option>
-          <option>3:00 PM</option><option>4:00 PM</option><option>5:00 PM</option>
-          <option>6:00 PM</option><option>7:00 PM</option><option>8:00 PM</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Closes</label>
-        <select class="form-select">
-          <option>12:00 AM</option><option>1:00 AM</option><option>2:00 AM</option>
-          <option>3:00 AM</option><option>4:00 AM</option><option>5:00 AM</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="form-label">Days Open</label>
-      <select class="form-select">
-        <option>Daily (7 days)</option><option>Mon–Fri only</option><option>Weekends only</option><option>Custom</option>
-      </select>
-    </div>
-  </div>
-
-  <!-- DESCRIPTION -->
-  <div class="form-section">
-    <div class="form-section-title">📝 Description</div>
-    <div class="form-group">
-      <label class="form-label">About Your Business <span class="req">*</span></label>
-      <textarea class="form-textarea" placeholder="Describe your business, services, atmosphere, and what makes you unique..."></textarea>
-      <div class="form-hint">Min 50 characters. Be specific — good descriptions get more clicks.</div>
-    </div>
-  </div>
-
-  <!-- PHOTOS -->
-  <div class="form-section">
-    <div class="form-section-title">📷 Photos</div>
-    <p style="font-size:13px;color:var(--white70);margin-bottom:14px;">Upload up to 8 photos. First photo will be your main thumbnail. High quality photos get significantly more views.</p>
-    <div class="photo-grid">
-      <div class="photo-slot filled"><img src="https://sgp1.vultrobjects.com/swanprod/uploads/photo/image/14214/chairman-nuru.jpeg" alt=""><span style="position:absolute;bottom:4px;right:4px;background:var(--green);color:#000;font-size:8px;font-weight:800;padding:2px 5px;border-radius:3px;z-index:1;">MAIN</span></div>
-      <div class="photo-slot">➕<span class="ph-label">Add photo</span></div>
-      <div class="photo-slot">➕<span class="ph-label">Add photo</span></div>
-      <div class="photo-slot">➕<span class="ph-label">Add photo</span></div>
-    </div>
+  <!-- WHAT YOU GET -->
+  <div class="section-card">
+    <div class="section-title">&#x1F4A1; What a Listing Gets You</div>
+    <ul class="benefits-list">
+      <li><span>&#x1F4CD;</span> A dedicated profile page with photos, services, pricing, and map location</li>
+      <li><span>&#x2B50;</span> Star ratings and real customer reviews that build trust</li>
+      <li><span>&#x1F50D;</span> Visibility in search, city pages, category filters, and the interactive map</li>
+      <li><span>&#x1F3F7;&#xFE0F;</span> Ability to run exclusive Swanpass deals that drive foot traffic</li>
+      <li><span>&#x1F4F1;</span> Optimized for mobile &mdash; where 87% of our users browse</li>
+      <li><span>&#x2705;</span> Verified badge that signals credibility and quality to visitors</li>
+    </ul>
   </div>
 
   <!-- PRICING -->
-  <div class="form-section">
-    <div class="form-section-title">💰 Services & Pricing <span style="font-size:12px;font-weight:400;color:var(--white40)">(optional)</span></div>
-    <div class="pricing-rows" id="pricingRows">
-      <div class="pricing-row">
-        <input class="form-input" type="text" placeholder="Service name (e.g. Nuru Massage)">
-        <select class="pricing-dur"><option>60 min</option><option>30 min</option><option>90 min</option><option>120 min</option></select>
-        <input class="form-input" type="text" placeholder="Price" style="width:100px">
-      </div>
-      <div class="pricing-row">
-        <input class="form-input" type="text" placeholder="Service name">
-        <select class="pricing-dur"><option>60 min</option><option>30 min</option><option>90 min</option><option>120 min</option></select>
-        <input class="form-input" type="text" placeholder="Price" style="width:100px">
-      </div>
-    </div>
-    <button class="btn-add-row" onclick="addRow()">+ Add another service</button>
-  </div>
-
-  <!-- PACKAGE -->
-  <div class="form-section">
-    <div class="form-section-title">📦 Choose Your Package</div>
+  <div class="section-card">
+    <div class="section-title">&#x1F4E6; Plans &amp; Pricing</div>
+    <p class="section-text" style="margin-bottom:14px;">Every shop on Swanpass starts with a free listing. Upgrade to Verified to claim your shop and build credibility, or go Featured for maximum visibility and promotion.</p>
     <div class="pkg-grid">
-      <div class="pkg" onclick="selectPkg(this)">
-        <div class="pkg-icon">📋</div>
-        <div class="pkg-name">Basic</div>
-        <div class="pkg-price">Free</div>
+      <div class="pkg">
+        <div class="pkg-icon">&#x1F4CB;</div>
+        <div class="pkg-name">Free</div>
+        <div class="pkg-price">&#x0E3F;0</div>
         <div class="pkg-period">forever</div>
         <ul class="pkg-features">
           <li>Listed in directory</li>
           <li>Basic profile page</li>
-          <li>Up to 4 photos</li>
+          <li>Photos &amp; business info</li>
+          <li>Appears on map &amp; city pages</li>
           <li>Customer reviews</li>
         </ul>
-      </div>
-      <div class="pkg active" onclick="selectPkg(this)">
-        <div class="pkg-icon">⭐</div>
-        <div class="pkg-name">Featured</div>
-        <div class="pkg-price">฿2,500</div>
-        <div class="pkg-period">/ month</div>
-        <ul class="pkg-features">
-          <li>Everything in Basic</li>
-          <li>Featured badge</li>
-          <li>Priority in search</li>
-          <li>Up to 12 photos</li>
-          <li>Deal posting</li>
+        <ul class="pkg-features" style="margin-top:6px;opacity:.45;">
+          <li style="text-decoration:line-through;">No verified badge</li>
+          <li style="text-decoration:line-through;">No featured placement</li>
+          <li style="text-decoration:line-through;">No deal posting</li>
         </ul>
       </div>
-      <div class="pkg" onclick="selectPkg(this)">
-        <div class="pkg-icon">📣</div>
-        <div class="pkg-name">Sponsored</div>
-        <div class="pkg-price">฿6,000</div>
+      <div class="pkg pop">
+        <div class="pkg-pop-label">Most Popular</div>
+        <div class="pkg-icon">&#x2705;</div>
+        <div class="pkg-name">Verified</div>
+        <div class="pkg-price">&#x0E3F;3,500</div>
         <div class="pkg-period">/ month</div>
         <ul class="pkg-features">
-          <li>Everything in Featured</li>
-          <li>Homepage banner slot</li>
-          <li>Sponsored badge</li>
-          <li>Top of search results</li>
+          <li>Everything in Free</li>
+          <li>Verified badge</li>
+          <li>Claim &amp; manage your listing</li>
+          <li>Update photos &amp; business info</li>
+          <li>Priority over free listings</li>
+          <li>Post deals &amp; offers</li>
+          <li>Stronger credibility &amp; trust</li>
+        </ul>
+      </div>
+      <div class="pkg">
+        <div class="pkg-icon">&#x2B50;</div>
+        <div class="pkg-name">Featured</div>
+        <div class="pkg-price">&#x0E3F;7,000</div>
+        <div class="pkg-period">/ month</div>
+        <ul class="pkg-features">
+          <li>Everything in Verified</li>
+          <li>Featured badge</li>
+          <li>Homepage &amp; top-of-page placement</li>
+          <li>Priority visibility on key pages</li>
+          <li>Promoted deal placement</li>
           <li>Monthly analytics report</li>
           <li>Account manager</li>
         </ul>
       </div>
     </div>
+    <p class="section-text" style="margin-top:14px;font-size:12px;color:var(--white40);">All paid plans are activated manually. Email <strong style="color:var(--gold);">hello@swanpass.com</strong> to get started.</p>
   </div>
 
-  <!-- SUBMIT -->
-  <div class="submit-section">
-    <h3>Ready to Go Live?</h3>
-    <p>Your listing will be reviewed within 24 hours and published once approved. You'll receive an email confirmation.</p>
-    <button class="btn-submit" onclick="alert('Submission coming soon — this is a demo!')">Submit Listing →</button>
-    <div class="terms-note">By submitting you agree to our <a href="#">Terms of Use</a> and <a href="#">Content Policy</a></div>
+  <!-- CLAIM YOUR SHOP -->
+  <div class="claim-box">
+    <div class="section-title">&#x1F50D; Already See Your Shop on Swanpass?</div>
+    <p class="section-text">Many venues are already listed on Swanpass for free based on public data and user submissions. If your business is already on the site, you can <strong style="color:var(--white);">claim it through the Verified plan</strong> &mdash; take control of your listing, update your photos and details, earn the verified badge, and start posting deals.</p>
+    <p class="section-text">Email <strong style="color:var(--gold);">hello@swanpass.com</strong> with your business name and city to claim your shop.</p>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="section-card">
+    <div class="section-title">&#x1F4AC; How It Works</div>
+    <p class="section-text">Swanpass does not yet offer automated self-serve listing or claiming. All listings and claims are currently handled personally to ensure quality and accuracy.</p>
+    <p class="section-text" style="margin-top:12px;"><strong style="color:var(--white);">To get started:</strong></p>
+    <ul class="benefits-list" style="margin-top:6px;">
+      <li><span>1&#xFE0F;&#x20E3;</span> Email us at <strong style="color:var(--gold);">hello@swanpass.com</strong></li>
+      <li><span>2&#xFE0F;&#x20E3;</span> Tell us your business name, city, and whether you want to list a new venue or claim an existing one</li>
+      <li><span>3&#xFE0F;&#x20E3;</span> We'll verify your identity and set everything up within 24&ndash;48 hours</li>
+    </ul>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h3>Ready to Get More Customers?</h3>
+    <p>Whether you're listing a new business or claiming your existing shop, we'll get you set up quickly.</p>
+    <a href="mailto:hello@swanpass.com?subject=Swanpass%20Listing%20Inquiry" class="cta-email">Email hello@swanpass.com &rarr;</a>
+    <div class="cta-note">Include your business name and city. We typically respond within 24 hours.</div>
   </div>
 
 </div>
 
 <script src="js/bottom-nav.js"></script>
-<script>
-function selectPkg(el){document.querySelectorAll('.pkg').forEach(p=>p.classList.remove('active'));el.classList.add('active');}
-function addRow(){
-  const row=document.createElement('div');row.className='pricing-row';
-  row.innerHTML='<input class="form-input" type="text" placeholder="Service name"><select class="pricing-dur"><option>60 min</option><option>30 min</option><option>90 min</option><option>120 min</option></select><input class="form-input" type="text" placeholder="Price" style="width:100px">';
-  document.getElementById('pricingRows').appendChild(row);
-}
-</script>
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">

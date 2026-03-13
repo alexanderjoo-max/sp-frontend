@@ -481,7 +481,7 @@ function generatePage(listing, allListings, garbageSet, allReviews) {
 <title>${escapeHtml(listing.name)} — Swanpass</title>
 <meta name="description" content="${escapeHtml((listing.description || '').slice(0, 160))}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/site.css?v=3">
 </head>
 <body>
@@ -636,7 +636,7 @@ function generatePhotosPage(listing) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Photos — ${escapeHtml(listing.name)} — Swanpass</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/site.css?v=3">
 </head>
 <body>

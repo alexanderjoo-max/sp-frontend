@@ -135,7 +135,7 @@
   function buildSection(title, id, contentHTML, extraStyle) {
     if (!contentHTML) return '';
     return '<div style="margin-bottom:24px;' + (extraStyle || '') + '">' +
-      '<h2 style="font-family:\'Bebas Neue\',sans-serif;font-size:24px;font-weight:700;letter-spacing:1px;margin-bottom:12px;display:flex;align-items:center;gap:8px;">' +
+      '<h2 style="font-family:\'Antonio\',sans-serif;font-size:24px;font-weight:700;letter-spacing:1px;margin-bottom:12px;display:flex;align-items:center;gap:8px;">' +
         '<span style="width:3px;height:14px;background:var(--red,#e8142a);border-radius:2px;flex-shrink:0;"></span>' + title +
       '</h2>' +
       '<div id="' + id + '">' + contentHTML + '</div>' +
@@ -248,7 +248,7 @@
               '</div>' +
               '<div style="margin-top:14px;">' +
                 '<input type="text" id="cpSearchInput" placeholder="Search ' + cityName + ' listings\u2026" ' +
-                  'style="width:100%;max-width:400px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:10px 14px;color:#fff;font-family:\'DM Sans\',sans-serif;font-size:13px;outline:none;backdrop-filter:blur(4px);transition:border-color .2s;" ' +
+                  'style="width:100%;max-width:400px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:10px 14px;color:#fff;font-family:\'Inter\',sans-serif;font-size:13px;outline:none;backdrop-filter:blur(4px);transition:border-color .2s;" ' +
                   'onfocus="this.style.borderColor=\'rgba(232,20,42,.6)\'" onblur="this.style.borderColor=\'rgba(255,255,255,.15)\'">' +
               '</div>' +
             '</div>' +
@@ -309,9 +309,9 @@
 
       /* ── SECTION 4: ALL LISTINGS (with category filter) ───────────── */
       var filterHTML = '<div style="display:flex;gap:6px;overflow-x:auto;padding:0 0 12px;scrollbar-width:none;flex-wrap:nowrap;" id="cpCatFilter">' +
-        '<button data-cat="all" style="background:var(--red,#e8142a);border:1px solid var(--red,#e8142a);border-radius:16px;padding:5px 12px;font-size:11px;font-weight:500;color:var(--white,#fff);white-space:nowrap;cursor:pointer;flex-shrink:0;font-family:\'DM Sans\',sans-serif;" class="cp-fbtn active">All (' + cityShops.length + ')</button>';
+        '<button data-cat="all" style="background:var(--red,#e8142a);border:1px solid var(--red,#e8142a);border-radius:16px;padding:5px 12px;font-size:11px;font-weight:500;color:var(--white,#fff);white-space:nowrap;cursor:pointer;flex-shrink:0;font-family:\'Inter\',sans-serif;" class="cp-fbtn active">All (' + cityShops.length + ')</button>';
       catKeys.forEach(function (c) {
-        filterHTML += '<button data-cat="' + c + '" style="background:var(--white10,rgba(255,255,255,.08));border:1px solid var(--border,rgba(255,255,255,.08));border-radius:16px;padding:5px 12px;font-size:11px;font-weight:500;color:var(--white70,rgba(255,255,255,.7));white-space:nowrap;cursor:pointer;flex-shrink:0;font-family:\'DM Sans\',sans-serif;" class="cp-fbtn">' + c + ' (' + categories[c] + ')</button>';
+        filterHTML += '<button data-cat="' + c + '" style="background:var(--white10,rgba(255,255,255,.08));border:1px solid var(--border,rgba(255,255,255,.08));border-radius:16px;padding:5px 12px;font-size:11px;font-weight:500;color:var(--white70,rgba(255,255,255,.7));white-space:nowrap;cursor:pointer;flex-shrink:0;font-family:\'Inter\',sans-serif;" class="cp-fbtn">' + c + ' (' + categories[c] + ')</button>';
       });
       filterHTML += '</div>';
 
@@ -330,7 +330,7 @@
       var seoText = CITY_SEO[citySlug] || '';
       if (seoText) {
         html += '<div style="margin-bottom:24px;padding:20px;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;">' +
-          '<h2 style="font-family:\'Bebas Neue\',sans-serif;font-size:20px;margin-bottom:10px;letter-spacing:1px;">About ' + cityName + '</h2>' +
+          '<h2 style="font-family:\'Antonio\',sans-serif;font-size:20px;margin-bottom:10px;letter-spacing:1px;">About ' + cityName + '</h2>' +
           '<p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.7;">' + seoText + '</p>' +
         '</div>';
       }
