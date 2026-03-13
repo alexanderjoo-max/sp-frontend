@@ -158,10 +158,20 @@ function filterShops() {
     return s.categories.some(function(c) { return c.toLowerCase().indexOf(activeCat.toLowerCase()) !== -1; });
   });
 
-  if (sort === 'rating') list.sort(function(a,b) { return b.rating - a.rating; });
-  else if (sort === 'reviews') list.sort(function(a,b) { return b.reviews - a.reviews; });
-  else if (sort === 'name') list.sort(function(a,b) { return a.name.localeCompare(b.name); });
-  list.sort(function(a,b) { return (SP_VERIFIED.has(b.id)?1:0) - (SP_VERIFIED.has(a.id)?1:0); });
+  /* Tiered ordering: Featured → Top Rated → Newly Added → Rest */
+  function tier(s) {
+    if (SP_VERIFIED.has(s.id)) return 0;
+    if (s.rating >= 4.5) return 1;
+    if (SP_NEW.has(s.id)) return 2;
+    return 3;
+  }
+  if (sort === 'rating') {
+    list.sort(function(a,b) { return tier(a) - tier(b) || b.rating - a.rating; });
+  } else if (sort === 'reviews') {
+    list.sort(function(a,b) { return tier(a) - tier(b) || b.reviews - a.reviews; });
+  } else if (sort === 'name') {
+    list.sort(function(a,b) { return tier(a) - tier(b) || a.name.localeCompare(b.name); });
+  }
 
   document.getElementById('resultsCount').textContent = list.length + ' listings';
   document.getElementById('grid').innerHTML = list.map(function(s) {
